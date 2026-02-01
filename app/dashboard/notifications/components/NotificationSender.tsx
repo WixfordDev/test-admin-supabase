@@ -1,12 +1,36 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 
 export default function AdminNotifications() {
   const [title, setTitle] = useState('');
   const [body, setBody] = useState('');
   const [isLoading, setIsLoading] = useState(false);
   const [message, setMessage] = useState('');
+  const [subscriberCount, setSubscriberCount] = useState<number | null>(null);
+  const [countLoading, setCountLoading] = useState(true);
+
+  // Fetch subscriber count on component mount
+  useEffect(() => {
+    const fetchSubscriberCount = async () => {
+      try {
+        const response = await fetch('/api/get-subscriber-count');
+        const data = await response.json();
+
+        if (response.ok) {
+          setSubscriberCount(data.subscriberCount);
+        } else {
+          console.error('Error fetching subscriber count:', data.error);
+        }
+      } catch (error) {
+        console.error('Network error fetching subscriber count:', error);
+      } finally {
+        setCountLoading(false);
+      }
+    };
+
+    fetchSubscriberCount();
+  }, []);
 
   const handleSendNotification = async () => {
     // Validation
@@ -25,12 +49,13 @@ export default function AdminNotifications() {
     console.log('Timestamp:', new Date().toISOString());
 
     try {
-      // API call to send notification to all users
-      const response = await fetch('/api/admin/send-notification', {
+      // API call to send notification to all users via our secure API route
+      const response = await fetch('/api/send-announcement', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
         },
+        credentials: 'include', // Include cookies for authentication
         body: JSON.stringify({
           title,
           body,
@@ -61,9 +86,18 @@ export default function AdminNotifications() {
     <div className="  bg-gray-100   px-4">
       <div className="max-w-2xl mx-auto">
         <div className="bg-white rounded-lg shadow-md p-8">
-          <h1 className="text-3xl font-bold text-gray-800 mb-2">
-            Send Notification to All Users
-          </h1>
+          <div className="flex items-center justify-between mb-2">
+            <h1 className="text-3xl font-bold text-gray-800">
+              Send Notification to All Users
+            </h1>
+            {countLoading ? (
+              <span className="text-gray-500">Loading subscriber count...</span>
+            ) : (
+              <span className="text-lg font-semibold text-blue-600">
+                ({subscriberCount !== null ? subscriberCount.toLocaleString() : 'N/A'} subscribers)
+              </span>
+            )}
+          </div>
           <p className="text-gray-600 mb-8">
             Send a custom notification message to all registered users
           </p>
@@ -138,7 +172,7 @@ export default function AdminNotifications() {
                   Sending...
                 </>
               ) : (
-                'Send Notification'
+                `Send Notification${subscriberCount !== null ? ` (${subscriberCount.toLocaleString()} subscribers)` : ''}`
               )}
             </button>
 

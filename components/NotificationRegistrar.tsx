@@ -35,29 +35,35 @@ export default function NotificationRegistrar({ userId }: NotificationRegistrarP
         // Register the service worker
         if ('serviceWorker' in navigator) {
           const registration = await navigator.serviceWorker.register('/sw.js');
-          
+
           // Subscribe to push notifications
           const subscription = await registration.pushManager.subscribe({
             userVisibleOnly: true,
             applicationServerKey: urlBase64ToUint8Array(process.env.NEXT_PUBLIC_VAPID_PUBLIC_KEY!)
           });
 
-          // Send the subscription to your server
+          // Send the subscription to your server via API route
           const subscriptionData = JSON.stringify(subscription);
-          
-          // Save the subscription to Supabase
-          const { error } = await supabase.rpc('register_fcm_token', {
-            p_user_id: userId,
-            p_fcm_token: subscriptionData,
-            p_device_info: {
-              platform: navigator.platform,
-              userAgent: navigator.userAgent,
-              language: navigator.language
-            }
+
+          // Save the subscription via API route
+          const response = await fetch('/api/register-fcm-token', {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({
+              fcmToken: subscriptionData,
+              deviceInfo: {
+                platform: navigator.platform,
+                userAgent: navigator.userAgent,
+                language: navigator.language
+              }
+            }),
           });
-          
-          if (error) {
-            console.error('Error saving subscription:', error);
+
+          if (!response.ok) {
+            const errorData = await response.json();
+            console.error('Error saving subscription:', errorData);
           } else {
             console.log('Push notification subscription saved');
           }
