@@ -13,17 +13,18 @@ import 'package:deenhub/core/services/shared_prefs_helper.dart';
 
 class MosqueNotificationService {
   static const String MOSQUE_TOPIC_PREFIX = 'mosque_';
+  static const String ALL_USERS_TOPIC = 'all_users'; // Topic for all users
   static const String PRAYER_TIME_CHANNEL_ID = 'mosque_prayer_times';
   static const String PRAYER_TIME_CHANNEL_NAME = 'Mosque Prayer Times';
   static const String PRAYER_TIME_CHANNEL_DESC = 'Notifications for mosque prayer time updates';
-  
+
   final FirebaseMessaging _firebaseMessaging = FirebaseMessaging.instance;
   final FlutterLocalNotificationsPlugin _localNotifications = FlutterLocalNotificationsPlugin();
-  
+
   // Use 24-hour format for internal calculations, 12-hour for display
   final DateFormat _internalTimeFormat = DateFormat('HH:mm');
   final DateFormat _displayTimeFormat = DateFormat('h:mm a');
-  
+
   MosqueNotificationService();
   
   Future<void> initialize() async {
@@ -33,14 +34,17 @@ class MosqueNotificationService {
       badge: true,
       sound: true,
     );
-    
+
+    // Subscribe to all user announcements (broadcast notifications)
+    await subscribeToAllUserAnnouncements();
+
     // Initialize local notifications
     const androidSettings = AndroidInitializationSettings('@mipmap/ic_launcher');
     const iosSettings = DarwinInitializationSettings();
     const initSettings = InitializationSettings(android: androidSettings, iOS: iosSettings);
-    
+
     await _localNotifications.initialize(initSettings);
-    
+
     // Create notification channel for mosque updates
     if (kIsWeb == false) {
       const androidChannel = AndroidNotificationChannel(
@@ -49,18 +53,18 @@ class MosqueNotificationService {
         description: PRAYER_TIME_CHANNEL_DESC,
         importance: Importance.high,
       );
-      
+
       await _localNotifications
           .resolvePlatformSpecificImplementation<AndroidFlutterLocalNotificationsPlugin>()
           ?.createNotificationChannel(androidChannel);
     }
-    
+
     // Handle FCM messages when app is in foreground
     FirebaseMessaging.onMessage.listen(_handleForegroundMessage);
-    
+
     // Handle when user taps on notification
     FirebaseMessaging.onMessageOpenedApp.listen(_handleNotificationTap);
-    
+
     // Handle background messages
     FirebaseMessaging.onBackgroundMessage(_handleBackgroundMessage);
   }
@@ -77,6 +81,18 @@ class MosqueNotificationService {
     final topic = '$MOSQUE_TOPIC_PREFIX$mosqueId';
     await _firebaseMessaging.unsubscribeFromTopic(topic);
     debugPrint('Unsubscribed from mosque updates: $topic');
+  }
+
+  /// Subscribe user to all app-wide announcements
+  Future<void> subscribeToAllUserAnnouncements() async {
+    await _firebaseMessaging.subscribeToTopic(ALL_USERS_TOPIC);
+    debugPrint('Subscribed to all user announcements: $ALL_USERS_TOPIC');
+  }
+
+  /// Unsubscribe user from all app-wide announcements
+  Future<void> unsubscribeFromAllUserAnnouncements() async {
+    await _firebaseMessaging.unsubscribeFromTopic(ALL_USERS_TOPIC);
+    debugPrint('Unsubscribed from all user announcements: $ALL_USERS_TOPIC');
   }
   
   /// Handle message when app is in foreground
