@@ -1,0 +1,148 @@
+{
+  "project_info": {
+    "project_number": "1031438051281",
+    "project_id": "deenhub-4bf96",
+    "storage_bucket": "deenhub-4bf96.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1031438051281:android:13fd8c96834e10b7af62f0",
+        "android_client_info": {
+          "package_name": "com.deenhub.app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1031438051281-13a7j65td4ovpqugok5gdmbnlicgci3m.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.deenhub.app",
+            "certificate_hash": "9d6f123c5538c42d100b651e64a576f21f13ddaf"
+          }
+        },
+        {
+          "client_id": "1031438051281-hacgeqc4r6qc7gl9bfbdpsiacmvjnqau.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.deenhub.app",
+            "certificate_hash": "632a4c42c60cdbc67e3e7e50010b8c7c3149c86e"
+          }
+        },
+        {
+          "client_id": "1031438051281-nd0gm0rk36fg077jb0bmqaujcskcd0v2.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.deenhub.app",
+            "certificate_hash": "50b1dbb519b89536dc7265fc1ba3653c6f3e7163"
+          }
+        },
+        {
+          "client_id": "1031438051281-vr5f328l357ktbfl8ajlbbg4git8i5ca.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.deenhub.app",
+            "certificate_hash": "4afc29e85ced775a66743e747abf2ba7e9f32659"
+          }
+        },
+        {
+          "client_id": "1031438051281-2e87rokfit4of2ugec8ltp79o9g5qbqk.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDTRC-QCzJTHDVaIibNUkZ7tk3BtQbXXZY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1031438051281-2e87rokfit4of2ugec8ltp79o9g5qbqk.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "1031438051281-4uemg3422hkpo4c0h9c65pq19m3qlb83.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.deenhub.app",
+                "app_store_id": "6749580911"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1031438051281:android:edd82415fbe1eea6af62f0",
+        "android_client_info": {
+          "package_name": "com.deenhub.app.dev"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1031438051281-2olhansq9ktrrhgoofd1k34ou0qmqqlt.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.deenhub.app.dev",
+            "certificate_hash": "632a4c42c60cdbc67e3e7e50010b8c7c3149c86e"
+          }
+        },
+        {
+          "client_id": "1031438051281-f0e9ebd6hn8aeaqm8u967gut1knkep2g.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.deenhub.app.dev",
+            "certificate_hash": "9d6f123c5538c42d100b651e64a576f21f13ddaf"
+          }
+        },
+        {
+          "client_id": "1031438051281-n37goqbac2pmnr5rehkqtjlrll7t7ed4.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.deenhub.app.dev",
+            "certificate_hash": "4afc29e85ced775a66743e747abf2ba7e9f32659"
+          }
+        },
+        {
+          "client_id": "1031438051281-nu6h51pk6od8a5lmq2undugi4bvsnp3a.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.deenhub.app.dev",
+            "certificate_hash": "50b1dbb519b89536dc7265fc1ba3653c6f3e7163"
+          }
+        },
+        {
+          "client_id": "1031438051281-2e87rokfit4of2ugec8ltp79o9g5qbqk.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDTRC-QCzJTHDVaIibNUkZ7tk3BtQbXXZY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1031438051281-2e87rokfit4of2ugec8ltp79o9g5qbqk.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "1031438051281-4uemg3422hkpo4c0h9c65pq19m3qlb83.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.deenhub.app",
+                "app_store_id": "6749580911"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

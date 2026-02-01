@@ -1,0 +1,1218 @@
+{
+  "categories": [
+    {
+      "id": "1",
+      "name": "Duas from the Qur’an",
+      "description": "Supplications directly from the Holy Qur’an",
+      "icon": "menu_book",
+      "color": "#42A5F5",
+      "subcategories": [
+        {
+          "id": "1.1",
+          "name": "Guidance and Steadfastness",
+          "description": "Duas seeking Allah's guidance and firmness in faith."
+        },
+        {
+          "id": "1.2",
+          "name": "Forgiveness and Mercy",
+          "description": "Duas for seeking pardon and divine mercy."
+        },
+        {
+          "id": "1.3",
+          "name": "Protection",
+          "description": "Duas for seeking Allah's protection from various evils."
+        },
+        {
+          "id": "1.4",
+          "name": "Relief from Hardship and Anxiety",
+          "description": "Duas for ease during difficult times and alleviation of worries."
+        },
+        {
+          "id": "1.5",
+          "name": "Gratitude and Praise",
+          "description": "Duas expressing thankfulness and glorifying Allah."
+        },
+        {
+          "id": "1.6",
+          "name": "Parents",
+          "description": "Duas specifically for parents."
+        },
+        {
+          "id": "1.7",
+          "name": "Knowledge",
+          "description": "Duas for increasing in beneficial knowledge."
+        },
+        {
+          "id": "1.8",
+          "name": "Good in This Life and Hereafter",
+          "description": "Comprehensive duas for well-being in both worlds."
+        },
+        {
+          "id": "1.9",
+          "name": "Repelling Enemies and Harm",
+          "description": "Duas seeking protection from adversaries and malevolence."
+        },
+        {
+          "id": "1.10",
+          "name": "Duas of the Prophets",
+          "description": "Examples of supplications made by various Prophets (peace be upon them)."
+        }
+      ]
+    },
+    {
+      "id": "2",
+      "name": "Clothing",
+      "description": "Duas Related to Clothing",
+      "icon": "checkroom",
+      "color": "#4CAF50",
+      "subcategories": []
+    },
+    {
+      "id": "3",
+      "name": "Death",
+      "description": "Duas Related to Death",
+      "icon": "airline_seat_flat_angled",
+      "color": "#616161",
+      "subcategories": []
+    },
+    {
+      "id": "4",
+      "name": "Difficulty",
+      "description": "Duas Related to Difficulty",
+      "icon": "report_problem",
+      "color": "#FF9800",
+      "subcategories": []
+    },
+    {
+      "id": "5",
+      "name": "Emotion",
+      "description": "Duas Related to Emotion",
+      "icon": "sentiment_satisfied",
+      "color": "#FFC107",
+      "subcategories": []
+    },
+    {
+      "id": "6",
+      "name": "Family",
+      "description": "Duas Related to Family",
+      "icon": "people",
+      "color": "#03A9F4",
+      "subcategories": []
+    },
+    {
+      "id": "7",
+      "name": "Hajj and Umrah",
+      "description": "Duas Related to Hajj and Umrah",
+      "icon": "account_balance",
+      "color": "#8BC34A",
+      "subcategories": []
+    },
+    {
+      "id": "8",
+      "name": "Home",
+      "description": "Duas Related to Home",
+      "icon": "home",
+      "color": "#795548",
+      "subcategories": []
+    },
+    {
+      "id": "9",
+      "name": "Illness",
+      "description": "Duas Related to Illness",
+      "icon": "healing",
+      "color": "#F44336",
+      "subcategories": []
+    },
+    {
+      "id": "10",
+      "name": "Marriage",
+      "description": "Duas Related to Marriage",
+      "icon": "favorite",
+      "color": "#E91E63",
+      "subcategories": []
+    }
+  ],
+  "duas": {
+    "1": [
+      {
+        "id": 68,
+        "title": "Dua for Guidance to the Straight Path",
+        "arabic_text": "اهْدِنَا الصِّرَاطَ الْمُسْتَقِيمَ",
+        "transliteration": "Ihdina as-sirata al-mustaqim",
+        "translation": "Guide us to the Straight Path.",
+        "reference": "Surah Al-Fatiha 1:5",
+        "category_id": "1",
+        "subcategory_id": "1.1"
+      },
+      {
+        "id": 69,
+        "title": "Dua Against Being a Trial for Disbelievers",
+        "arabic_text": "رَبَّنَا لَا تَجْعَلْنَا فِتْنَةً لِّلَّذِينَ كَفَرُوا",
+        "transliteration": "Rabbana la taj'alna fitnatan lilladhina kafaroo",
+        "translation": "Our Lord, make us not [objects of] trial for the disbelievers...",
+        "reference": "Surah Al-Baqarah 2:286",
+        "category_id": "1",
+        "subcategory_id": "1.1"
+      },
+      {
+        "id": 70,
+        "title": "Dua for Forgiveness of Forgetfulness or Mistakes",
+        "arabic_text": "رَبَّنَا لَا تُؤَاخِذْنَا إِن نَّسِينَا أَوْ أَخْطَأْنَا...",
+        "transliteration": "Rabbana la tu'akhidhna in naseena aw akhta'na...",
+        "translation": "Our Lord, do not impose blame upon us if we forget or make a mistake. Our Lord, and lay not upon us a burden like that which You laid upon those before us...",
+        "reference": "Surah Al-Baqarah 2:286",
+        "category_id": "1",
+        "subcategory_id": "1.1"
+      },
+      {
+        "id": 71,
+        "title": "Dua Against Deviation of Hearts",
+        "arabic_text": "رَبَّنَا لَا تُزِغْ قُلُوبَنَا بَعْدَ إِذْ هَدَيْتَنَا",
+        "transliteration": "Rabbana la tuzigh quloobana ba'da idh hadaytana",
+        "translation": "Our Lord, let not our hearts deviate after You have guided us and grant us from Yourself mercy.",
+        "reference": "Surah Al-Imran 3:8",
+        "category_id": "1",
+        "subcategory_id": "1.1"
+      },
+      {
+        "id": 72,
+        "title": "Dua for Mercy and Right Guidance",
+        "arabic_text": "رَبَّنَا آتِنَا مِن لَّدُنكَ رَحْمَةً وَهَيِّئْ لَنَا مِنْ أَمْرِنَا رَشَدًا",
+        "transliteration": "Rabbana atina min ladunka rahmah wa hayyi' lana min amrina rashada",
+        "translation": "Our Lord, grant us mercy from Yourself and prepare for us from our affair right guidance.",
+        "reference": "Surah Al-Kahf 18:10",
+        "category_id": "1",
+        "subcategory_id": "1.1"
+      },
+      {
+        "id": 73,
+        "title": "Dua for Comfort in Spouses and Offspring",
+        "arabic_text": "رَبَّنَا هَبْ لَنَا مِنْ أَزْوَاجِنَا وَذُرِّيَّاتِنَا قُرَّةَ أَعْيُنٍ",
+        "transliteration": "Rabbana hablana min azwajina wa dhurriyyatina qurrata a'yunin",
+        "translation": "Our Lord, grant us from among our wives and offspring comfort to our eyes and make us an example for the righteous.",
+        "reference": "Surah Al-Furqan 25:74",
+        "category_id": "1",
+        "subcategory_id": "1.1"
+      },
+      {
+        "id": 74,
+        "title": "Dua Not to Despair of Allah's Mercy",
+        "arabic_text": "قُلْ يَا عِبَادِيَ الَّذِينَ أَسْرَفُوا عَلَىٰ أَنفُسِهِمْ لَا تَقْنَطُوا مِن رَّحْمَةِ اللَّهِ",
+        "transliteration": "Qul ya 'ibadiya alladheena asrafoo 'ala anfusihim la taqnatoo min rahmatillah",
+        "translation": "Say, O My servants who have transgressed against themselves, do not despair of the mercy of Allah. Indeed, Allah forgives all sins.",
+        "reference": "Surah Az-Zumar 39:53",
+        "category_id": "1",
+        "subcategory_id": "1.2"
+      },
+      {
+        "id": 75,
+        "title": "Dua to Ask Forgiveness and Repent",
+        "arabic_text": "فَاسْتَغْفِرُوا رَبَّكُمْ ثُمَّ تُوبُوا إِلَيْهِ",
+        "transliteration": "Fastaghfiroo rabbakum thumma tooboo ilayh",
+        "translation": "So ask forgiveness of your Lord and repent to Him.",
+        "reference": "Surah Al-Mu’min 40:55",
+        "category_id": "1",
+        "subcategory_id": "1.2"
+      },
+      {
+        "id": 76,
+        "title": "Dua for Allah's Forgiveness and Mercy",
+        "arabic_text": "وَاسْتَغْفِرُوا اللَّهَ إِنَّ اللَّهَ كَانَ غَفُورًا رَّحِيمًا",
+        "transliteration": "Wastaghfiroo Allaha inna Allaha kana ghafooran raheema",
+        "translation": "And ask forgiveness of Allah. Indeed, Allah is Forgiving and Merciful.",
+        "reference": "Surah An-Nur 24:31",
+        "category_id": "1",
+        "subcategory_id": "1.2"
+      },
+      {
+        "id": 77,
+        "title": "Dua for Forgiveness After Wronging Oneself",
+        "arabic_text": "رَبَّنَا ظَلَمْنَا أَنفُسَنَا وَإِن لَمْ تَغْفِرْ لَنَا وَتَرْحَمْنَا",
+        "transliteration": "Rabbana zalamna anfusana wa in lam taghfir lana wa tarhamna",
+        "translation": "Our Lord, we have wronged ourselves, and if You do not forgive us and have mercy upon us, we will surely be among the losers.",
+        "reference": "Surah Al-A’raf 7:23",
+        "category_id": "1",
+        "subcategory_id": "1.2"
+      },
+      {
+        "id": 78,
+        "title": "Dua for Forgiveness of Family and Believers",
+        "arabic_text": "رَبِّ اغْفِرْ لِي وَلِوَالِدَيَّ وَلِمَن دَخَلَ بَيْتِيَ",
+        "transliteration": "Rabbi ighfir li wa liwalidayya wa liman dakhala baytiya",
+        "translation": "Our Lord, forgive me and my parents and whoever enters my house a believer and the believing men and believing women.",
+        "reference": "Surah Hud 11:47",
+        "category_id": "1",
+        "subcategory_id": "1.2"
+      },
+      {
+        "id": 79,
+        "title": "Dua for Refuge in the Lord of Daybreak (Al-Falaq)",
+        "arabic_text": "قُلْ أَعُوذُ بِرَبِّ الْفَلَقِ",
+        "transliteration": "Qul a'oodhu bi rabbil falaq",
+        "translation": "Say: I seek refuge in the Lord of daybreak from the evil of what He created...",
+        "reference": "Surah Al-Falaq 113:1-5",
+        "category_id": "1",
+        "subcategory_id": "1.3"
+      },
+      {
+        "id": 80,
+        "title": "Dua for Refuge in the Lord of Mankind (An-Nas)",
+        "arabic_text": "قُلْ أَعُوذُ بِرَبِّ النَّاسِ",
+        "transliteration": "Qul a'oodhu bi rabbin nas",
+        "translation": "Say: I seek refuge in the Lord of mankind, the Sovereign of mankind, the God of mankind...",
+        "reference": "Surah An-Nas 114:1-6",
+        "category_id": "1",
+        "subcategory_id": "1.3"
+      },
+      {
+        "id": 81,
+        "title": "Ayat al-Kursi (The Throne Verse) for Protection",
+        "arabic_text": "اللَّهُ لَا إِلَٰهَ إِلَّا هُوَ الْحَيُّ الْقَيُّومُ",
+        "transliteration": "Allahu la ilaha illa huwal hayyul qayyum",
+        "translation": "Allah! There is no deity except Him, the Ever-Living, the Sustainer of existence...",
+        "reference": "Surah Al-Baqarah 2:255",
+        "category_id": "1",
+        "subcategory_id": "1.3"
+      },
+      {
+        "id": 82,
+        "title": "Dua for Ease After Hardship",
+        "arabic_text": "فَإِنَّ مَعَ الْعُسْرِ يُسْرًا",
+        "transliteration": "Fa inna ma'al 'usri yusra",
+        "translation": "Indeed, with hardship [will be] ease. Indeed, with hardship [will be] ease.",
+        "reference": "Surah Ash-Sharh 94:5-6",
+        "category_id": "1",
+        "subcategory_id": "1.4"
+      },
+      {
+        "id": 83,
+        "title": "Dua for Sufficiency from Allah",
+        "arabic_text": "قُلْ حَسْبِيَ اللَّهُ",
+        "transliteration": "Qul hasbiya Allah",
+        "translation": "Say, 'Allah is sufficient for me; there is no deity except Him. On Him I have relied...'",
+        "reference": "Surah At-Tawbah 9:129",
+        "category_id": "1",
+        "subcategory_id": "1.4"
+      },
+      {
+        "id": 84,
+        "title": "Dua Against Burdens Beyond Capacity",
+        "arabic_text": "وَلَا تُحَمِّلْنَا مَا لَا طَاقَةَ لَنَا بِهِ",
+        "transliteration": "wa la tuhammilna ma la taqata lana bih",
+        "translation": "...and burden us not with that which we have no ability to bear.",
+        "reference": "Surah Al-Baqarah 2:286",
+        "category_id": "1",
+        "subcategory_id": "1.4"
+      },
+      {
+        "id": 85,
+        "title": "Dua for Remembering Allah and Being Grateful",
+        "arabic_text": "فَاذْكُرُونِي أَذْكُرْكُمْ",
+        "transliteration": "Fadhkurooni adhkurkum",
+        "translation": "So remember Me; I will remember you. And be grateful to Me and do not deny Me.",
+        "reference": "Surah Al-Baqarah 2:152",
+        "category_id": "1",
+        "subcategory_id": "1.5"
+      },
+      {
+        "id": 86,
+        "title": "Dua for the Benefit of Gratitude",
+        "arabic_text": "وَمَن شَكَرَ فَإِنَّمَا يَشْكُرُ لِنَفْسِهِ",
+        "transliteration": "Wa man shakara fa innama yashkuru li nafsihi",
+        "translation": "And whoever is grateful—his gratitude is only for [the benefit of] himself.",
+        "reference": "Surah An-Naml 27:40",
+        "category_id": "1",
+        "subcategory_id": "1.5"
+      },
+      {
+        "id": 87,
+        "title": "Dua for Parents' Mercy",
+        "arabic_text": "وَاخْفِضْ لَهُمَا جَنَاحَ الذُّلِّ مِنَ الرَّحْمَةِ",
+        "transliteration": "Wakhfid lahuma janahal dhulli min ar-rahmah",
+        "translation": "And lower to them the wing of humility out of mercy and say, 'My Lord, have mercy upon them as they brought me up when I was small.'",
+        "reference": "Surah Al-Isra 17:24",
+        "category_id": "1",
+        "subcategory_id": "1.6"
+      },
+      {
+        "id": 88,
+        "title": "Dua for Increase in Knowledge",
+        "arabic_text": "رَبِّ زِدْنِي عِلْمًا",
+        "transliteration": "Rabbi zidni 'ilma",
+        "translation": "My Lord, increase me in knowledge.",
+        "reference": "Surah Ta-Ha 20:114",
+        "category_id": "1",
+        "subcategory_id": "1.7"
+      },
+      {
+        "id": 89,
+        "title": "Dua for Good in This World and Hereafter",
+        "arabic_text": "رَبَّنَا آتِنَا فِي الدُّنْيَا حَسَنَةً وَفِي الآخِرَةِ حَسَنَةً",
+        "transliteration": "Rabbana atina fid dunya hasanatan wa fil akhirati hasanatan",
+        "translation": "Our Lord, give us in this world [that which is] good and in the Hereafter [that which is] good and protect us from the punishment of the Fire.",
+        "reference": "Surah Al-Baqarah 2:201",
+        "category_id": "1",
+        "subcategory_id": "1.8"
+      },
+      {
+        "id": 90,
+        "title": "Dua for Refuge from Devils' Incitements",
+        "arabic_text": "وَقُل رَّبِّ أَعُوذُ بِكَ مِنْ هَمَزَاتِ الشَّيَاطِينِ",
+        "transliteration": "Wa qul rabbi a'oodhu bika min hamazatish shayateen",
+        "translation": "And say, 'My Lord, I seek refuge in You from the incitements of the devils. And I seek refuge in You, my Lord, lest they be present with me.'",
+        "reference": "Surah Al-Mu’minun 23:97-98",
+        "category_id": "1",
+        "subcategory_id": "1.9"
+      },
+      {
+        "id": 91,
+        "title": "Prophet Ibrahim's Dua for Righteous Child",
+        "arabic_text": "رَبِّ هَبْ لِي مِنَ الصَّالِحِينَ",
+        "transliteration": "Rabbi hab li minas saliheen",
+        "translation": "My Lord, grant me [a child] from among the righteous.",
+        "reference": "Surah As-Saffat 37:100",
+        "category_id": "1",
+        "subcategory_id": "1.10"
+      },
+      {
+        "id": 92,
+        "title": "Prophet Yunus' Dua in the Whale's Belly",
+        "arabic_text": "لَا إِلَٰهَ إِلَّا أَنتَ سُبْحَانَكَ إِنِّي كُنتُ مِنَ الظَّالِمِينَ",
+        "transliteration": "La ilaha illa anta subhanaka inni kuntu minaz zalimeen",
+        "translation": "There is no deity except You; exalted are You. Indeed, I have been of the wrongdoers.",
+        "reference": "Surah Al-Anbiya 21:87",
+        "category_id": "1",
+        "subcategory_id": "1.10"
+      },
+      {
+        "id": 93,
+        "title": "Prophet Musa's Dua for Strength and Ease",
+        "arabic_text": "رَبِّ اشْرَحْ لِي صَدْرِي وَيَسِّرْ لِي أَمْرِي",
+        "transliteration": "Rabbi ishrah li sadri wa yassir li amri",
+        "translation": "My Lord, expand for me my chest and ease my task for me.",
+        "reference": "Surah Taha 20:25-28",
+        "category_id": "1",
+        "subcategory_id": "1.10"
+      }
+    ],
+    "2": [
+      {
+        "id": 1,
+        "title": "Dua Before Undressing",
+        "arabic_text": "بِسْمِ اللَّهِ",
+        "transliteration": "Bismillah",
+        "translation": "In the name of Allah.",
+        "reference": "Ibn Majah 2/1160. Graded Hasan by Al-Albani in Sahih al-Jami’ (No. 3026). Narrated that the Prophet ﷺ said: \"The screen between the eyes of the jinn and the private parts of the children of Adam when one of them enters the toilet is saying ‘Bismillah’.” — This is extended by scholars to general undressing as well.",
+        "category_id": "1"
+      },
+      {
+        "id": 2,
+        "title": "Dua When Someone Else Puts On New Clothes",
+        "arabic_text": "تُبْلِي وَيُخْلِفُ اللَّهُ تَعَالَى",
+        "transliteration": "Tublee wa yukhlifu-llāhu taʿālā.",
+        "translation": "May you wear it out and may Allah replace it (with something better).",
+        "reference": "Sunan Abi Dawood 4031. Graded Hasan by Al-Albani. Narrated Abu Sa’id: When the Prophet ﷺ saw someone wearing new clothes, he said this dua.",
+        "category_id": "1"
+      },
+      {
+        "id": 3,
+        "title": "Dua When Getting Dressed",
+        "arabic_text": "اللَّهُمَّ لَكَ الْحَمْدُ أَنْتَ كَسَوْتَنِيهِ، أَسْأَلُكَ مِنْ خَيْرِهِ، وَخَيْرِ مَا صُنِعَ لَهُ، وَأَعُوذُ بِكَ مِنْ شَرِّهِ، وَشَرِّ مَا صُنِعَ لَهُ",
+        "transliteration": "Allāhumma laka al-ḥamdu anta kasautanīhi, as’aluka min khayrihi wa khayri mā ṣuniʿa lah, wa aʿūdhu bika min sharrihi wa sharri mā ṣuniʿa lah.",
+        "translation": "O Allah, all praise is for You. You have clothed me with it. I ask You for its good and the good of what it was made for, and I seek refuge with You from its evil and the evil of what it was made for.",
+        "reference": "Abu Dawood 4020, Tirmidhi 1767. Graded Sahih by Al-Albani.",
+        "category_id": "1"
+      },
+      {
+        "id": 4,
+        "title": "Dua When Putting On New Clothes (for oneself) - Main",
+        "arabic_text": "اللَّهُمَّ لَكَ الْحَمْدُ أَنْتَ كَسَوْتَنِيهِ، أَسْأَلُكَ مِنْ خَيْرِهِ، وَخَيْرِ مَا صُنِعَ لَهُ، وَأَعُوذُ بِكَ مِنْ شَرِّهِ، وَشَرِّ مَا صُنِعَ لَهُ",
+        "transliteration": "Allāhumma laka al-ḥamdu anta kasautanīhi, as’aluka min khayrihi wa khayri mā ṣuniʿa lah, wa aʿūdhu bika min sharrihi wa sharri mā ṣuniʿa lah.",
+        "translation": "O Allah, all praise is for You. You have clothed me with it. I ask You for its good and the good of what it was made for, and I seek refuge with You from its evil and the evil of what it was made for.",
+        "reference": "Abu Dawood 4020, Tirmidhi 1767. Graded Sahih by Al-Albani. (Same as Dua When Getting Dressed)",
+        "category_id": "1"
+      },
+      {
+        "id": 5,
+        "title": "Dua When Putting On New Clothes (for oneself) - Additional",
+        "arabic_text": "اللَّهُمَّ أَنْتَ كَسَوْتَنِيهِ، فَلَكَ الْحَمْدُ، أَسْأَلُكَ خَيْرَهُ وَخَيْرَ مَا صُنِعَ لَهُ، وَأَعُوذُ بِكَ مِنْ شَرِّهِ وَشَرِّ مَا صُنِعَ لَهُ",
+        "transliteration": "Allāhumma anta kasautanīh, fa lakal-ḥamd, as’aluka khayrahu wa khayra mā ṣuniʿa lah, wa aʿūdhu bika min sharrihi wa sharri mā ṣuniʿa lah.",
+        "translation": "O Allah, You have clothed me with it, so to You is the praise. I ask You for its good and the good of what it was made for, and I seek refuge with You from its evil and the evil of what it was made for.",
+        "reference": "(Slight variation, same meaning and source as Dua When Getting Dressed.)",
+        "category_id": "1"
+      }
+    ],
+    "3": [
+      {
+        "id": 6,
+        "title": "After Burying the Deceased",
+        "arabic_text": "اللَّهُمَّ اغْفِرْ لَهُ، اللَّهُمَّ ثَبِّتْهُ",
+        "transliteration": "Allāhumma ighfir lahu, Allāhumma thabbit’hu.",
+        "translation": "O Allah, forgive him. O Allah, make him steadfast.",
+        "reference": "Abu Dawood 3221. Graded Sahih by Al-Albani. Prophet ﷺ said: “Seek forgiveness for your brother and pray that he remains firm, for he is now being questioned.”",
+        "category_id": "2"
+      },
+      {
+        "id": 7,
+        "title": "When Closing the Eyes of the Deceased",
+        "arabic_text": "اللَّهُمَّ اغْفِرْ لِفُلَانٍ وَارْفَعْ دَرَجَتَهُ فِي الْمَهْدِيِّينَ، وَاخْلُفْهُ فِي عَقِبِهِ فِي الْغَابِرِينَ، وَاغْفِرْ لَنَا وَلَهُ يَا رَبَّ الْعَالَمِينَ، وَافْسَحْ لَهُ فِي قَبْرِهِ، وَنَوِّرْ لَهُ فِيهِ",
+        "transliteration": "Allāhumma ighfir lifulān, warfaʿ darajatahu fil-mahdiyyīn, wakhlufhu fī ʿaqibihi fil-ghābirīn, waghfir lanā walahu yā rabbal-ʿālamīn, wafsaḥ lahu fī qabrihi, wanawwir lahu fīhi.",
+        "translation": "O Allah, forgive [name], raise his status among the guided, and be a successor to him among his descendants. Forgive us and him, O Lord of the worlds. Make his grave spacious and fill it with light.",
+        "reference": "Muslim 920",
+        "category_id": "2"
+      },
+      {
+        "id": 8,
+        "title": "Encouraging the Dying Person to Say the Shahada",
+        "arabic_text": "لَا إِلَهَ إِلَّا اللَّهُ",
+        "transliteration": "Lā ilāha illā Allāh",
+        "translation": "There is no god but Allah.",
+        "reference": "Muslim 916. Prophet ﷺ said: “Prompt your dying ones to say: There is no god but Allah.”",
+        "category_id": "2"
+      },
+      {
+        "id": 9,
+        "title": "Duas for the Deceased in Funeral Prayer: Most Common General Dua",
+        "arabic_text": "اللَّهُمَّ اغْفِرْ لَهُ، وَارْحَمْهُ، وَعَافِهِ، وَاعْفُ عَنْهُ",
+        "transliteration": "Allāhumma ighfir lahu, warḥamhu, wa ʿāfihi, waʿfu ʿanhu.",
+        "translation": "O Allah, forgive him, have mercy on him, grant him peace, and pardon him.",
+        "reference": "Abu Dawood 3201",
+        "category_id": "2"
+      },
+      {
+        "id": 10,
+        "title": "Duas for the Deceased in Funeral Prayer: Dua for Forgiveness and Mercy",
+        "arabic_text": "اللَّهُمَّ اغْفِرْ لِحَيِّنَا وَمَيِّتِنَا",
+        "transliteration": "Allāhumma ighfir liḥayyina wa mayyitinā...",
+        "translation": "(O Allah, forgive our living and our dead...)",
+        "reference": "Muslim 963",
+        "category_id": "2"
+      },
+      {
+        "id": 11,
+        "title": "Duas for the Deceased in Funeral Prayer: Comprehensive Dua",
+        "arabic_text": "اللَّهُمَّ اجْعَلْ قَبْرَهُ رَوْضَةً مِنْ رِيَاضِ الْجَنَّةِ، وَلَا تَجْعَلْهُ حُفْرَةً مِنْ حُفَرِ النَّارِ",
+        "transliteration": "Allāhumma ijʿal qabarahu rawḍatan min riyāḍil-jannah, wa lā tajʿalhu ḥufratan min ḥufarin-nār.",
+        "translation": "O Allah, make his grave a garden from the gardens of Paradise, and do not make it a pit from the pits of Hell.",
+        "reference": "Ibn Majah 3567 (weak chain but commonly recited)",
+        "category_id": "2"
+      },
+      {
+        "id": 12,
+        "title": "Duas for the Deceased in Funeral Prayer: For Children (if deceased is a child)",
+        "arabic_text": "اللَّهُمَّ اجْعَلْهُ فَرَطًا وَذُخْرًا لِوَالِدَيْهِ، وَشَفِيعًا مُجَابًا",
+        "transliteration": "Allāhumma ijʿalhu faraṭan wa dhukhran li-wālidaihi, wa shafīʿan mujāban.",
+        "translation": "O Allah, make him a forerunner, a treasure for his parents, and an accepted intercessor.",
+        "reference": "Al-Nasa’i 1987",
+        "category_id": "2"
+      },
+      {
+        "id": 13,
+        "title": "Giving Condolences",
+        "arabic_text": "إِنَّا لِلَّهِ وَإِنَّا إِلَيْهِ رَاجِعُونَ، اللَّهُمَّ أْجُرْنِي فِي مُصِيبَتِي، وَاخْلُفْ لِي خَيْرًا مِنْهَا",
+        "transliteration": "Innā lillāhi wa innā ilayhi rājiʿūn. Allāhumma’jurnī fī muṣībatī wakhluf lī khayran minhā.",
+        "translation": "To Allah we belong and to Him we return. O Allah, reward me for my affliction and replace it for me with something better.",
+        "reference": "Muslim 918",
+        "category_id": "2"
+      },
+      {
+        "id": 14,
+        "title": "Placing the Deceased in the Grave",
+        "arabic_text": "بِسْمِ اللَّهِ وَعَلَى سُنَّةِ رَسُولِ اللَّهِ",
+        "transliteration": "Bismillāh wa ʿalā sunnati Rasūlillāh",
+        "translation": "In the name of Allah and upon the Sunnah of the Messenger of Allah.",
+        "reference": "Abu Dawood 3215",
+        "category_id": "2"
+      },
+      {
+        "id": 15,
+        "title": "Visiting the Graves",
+        "arabic_text": "السَّلَامُ عَلَيْكُمْ أَهْلَ الدِّيَارِ، مِنَ الْمُؤْمِنِينَ وَالْمُسْلِمِينَ، وَإِنَّا إِنْ شَاءَ اللَّهُ بِكُمْ لَاحِقُونَ، نَسْأَلُ اللَّهَ لَنَا وَلَكُمُ الْعَافِيَةَ",
+        "transliteration": "As-salāmu ʿalaykum ahla-d-diyāri min al-muʾminīna wa-l-muslimīn, wa innā inshāʾ Allāhu bikum lāḥiqūn. Nasʾalullāha lanā wa lakumul-ʿāfiyah.",
+        "translation": "Peace be upon you, O inhabitants of the graves, believers and Muslims. Indeed, we are, Allah willing, to join you. We ask Allah for well-being for us and for you.",
+        "reference": "Muslim 975",
+        "category_id": "2"
+      }
+    ],
+    "4": [
+      {
+        "id": 16,
+        "title": "General Distress & Hardship",
+        "arabic_text": "اللَّهُمَّ رَحْمَتَكَ أَرْجُو، فَلَا تَكِلْنِي إِلَى نَفْسِي طَرْفَةَ عَيْنٍ، وَأَصْلِحْ لِي شَأْنِي كُلَّهُ، لَا إِلَهَ إِلَّا أَنْتَ",
+        "transliteration": "Allāhumma raḥmataka arjū, falā takilnī ilā nafsī ṭarfata ʿayn, wa aṣliḥ lī sha'nī kullah, lā ilāha illā anta.",
+        "translation": "O Allah, I hope for Your mercy. Do not leave me to myself even for the blink of an eye. Correct all my affairs. There is no god but You.",
+        "reference": "Abu Dawood 5090",
+        "category_id": "3"
+      },
+      {
+        "id": 17,
+        "title": "Overwhelmed with Burdens",
+        "arabic_text": "اللَّهُمَّ إِنِّي أَعُوذُ بِكَ مِنَ الْهَمِّ وَالْحَزَنِ، وَأَعُوذُ بِكَ مِنَ الْعَجْزِ وَالْكَسَلِ، وَأَعُوذُ بِكَ مِنَ الْجُبْنِ وَالْبُخْلِ، وَأَعُوذُ بِكَ مِنْ غَلَبَةِ الدَّيْنِ وَقَهْرِ الرِّجَالِ",
+        "transliteration": "Allāhumma innī aʿūdhu bika minal-hammi wal-ḥazan, wa aʿūdhu bika minal-ʿajzi wal-kasal, wa aʿūdhu bika minal-jubni wal-bukhl, wa aʿūdhu bika min ghalabatid-dayni wa qahri rijāl.",
+        "translation": "O Allah, I seek refuge in You from anxiety and grief, from weakness and laziness, from cowardice and miserliness, and from the burden of debts and the oppression of men.",
+        "reference": "Bukhari 6369",
+        "category_id": "3"
+      },
+      {
+        "id": 18,
+        "title": "In Times of Fear or Anxiety",
+        "arabic_text": "حَسْبُنَا اللَّهُ وَنِعْمَ الْوَكِيلُ",
+        "transliteration": "Hasbunallāhu wa niʿmal-wakīl.",
+        "translation": "Sufficient for us is Allah, and He is the best Disposer of affairs.",
+        "reference": "Qur’an – Surah Al Imran 3:173",
+        "category_id": "3"
+      },
+      {
+        "id": 19,
+        "title": "Seeking Relief from Sadness",
+        "arabic_text": "يَا حَيُّ يَا قَيُّومُ، بِرَحْمَتِكَ أَسْتَغِيثُ، أَصْلِحْ لِي شَأْنِي كُلَّهُ، وَلَا تَكِلْنِي إِلَى نَفْسِي طَرْفَةَ عَيْنٍ",
+        "transliteration": "Yā Ḥayy, yā Qayyūm, bi raḥmatika astaghīth, aṣliḥ lī sha’nī kullah, wa lā takilnī ilā nafsī ṭarfata ʿayn.",
+        "translation": "O Ever-Living, O Sustainer, by Your mercy I seek help. Rectify all of my affairs and do not leave me to myself for the blink of an eye.",
+        "reference": "Al-Hakim 1/545",
+        "category_id": "3"
+      },
+      {
+        "id": 20,
+        "title": "Dua for Patience in Trials",
+        "arabic_text": "رَبَّنَا أَفْرِغْ عَلَيْنَا صَبْرًا وَتَوَفَّنَا مُسْلِمِينَ",
+        "transliteration": "Rabbana afrigh ʿalaynā ṣabran wa tawaffanā muslimīn.",
+        "translation": "Our Lord, pour upon us patience and let us die as Muslims [in submission to You].",
+        "reference": "Qur’an – Surah Al-A'raf 7:126",
+        "category_id": "3"
+      },
+      {
+        "id": 21,
+        "title": "Dua for Financial Hardship",
+        "arabic_text": "اللَّهُمَّ اكْفِنِي بِحَلَالِكَ عَنْ حَرَامِكَ، وَأَغْنِنِي بِفَضْلِكَ عَمَّنْ سِوَاكَ",
+        "transliteration": "Allāhumma ikfinī biḥalālika ʿan ḥarāmik, wa aghninī bifaḍlika ʿamman siwāk.",
+        "translation": "O Allah, suffice me with what You have allowed instead of what You have forbidden, and make me independent of all others besides You.",
+        "reference": "Tirmidhi 3563",
+        "category_id": "3"
+      },
+      {
+        "id": 22,
+        "title": "When Facing a Big Decision or Pressure",
+        "arabic_text": "لَا حَوْلَ وَلَا قُوَّةَ إِلَّا بِاللَّهِ",
+        "transliteration": "Lā ḥawla wa lā quwwata illā billāh.",
+        "translation": "There is no power and no strength except with Allah.",
+        "reference": "Bukhari 4206",
+        "category_id": "3"
+      },
+      {
+        "id": 23,
+        "title": "For a Heart in Distress",
+        "arabic_text": "رَبِّ إِنِّي مَغْلُوبٌ فَانْتَصِرْ",
+        "transliteration": "Rabbi innī maghlūbun fa-ntaṣir.",
+        "translation": "My Lord, indeed I am overpowered, so help me.",
+        "reference": "Qur’an – Surah Al-Qamar 54:10 (Dua of Prophet Nuh)",
+        "category_id": "3"
+      },
+      {
+        "id": 24,
+        "title": "Protection from Difficult People or Harm",
+        "arabic_text": "اللَّهُمَّ إِنَّا نَجْعَلُكَ فِي نُحُورِهِمْ، وَنَعُوذُ بِكَ مِنْ شُرُورِهِمْ",
+        "transliteration": "Allāhumma innā najʿaluk fī nuḥūrihim, wa naʿūdhu bika min shurūrihim.",
+        "translation": "O Allah, we place You before them and seek refuge in You from their evil.",
+        "reference": "Abu Dawood 1537",
+        "category_id": "3"
+      },
+      {
+        "id": 25,
+        "title": "When You Feel Weak or Powerless",
+        "arabic_text": "رَبِّ اشْرَحْ لِي صَدْرِي ﴿٢٥﴾ وَيَسِّرْ لِي أَمْرِي",
+        "transliteration": "Rabbi ishraḥ lī ṣadrī (25) wa yassir lī amrī.",
+        "translation": "My Lord, expand for me my chest and ease my task for me.",
+        "reference": "Qur’an – Surah Ta-Ha 20:25–26 (Dua of Musa ﷺ)",
+        "category_id": "3"
+      },
+      {
+        "id": 26,
+        "title": "Against an Enemy or Threatening Force",
+        "arabic_text": "اللَّهُمَّ مُنْزِلَ الْكِتَابِ، سَرِيعَ الْحِسَابِ، اهْزِمِ الْأَحْزَابَ، اللَّهُمَّ اهْزِمْهُمْ وَزَلْزِلْهُمْ",
+        "transliteration": "Allāhumma munzila al-kitābi, sarīʿa al-ḥisābi, ihzim al-aḥzāba, Allāhumma ihzimhum wa zalzilhum.",
+        "translation": "O Allah, Revealer of the Book, Swift in taking account, defeat the confederates. O Allah, defeat them and shake them.",
+        "reference": "Bukhari 2933, Muslim 1742",
+        "category_id": "3"
+      },
+      {
+        "id": 27,
+        "title": "Against an Oppressive Ruler or Tyrant",
+        "arabic_text": "اللَّهُمَّ إِنَّا نَعُوذُ بِكَ مِنْ ظُلْمِ الظَّالِمِينَ، وَنَسْأَلُكَ نَصْرَ الْمَظْلُومِينَ",
+        "transliteration": "Allāhumma innā naʿūdhu bika min ẓulmi aẓ-ẓālimīn, wa nas’aluka naṣra al-maẓlūmīn.",
+        "translation": "O Allah, we seek refuge with You from the oppression of the oppressors, and we ask You for the victory of the oppressed.",
+        "reference": "Paraphrased from many prophetic supplications.",
+        "category_id": "3"
+      },
+      {
+        "id": 28,
+        "title": "For Support Against Corruption",
+        "arabic_text": "رَبَّنَا لَا تَجْعَلْنَا فِتْنَةً لِّلَّذِينَ كَفَرُوا وَاغْفِرْ لَنَا رَبَّنَا ۖ إِنَّكَ أَنتَ الْعَزِيزُ الْحَكِيمُ",
+        "transliteration": "Rabbana lā tajʿalnā fitnatan lilladhīna kafarū, waghfir lanā rabbanā, innaka anta al-ʿazīzu al-ḥakīm.",
+        "translation": "Our Lord, do not make us a trial for the disbelievers, and forgive us. Our Lord, indeed You are the Almighty, the Wise.",
+        "reference": "Qur’an – Surah Al-Mumtahina 60:5",
+        "category_id": "3"
+      },
+      {
+        "id": 29,
+        "title": "When Calamity or Tragedy Strikes",
+        "arabic_text": "إِنَّا لِلَّهِ وَإِنَّا إِلَيْهِ رَاجِعُونَ، اللَّهُمَّ أْجُرْنِي فِي مُصِيبَتِي، وَاخْلُفْ لِي خَيْرًا مِنْهَا",
+        "transliteration": "Innā lillāhi wa innā ilayhi rājiʿūn, Allāhumma'jurnī fī muṣībatī, wakhluf lī khayran minhā.",
+        "translation": "Indeed we belong to Allah, and indeed to Him we will return. O Allah, reward me for my affliction and replace it with something better.",
+        "reference": "Muslim 918",
+        "category_id": "3"
+      }
+    ],
+    "5": [
+      {
+        "id": 30,
+        "title": "For Anxiety / Worry",
+        "arabic_text": "اللّهُمَّ إِنِّي أَعُوذُ بِكَ مِنَ الهَمِّ وَالحَزَنِ",
+        "transliteration": "Allahumma inni a'oodhu bika min al-hammi wal-hazan",
+        "translation": "O Allah, I seek refuge in You from anxiety and sorrow.",
+        "reference": "Sahih Bukhari, Hadith 6369",
+        "category_id": "4"
+      },
+      {
+        "id": 31,
+        "title": "For Sadness / Grief",
+        "arabic_text": "اللَّهُمَّ أَجِرْنِي مِنْ هَمِّ الْمَوْتِ وَعَذَابِ الْقَبْرِ",
+        "transliteration": "Allahumma ajirni min hammi al-mawt wa 'adhabi al-qabr",
+        "translation": "O Allah, protect me from the distress of death and the torment of the grave.",
+        "reference": "Sunnah (Reported by Al-Bayhaqi)",
+        "category_id": "4"
+      },
+      {
+        "id": 32,
+        "title": "For Fear",
+        "arabic_text": "رَضِيتُ بِاللَّهِ رَبًّا وَبِالإِسْلَامِ دِينًا وَبِمُحَمَّدٍ صَلَّى اللَّهُ عَلَيْهِ وَسَلَّمَ نَبِيًّا",
+        "transliteration": "Radheetu billahi rabban wa bil-islami deenan wa bi Muhammad sallallahu ‘alayhi wa sallam nabiyya",
+        "translation": "I am pleased with Allah as my Lord, with Islam as my religion, and with Muhammad (peace be upon him) as my prophet.",
+        "reference": "Sahih Muslim, Hadith 8",
+        "category_id": "4"
+      },
+      {
+        "id": 33,
+        "title": "For Anger",
+        "arabic_text": "اللَّهُمَّ إِنِّي أَعُوذُ بِكَ مِنَ الغَضَبِ وَمِنْ شَرِّ النَّفْسِ",
+        "transliteration": "Allahumma inni a'oodhu bika min al-ghadabi wa min sharri an-nafs",
+        "translation": "O Allah, I seek refuge in You from anger and the evil of the soul.",
+        "reference": "Sunnah (Common supplication taught by Prophet Muhammad ﷺ)",
+        "category_id": "4"
+      },
+      {
+        "id": 34,
+        "title": "For Patience",
+        "arabic_text": "رَبَّنَا أَفْرِغْ عَلَيْنَا صَبْرًا وَتَوَفَّنَا مُسْلِمِينَ",
+        "transliteration": "Rabbana afrigh ‘alayna sabran wa tawaffana muslimeen",
+        "translation": "Our Lord, pour upon us patience and let us die as Muslims [in submission to You].",
+        "reference": "Quran, Surah Al-A’raf (7:126)",
+        "category_id": "4"
+      },
+      {
+        "id": 35,
+        "title": "For Seeking Peace of Mind",
+        "arabic_text": "اللَّهُمَّ أَنْتَ السَّلَامُ وَمِنْكَ السَّلَامُ، تَبَارَكْتَ يَا ذَا الجَلاَلِ وَالإِكْرَامِ",
+        "transliteration": "Allahumma anta as-salam wa minka as-salam, tabarakta ya dhal-jalali wal-ikram",
+        "translation": "O Allah, You are Peace, and from You comes peace. Blessed are You, O Owner of Majesty and Honor.",
+        "reference": "Quran, Surah Al-Hashr (59:23)",
+        "category_id": "4"
+      },
+      {
+        "id": 36,
+        "title": "For Hope",
+        "arabic_text": "رَبِّ إِنِّي لِمَا أَنْزَلْتَ إِلَيَّ مِنْ خَيْرٍ فَقِيرٌ",
+        "transliteration": "Rabbi inni lima anzalta ilayya min khayrin faqeer",
+        "translation": "My Lord, indeed I am, for whatever good You would send down to me, in need.",
+        "reference": "Quran, Surah Al-Qasas (28:24)",
+        "category_id": "4"
+      },
+      {
+        "id": 37,
+        "title": "For Forgiveness and Relief from Guilt",
+        "arabic_text": "رَبَّنَا ظَلَمْنَا أَنفُسَنَا وَإِن لَمْ تَغْفِرْ لَنَا وَتَرْحَمْنَا لَنَكُونَنَّ مِنَ الْخَاسِرِينَ",
+        "transliteration": "Rabbana zalamna anfusana wa in lam taghfir lana wa tarhamna lanakoonanna minal khasireen",
+        "translation": "Our Lord, we have wronged ourselves, and if You do not forgive us and have mercy upon us, we will surely be among the losers.",
+        "reference": "Quran, Surah Al-A’raf (7:23)",
+        "category_id": "4"
+      },
+      {
+        "id": 38,
+        "title": "For Strength",
+        "arabic_text": "حَسْبِيَ اللَّهُ لا إِلَهَ إِلَّا هُوَ عَلَيْهِ تَوَكَّلْتُ وَهُوَ رَبُّ الْعَرْشِ الْعَظِيمِ",
+        "transliteration": "Hasbiya Allahu la ilaha illa huwa ‘alayhi tawakkaltu wa huwa rabbul ‘arshil ‘azim",
+        "translation": "Allah is sufficient for me; there is no deity except Him. On Him I rely, and He is the Lord of the Great Throne.",
+        "reference": "Quran, Surah At-Tawbah (9:129)",
+        "category_id": "4"
+      },
+      {
+        "id": 39,
+        "title": "For Gratitude and Contentment",
+        "arabic_text": "اللَّهُمَّ أَرِنِي نِعْمَتَكَ فِي نَفْسِي وَفِي مَالِي وَعَلَىٰ أَهْلِي",
+        "transliteration": "Allahumma arini ni’mataka fi nafsi wa fi mali wa ‘ala ahli",
+        "translation": "O Allah, show me Your favor in myself, in my wealth, and upon my family.",
+        "reference": "This dua is commonly made from personal supplications of the Prophet and the righteous; no direct Quran or Hadith but consistent with Islamic teachings on gratitude.",
+        "category_id": "4"
+      }
+    ],
+    "6": [
+      {
+        "id": 40,
+        "title": "Asking for Righteous Children",
+        "arabic_text": "رَبِّ هَبْ لِي مِنَ الصَّالِحِينَ",
+        "transliteration": "Rabbi hab li min as-salihin",
+        "translation": "My Lord, grant me [a child] from among the righteous.",
+        "reference": "(Quran 37:100)",
+        "category_id": "5"
+      },
+      {
+        "id": 41,
+        "title": "Asking for Good Offspring",
+        "arabic_text": "وَاجْعَلْ لِي مِن لَّدُنكَ ذُرِّيَّةً طَيِّبَةً ۖ إِنَّكَ سَمِيعُ الدُّعَاءِ",
+        "transliteration": "Waj‘al li min ladunka dhurriyyatan tayyibatan innaka sami‘ud-du‘aa",
+        "translation": "And grant me from Yourself a good offspring. Indeed, You are the Hearer of supplication.",
+        "reference": "(Quran 3:38)",
+        "category_id": "5"
+      },
+      {
+        "id": 42,
+        "title": "Asking Not to Be Left Childless",
+        "arabic_text": "رَبِّ لَا تَذَرْنِي فَرْدًا وَأَنتَ خَيْرُ الْوَارِثِينَ",
+        "transliteration": "Rabbi la tadharni fardan wa anta khayrul-waritheen",
+        "translation": "My Lord, do not leave me alone [childless], while You are the best of inheritors.",
+        "reference": "(Quran 21:89)",
+        "category_id": "5"
+      },
+      {
+        "id": 43,
+        "title": "For Family’s Happiness and Righteousness",
+        "arabic_text": "رَبَّنَا هَبْ لَنَا مِنْ أَزْوَاجِنَا وَذُرِّيَّاتِنَا قُرَّةَ أَعْيُنٍ وَاجْعَلْنَا لِلْمُتَّقِينَ إِمَامًا",
+        "transliteration": "Rabbana hablana min azwajina wa dhurriyyatina qurrata a’yunin waj’alna lilmuttaqina imama",
+        "translation": "Our Lord, grant us from among our wives and offspring comfort to our eyes and make us an example for the righteous.",
+        "reference": "(Quran 25:74)",
+        "category_id": "5"
+      },
+      {
+        "id": 44,
+        "title": "For Protection of Family",
+        "arabic_text": "اللَّهُمَّ احْفَظْ أَهْلِي مِنْ كُلِّ سُوءٍ وَبَأْسٍ",
+        "transliteration": "Allahumma ihfaz ahli min kulli soo’in wa ba’sin",
+        "translation": "O Allah, protect my family from every harm and adversity.",
+        "reference": "",
+        "category_id": "5"
+      },
+      {
+        "id": 45,
+        "title": "For Family Unity",
+        "arabic_text": "وَاجْمَعْ بَيْنَنَا فِي خَيْرٍ",
+        "transliteration": "Wajma’ baynana fee khayr",
+        "translation": "And unite us in goodness.",
+        "reference": "",
+        "category_id": "5"
+      },
+      {
+        "id": 46,
+        "title": "For Forgiveness of Parents and Believers",
+        "arabic_text": "رَبِّ اغْفِرْ لِي وَلِوَالِدَيَّ وَلِلْمُؤْمِنِينَ يَوْمَ يَقُومُ الْحِسَابُ",
+        "transliteration": "Rabbi ighfir li wa liwalidayya wa lilmu’minina yawma yaqoomu al-hisab",
+        "translation": "My Lord, forgive me and my parents and the believers on the Day the account is established.",
+        "reference": "(Quran 14:41)",
+        "category_id": "5"
+      },
+      {
+        "id": 47,
+        "title": "For Prayerfulness and Righteous Descendants",
+        "arabic_text": "رَبِّ اجْعَلْنِي مُقِيمَ الصَّلَاةِ وَمِن ذُرِّيَّتِي ۚ رَبَّنَا وَتَقَبَّلْ دُعَاءِ",
+        "transliteration": "Rabbi aj’alni muqimas-salati wa min dhurriyati rabbana wa taqabbal du’a",
+        "translation": "My Lord, make me an establisher of prayer, and [many] from my descendants. Our Lord, and accept my supplication.",
+        "reference": "(Quran 14:40)",
+        "category_id": "5"
+      },
+      {
+        "id": 48,
+        "title": "For Mercy and Steadfastness",
+        "arabic_text": "رَبَّنَا لَا تُزِغْ قُلُوبَنَا بَعْدَ إِذْ هَدَيْتَنَا وَهَبْ لَنَا مِن لَّدُنكَ رَحْمَةً ۚ إِنَّكَ أَنتَ الْوَهَّابُ",
+        "transliteration": "Rabbana la tuzigh quloobana ba’da ith hadaitana wahab lana min ladunka rahmah innaka antal wahhab",
+        "translation": "Our Lord, let not our hearts deviate after You have guided us and grant us from Yourself mercy. Indeed, You are the Bestower.",
+        "reference": "(Quran 3:8)",
+        "category_id": "5"
+      },
+      {
+        "id": 49,
+        "title": "For Guidance on the Straight Path",
+        "arabic_text": "وَاهْدِنَا صِرَاطَكَ الْمُسْتَقِيمَ",
+        "transliteration": "Wahidna sirataka al-mustaqim",
+        "translation": "And guide us to the straight path.",
+        "reference": "(Quran 1:6)",
+        "category_id": "5"
+      },
+      {
+        "id": 50,
+        "title": "For Blessings in Sustenance and Protection from Hellfire",
+        "arabic_text": "اللَّهُمَّ بَارِكْ لَنَا فِيمَا رَزَقْتَنَا وَقِنَا عَذَابَ النَّارِ",
+        "transliteration": "Allahumma barik lana fima razaqtana wa qina 'adhab an-nar",
+        "translation": "O Allah, bless us in what You have provided us and protect us from the punishment of the Fire.",
+        "reference": "",
+        "category_id": "5"
+      },
+      {
+        "id": 51,
+        "title": "For Health and Healing",
+        "arabic_text": "اللَّهُمَّ اشْفِ أَهْلِي وَجَمِيعَ الْمُؤْمِنِينَ وَالْمُؤْمِنَاتِ",
+        "transliteration": "Allahumma ishfi ahli wa jamee’ al-mu’minina wal-mu’minat",
+        "translation": "O Allah, heal my family and all believing men and women.",
+        "reference": "",
+        "category_id": "5"
+      },
+      {
+        "id": 52,
+        "title": "For Increase in Knowledge and Good Character",
+        "arabic_text": "وَقُل رَّبِّ زِدْنِي عِلْمًا",
+        "transliteration": "Wa qul rabbi zidni ilma",
+        "translation": "And say, \"My Lord, increase me in knowledge.\"",
+        "reference": "(Quran 20:114)",
+        "category_id": "5"
+      }
+    ],
+    "7": [
+      {
+        "id": 53,
+        "title": "Full Dua for Entering Ihram (Talbiyah)",
+        "arabic_text": "لَبَّيْكَ اللَّهُمَّ لَبَّيْكَ\nلَبَّيْكَ لَا شَرِيكَ لَكَ لَبَّيْكَ\nإِنَّ الْحَمْدَ وَالنِّعْمَةَ لَكَ وَالْمُلْكَ\nلَا شَرِيكَ لَكَ",
+        "transliteration": "Labbayka Allahumma labbayk\nLabbayka la sharika laka labbayk\nInnal-hamda wan-ni‘mata laka wal-mulk\nLa sharika lak",
+        "translation": "Here I am, O Allah, here I am.\nHere I am, You have no partner, here I am.\nIndeed, all praise, grace, and sovereignty belong to You.\nYou have no partner.",
+        "reference": "Sunnah — Recited when entering Ihram. (Bukhari, Muslim)",
+        "category_id": "6"
+      },
+      {
+        "id": 54,
+        "title": "Dua for Tawaf (Circumambulation)",
+        "arabic_text": "رَبَّنَا تَقَبَّلْ مِنَّا إِنَّكَ أَنتَ السَّمِيعُ الْعَلِيمُ",
+        "transliteration": "Rabbana taqabbal minna innaka anta as-sami‘ul-‘alim",
+        "translation": "Our Lord, accept [this] from us. Indeed, You are the Hearing, the Knowing.",
+        "reference": "(Quran 2:127)",
+        "category_id": "6"
+      },
+      {
+        "id": 55,
+        "title": "Dua While Performing Sa’i (Between Safa and Marwah)",
+        "arabic_text": "إِنَّ الصَّفَا وَالْمَرْوَةَ مِن شَعَائِرِ اللَّهِ",
+        "transliteration": "Inna as-Safa wal-Marwata min sha’a’iri Allah",
+        "translation": "Indeed, Safa and Marwah are among the symbols of Allah.",
+        "reference": "(Quran 2:158)",
+        "category_id": "6"
+      },
+      {
+        "id": 56,
+        "title": "Dua at Arafat (Standing on the Day of Arafah)",
+        "arabic_text": "لَا إِلَهَ إِلَّا اللَّهُ وَحْدَهُ لَا شَرِيكَ لَهُ لَهُ الْمُلْكُ وَلَهُ الْحَمْدُ وَهُوَ عَلَى كُلِّ شَيْءٍ قَدِيرٌ",
+        "transliteration": "La ilaha illa Allah wahdahu la sharika lahu lahul-mulku wa lahul-hamdu wa huwa ‘ala kulli shay’in qadeer",
+        "translation": "There is no deity except Allah alone, without partner. His is the dominion and His is the praise, and He is over all things competent.",
+        "reference": "",
+        "category_id": "6"
+      },
+      {
+        "id": 57,
+        "title": "Dua for Seeking Forgiveness at Muzdalifah",
+        "arabic_text": "اللَّهُمَّ اغْفِرْ لِي وَلِوَالِدَيَّ وَلِلْمُؤْمِنِينَ وَالْمُؤْمِنَاتِ",
+        "transliteration": "Allahumma ighfir li wa liwalidayya wa lilmu’minina walmu’minat",
+        "translation": "O Allah, forgive me, my parents, and all believing men and women.",
+        "reference": "",
+        "category_id": "6"
+      },
+      {
+        "id": 58,
+        "title": "Dua for Stoning the Devil (Rami al-Jamarat)",
+        "arabic_text": "اللَّهُمَّ اجْعَلْهَا حَجًّا مَبْرُورًا وَذَنْبًا مَغْفُورًا وَسَعْيًا مَشْكُورًا",
+        "transliteration": "Allahumma aj‘alha hajjan mabruran wa dhanban maghfuran wa sa‘yan mashkuran",
+        "translation": "O Allah, make this an accepted Hajj, a forgiven sin, and a praised effort.",
+        "reference": "",
+        "category_id": "6"
+      },
+      {
+        "id": 59,
+        "title": "Dua After Shaving or Trimming Hair",
+        "arabic_text": "اللَّهُمَّ تَقَبَّلْ مِنِّي",
+        "transliteration": "Allahumma taqabbal minni",
+        "translation": "O Allah, accept from me.",
+        "reference": "",
+        "category_id": "6"
+      },
+      {
+        "id": 60,
+        "title": "Dua Upon Leaving Masjid al-Haram (Kaaba)",
+        "arabic_text": "اللَّهُمَّ أَنْتَ السَّلَامُ وَمِنْكَ السَّلَامُ تَبَارَكْتَ يَا ذَا الْجَلَالِ وَالإكْرَامِ",
+        "transliteration": "Allahumma anta as-Salam wa minka as-Salam tabarakta ya dhal-jalali wal-ikram",
+        "translation": "O Allah, You are Peace and from You is peace. Blessed are You, O Owner of majesty and honor.",
+        "reference": "",
+        "category_id": "6"
+      },
+      {
+        "id": 61,
+        "title": "Dua for Protection from Hellfire",
+        "arabic_text": "اللَّهُمَّ أَجِرْنِي مِنَ النَّارِ",
+        "transliteration": "Allahumma ajirni min an-naar",
+        "translation": "O Allah, protect me from the Fire.",
+        "reference": "",
+        "category_id": "6"
+      },
+      {
+        "id": 62,
+        "title": "General Dua of Repentance and Mercy",
+        "arabic_text": "رَبَّنَا ظَلَمْنَا أَنْفُسَنَا وَإِنْ لَمْ تَغْفِرْ لَنَا وَتَرْحَمْنَا لَنَكُونَنَّ مِنَ الْخَاسِرِينَ",
+        "transliteration": "Rabbana zalamna anfusana wa in lam taghfir lana wa tarhamna lanakoonanna minal-khasireen",
+        "translation": "Our Lord, we have wronged ourselves, and if You do not forgive us and have mercy upon us, we will surely be among the losers.",
+        "reference": "(Quran 7:23)",
+        "category_id": "6"
+      },
+      {
+        "id": 63,
+        "title": "Dua for Ease and Acceptance",
+        "arabic_text": "رَبَّنَا آتِنَا فِي الدُّنْيَا حَسَنَةً وَفِي الْآخِرَةِ حَسَنَةً وَقِنَا عَذَابَ النَّارِ",
+        "transliteration": "Rabbana atina fid-dunya hasanatan wa fil-akhirati hasanatan wa qina 'adhab an-naar",
+        "translation": "Our Lord, give us good in this world and good in the Hereafter and protect us from the punishment of the Fire.",
+        "reference": "(Quran 2:201)",
+        "category_id": "6"
+      }
+    ],
+    "8": [
+      {
+        "id": 64,
+        "title": "Dua for Entering the Home",
+        "arabic_text": "بِسْمِ اللَّهِ وَلَجْنَا، وَبِسْمِ اللَّهِ خَرَجْنَا، وَعَلَى اللَّهِ رَبِّنَا تَوَكَّلْنَا",
+        "transliteration": "Bismillahi walajna, wa bismillahi kharajna, wa ‘ala Allahi rabbina tawakkalna",
+        "translation": "In the name of Allah we enter, and in the name of Allah we leave, and upon our Lord we place our trust.",
+        "reference": "Abu Dawood (5096), authenticated by Al-Albani",
+        "category_id": "7"
+      },
+      {
+        "id": 65,
+        "title": "Dua for Leaving the Home",
+        "arabic_text": "بِسْمِ اللَّهِ، تَوَكَّلْتُ عَلَى اللَّهِ، وَلَا حَوْلَ وَلَا قُوَّةَ إِلَّا بِاللَّهِ",
+        "transliteration": "Bismillah, tawakkaltu ‘ala Allah, wa la hawla wa la quwwata illa billah",
+        "translation": "In the name of Allah, I place my trust in Allah, and there is no might nor power except with Allah.",
+        "reference": "Abu Dawood (5095), At-Tirmidhi (3426)",
+        "category_id": "7"
+      },
+      {
+        "id": 66,
+        "title": "Dua for Protection of the Home from Shaytan",
+        "arabic_text": "اللَّهُمَّ إِنِّي أَسْأَلُكَ خَيْرَ الْمَوْلِجِ وَخَيْرَ الْمَخْرَجِ",
+        "transliteration": "Allahumma inni as’aluka khayr al-mawliji wa khayr al-makhraj",
+        "translation": "O Allah, I ask You for the best of entrances and the best of exits.",
+        "reference": "Ibn Majah (925), Al-Albani: authentic",
+        "category_id": "7"
+      },
+      {
+        "id": 67,
+        "title": "Dua for Blessings in the Home",
+        "arabic_text": "اللَّهُمَّ بَارِكْ لَنَا فِيهِ",
+        "transliteration": "Allahumma barik lana fihi",
+        "translation": "O Allah, bless it for us.",
+        "reference": "Common dua — general wording from Hadith on blessings",
+        "category_id": "7"
+      },
+      {
+        "id": 68,
+        "title": "Dua When Hearing a Dog or Donkey at Night",
+        "arabic_text": "أَعُوذُ بِاللَّهِ مِنَ الشَّيْطَانِ الرَّجِيمِ",
+        "transliteration": "A‘udhu billahi minash-shaytanir-rajim",
+        "translation": "I seek refuge in Allah from the accursed devil.",
+        "reference": "Sahih Muslim (2228) — when hearing strange sounds at night",
+        "category_id": "7"
+      },
+      {
+        "id": 69,
+        "title": "Dua When Experiencing Fear at Home",
+        "arabic_text": "اللَّهُمَّ إِنِّي أَعُوذُ بِكَلِمَاتِ اللَّهِ التَّامَّاتِ مِنْ غَضَبِهِ وَعِقَابِهِ، وَشَرِّ عِبَادِهِ، وَمِنْ هَمَزَاتِ الشَّيَاطِينِ، وَأَنْ يَحْضُرُونِ",
+        "transliteration": "Allahumma inni a‘udhu bikalimatillahi-ttammati min ghadabihi wa ‘iqabihi, wa sharri ‘ibadihi, wa min hamazatish-shayatin, wa an yahdurun",
+        "translation": "O Allah, I seek refuge in Your perfect words from Your anger and punishment, from the evil of Your slaves, from the whispers of devils, and from their coming near me.",
+        "reference": "Abu Dawood (3893), Hasan",
+        "category_id": "7"
+      },
+      {
+        "id": 70,
+        "title": "Dua to Ward Off Evil from Home and Family",
+        "arabic_text": "أُعِيذُكُمْ بِكَلِمَاتِ اللَّهِ التَّامَّةِ مِنْ كُلِّ شَيْطَانٍ وَهَامَّةٍ، وَمِنْ كُلِّ عَيْنٍ لَامَّةٍ",
+        "transliteration": "U‘idhu-kum bikalimatillahi-t-tammah min kulli shaytanin wa hammah, wa min kulli ‘aynin lammah",
+        "translation": "I seek refuge for you in the perfect words of Allah from every devil and poisonous thing, and from every harmful envious eye.",
+        "reference": "Bukhari (3371) — Prophet used this for protection of children",
+        "category_id": "7"
+      },
+      {
+        "id": 71,
+        "title": "Dua for Bringing Peace and Unity to the Home",
+        "arabic_text": "رَبَّنَا هَبْ لَنَا مِنْ أَزْوَاجِنَا وَذُرِّيَّاتِنَا قُرَّةَ أَعْيُنٍ وَاجْعَلْنَا لِلْمُتَّقِينَ إِمَامًا",
+        "transliteration": "Rabbana hab lana min azwajina wa dhurriyyatina qurrata a‘yunin waj‘alna lil-muttaqina imama",
+        "translation": "Our Lord, grant us from among our spouses and offspring comfort to our eyes and make us an example for the righteous.",
+        "reference": "Quran — Surah Al-Furqan (25:74)",
+        "category_id": "7"
+      },
+      {
+        "id": 72,
+        "title": "Dua When Something Goes Wrong at Home",
+        "arabic_text": "قَدَّرَ اللَّهُ وَمَا شَاءَ فَعَلَ",
+        "transliteration": "Qaddarallahu wa ma sha’a fa‘al",
+        "translation": "Allah has decreed, and whatever He wills, He does.",
+        "reference": "Sahih Muslim (2664)",
+        "category_id": "7"
+      },
+      {
+        "id": 73,
+        "title": "Dua for Moving Into a New Home",
+        "arabic_text": "اللَّهُمَّ إِنِّي أَسْأَلُكَ خَيْرَهَا وَخَيْرَ مَا جُبِلَتْ عَلَيْهِ، وَأَعُوذُ بِكَ مِنْ شَرِّهَا وَشَرِّ مَا جُبِلَتْ عَلَيْهِ",
+        "transliteration": "Allahumma inni as’aluka khayraha wa khayra ma jubilat ‘alayh, wa a‘udhu bika min sharriha wa sharri ma jubilat ‘alayh",
+        "translation": "O Allah, I ask You for the good of this house and the good of what You have created it for, and I seek refuge in You from its evil and the evil of what You have created it for.",
+        "reference": "Abu Dawood (2606)",
+        "category_id": "7"
+      }
+    ],
+    "9": [
+      {
+        "id": 74,
+        "title": "Dua for Cure and Healing",
+        "arabic_text": "اللَّهُمَّ رَبَّ النَّاسِ، أَذْهِبِ الْبَاسَ، اشْفِ أَنْتَ الشَّافِي، لَا شِفَاءَ إِلَّا شِفَاؤُكَ، شِفَاءً لَا يُغَادِرُ سَقَمًا",
+        "transliteration": "Allahumma Rabb an-nas, adhhib al-ba’s, ishfi anta ash-Shafi, la shifa’a illa shifa’uk, shifa’an la yughadiru saqaman",
+        "translation": "O Allah, Lord of the people, remove the harm and cure [him/her], for You are the Healer. There is no cure except Your cure, a cure that leaves no illness behind.",
+        "reference": "Sahih al-Bukhari (5743), Sahih Muslim (2191)",
+        "category_id": "8"
+      },
+      {
+        "id": 75,
+        "title": "Dua for Someone Who is Sick",
+        "arabic_text": "لَا بَأْسَ طَهُورٌ إِنْ شَاءَ اللَّهُ",
+        "transliteration": "La ba’s, tahoorun in shaa’ Allah",
+        "translation": "No harm, it will be a purification (from sins), if Allah wills.",
+        "reference": "Sahih al-Bukhari (3616)",
+        "category_id": "8"
+      },
+      {
+        "id": 76,
+        "title": "Dua for Yourself When in Pain or Illness",
+        "arabic_text": "بِسْمِ اللَّهِ\nأَعُوذُ بِعِزَّةِ اللَّهِ وَقُدْرَتِهِ مِنْ شَرِّ مَا أَجِدُ وَأُحَاذِرُ",
+        "transliteration": "Bismillah\nA‘udhu bi‘izzatillahi wa qudratihi min sharri ma ajidu wa uhadhir",
+        "translation": "In the name of Allah… I seek refuge in the might and power of Allah from the evil of what I feel and fear.",
+        "reference": "Sahih Muslim (2202)",
+        "category_id": "8"
+      },
+      {
+        "id": 77,
+        "title": "Dua for Visiting the Sick",
+        "arabic_text": "أَسْأَلُ اللَّهَ الْعَظِيمَ، رَبَّ الْعَرْشِ الْعَظِيمِ، أَنْ يَشْفِيَكَ",
+        "transliteration": "As’alu Allah al-‘Azim, Rabb al-‘Arsh al-‘Azim, an yashfiyak",
+        "translation": "I ask Allah the Magnificent, Lord of the Magnificent Throne, to cure you.",
+        "reference": "Abu Dawood (3106), At-Tirmidhi (2083) — Recited 7 times",
+        "category_id": "8"
+      },
+      {
+        "id": 78,
+        "title": "Quranic Dua of Prophet Ayyub (Job) عليه السلام",
+        "arabic_text": "إِنِّي مَسَّنِيَ الضُّرُّ وَأَنتَ أَرْحَمُ الرَّاحِمِينَ",
+        "transliteration": "Inni massaniya adh-durru wa anta arhamur-rahimeen",
+        "translation": "Indeed, adversity has touched me, and You are the Most Merciful of the merciful.",
+        "reference": "Quran — Surah Al-Anbiya (21:83)",
+        "category_id": "8"
+      },
+      {
+        "id": 79,
+        "title": "Quranic Dua for Relief from Distress",
+        "arabic_text": "لَا إِلَهَ إِلَّا أَنتَ، سُبْحَانَكَ، إِنِّي كُنتُ مِنَ الظَّالِمِينَ",
+        "transliteration": "La ilaha illa anta, subhanaka, inni kuntu mina adh-dhalimeen",
+        "translation": "There is no deity except You; exalted are You. Indeed, I have been of the wrongdoers.",
+        "reference": "Quran — Surah Al-Anbiya (21:87)\n Note: Also called Dua Yunus — highly effective in distress and affliction.",
+        "category_id": "8"
+      },
+      {
+        "id": 80,
+        "title": "General Dua for Protection and Well-being",
+        "arabic_text": "اللَّهُمَّ إِنِّي أَعُوذُ بِكَ مِنَ الْبَرَصِ، وَالْجُنُونِ، وَالْجُذَامِ، وَسَيِّئِ الْأَسْقَامِ",
+        "transliteration": "Allahumma inni a‘udhu bika minal-barasi, wal-jununi, wal-juthami, wa sayyi’il-asqam",
+        "translation": "O Allah, I seek refuge in You from leprosy, madness, mutilation, and all bad diseases.",
+        "reference": "Abu Dawood (1554), An-Nasa’i",
+        "category_id": "8"
+      },
+      {
+        "id": 81,
+        "title": "Dua for Strength During Weakness or Fatigue",
+        "arabic_text": "اللَّهُمَّ أَعِنِّي وَلَا تُعِنْ عَلَيَّ، وَانْصُرْنِي وَلَا تَنْصُرْ عَلَيَّ",
+        "transliteration": "Allahumma a‘inni wa la tu‘in ‘alayya, wansurni wa la tansur ‘alayya",
+        "translation": "O Allah, help me and do not help against me; support me and do not support anyone against me.",
+        "reference": "At-Tirmidhi (3399) – part of a longer powerful dua",
+        "category_id": "8"
+      },
+      {
+        "id": 82,
+        "title": "Dua for Relief from Suffering (Short)",
+        "arabic_text": "اللَّهُمَّ رَبَّ النَّاسِ، اشْفِ، أَنْتَ الشَّافِي",
+        "transliteration": "Allahumma Rabb an-nas, ishfi, anta ash-Shafi",
+        "translation": "O Allah, Lord of the people, heal — You are the Healer.",
+        "reference": "Shortened version from Sahih Muslim (2191)",
+        "category_id": "8"
+      },
+      {
+        "id": 83,
+        "title": "Quranic Verse of Healing",
+        "arabic_text": "وَإِذَا مَرِضْتُ فَهُوَ يَشْفِينِ",
+        "transliteration": "Wa idha maridtu fahuwa yashfeen",
+        "translation": "And when I am ill, it is He who cures me.",
+        "reference": "Quran — Surah Ash-Shu'ara (26:80)",
+        "category_id": "8"
+      }
+    ],
+    "10": [
+      {
+        "id": 84,
+        "title": "Dua for Righteous Spouse (Seeking Marriage)",
+        "arabic_text": "رَبِّ هَبْ لِي مِنَ الصَّالِحِينَ",
+        "transliteration": "Rabbi hab li mina-ṣ-ṣāliḥīn",
+        "translation": "My Lord, grant me [a spouse or child] from among the righteous.",
+        "reference": "Qur’an – Surah As-Saffat (37:100)",
+        "category_id": "9"
+      },
+      {
+        "id": 85,
+        "title": "Dua for Choosing a Spouse (Istikhara excerpt)",
+        "arabic_text": "اللَّهُمَّ إِنْ كُنْتَ تَعْلَمُ أَنَّ زَوَاجِي بِفُلَانٍ خَيْرٌ لِي فِي دِينِي وَمَعَاشِي وَعَاقِبَةِ أَمْرِي، أَوْ قَالَ: فِي عَاجِلِ أَمْرِي وَآجِلِهِ، فَاقْدُرْهُ لِي وَيَسِّرْهُ لِي، ثُمَّ بَارِكْ لِي فِيهِ، وَإِنْ كُنْتَ تَعْلَمُ أَنَّ زَوَاجِي بِفُلَانٍ شَرٌّ لِي فِي دِينِي وَمَعَاشِي وَعَاقِبَةِ أَمْرِي، أَوْ قَالَ: فِي عَاجِلِ أَمْرِي وَآجِلِهِ، فَاصْرِفْهُ عَنِّي وَاصْرِفْنِي عَنْهُ، وَاقْدُرْ لِيَ الْخَيْرَ حَيْثُ كَانَ، ثُمَّ أَرْضِنِي",
+        "transliteration": "Allāhumma in kunta taʿlamu anna zawājī bi-fulān khayrun lī fī dīnī wa maʿāshī wa ʿāqibati amrī, faqdurhu lī wa yassirhu lī, thumma bārik lī fīhi. Wa in kunta taʿlamu anna zawājī bi-fulān sharrun lī fī dīnī wa maʿāshī wa ʿāqibati amrī, faṣrifhu ʿannī waṣrifnī ʿanhu, waqdur lī al-khayra ḥaythu kāna, thumma arḍinī.",
+        "translation": "O Allah, if You know that marriage to [name] is good for me in my religion, my livelihood, and the outcome of my affairs, then ordain it for me, make it easy for me, and bless it for me. And if You know that marriage to [name] is bad for me in my religion, my livelihood, and the outcome of my affairs, then turn it away from me and turn me away from it, and ordain for me what is good wherever it may be, and make me content with it.",
+        "reference": "Sahih al-Bukhari (1166)",
+        "category_id": "9"
+      },
+      {
+        "id": 86,
+        "title": "Dua for Love and Harmony in Marriage (complete verse)",
+        "arabic_text": "وَمِنْ آيَاتِهِ أَنْ خَلَقَ لَكُم مِّنْ أَنفُسِكُمْ أَزْوَاجًا لِّتَسْكُنُوا إِلَيْهَا وَجَعَلَ بَيْنَكُم مَّوَدَّةً وَرَحْمَةً إِنَّ فِي ذَٰلِكَ لَآيَاتٍ لِّقَوْمٍ يَتَفَكَّرُونَ",
+        "transliteration": "Wa min āyātihi an khalaqa lakum min anfusikum azwājan litaskunū ilayhā wa jaʿala baynakum mawaddatan wa raḥmah. Inna fī dhālika la-āyātin li-qawmin yatafakkarūn.",
+        "translation": "And of His signs is that He created for you from yourselves mates that you may find tranquility in them; and He placed between you affection and mercy. Indeed in that are signs for a people who reflect.",
+        "reference": "Qur’an – Surah Ar-Rum (30:21)",
+        "category_id": "9"
+      },
+      {
+        "id": 87,
+        "title": "Dua for Barakah in Marriage",
+        "arabic_text": "اللَّهُمَّ بَارِكْ لَهُمَا، وَبَارِكْ عَلَيْهِمَا، وَاجْمَعْ بَيْنَهُمَا فِي خَيْرٍ",
+        "transliteration": "Allāhumma bārik lahumā, wa bārik ʿalayhimā, wajmaʿ baynahumā fī khayr.",
+        "translation": "O Allah, bless them, and bless upon them, and unite them in goodness.",
+        "reference": "Abu Dawood (2130)",
+        "category_id": "9"
+      },
+      {
+        "id": 88,
+        "title": "Dua for a Happy Marital Relationship (complete)",
+        "arabic_text": "رَبَّنَا هَبْ لَنَا مِنْ أَزْوَاجِنَا وَذُرِّيَّاتِنَا قُرَّةَ أَعْيُنٍ وَاجْعَلْنَا لِلْمُتَّقِينَ إِمَامًا",
+        "transliteration": "Rabbana hab lana min azwājinā wa dhurriyyātinā qurrata aʿyun, wa-jʿalnā lil-muttaqīna imāmā",
+        "translation": "Our Lord, grant us from among our spouses and offspring comfort to our eyes and make us an example for the righteous.",
+        "reference": "Qur’an – Surah Al-Furqan (25:74)",
+        "category_id": "9"
+      },
+      {
+        "id": 89,
+        "title": "Dua for Marital Disputes",
+        "arabic_text": "وَأَصْلِحْ لِي فِي ذُرِّيَّتِي إِنِّي تُبْتُ إِلَيْكَ وَإِنِّي مِنَ الْمُسْلِمِينَ",
+        "transliteration": "Wa aṣliḥ lī fī dhurriyyatī, innī tubtu ilayka wa innī mina al-muslimīn",
+        "translation": "And make my descendants righteous for me. Indeed, I have repent",
+        "reference": "",
+        "category_id": "9"
+      }
+    ]
+  }
+}

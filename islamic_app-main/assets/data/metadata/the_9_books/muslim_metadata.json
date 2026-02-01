@@ -1,0 +1,532 @@
+{
+  "id": 2,
+  "metadata": {
+    "id": 2,
+    "length": 7459,
+    "arabic": {
+      "title": "صحيح مسلم",
+      "author": "الإمام مسلم بن الحجاج القشيري النيسابوري",
+      "introduction": ""
+    },
+    "english": {
+      "title": "Sahih Muslim",
+      "author": "Imam Muslim ibn al-Hajjaj al-Naysaburi",
+      "introduction": ""
+    }
+  },
+  "chapters": [
+    {
+      "id": 1,
+      "bookId": 2,
+      "length": 439,
+      "start": 1,
+      "end": 439,
+      "english": "The Book of Faith",
+      "arabic": "كتاب الإيمان"
+    },
+    {
+      "id": 2,
+      "bookId": 2,
+      "length": 144,
+      "start": 440,
+      "end": 583,
+      "english": "The Book of Purification",
+      "arabic": "كتاب الطهارة"
+    },
+    {
+      "id": 3,
+      "bookId": 2,
+      "length": 157,
+      "start": 584,
+      "end": 740,
+      "english": "The Book of Menstruation",
+      "arabic": "كتاب الحيض"
+    },
+    {
+      "id": 4,
+      "bookId": 2,
+      "length": 322,
+      "start": 741,
+      "end": 1062,
+      "english": "The Book of Prayers",
+      "arabic": "كتاب الصلاة"
+    },
+    {
+      "id": 5,
+      "bookId": 2,
+      "length": 402,
+      "start": 1063,
+      "end": 1464,
+      "english": "The Book of Mosques and Places of Prayer",
+      "arabic": "كتاب الْمَسَاجِدِ وَمَوَاضِعِ الصَّلاَةِ"
+    },
+    {
+      "id": 6,
+      "bookId": 2,
+      "length": 378,
+      "start": 1465,
+      "end": 1842,
+      "english": "The Book of Prayer - Travellers",
+      "arabic": "كتاب صلاة المسافرين وقصرها"
+    },
+    {
+      "id": 7,
+      "bookId": 2,
+      "length": 93,
+      "start": 1843,
+      "end": 1935,
+      "english": "The Book of Prayer - Friday",
+      "arabic": "كتاب الجمعة"
+    },
+    {
+      "id": 8,
+      "bookId": 2,
+      "length": 24,
+      "start": 1936,
+      "end": 1959,
+      "english": "The Book of Prayer - Two Eids",
+      "arabic": "كتاب صلاة العيدين"
+    },
+    {
+      "id": 9,
+      "bookId": 2,
+      "length": 19,
+      "start": 1960,
+      "end": 1978,
+      "english": "The Book of Prayer - Rain",
+      "arabic": "كتاب صلاة الاستسقاء‏"
+    },
+    {
+      "id": 10,
+      "bookId": 2,
+      "length": 31,
+      "start": 1979,
+      "end": 2009,
+      "english": "The Book of Prayer - Eclipses",
+      "arabic": "كتاب الكسوف"
+    },
+    {
+      "id": 11,
+      "bookId": 2,
+      "length": 138,
+      "start": 2010,
+      "end": 2147,
+      "english": "The Book of Prayer - Funerals",
+      "arabic": "كتاب الجنائز"
+    },
+    {
+      "id": 12,
+      "bookId": 2,
+      "length": 231,
+      "start": 2148,
+      "end": 2378,
+      "english": "The Book of Zakat",
+      "arabic": "كتاب الزكاة"
+    },
+    {
+      "id": 13,
+      "bookId": 2,
+      "length": 285,
+      "start": 2379,
+      "end": 2663,
+      "english": "The Book of Fasting",
+      "arabic": "كتاب الصيام"
+    },
+    {
+      "id": 14,
+      "bookId": 2,
+      "length": 11,
+      "start": 2664,
+      "end": 2674,
+      "english": "The Book of I'tikaf",
+      "arabic": "كتاب الاعتكاف"
+    },
+    {
+      "id": 15,
+      "bookId": 2,
+      "length": 601,
+      "start": 2675,
+      "end": 3275,
+      "english": "The Book of Pilgrimage",
+      "arabic": "كتاب الحج"
+    },
+    {
+      "id": 16,
+      "bookId": 2,
+      "length": 169,
+      "start": 3276,
+      "end": 3444,
+      "english": "The Book of Marriage",
+      "arabic": "كتاب النكاح"
+    },
+    {
+      "id": 17,
+      "bookId": 2,
+      "length": 84,
+      "start": 3445,
+      "end": 3528,
+      "english": "The Book of Suckling",
+      "arabic": "كتاب الرضاع"
+    },
+    {
+      "id": 18,
+      "bookId": 2,
+      "length": 87,
+      "start": 3529,
+      "end": 3615,
+      "english": "The Book of Divorce",
+      "arabic": "كتاب الطلاق"
+    },
+    {
+      "id": 19,
+      "bookId": 2,
+      "length": 27,
+      "start": 3616,
+      "end": 3642,
+      "english": "The Book of Invoking Curses",
+      "arabic": "كتاب اللعان"
+    },
+    {
+      "id": 20,
+      "bookId": 2,
+      "length": 30,
+      "start": 3643,
+      "end": 3672,
+      "english": "The Book of Emancipating Slaves",
+      "arabic": "كتاب العتق"
+    },
+    {
+      "id": 21,
+      "bookId": 2,
+      "length": 160,
+      "start": 3673,
+      "end": 3832,
+      "english": "The Book of Transactions",
+      "arabic": "كتاب البيوع"
+    },
+    {
+      "id": 22,
+      "bookId": 2,
+      "length": 178,
+      "start": 3833,
+      "end": 4010,
+      "english": "The Book of Musaqah",
+      "arabic": "كتاب المساقاة"
+    },
+    {
+      "id": 23,
+      "bookId": 2,
+      "length": 23,
+      "start": 4011,
+      "end": 4033,
+      "english": "The Book of the Rules of Inheritance",
+      "arabic": "كتاب الفرائض"
+    },
+    {
+      "id": 24,
+      "bookId": 2,
+      "length": 41,
+      "start": 4034,
+      "end": 4074,
+      "english": "The Book of Gifts",
+      "arabic": "كتاب الهبات"
+    },
+    {
+      "id": 25,
+      "bookId": 2,
+      "length": 31,
+      "start": 4075,
+      "end": 4105,
+      "english": "The Book of Wills",
+      "arabic": "كتاب الوصية"
+    },
+    {
+      "id": 26,
+      "bookId": 2,
+      "length": 18,
+      "start": 4106,
+      "end": 4123,
+      "english": "The Book of Vows",
+      "arabic": "كتاب النذر"
+    },
+    {
+      "id": 27,
+      "bookId": 2,
+      "length": 88,
+      "start": 4124,
+      "end": 4211,
+      "english": "The Book of Oaths",
+      "arabic": "كتاب الأيمان"
+    },
+    {
+      "id": 28,
+      "bookId": 2,
+      "length": 56,
+      "start": 4212,
+      "end": 4267,
+      "english": "The Book of Oaths, Muharibin, Qasas (Retaliation), and Diyat (Blood Money)",
+      "arabic": "كتاب القسامة والمحاربين والقصاص والديات"
+    },
+    {
+      "id": 29,
+      "bookId": 2,
+      "length": 72,
+      "start": 4268,
+      "end": 4339,
+      "english": "The Book of Legal Punishments",
+      "arabic": "كتاب الحدود"
+    },
+    {
+      "id": 30,
+      "bookId": 2,
+      "length": 28,
+      "start": 4340,
+      "end": 4367,
+      "english": "The Book of Judicial Decisions",
+      "arabic": "كتاب الأقضية"
+    },
+    {
+      "id": 31,
+      "bookId": 2,
+      "length": 20,
+      "start": 4368,
+      "end": 4387,
+      "english": "The Book of Lost Property",
+      "arabic": "كتاب اللقطة"
+    },
+    {
+      "id": 32,
+      "bookId": 2,
+      "length": 182,
+      "start": 4388,
+      "end": 4569,
+      "english": "The Book of Jihad and Expeditions",
+      "arabic": "كتاب الجهاد والسير"
+    },
+    {
+      "id": 33,
+      "bookId": 2,
+      "length": 266,
+      "start": 4570,
+      "end": 4835,
+      "english": "The Book on Government",
+      "arabic": "كتاب الإمارة"
+    },
+    {
+      "id": 34,
+      "bookId": 2,
+      "length": 92,
+      "start": 4836,
+      "end": 4927,
+      "english": "The Book of Hunting, Slaughter, and what may be Eaten",
+      "arabic": "كتاب الصيد والذبائح وما يؤكل من الحيوان"
+    },
+    {
+      "id": 35,
+      "bookId": 2,
+      "length": 62,
+      "start": 4928,
+      "end": 4989,
+      "english": "The Book of Sacrifices",
+      "arabic": "كتاب الأضاحى"
+    },
+    {
+      "id": 36,
+      "bookId": 2,
+      "length": 257,
+      "start": 4990,
+      "end": 5246,
+      "english": "The Book of Drinks",
+      "arabic": "كتاب الأشربة"
+    },
+    {
+      "id": 37,
+      "bookId": 2,
+      "length": 193,
+      "start": 5247,
+      "end": 5439,
+      "english": "The Book of Clothes and Adornment",
+      "arabic": "كتاب اللباس والزينة"
+    },
+    {
+      "id": 38,
+      "bookId": 2,
+      "length": 60,
+      "start": 5440,
+      "end": 5499,
+      "english": "The Book of Manners and Etiquette",
+      "arabic": "كتاب الآداب"
+    },
+    {
+      "id": 39,
+      "bookId": 2,
+      "length": 212,
+      "start": 5500,
+      "end": 5711,
+      "english": "The Book of Greetings",
+      "arabic": "كتاب السلام"
+    },
+    {
+      "id": 40,
+      "bookId": 2,
+      "length": 23,
+      "start": 5712,
+      "end": 5734,
+      "english": "The Book Concerning the Use of Correct Words",
+      "arabic": "كتاب الألفاظ من الأدب وغيرها"
+    },
+    {
+      "id": 41,
+      "bookId": 2,
+      "length": 11,
+      "start": 5735,
+      "end": 5745,
+      "english": "The Book of Poetry",
+      "arabic": "كتاب الشعر"
+    },
+    {
+      "id": 42,
+      "bookId": 2,
+      "length": 41,
+      "start": 5746,
+      "end": 5786,
+      "english": "The Book of Dreams",
+      "arabic": "كتاب الرؤيا"
+    },
+    {
+      "id": 43,
+      "bookId": 2,
+      "length": 226,
+      "start": 5787,
+      "end": 6012,
+      "english": "The Book of Virtues",
+      "arabic": "كتاب الفضائل"
+    },
+    {
+      "id": 44,
+      "bookId": 2,
+      "length": 328,
+      "start": 6013,
+      "end": 6340,
+      "english": "The Book of the Merits of the Companions",
+      "arabic": "كتاب فضائل الصحابة رضى الله تعالى عنهم"
+    },
+    {
+      "id": 45,
+      "bookId": 2,
+      "length": 217,
+      "start": 6341,
+      "end": 6557,
+      "english": "The Book of Virtue, Enjoining Good Manners, and Joining of the Ties of Kinship",
+      "arabic": "كتاب البر والصلة والآداب"
+    },
+    {
+      "id": 46,
+      "bookId": 2,
+      "length": 52,
+      "start": 6558,
+      "end": 6609,
+      "english": "The Book of Destiny",
+      "arabic": "كتاب القدر"
+    },
+    {
+      "id": 47,
+      "bookId": 2,
+      "length": 30,
+      "start": 6610,
+      "end": 6639,
+      "english": "The Book of Knowledge",
+      "arabic": "كتاب العلم"
+    },
+    {
+      "id": 48,
+      "bookId": 2,
+      "length": 127,
+      "start": 6640,
+      "end": 6766,
+      "english": "The Book Pertaining to the Remembrance of Allah, Supplication, Repentance and Seeking Forgiveness",
+      "arabic": "كتاب الذكر والدعاء والتوبة والاستغفار"
+    },
+    {
+      "id": 49,
+      "bookId": 2,
+      "length": 15,
+      "start": 6767,
+      "end": 6781,
+      "english": "The Book of Heart-Melting Traditions",
+      "arabic": "كتاب الرقاق"
+    },
+    {
+      "id": 50,
+      "bookId": 2,
+      "length": 68,
+      "start": 6782,
+      "end": 6849,
+      "english": "The Book of Repentance",
+      "arabic": "كتاب التوبة"
+    },
+    {
+      "id": 51,
+      "bookId": 2,
+      "length": 21,
+      "start": 6850,
+      "end": 6870,
+      "english": "Characteristics of The Hypocrites And Rulings Concerning Them",
+      "arabic": "كتاب صفات المنافقين وأحكامهم"
+    },
+    {
+      "id": 52,
+      "bookId": 2,
+      "length": 82,
+      "start": 6871,
+      "end": 6952,
+      "english": "Characteristics of the Day of Judgment, Paradise, and Hell",
+      "arabic": "كتاب صفة القيامة والجنة والنار"
+    },
+    {
+      "id": 53,
+      "bookId": 2,
+      "length": 103,
+      "start": 6953,
+      "end": 7055,
+      "english": "The Book of Paradise, its Description, its Bounties and its Inhabitants",
+      "arabic": "كتاب الجنة وصفة نعيمها وأهلها"
+    },
+    {
+      "id": 54,
+      "bookId": 2,
+      "length": 177,
+      "start": 7056,
+      "end": 7232,
+      "english": "The Book of Tribulations and Portents of the Last Hour",
+      "arabic": "كتاب الفتن وأشراط الساعة"
+    },
+    {
+      "id": 55,
+      "bookId": 2,
+      "length": 96,
+      "start": 7233,
+      "end": 7328,
+      "english": "The Book of Zuhd and Softening of Hearts",
+      "arabic": "كتاب الزهد والرقائق"
+    },
+    {
+      "id": 56,
+      "bookId": 2,
+      "length": 40,
+      "start": 7329,
+      "end": 7368,
+      "english": "The Book of Commentary on the Qur'an",
+      "arabic": "كتاب التفسير"
+    },
+    {
+      "id": 0,
+      "bookId": 2,
+      "length": 91,
+      "start": 7369,
+      "end": 7459,
+      "english": "Introduction",
+      "arabic": "المقدمة"
+    }
+  ]
+}

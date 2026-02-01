@@ -1,0 +1,406 @@
+{
+  "id": 4,
+  "metadata": {
+    "id": 4,
+    "length": 5276,
+    "arabic": {
+      "title": "سنن أبي داود",
+      "author": "الإمام سليمان بن الأشعث أبو داود السجستاني",
+      "introduction": ""
+    },
+    "english": {
+      "title": "Sunan Abi Dawud",
+      "author": "Imam Sulayman ibn al-Ash'ath Abu Dawud al-Sijistani",
+      "introduction": ""
+    }
+  },
+  "chapters": [
+    {
+      "id": 1,
+      "bookId": 4,
+      "length": 390,
+      "start": 1,
+      "end": 390,
+      "english": "Purification (Kitab Al-Taharah)",
+      "arabic": "كتاب الطهارة"
+    },
+    {
+      "id": 2,
+      "bookId": 4,
+      "length": 771,
+      "start": 391,
+      "end": 1161,
+      "english": "Prayer (Kitab Al-Salat)",
+      "arabic": "كتاب الصلاة"
+    },
+    {
+      "id": 3,
+      "bookId": 4,
+      "length": 37,
+      "start": 1162,
+      "end": 1198,
+      "english": "The Book Of The Prayer For Rain (Kitab al-Istisqa')",
+      "arabic": "كتاب الاستسقاء"
+    },
+    {
+      "id": 4,
+      "bookId": 4,
+      "length": 52,
+      "start": 1199,
+      "end": 1250,
+      "english": "Prayer (Kitab Al-Salat): Detailed Rules of Law about the Prayer during Journey",
+      "arabic": "كتاب صلاة السفر"
+    },
+    {
+      "id": 5,
+      "bookId": 4,
+      "length": 121,
+      "start": 1251,
+      "end": 1371,
+      "english": "Prayer (Kitab Al-Salat): Voluntary Prayers",
+      "arabic": "كتاب التطوع"
+    },
+    {
+      "id": 6,
+      "bookId": 4,
+      "length": 30,
+      "start": 1372,
+      "end": 1401,
+      "english": "Prayer (Kitab Al-Salat): Detailed Injunctions about Ramadan",
+      "arabic": "كتاب شهر رمضان"
+    },
+    {
+      "id": 7,
+      "bookId": 4,
+      "length": 15,
+      "start": 1402,
+      "end": 1416,
+      "english": "Prayer (Kitab Al-Salat): Prostration while reciting the Qur'an",
+      "arabic": "كتاب سجود القرآن"
+    },
+    {
+      "id": 8,
+      "bookId": 4,
+      "length": 140,
+      "start": 1417,
+      "end": 1556,
+      "english": "Prayer (Kitab Al-Salat): Detailed Injunctions about Witr",
+      "arabic": "كتاب الوتر"
+    },
+    {
+      "id": 9,
+      "bookId": 4,
+      "length": 145,
+      "start": 1557,
+      "end": 1701,
+      "english": "Zakat (Kitab Al-Zakat)",
+      "arabic": "كتاب الزكاة"
+    },
+    {
+      "id": 10,
+      "bookId": 4,
+      "length": 20,
+      "start": 1702,
+      "end": 1721,
+      "english": "The Book of Lost and Found Items",
+      "arabic": "كتاب اللقطة"
+    },
+    {
+      "id": 11,
+      "bookId": 4,
+      "length": 325,
+      "start": 1722,
+      "end": 2046,
+      "english": "The Rites of Hajj (Kitab Al-Manasik Wa'l-Hajj)",
+      "arabic": "كتاب المناسك"
+    },
+    {
+      "id": 12,
+      "bookId": 4,
+      "length": 129,
+      "start": 2047,
+      "end": 2175,
+      "english": "Marriage (Kitab Al-Nikah)",
+      "arabic": "كتاب النكاح"
+    },
+    {
+      "id": 13,
+      "bookId": 4,
+      "length": 138,
+      "start": 2176,
+      "end": 2313,
+      "english": "Divorce (Kitab Al-Talaq)",
+      "arabic": "كتاب الطلاق"
+    },
+    {
+      "id": 14,
+      "bookId": 4,
+      "length": 164,
+      "start": 2314,
+      "end": 2477,
+      "english": "Fasting (Kitab Al-Siyam)",
+      "arabic": "كتاب الصوم"
+    },
+    {
+      "id": 15,
+      "bookId": 4,
+      "length": 311,
+      "start": 2478,
+      "end": 2788,
+      "english": "Jihad (Kitab Al-Jihad)",
+      "arabic": "كتاب الجهاد"
+    },
+    {
+      "id": 16,
+      "bookId": 4,
+      "length": 56,
+      "start": 2789,
+      "end": 2844,
+      "english": "Sacrifice (Kitab Al-Dahaya)",
+      "arabic": "كتاب الضحايا"
+    },
+    {
+      "id": 17,
+      "bookId": 4,
+      "length": 18,
+      "start": 2845,
+      "end": 2862,
+      "english": "Game (Kitab Al-Said)",
+      "arabic": "كتاب الصيد"
+    },
+    {
+      "id": 18,
+      "bookId": 4,
+      "length": 23,
+      "start": 2863,
+      "end": 2885,
+      "english": "Wills (Kitab Al-Wasaya)",
+      "arabic": "كتاب الوصايا"
+    },
+    {
+      "id": 19,
+      "bookId": 4,
+      "length": 43,
+      "start": 2886,
+      "end": 2928,
+      "english": "Shares of Inheritance (Kitab Al-Fara'id)",
+      "arabic": "كتاب الفرائض"
+    },
+    {
+      "id": 20,
+      "bookId": 4,
+      "length": 161,
+      "start": 2929,
+      "end": 3089,
+      "english": "Tribute, Spoils, and Rulership (Kitab Al-Kharaj, Wal-Fai' Wal-Imarah)",
+      "arabic": "كتاب الخراج والإمارة والفىء"
+    },
+    {
+      "id": 21,
+      "bookId": 4,
+      "length": 153,
+      "start": 3090,
+      "end": 3242,
+      "english": "Funerals (Kitab Al-Jana'iz)",
+      "arabic": "كتاب الجنائز"
+    },
+    {
+      "id": 22,
+      "bookId": 4,
+      "length": 84,
+      "start": 3243,
+      "end": 3326,
+      "english": "Oaths and Vows (Kitab Al-Aiman Wa Al-Nudhur)",
+      "arabic": "كتاب الأيمان والنذور"
+    },
+    {
+      "id": 23,
+      "bookId": 4,
+      "length": 90,
+      "start": 3327,
+      "end": 3416,
+      "english": "Commercial Transactions (Kitab Al-Buyu)",
+      "arabic": "كتاب البيوع"
+    },
+    {
+      "id": 24,
+      "bookId": 4,
+      "length": 155,
+      "start": 3417,
+      "end": 3571,
+      "english": "Wages (Kitab Al-Ijarah)",
+      "arabic": "كتاب الإجارة"
+    },
+    {
+      "id": 25,
+      "bookId": 4,
+      "length": 70,
+      "start": 3572,
+      "end": 3641,
+      "english": "The Office of the Judge (Kitab Al-Aqdiyah)",
+      "arabic": "كتاب الأقضية"
+    },
+    {
+      "id": 26,
+      "bookId": 4,
+      "length": 28,
+      "start": 3642,
+      "end": 3669,
+      "english": "Knowledge (Kitab Al-Ilm)",
+      "arabic": "كتاب العلم"
+    },
+    {
+      "id": 27,
+      "bookId": 4,
+      "length": 67,
+      "start": 3670,
+      "end": 3736,
+      "english": "Drinks (Kitab Al-Ashribah)",
+      "arabic": "كتاب الأشربة"
+    },
+    {
+      "id": 28,
+      "bookId": 4,
+      "length": 119,
+      "start": 3737,
+      "end": 3855,
+      "english": "Foods (Kitab Al-At'imah)",
+      "arabic": "كتاب الأطعمة"
+    },
+    {
+      "id": 29,
+      "bookId": 4,
+      "length": 49,
+      "start": 3856,
+      "end": 3904,
+      "english": "Medicine (Kitab Al-Tibb)",
+      "arabic": "كتاب الطب"
+    },
+    {
+      "id": 30,
+      "bookId": 4,
+      "length": 22,
+      "start": 3905,
+      "end": 3926,
+      "english": "Divination and Omens (Kitab Al-Kahanah Wa Al-Tatayyur)",
+      "arabic": "كتاب الكهانة و التطير"
+    },
+    {
+      "id": 31,
+      "bookId": 4,
+      "length": 43,
+      "start": 3927,
+      "end": 3969,
+      "english": "The Book of Manumission of Slaves",
+      "arabic": "كتاب العتق"
+    },
+    {
+      "id": 32,
+      "bookId": 4,
+      "length": 40,
+      "start": 3970,
+      "end": 4009,
+      "english": "Dialects and Readings of the Qur'an (Kitab Al-Huruf Wa Al-Qira'at)",
+      "arabic": "كتاب الحروف والقراءات"
+    },
+    {
+      "id": 33,
+      "bookId": 4,
+      "length": 11,
+      "start": 4010,
+      "end": 4020,
+      "english": "Hot Baths (Kitab Al-Hammam)",
+      "arabic": "كتاب الحمَّام"
+    },
+    {
+      "id": 34,
+      "bookId": 4,
+      "length": 139,
+      "start": 4021,
+      "end": 4159,
+      "english": "Clothing (Kitab Al-Libas)",
+      "arabic": "كتاب اللباس"
+    },
+    {
+      "id": 35,
+      "bookId": 4,
+      "length": 55,
+      "start": 4160,
+      "end": 4214,
+      "english": "Combing the Hair (Kitab Al-Tarajjul)",
+      "arabic": "كتاب الترجل"
+    },
+    {
+      "id": 36,
+      "bookId": 4,
+      "length": 26,
+      "start": 4215,
+      "end": 4240,
+      "english": "Signet-Rings (Kitab Al-Khatam)",
+      "arabic": "كتاب الخاتم"
+    },
+    {
+      "id": 37,
+      "bookId": 4,
+      "length": 39,
+      "start": 4241,
+      "end": 4279,
+      "english": "Trials and Fierce Battles (Kitab Al-Fitan Wa Al-Malahim)",
+      "arabic": "كتاب الفتن والملاحم"
+    },
+    {
+      "id": 38,
+      "bookId": 4,
+      "length": 13,
+      "start": 4280,
+      "end": 4292,
+      "english": "The Promised Deliverer (Kitab Al-Mahdi)",
+      "arabic": "كتاب المهدى"
+    },
+    {
+      "id": 39,
+      "bookId": 4,
+      "length": 60,
+      "start": 4293,
+      "end": 4352,
+      "english": "Battles (Kitab Al-Malahim)",
+      "arabic": "كتاب الملاحم"
+    },
+    {
+      "id": 40,
+      "bookId": 4,
+      "length": 143,
+      "start": 4353,
+      "end": 4495,
+      "english": "Prescribed Punishments (Kitab Al-Hudud)",
+      "arabic": "كتاب الحدود"
+    },
+    {
+      "id": 41,
+      "bookId": 4,
+      "length": 102,
+      "start": 4496,
+      "end": 4597,
+      "english": "Types of Blood-Wit (Kitab Al-Diyat)",
+      "arabic": "كتاب الديات"
+    },
+    {
+      "id": 42,
+      "bookId": 4,
+      "length": 177,
+      "start": 4598,
+      "end": 4774,
+      "english": "Model Behavior of the Prophet (Kitab Al-Sunnah)",
+      "arabic": "كتاب السنة"
+    },
+    {
+      "id": 43,
+      "bookId": 4,
+      "length": 502,
+      "start": 4775,
+      "end": 5276,
+      "english": "General Behavior (Kitab Al-Adab)",
+      "arabic": "كتاب الأدب"
+    }
+  ]
+}

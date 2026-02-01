@@ -1,0 +1,163 @@
+{
+  "id": 17,
+  "metadata": {
+    "id": 17,
+    "length": 1767,
+    "arabic": {
+      "title": "بلوغ المرام",
+      "author": "الإمام ابن حجر العسقلاني",
+      "introduction": ""
+    },
+    "english": {
+      "title": "Bulugh al-Maram",
+      "author": "Ibn Hajar al-Asqalani",
+      "introduction": ""
+    }
+  },
+  "chapters": [
+    {
+      "id": 1,
+      "bookId": 17,
+      "length": 179,
+      "start": 1,
+      "end": 179,
+      "english": "The Book of Purification",
+      "arabic": "كتاب الطهارة"
+    },
+    {
+      "id": 2,
+      "bookId": 17,
+      "length": 461,
+      "start": 180,
+      "end": 640,
+      "english": "The Book of Prayer",
+      "arabic": "كتاب الصلاة"
+    },
+    {
+      "id": 3,
+      "bookId": 17,
+      "length": 66,
+      "start": 641,
+      "end": 706,
+      "english": "Funerals",
+      "arabic": "كتاب الجنائز"
+    },
+    {
+      "id": 4,
+      "bookId": 17,
+      "length": 51,
+      "start": 707,
+      "end": 757,
+      "english": "The Book of Zakah",
+      "arabic": "كتاب الزكاة"
+    },
+    {
+      "id": 5,
+      "bookId": 17,
+      "length": 58,
+      "start": 758,
+      "end": 815,
+      "english": "Fasting",
+      "arabic": "كتاب الصيام"
+    },
+    {
+      "id": 6,
+      "bookId": 17,
+      "length": 74,
+      "start": 816,
+      "end": 889,
+      "english": "Hajj",
+      "arabic": "كتاب الحج"
+    },
+    {
+      "id": 7,
+      "bookId": 17,
+      "length": 233,
+      "start": 890,
+      "end": 1122,
+      "english": "Business Transactions",
+      "arabic": "كتاب البيوع"
+    },
+    {
+      "id": 8,
+      "bookId": 17,
+      "length": 222,
+      "start": 1123,
+      "end": 1344,
+      "english": "Marriage",
+      "arabic": "كتاب النكاح"
+    },
+    {
+      "id": 9,
+      "bookId": 17,
+      "length": 47,
+      "start": 1345,
+      "end": 1391,
+      "english": "Crimes (Qisas or Retaliation)",
+      "arabic": "كتاب الجنايات"
+    },
+    {
+      "id": 10,
+      "bookId": 17,
+      "length": 57,
+      "start": 1392,
+      "end": 1448,
+      "english": "Hudud",
+      "arabic": "كتاب الحدود"
+    },
+    {
+      "id": 11,
+      "bookId": 17,
+      "length": 63,
+      "start": 1449,
+      "end": 1511,
+      "english": "Jihad",
+      "arabic": "كتاب الجهاد"
+    },
+    {
+      "id": 12,
+      "bookId": 17,
+      "length": 44,
+      "start": 1512,
+      "end": 1555,
+      "english": "Food",
+      "arabic": "كتاب الأطعمة"
+    },
+    {
+      "id": 13,
+      "bookId": 17,
+      "length": 23,
+      "start": 1556,
+      "end": 1578,
+      "english": "Oaths and Vows",
+      "arabic": "كتاب الأيمان والنذور"
+    },
+    {
+      "id": 14,
+      "bookId": 17,
+      "length": 36,
+      "start": 1579,
+      "end": 1614,
+      "english": "Judgments",
+      "arabic": "كتاب القضاء"
+    },
+    {
+      "id": 15,
+      "bookId": 17,
+      "length": 20,
+      "start": 1615,
+      "end": 1634,
+      "english": "Emancipation",
+      "arabic": "كتاب العتق"
+    },
+    {
+      "id": 16,
+      "bookId": 17,
+      "length": 133,
+      "start": 1635,
+      "end": 1767,
+      "english": "The Comprehensive Book",
+      "arabic": "كتاب الجامع"
+    }
+  ]
+}

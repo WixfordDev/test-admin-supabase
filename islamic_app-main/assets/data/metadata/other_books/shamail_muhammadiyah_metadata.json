@@ -1,0 +1,523 @@
+{
+  "id": 16,
+  "metadata": {
+    "id": 16,
+    "length": 402,
+    "arabic": {
+      "title": "الشمائل المحمدية",
+      "author": "الإمام الترمذي",
+      "introduction": ""
+    },
+    "english": {
+      "title": "Shama'il Muhammadiyah",
+      "author": "Imam Tirmidhi",
+      "introduction": ""
+    }
+  },
+  "chapters": [
+    {
+      "id": 1,
+      "bookId": 16,
+      "length": 14,
+      "start": 1,
+      "end": 14,
+      "english": "The Noble Features Of Rasoolullah",
+      "arabic": "باب ما جاء في خلق رسول الله صلى الله عليه وسلم"
+    },
+    {
+      "id": 2,
+      "bookId": 16,
+      "length": 8,
+      "start": 15,
+      "end": 22,
+      "english": "Seal Of Nubuwwah (Prophethood) Of Rasoolullah",
+      "arabic": "باب ما جاء في خاتم النبوة"
+    },
+    {
+      "id": 3,
+      "bookId": 16,
+      "length": 8,
+      "start": 23,
+      "end": 30,
+      "english": "The Mubarak Hair Of Rasoolullah",
+      "arabic": "-باب ما جاء في شعر رسول الله صلى الله عليه وسلم"
+    },
+    {
+      "id": 4,
+      "bookId": 16,
+      "length": 5,
+      "start": 31,
+      "end": 35,
+      "english": "The Combing Of The Hair Of Rasoolullah",
+      "arabic": "باب ما جاء في ترجل رسول الله صلى الله عليه وسلم"
+    },
+    {
+      "id": 5,
+      "bookId": 16,
+      "length": 8,
+      "start": 36,
+      "end": 43,
+      "english": "Appearing Of The White Hair Of Rasoolullah",
+      "arabic": "باب ما جاء في شيب رسول الله صلى الله عليه وسلم"
+    },
+    {
+      "id": 6,
+      "bookId": 16,
+      "length": 5,
+      "start": 44,
+      "end": 48,
+      "english": "Rasoolullah Using a Dye",
+      "arabic": "باب ما جاء في خضاب رسول الله صلى الله عليه وسلم"
+    },
+    {
+      "id": 7,
+      "bookId": 16,
+      "length": 5,
+      "start": 49,
+      "end": 53,
+      "english": "Kuhl Of Rasoolullah",
+      "arabic": "باب ما جاء في كُحل رسول الله صلى الله عليه وسلم"
+    },
+    {
+      "id": 8,
+      "bookId": 16,
+      "length": 16,
+      "start": 54,
+      "end": 69,
+      "english": "The Dressing Of Rasoolullah",
+      "arabic": "باب ما جاء في لباس رسول الله صلى الله عليه وسلم"
+    },
+    {
+      "id": 9,
+      "bookId": 16,
+      "length": 2,
+      "start": 72,
+      "end": 73,
+      "english": "The Khuff (Leather Socks) Of Rasoolullah",
+      "arabic": "باب ما جاء في خف رسول الله صلى الله عليه وسلم"
+    },
+    {
+      "id": 10,
+      "bookId": 16,
+      "length": 11,
+      "start": 74,
+      "end": 84,
+      "english": "The Shoes Of Rasoolullah",
+      "arabic": "باب ماجاء في نعل رسول الله صلى الله عليه وسلم"
+    },
+    {
+      "id": 11,
+      "bookId": 16,
+      "length": 8,
+      "start": 85,
+      "end": 92,
+      "english": "The Mubarak Ring Of Rasoolullah",
+      "arabic": "باب ما جاء في ذكر خاتم رسول الله صلى الله عليه وسلم"
+    },
+    {
+      "id": 12,
+      "bookId": 16,
+      "length": 9,
+      "start": 93,
+      "end": 101,
+      "english": "Stating That Rasoolullah Wore The Ring On His Right Hand",
+      "arabic": "باب ماجاء في تختم رسول الله صلى الله عليه وسلم"
+    },
+    {
+      "id": 13,
+      "bookId": 16,
+      "length": 4,
+      "start": 102,
+      "end": 105,
+      "english": "The Sword Of Rasoolullah",
+      "arabic": "باب ماجاء في صفة سَيْفِ رَسُولِ اللهِ صلى الله عليه وسلم"
+    },
+    {
+      "id": 14,
+      "bookId": 16,
+      "length": 2,
+      "start": 106,
+      "end": 107,
+      "english": "The Armor Of Rasoolullah",
+      "arabic": "باب ماجاء في صفة درع رَسُولِ اللهِصلى الله عليه وسلم"
+    },
+    {
+      "id": 15,
+      "bookId": 16,
+      "length": 2,
+      "start": 108,
+      "end": 109,
+      "english": "The Helmet Of Rasoolullah",
+      "arabic": "باب ما جاء في صفة مغفر رسول الله صلى الله عليه وسلم"
+    },
+    {
+      "id": 16,
+      "bookId": 16,
+      "length": 5,
+      "start": 110,
+      "end": 114,
+      "english": "The Turban Of Rasoolullah",
+      "arabic": "باب ما جاء في عمامة رسول الله صلى الله عليه وسلم"
+    },
+    {
+      "id": 17,
+      "bookId": 16,
+      "length": 4,
+      "start": 115,
+      "end": 118,
+      "english": "The Lungi Of Rasoolullah",
+      "arabic": "باب ما جاء في صفة إزار رسول الله صلى الله عليه وسلم"
+    },
+    {
+      "id": 18,
+      "bookId": 16,
+      "length": 3,
+      "start": 119,
+      "end": 121,
+      "english": "The Walking Of Rasoolullah",
+      "arabic": "باب ما جاء في مشية رسول الله صلى الله عليه وسلم"
+    },
+    {
+      "id": 19,
+      "bookId": 16,
+      "length": 1,
+      "start": 122,
+      "end": 122,
+      "english": "The Qinaa Of Rasoolullah",
+      "arabic": "باب ما جاء في تقنع رسول الله صلى الله عليه وسلم"
+    },
+    {
+      "id": 20,
+      "bookId": 16,
+      "length": 3,
+      "start": 123,
+      "end": 125,
+      "english": "The Sitting Of Rasoolullah",
+      "arabic": "باب ما جاء في جلسته صلى الله عليه وسلم"
+    },
+    {
+      "id": 21,
+      "bookId": 16,
+      "length": 5,
+      "start": 126,
+      "end": 130,
+      "english": "The Pillow Of Rasoolullah",
+      "arabic": "باب ما جاء في تكأة رسول الله صلى الله عليه وسلم"
+    },
+    {
+      "id": 22,
+      "bookId": 16,
+      "length": 2,
+      "start": 131,
+      "end": 132,
+      "english": "Rasoolullah Leaning On Something Other Than a Pillow",
+      "arabic": "باب ما جاء في اتكاء رسول الله صلى الله عليه وسلم"
+    },
+    {
+      "id": 23,
+      "bookId": 16,
+      "length": 5,
+      "start": 133,
+      "end": 137,
+      "english": "Description Of The Eating Of Rasoolullah",
+      "arabic": "باب ما جاء في أكل رسول الله صلى الله عليه وسلم"
+    },
+    {
+      "id": 24,
+      "bookId": 16,
+      "length": 8,
+      "start": 138,
+      "end": 145,
+      "english": "The Bread Of Rasoolullah",
+      "arabic": "باب ما جاء في صفة خبز رسول الله صلى الله عليه وسلم"
+    },
+    {
+      "id": 25,
+      "bookId": 16,
+      "length": 34,
+      "start": 146,
+      "end": 179,
+      "english": "What Rasoolullah Would Eat with Bread",
+      "arabic": "ما جاء في إدام رسول الله صلى الله عليه وسلم"
+    },
+    {
+      "id": 26,
+      "bookId": 16,
+      "length": 3,
+      "start": 180,
+      "end": 182,
+      "english": "Rasoolullah Performing Wudu At The Time Of Eating",
+      "arabic": "باب ما جاء في صفة وضوء رسول الله صلى الله عليه وسلم عند الطعام"
+    },
+    {
+      "id": 27,
+      "bookId": 16,
+      "length": 7,
+      "start": 183,
+      "end": 189,
+      "english": "The Words That Of Rasoolullah Said Before and After Eating",
+      "arabic": "باب ما جاء في قول رسول الله صلى الله عليه وسلم قبل الطعام وعند الفراغ منه"
+    },
+    {
+      "id": 28,
+      "bookId": 16,
+      "length": 2,
+      "start": 190,
+      "end": 191,
+      "english": "The Cup Of Rasoolullah",
+      "arabic": "باب ما جاء في قدح رسول الله صلى الله عليه وسلم"
+    },
+    {
+      "id": 29,
+      "bookId": 16,
+      "length": 7,
+      "start": 192,
+      "end": 198,
+      "english": "The Fruits Eaten By Rasoolullah",
+      "arabic": "باب ما جاء في صفة فاكهة رسول الله صلى الله عليه وسلم"
+    },
+    {
+      "id": 30,
+      "bookId": 16,
+      "length": 2,
+      "start": 199,
+      "end": 200,
+      "english": "Description Of The Things Rasoolullah Drank",
+      "arabic": "باب ما جاء في صفة شراب رسول الله صلى الله عليه وسلم"
+    },
+    {
+      "id": 31,
+      "bookId": 16,
+      "length": 10,
+      "start": 201,
+      "end": 210,
+      "english": "Hadith Describing The Manner Rasoolullah Drank",
+      "arabic": "باب ما جاء في شرب رسول الله صلى الله عليه وسلم"
+    },
+    {
+      "id": 32,
+      "bookId": 16,
+      "length": 6,
+      "start": 211,
+      "end": 216,
+      "english": "Rasoolullah Using 'Itr",
+      "arabic": "باب ما جاء في تعطررسول الله صلى الله عليه وسلم"
+    },
+    {
+      "id": 33,
+      "bookId": 16,
+      "length": 3,
+      "start": 217,
+      "end": 219,
+      "english": "The Speech Of rasoolullah",
+      "arabic": "باب كيف كان كلام رسول الله صلى الله عليه وسلم"
+    },
+    {
+      "id": 34,
+      "bookId": 16,
+      "length": 9,
+      "start": 220,
+      "end": 228,
+      "english": "The Laughing Of Rasoolullah",
+      "arabic": "باب ما جاء في ضحك رسول الله صلى الله عليه وسلم"
+    },
+    {
+      "id": 35,
+      "bookId": 16,
+      "length": 6,
+      "start": 229,
+      "end": 234,
+      "english": "Description Of The Joking Of Rasoolullah",
+      "arabic": "باب ما جاء في صفة مزاح رسول الله صلى الله عليه وسلم"
+    },
+    {
+      "id": 36,
+      "bookId": 16,
+      "length": 9,
+      "start": 235,
+      "end": 243,
+      "english": "Description Of The Saying Of Rasoolullah On Poetry",
+      "arabic": "باب ما جاء في صفة كلام رسول الله صلى الله عليه وسلم في الشعر"
+    },
+    {
+      "id": 37,
+      "bookId": 16,
+      "length": 1,
+      "start": 244,
+      "end": 244,
+      "english": "Story Telling Of Rasoolullah At Night",
+      "arabic": "باب ما جاء في كلام رسول الله صلى الله عليه وسلم في السمر"
+    },
+    {
+      "id": 38,
+      "bookId": 16,
+      "length": 1,
+      "start": 245,
+      "end": 245,
+      "english": "Hadith of Umm Zar`",
+      "arabic": "حديث أم زرع"
+    },
+    {
+      "id": 39,
+      "bookId": 16,
+      "length": 6,
+      "start": 246,
+      "end": 251,
+      "english": "The Sleeping Of Rasoolullah",
+      "arabic": "باب في صفة نوم رسول الله صلى الله عليه وسلم في السمر"
+    },
+    {
+      "id": 40,
+      "bookId": 16,
+      "length": 25,
+      "start": 252,
+      "end": 276,
+      "english": "Worship And Devotion Of Rasoolullah",
+      "arabic": "باب ما جاء في عبادة النبي صلى الله عليه وسلم"
+    },
+    {
+      "id": 41,
+      "bookId": 16,
+      "length": 8,
+      "start": 277,
+      "end": 284,
+      "english": "Salaatut Duha (Chaast Prayers)",
+      "arabic": "باب صلاة الضحى"
+    },
+    {
+      "id": 42,
+      "bookId": 16,
+      "length": 1,
+      "start": 285,
+      "end": 285,
+      "english": "Sayyidina Rasoolullah Performing Nawaafil At Home",
+      "arabic": "باب صلاة التطوع في البيت"
+    },
+    {
+      "id": 43,
+      "bookId": 16,
+      "length": 16,
+      "start": 286,
+      "end": 301,
+      "english": "The Fasting Of Sayyidina Rasoolullah",
+      "arabic": "باب ماجاء في صوم رسول الله صلى الله عليه وسلم"
+    },
+    {
+      "id": 44,
+      "bookId": 16,
+      "length": 8,
+      "start": 302,
+      "end": 309,
+      "english": "The Recital Of Sayyidina Rasoolullah",
+      "arabic": "باب ماجاء في قراءة رسول الله صلى الله عليه وسلم"
+    },
+    {
+      "id": 45,
+      "bookId": 16,
+      "length": 6,
+      "start": 310,
+      "end": 315,
+      "english": "The Weeping Of Sayyidina Rasoolullah",
+      "arabic": "باب ماجاء في بكاء رسول الله صلى الله عليه وسلم"
+    },
+    {
+      "id": 46,
+      "bookId": 16,
+      "length": 2,
+      "start": 316,
+      "end": 317,
+      "english": "Narrations Of The Bed Of Sayyidina Rasoolullah",
+      "arabic": "باب ماجاء في فراش رسول الله صلى الله عليه وسلم"
+    },
+    {
+      "id": 47,
+      "bookId": 16,
+      "length": 13,
+      "start": 318,
+      "end": 330,
+      "english": "The Humbleness Of Sayyidina Rasoolullah",
+      "arabic": "باب ماجاء في تواضع رسول الله صلى الله عليه وسلم"
+    },
+    {
+      "id": 48,
+      "bookId": 16,
+      "length": 15,
+      "start": 331,
+      "end": 345,
+      "english": "Noble Character And Habits Of Sayyidina Rasoolullah",
+      "arabic": "باب ماجاء في خلق رسول الله صلى الله عليه وسلم"
+    },
+    {
+      "id": 49,
+      "bookId": 16,
+      "length": 2,
+      "start": 346,
+      "end": 347,
+      "english": "Modesty Of Sayyidina Rasoolullah",
+      "arabic": "باب ماجاء في حياء رسول الله صلى الله عليه وسلم"
+    },
+    {
+      "id": 50,
+      "bookId": 16,
+      "length": 6,
+      "start": 348,
+      "end": 353,
+      "english": "Hajaamah (Cupping-Cautering) Of Sayyidina Rasoolullah",
+      "arabic": "باب ماجاء في حجامة رسول الله صلى الله عليه وسلم"
+    },
+    {
+      "id": 51,
+      "bookId": 16,
+      "length": 2,
+      "start": 354,
+      "end": 355,
+      "english": "The Names Of Sayyidina Rasoolullah",
+      "arabic": "باب ماجاء في أسماء رسول الله صلى الله عليه وسلم"
+    },
+    {
+      "id": 52,
+      "bookId": 16,
+      "length": 9,
+      "start": 356,
+      "end": 364,
+      "english": "The Living Of Sayyidina Rasoolullah",
+      "arabic": "باب ماجاء في عيش رسول الله صلى الله عليه وسلم"
+    },
+    {
+      "id": 53,
+      "bookId": 16,
+      "length": 6,
+      "start": 365,
+      "end": 370,
+      "english": "The Noble Age Of Sayyidina Rasoolullah",
+      "arabic": "باب ماجاء في سن رسول الله صلى الله عليه وسلم"
+    },
+    {
+      "id": 54,
+      "bookId": 16,
+      "length": 14,
+      "start": 371,
+      "end": 384,
+      "english": "The Death Of Sayyidina Rasoolullah",
+      "arabic": "باب ماجاء في وفاة رسول الله صلى الله عليه وسلم"
+    },
+    {
+      "id": 55,
+      "bookId": 16,
+      "length": 7,
+      "start": 385,
+      "end": 391,
+      "english": "The Legacy Of Sayyidina Rasoolullah",
+      "arabic": "باب ماجاء في ميراث رسول الله صلى الله عليه وسلم"
+    },
+    {
+      "id": 56,
+      "bookId": 16,
+      "length": 11,
+      "start": 392,
+      "end": 402,
+      "english": "The Seeing Of Rasoolullah In a Dream",
+      "arabic": "باب ماجاء في رؤية رسول الله صلى الله عليه وسلم"
+    }
+  ]
+}

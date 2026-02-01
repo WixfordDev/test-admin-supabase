@@ -1,0 +1,235 @@
+{
+  "id": 9,
+  "metadata": {
+    "id": 9,
+    "length": 3406,
+    "arabic": {
+      "title": "سنن الدارمي",
+      "author": "الإمام أبو محمد عبد الرحمن بن عبد الله بن الدارمي",
+      "introduction": ""
+    },
+    "english": {
+      "title": "Sunan al-Darimi",
+      "author": "Imam Abu Muhammad Abd al-Rahman ibn Abd Allah ibn al-Darimi",
+      "introduction": ""
+    }
+  },
+  "chapters": [
+    {
+      "id": 1,
+      "bookId": 9,
+      "length": 510,
+      "start": 1,
+      "end": 510,
+      "english": "",
+      "arabic": "كِتَاب الطَّهَارَةِ"
+    },
+    {
+      "id": 2,
+      "bookId": 9,
+      "length": 419,
+      "start": 511,
+      "end": 929,
+      "english": "",
+      "arabic": "كِتَاب الصَّلَاةِ"
+    },
+    {
+      "id": 3,
+      "bookId": 9,
+      "length": 59,
+      "start": 930,
+      "end": 988,
+      "english": "",
+      "arabic": "مِنْ كِتَابِ الزَّكَاةِ"
+    },
+    {
+      "id": 4,
+      "bookId": 9,
+      "length": 98,
+      "start": 989,
+      "end": 1086,
+      "english": "",
+      "arabic": "وَمِنْ كِتَابِ الصَّوْمِ"
+    },
+    {
+      "id": 5,
+      "bookId": 9,
+      "length": 153,
+      "start": 1087,
+      "end": 1239,
+      "english": "",
+      "arabic": "مِنْ كِتَابِ الْمَنَاسِكِ"
+    },
+    {
+      "id": 6,
+      "bookId": 9,
+      "length": 55,
+      "start": 1240,
+      "end": 1294,
+      "english": "",
+      "arabic": "مِنْ كِتَابِ الْأَضَاحِيِّ"
+    },
+    {
+      "id": 7,
+      "bookId": 9,
+      "length": 16,
+      "start": 1295,
+      "end": 1310,
+      "english": "",
+      "arabic": "وَمِنْ كِتَابِ الصَّيْدِ"
+    },
+    {
+      "id": 8,
+      "bookId": 9,
+      "length": 63,
+      "start": 1311,
+      "end": 1373,
+      "english": "",
+      "arabic": "وَمِنْ كِتَابِ الْأَطْعِمَةِ"
+    },
+    {
+      "id": 9,
+      "bookId": 9,
+      "length": 49,
+      "start": 1374,
+      "end": 1422,
+      "english": "",
+      "arabic": "وَمِنْ كِتَابِ الْأَشْرِبَةِ"
+    },
+    {
+      "id": 10,
+      "bookId": 9,
+      "length": 27,
+      "start": 1423,
+      "end": 1449,
+      "english": "",
+      "arabic": "وَمِنْ كِتَابِ الرُّؤْيَا"
+    },
+    {
+      "id": 11,
+      "bookId": 9,
+      "length": 92,
+      "start": 1450,
+      "end": 1541,
+      "english": "",
+      "arabic": "وَمِنْ كِتَابِ النِّكَاحِ"
+    },
+    {
+      "id": 12,
+      "bookId": 9,
+      "length": 32,
+      "start": 1542,
+      "end": 1573,
+      "english": "",
+      "arabic": "وَمِنْ كِتَابِ الطَّلَاقِ"
+    },
+    {
+      "id": 13,
+      "bookId": 9,
+      "length": 33,
+      "start": 1574,
+      "end": 1606,
+      "english": "",
+      "arabic": "وَمِنْ كِتَابِ الْحُدُودِ"
+    },
+    {
+      "id": 14,
+      "bookId": 9,
+      "length": 18,
+      "start": 1607,
+      "end": 1624,
+      "english": "",
+      "arabic": "وَمِنْ كِتَابِ النُّذُورِ وَالْأَيْمَانِ"
+    },
+    {
+      "id": 15,
+      "bookId": 9,
+      "length": 38,
+      "start": 1625,
+      "end": 1662,
+      "english": "",
+      "arabic": "وَمِنْ كِتَابِ الدِّيَاتِ"
+    },
+    {
+      "id": 16,
+      "bookId": 9,
+      "length": 48,
+      "start": 1663,
+      "end": 1710,
+      "english": "",
+      "arabic": "كِتَاب الْجِهَادِ"
+    },
+    {
+      "id": 17,
+      "bookId": 9,
+      "length": 91,
+      "start": 1711,
+      "end": 1801,
+      "english": "",
+      "arabic": "وَمِنْ كِتَابِ السِّيَرِ"
+    },
+    {
+      "id": 18,
+      "bookId": 9,
+      "length": 97,
+      "start": 1802,
+      "end": 1898,
+      "english": "",
+      "arabic": "وَمِنْ كِتَابِ الْبُيُوعِ"
+    },
+    {
+      "id": 19,
+      "bookId": 9,
+      "length": 75,
+      "start": 1899,
+      "end": 1973,
+      "english": "",
+      "arabic": "وَمِنْ كِتَابِ الِاسْتِئْذَانِ"
+    },
+    {
+      "id": 20,
+      "bookId": 9,
+      "length": 137,
+      "start": 1974,
+      "end": 2110,
+      "english": "",
+      "arabic": "وَمِنْ كِتَابِ الرِّقَاقِ"
+    },
+    {
+      "id": 21,
+      "bookId": 9,
+      "length": 325,
+      "start": 2111,
+      "end": 2435,
+      "english": "",
+      "arabic": "مِنْ كِتَابِ الْفَرَائِضِ"
+    },
+    {
+      "id": 22,
+      "bookId": 9,
+      "length": 126,
+      "start": 2436,
+      "end": 2561,
+      "english": "",
+      "arabic": "مِنْ كِتَابِ الْوَصَايَا"
+    },
+    {
+      "id": 23,
+      "bookId": 9,
+      "length": 196,
+      "start": 2562,
+      "end": 2757,
+      "english": "",
+      "arabic": "وَمِنْ كِتَابِ فَضَائِلِ الْقُرْآنِ"
+    },
+    {
+      "id": 0,
+      "bookId": 9,
+      "length": 649,
+      "start": 2758,
+      "end": 3406,
+      "english": "",
+      "arabic": "سنن الدارمي"
+    }
+  ]
+}

@@ -1,0 +1,566 @@
+[
+    {
+      "id": "1",
+      "question": "What is Islam?",
+      "answer": "Islam is a monotheistic religion founded on the belief in one God (Allah). It is based on the teachings of Prophet Muhammad (PBUH) as revealed in the Quran. The core belief of Islam is submission to the will of Allah.",
+      "category": "General Questions About Islam"
+    },
+    {
+      "id": "2",
+      "question": "Who is Allah?",
+      "answer": "Allah is the Arabic word for God. Muslims believe that Allah is the one and only God, the Creator, Sustainer, and the ultimate ruler of the universe. Allah has no partners or children, and He is beyond human comprehension.",
+      "category": "General Questions About Islam"
+    },
+    {
+      "id": "3",
+      "question": "What are the Five Pillars of Islam?",
+      "answer": "The Five Pillars of Islam are the five basic acts of worship that define a Muslim's faith and practice. They include:\n\nShahada (Faith) – Testifying that there is no god but Allah, and Muhammad (PBUH) is His messenger.\nSalat (Prayer) – Performing five daily prayers.\nZakat (Charity) – Giving a portion of one's wealth to the poor.\nSawm (Fasting) – Fasting during the month of Ramadan.\nHajj (Pilgrimage) – Performing the pilgrimage to Mecca at least once in a lifetime if financially and physically able.",
+      "category": "General Questions About Islam"
+    },
+    {
+      "id": "4",
+      "question": "What is the Quran?",
+      "answer": "The Quran is the holy book of Islam, believed by Muslims to be the literal word of Allah as revealed to Prophet Muhammad (PBUH) through the angel Jibreel (Gabriel). It contains guidance on all aspects of life and serves as the primary source of Islamic law and morality.",
+      "category": "General Questions About Islam"
+    },
+    {
+      "id": "5",
+      "question": "Who was Prophet Muhammad (PBUH)?",
+      "answer": "Prophet Muhammad (PBUH) is the final prophet in Islam, born in Mecca in 570 CE. He received divine revelations that were later compiled into the Quran. He is regarded as the \"Seal of the Prophets\" and is considered a model for Muslims to follow.",
+      "category": "General Questions About Islam"
+    },
+    {
+      "id": "6",
+      "question": "What is the significance of the Prophet Muhammad's life?",
+      "answer": "The life of Prophet Muhammad (PBUH) serves as an example of perfect morality, kindness, humility, patience, and devotion to Allah. His actions and sayings, known as Hadith, provide a blueprint for Muslims to live righteous lives.",
+      "category": "General Questions About Islam"
+    },
+    {
+      "id": "7",
+      "question": "Why is the Quran considered the final revelation?",
+      "answer": "The Quran is considered the final revelation because Muslims believe it is the ultimate, unaltered word of God, superseding previous scriptures such as the Torah and the Bible. It is believed to be comprehensive and complete for all of humanity.",
+      "category": "General Questions About Islam"
+    },
+    {
+      "id": "8",
+      "question": "How do Muslims view Jesus (Isa)?",
+      "answer": "Muslims believe that Jesus (Isa) was a prophet of God, born of the Virgin Mary, and a servant of Allah. They do not believe Jesus was the Son of God but a messenger. He performed miracles and will return before the Day of Judgment.",
+      "category": "General Questions About Islam"
+    },
+    {
+      "id": "9",
+      "question": "What is the role of angels in Islam?",
+      "answer": "Angels are spiritual beings created by Allah who carry out His commands. They have no free will and serve various functions, including delivering revelations, recording human deeds, and taking people's souls at death.",
+      "category": "General Questions About Islam"
+    },
+    {
+      "id": "10",
+      "question": "What are the basic beliefs of a Muslim?",
+      "answer": "The basic beliefs of a Muslim include belief in:\n\nAllah as the only God.\nAngels as Allah's messengers.\nProphets as Allah's chosen guides for humanity.\nThe Books (Quran, Torah, Psalms, and Gospel).\nThe Day of Judgment and life after death.\nDivine Predestination (the belief that Allah knows all and has a plan for each person).",
+      "category": "General Questions About Islam"
+    },
+    {
+      "id": "11",
+      "question": "Why do Muslims believe in only one God?",
+      "answer": "Muslims believe in one God, Allah, because the Quran teaches that there is no deity but Allah. The belief in one God is central to Islam, emphasizing monotheism and the rejection of any form of polytheism or association of partners with Allah.",
+      "category": "Belief in Allah"
+    },
+    {
+      "id": "12",
+      "question": "What is Tawhid (oneness of God)?",
+      "answer": "Tawhid refers to the absolute oneness and uniqueness of Allah. It is the most fundamental concept in Islam, emphasizing that Allah has no partners, no equals, and no children.",
+      "category": "Belief in Allah"
+    },
+    {
+      "id": "13",
+      "question": "What is the concept of God's mercy in Islam?",
+      "answer": "Allah is described in the Quran as being merciful and forgiving. Muslims believe that no sin is too great for Allah’s mercy, and He is always ready to forgive those who repent sincerely.",
+      "category": "Belief in Allah"
+    },
+    {
+      "id": "14",
+      "question": "How do Muslims connect with Allah in daily life?",
+      "answer": "Muslims connect with Allah through prayer (Salat), reading the Quran, dhikr (remembrance of Allah), and living according to Islamic principles. They also strive to seek Allah's guidance in all their actions and decisions.",
+      "category": "Belief in Allah"
+    },
+    {
+      "id": "15",
+      "question": "What does it mean to worship Allah in Islam?",
+      "answer": "Worshiping Allah means submitting to His will in all aspects of life. It involves following the teachings of Islam, performing acts of worship like prayer and fasting, and living a righteous life according to the Quran and the Hadith.",
+      "category": "Belief in Allah"
+    },
+    {
+      "id": "16",
+      "question": "Who are the major prophets in Islam?",
+      "answer": "The major prophets in Islam include Adam, Noah, Abraham, Moses, David, Solomon, Jesus, and Muhammad (PBUH). Muhammad (PBUH) is the last prophet, and all prophets conveyed the same message of monotheism.",
+      "category": "Prophets and Messengers"
+    },
+    {
+      "id": "17",
+      "question": "What is the role of Prophet Muhammad (PBUH) in Islam?",
+      "answer": "Prophet Muhammad (PBUH) is the final messenger of Allah. He received the Quran and was chosen to guide humanity. His life and teachings (Hadith) provide a model for Muslims to follow.",
+      "category": "Prophets and Messengers"
+    },
+    {
+      "id": "18",
+      "question": "Why do Muslims believe in the Day of Judgment?",
+      "answer": "Muslims believe in the Day of Judgment because the Quran teaches that all people will be resurrected and judged by Allah based on their deeds. Those who have lived righteous lives will enter paradise, while those who have rejected faith will be punished.",
+      "category": "Prophets and Messengers"
+    },
+    {
+      "id": "19",
+      "question": "How do Muslims view other religions' prophets?",
+      "answer": "Muslims respect and believe in the prophets of other Abrahamic faiths, such as Moses, Abraham, and Jesus. However, they believe that Prophet Muhammad (PBUH) is the final prophet and that Islam is the last and complete message from Allah.",
+      "category": "Prophets and Messengers"
+    },
+    {
+      "id": "20",
+      "question": "What is the importance of following the teachings of the Prophet Muhammad (PBUH)?",
+      "answer": "Following the teachings of Prophet Muhammad (PBUH) is essential for Muslims because his life serves as a guide for how to live according to Islamic principles. His actions and words are a source of guidance for worship, ethics, and personal behavior.",
+      "category": "Prophets and Messengers"
+    },
+    {
+      "id": "21",
+      "question": "What language is the Quran written in?",
+      "answer": "The Quran was revealed in Classical Arabic. Muslims believe that the Quran's message is best understood and appreciated in its original language, although translations exist in many languages.",
+      "category": "The Quran"
+    },
+    {
+      "id": "22",
+      "question": "How was the Quran revealed to Prophet Muhammad (PBUH)?",
+      "answer": "The Quran was revealed to Prophet Muhammad (PBUH) over 23 years by the angel Jibreel (Gabriel). It was revealed in stages, addressing the challenges faced by the early Muslim community.",
+      "category": "The Quran"
+    },
+    {
+      "id": "23",
+      "question": "What is the structure of the Quran?",
+      "answer": "The Quran is made up of 114 chapters called Surahs, which vary in length. Each Surah consists of verses (Ayahs) that address various aspects of faith, law, morality, and guidance.",
+      "category": "The Quran"
+    },
+    {
+      "id": "24",
+      "question": "Why is the Quran considered a miracle?",
+      "answer": "The Quran is considered a miracle because of its linguistic excellence, depth of wisdom, and prophetic insights. It is also seen as a timeless guide, relevant to all humanity regardless of time or place.",
+      "category": "The Quran"
+    },
+    {
+      "id": "25",
+      "question": "How should a Muslim read and interpret the Quran?",
+      "answer": "Muslims are encouraged to read the Quran with reflection and understanding. The Quran should be read with respect, and its meanings should be contemplated. Many also study the Tafsir (interpretation) to understand its deeper meanings.",
+      "category": "The Quran"
+    },
+    {
+      "id": "26",
+      "question": "What is a Hadith?",
+      "answer": "A Hadith is a record of the sayings, actions, and approvals of Prophet Muhammad (PBUH). It helps explain the Quran and offers guidance on how to live according to Islamic principles.",
+      "category": "The Hadith"
+    },
+    {
+      "id": "27",
+      "question": "How do Hadiths help in understanding the Quran?",
+      "answer": "Hadiths provide context to the Quranic verses and offer practical examples of how to implement the teachings of the Quran in daily life. They complement the Quran and give further clarity on issues not directly addressed in the Quran.",
+      "category": "The Hadith"
+    },
+    {
+      "id": "28",
+      "question": "What is the difference between Sahih, Da'if, and Hasan Hadiths?",
+      "answer": "Sahih Hadiths are considered authentic and reliable.\nDa'if Hadiths are weak and not considered reliable for legal rulings.\nHasan Hadiths are considered good but not as strong as Sahih.",
+      "category": "The Hadith"
+    },
+    {
+      "id": "29",
+      "question": "Why are Hadiths important for Muslims?",
+      "answer": "Hadiths are essential because they provide further guidance on how to follow the teachings of Islam. They are used to explain Quranic verses and serve as a practical manual for Islamic living.",
+      "category": "The Hadith"
+    },
+    {
+      "id": "30",
+      "question": "Are Hadiths more important than the Quran?",
+      "answer": "The Quran is the primary source of guidance in Islam. However, Hadiths are essential for understanding the Quran and guiding Muslims in matters not explicitly mentioned in the Quran. Both are important.",
+      "category": "The Hadith"
+    },
+    {
+      "id": "31",
+      "question": "What is Salat (prayer)?",
+      "answer": "Salat is the act of performing ritual prayers five times a day. It is one of the Five Pillars of Islam and serves as a direct connection between Muslims and Allah.",
+      "category": "Islamic Worship"
+    },
+    {
+      "id": "32",
+      "question": "How many times do Muslims pray a day?",
+      "answer": "Muslims are required to pray five times a day:\n\nFajr – Before dawn.\nDhuhr – After midday.\nAsr – In the afternoon.\nMaghrib – Just after sunset.\nIsha – At night.",
+      "category": "Islamic Worship"
+    },
+    {
+      "id": "33",
+      "question": "What are the benefits of praying regularly in Islam?",
+      "answer": "Prayer strengthens a Muslim's relationship with Allah, provides a sense of peace, serves as a reminder of one's purpose in life, and purifies the soul.",
+      "category": "Islamic Worship"
+    },
+    {
+      "id": "34",
+      "question": "How do Muslims prepare for prayer?",
+      "answer": "Muslims perform Wudu (ablution) before praying to cleanse themselves physically and spiritually. They then face the Qibla (direction of the Kaaba in Mecca) to begin the prayer.",
+      "category": "Islamic Worship"
+    },
+    {
+      "id": "35",
+      "question": "What is Wudu (ablution) and why is it necessary?",
+      "answer": "Wudu is a ritual washing of specific body parts (hands, mouth, nose, face, arms, head, and feet). It is necessary to maintain physical and spiritual cleanliness before performing the Salat.",
+      "category": "Islamic Worship"
+    },
+    {
+      "id": "36",
+      "question": "What happens if I miss a prayer?",
+      "answer": "If a Muslim misses a prayer, they are encouraged to make up for it as soon as possible. It is important to offer Qada (missed prayer) and seek forgiveness from Allah.",
+      "category": "Islamic Worship"
+    },
+    {
+      "id": "37",
+      "question": "What is Jumu'ah (Friday prayer)?",
+      "answer": "Jumu'ah is the weekly congregational prayer that takes place every Friday at midday. It is a significant and special prayer for Muslims, and it replaces the Dhuhr prayer on Fridays.",
+      "category": "Islamic Worship"
+    },
+    {
+      "id": "38",
+      "question": "What is the importance of facing the Qibla during prayer?",
+      "answer": "Muslims face the Kaaba in Mecca (the Qibla) during prayer as a symbol of unity among Muslims worldwide and a focus for their worship to Allah.",
+      "category": "Islamic Worship"
+    },
+    {
+      "id": "39",
+      "question": "What is Sujud (prostration)?",
+      "answer": "Sujud is the act of bowing down to the ground in prayer, signifying complete submission to Allah. It is considered the most humble and closest position a Muslim can attain to Allah during prayer.",
+      "category": "Islamic Worship"
+    },
+    {
+      "id": "40",
+      "question": "How do Muslims fast during Ramadan?",
+      "answer": "Muslims fast from dawn to sunset during the month of Ramadan, abstaining from food, drink, and other physical needs. Fasting is a way of purifying the soul and gaining self-discipline.",
+      "category": "Islamic Worship"
+    },
+     {
+      "id": "41",
+      "question": "What is Zakat (charity)?",
+      "answer": "Zakat is an obligatory form of charity that Muslims must give to the poor. It is one of the Five Pillars of Islam and typically involves giving 2.5% of one’s accumulated wealth annually to those in need.",
+      "category": "Islamic Worship"
+    },
+    {
+      "id": "42",
+      "question": "Why do Muslims give Zakat?",
+      "answer": "Zakat is given to purify wealth, assist those in need, and create a sense of community and compassion. It helps reduce poverty and encourages Muslims to share their blessings with others.",
+      "category": "Islamic Worship"
+    },
+    {
+      "id": "43",
+      "question": "What is Sadaqah (voluntary charity)?",
+      "answer": "Sadaqah is voluntary charity given beyond the required Zakat. It can be given at any time and in any amount to help those in need or support charitable causes.",
+      "category": "Islamic Worship"
+    },
+    {
+      "id": "44",
+      "question": "What is Sawm (fasting)?",
+      "answer": "Sawm refers to fasting during the month of Ramadan, where Muslims abstain from food, drink, and other physical needs from dawn until sunset. It is a time for spiritual reflection, self-discipline, and increased devotion to Allah.",
+      "category": "Islamic Worship"
+    },
+    {
+      "id": "45",
+      "question": "Why do Muslims fast during Ramadan?",
+      "answer": "Muslims fast during Ramadan to fulfill the commandment of Allah, to gain self-control, and to develop empathy for those who are less fortunate. It is also a time to purify the soul and grow spiritually.",
+      "category": "Islamic Worship"
+    },
+    {
+      "id": "46",
+      "question": "What is Eid al-Fitr?",
+      "answer": "Eid al-Fitr is a major Islamic holiday celebrated at the end of Ramadan. It marks the end of the fasting month and is a time of celebration, feasting, and giving thanks to Allah. Muslims also give Zakat al-Fitr, a charity, before the Eid prayer.",
+      "category": "Islamic Worship"
+    },
+    {
+      "id": "47",
+      "question": "What is Hajj?",
+      "answer": "Hajj is the annual pilgrimage to Mecca, which every Muslim who is physically and financially able must undertake at least once in their lifetime. It is a significant spiritual journey that includes specific rituals to honor Allah.",
+      "category": "Islamic Worship"
+    },
+    {
+      "id": "48",
+      "question": "Why is Hajj important?",
+      "answer": "Hajj is one of the Five Pillars of Islam and represents unity, humility, and submission to Allah. It allows Muslims to seek forgiveness, purify their sins, and renew their faith.",
+      "category": "Islamic Worship"
+    },
+    {
+      "id": "49",
+      "question": "What is Ihram?",
+      "answer": "Ihram is the state of spiritual purity and sacredness that a Muslim enters into before performing the pilgrimage of Hajj or Umrah. It involves wearing special garments and refraining from certain actions to focus entirely on worship.",
+      "category": "Islamic Worship"
+    },
+    {
+      "id": "50",
+      "question": "What is the significance of the Kaaba?",
+      "answer": "The Kaaba is the holiest site in Islam, located in Mecca. Muslims face the Kaaba during prayer (Salat), and it is the focal point for Hajj, where millions of Muslims gather to perform the pilgrimage.",
+      "category": "Islamic Worship"
+    },
+    {
+      "id": "51",
+      "question": "What is the role of the mosque in Islam?",
+      "answer": "The mosque is a place of worship and community for Muslims. It is where Muslims gather for the daily prayers, Friday prayers (Jumu'ah), and other religious activities. It also serves as a center for education, social services, and charity.",
+      "category": "Islamic Practices and Etiquette"
+    },
+    {
+      "id": "52",
+      "question": "How do Muslims greet each other?",
+      "answer": "Muslims often greet each other with the phrase “Assalamu Alaikum” (Peace be upon you). The response is “Wa Alaikum Assalam” (And peace be upon you too). This greeting reflects the importance of peace in Islam.",
+      "category": "Islamic Practices and Etiquette"
+    },
+    {
+      "id": "53",
+      "question": "What is the significance of the Islamic calendar?",
+      "answer": "The Islamic calendar is based on the lunar cycle, meaning months begin with the sighting of the new moon. Key events in the Islamic year, such as Ramadan and Hajj, are determined based on this calendar.",
+      "category": "Islamic Practices and Etiquette"
+    },
+    {
+      "id": "54",
+      "question": "What is Halal?",
+      "answer": "Halal refers to anything that is permissible or lawful in Islam. It is the opposite of Haram (forbidden). Halal guidelines apply to food, drink, behavior, and business practices.",
+      "category": "Islamic Practices and Etiquette"
+    },
+    {
+      "id": "55",
+      "question": "What is Haram?",
+      "answer": "Haram refers to anything that is prohibited in Islam. This includes behaviors such as eating pork, drinking alcohol, and engaging in dishonest or immoral actions.",
+      "category": "Islamic Practices and Etiquette"
+    },
+    {
+      "id": "56",
+      "question": "What is the significance of modesty in Islam?",
+      "answer": "Modesty is highly emphasized in Islam for both men and women. Muslims are encouraged to dress modestly, behave with humility, and avoid actions that could lead to inappropriate behavior or immodesty.",
+      "category": "Islamic Practices and Etiquette"
+    },
+    {
+      "id": "57",
+      "question": "What is the importance of cleanliness in Islam?",
+      "answer": "Cleanliness is considered a part of faith in Islam. Muslims are required to maintain physical and spiritual cleanliness, particularly before prayer. Wudu (ablution) is one of the main practices to ensure cleanliness before prayer.",
+      "category": "Islamic Practices and Etiquette"
+    },
+    {
+      "id": "58",
+      "question": "Can a Muslim marry a non-Muslim?",
+      "answer": "In Islam, a Muslim man is allowed to marry a Jewish or Christian woman (known as \"People of the Book\"), but a Muslim woman is not allowed to marry a non-Muslim man unless he converts to Islam.",
+      "category": "Islamic Practices and Etiquette"
+    },
+    {
+      "id": "59",
+      "question": "What is the role of women in Islam?",
+      "answer": "Women in Islam are respected and are granted rights to education, property, marriage, and work. Islam encourages men and women to live with mutual respect, love, and understanding. Women play a central role in family life and community.",
+      "category": "Islamic Practices and Etiquette"
+    },
+    {
+      "id": "60",
+      "question": "What is the role of men in Islam?",
+      "answer": "Men in Islam are expected to be providers and protectors of their families. They are responsible for maintaining justice, treating others with respect, and leading by example in matters of faith and morals.",
+      "category": "Islamic Practices and Etiquette"
+    },
+    {
+      "id": "61",
+      "question": "What happens after death in Islam?",
+      "answer": "Muslims believe that after death, the soul is taken to the grave, where it undergoes questioning by two angels, Munkar and Nakir. The soul will then be judged on the Day of Judgment, where it will either be rewarded with eternal paradise or punished in hell.",
+      "category": "Beliefs About Afterlife"
+    },
+    {
+      "id": "62",
+      "question": "What is the Day of Judgment?",
+      "answer": "The Day of Judgment is when all people will be resurrected and judged by Allah for their deeds in this life. The righteous will be rewarded with paradise, while the wrongdoers will be punished in hell.",
+      "category": "Beliefs About Afterlife"
+    },
+    {
+      "id": "63",
+      "question": "What is Paradise (Jannah)?",
+      "answer": "Jannah is the Islamic concept of paradise, a place of eternal peace, happiness, and reward for those who have followed Allah’s guidance and lived righteously. It is described in the Quran as a garden filled with blessings.",
+      "category": "Beliefs About Afterlife"
+    },
+    {
+      "id": "64",
+      "question": "What is Hell (Jahannam)?",
+      "answer": "Jahannam is the Islamic concept of hell, a place of torment and punishment for those who have rejected faith, committed evil deeds, and disobeyed Allah. The punishment is eternal for some, while others may eventually be forgiven and released.",
+      "category": "Beliefs About Afterlife"
+    },
+    {
+      "id": "65",
+      "question": "Can Muslims pray for someone who has passed away?",
+      "answer": "Yes, Muslims can and should pray for the deceased. The Salat al-Janazah (funeral prayer) is performed to seek forgiveness for the deceased, and Muslims often make personal supplications (du'a) for them.",
+      "category": "Beliefs About Afterlife"
+    },
+    {
+      "id": "66",
+      "question": "What is Shariah law?",
+      "answer": "Shariah refers to Islamic law derived from the Quran and Hadith. It governs all aspects of a Muslim's life, including religious, personal, social, and economic matters. It includes guidelines for behavior, morality, and justice.",
+      "category": "Islamic Law and Ethics"
+    },
+    {
+      "id": "67",
+      "question": "What is the difference between Shariah and man-made law?",
+      "answer": "Shariah is based on divine principles and is considered immutable and unalterable, while man-made laws are created by human societies and can change over time. Shariah provides a framework for moral and ethical behavior, while man-made laws may vary depending on the society.",
+      "category": "Islamic Law and Ethics"
+    },
+    {
+      "id": "68",
+      "question": "What is the concept of justice in Islam?",
+      "answer": "Justice in Islam is central to the faith. Allah commands Muslims to uphold justice in all matters, whether personal or societal. Muslims are encouraged to act justly in dealings with others, both in worldly matters and in religious obligations.",
+      "category": "Islamic Law and Ethics"
+    },
+    {
+      "id": "69",
+      "question": "What are the rules of inheritance in Islam?",
+      "answer": "Islamic inheritance laws are clearly outlined in the Quran and ensure fair distribution of wealth among heirs. Specific shares are allocated to family members based on their relationship to the deceased, ensuring that both men and women inherit.",
+      "category": "Islamic Law and Ethics"
+    },
+    {
+      "id": "70",
+      "question": "What is the concept of forgiveness in Islam?",
+      "answer": "Forgiveness is a central theme in Islam. Muslims are encouraged to forgive others and seek Allah’s forgiveness for their own sins. Allah is described as The Most Forgiving, and repentance is an essential part of seeking His mercy.",
+      "category": "Islamic Law and Ethics"
+    },
+    {
+      "id": "71",
+      "question": "What does it mean to be a Muslim?",
+      "answer": "To be a Muslim means to believe in the oneness of Allah, accept Muhammad (PBUH) as His final prophet, and follow the teachings of the Quran and the Hadith. It also means living a life of worship, charity, and submission to Allah’s will.",
+      "category": "Conversion to Islam"
+    },
+    {
+      "id": "72",
+      "question": "How does one become a Muslim?",
+      "answer": "To become a Muslim, a person must sincerely declare the Shahada (testimony of faith): \"There is no god but Allah, and Muhammad is His messenger.\" This declaration signifies entry into the faith.",
+      "category": "Conversion to Islam"
+    },
+    {
+      "id": "73",
+      "question": "Do Muslims need to go to the mosque regularly?",
+      "answer": "While attending the mosque is encouraged, especially for the Jumu'ah (Friday prayer), Muslims can pray at home as long as they fulfill their obligatory prayers. The mosque is an important place for community worship, but personal worship can take place anywhere.",
+      "category": "Conversion to Islam"
+    },
+    {
+      "id": "74",
+      "question": "Is there a specific way to convert to Islam?",
+      "answer": "Converting to Islam requires a sincere intention and reciting the Shahada in front of witnesses. There are no complicated rituals required, but it is recommended to learn about the faith and engage in supportive community.",
+      "category": "Conversion to Islam"
+    },
+    {
+      "id": "75",
+      "question": "Can a person convert to Islam at any time?",
+      "answer": "Yes, a person can convert to Islam at any time. Conversion is a personal decision based on belief and faith in the teachings of Islam.",
+      "category": "Conversion to Islam"
+    },
+    {
+      "id": "76",
+      "question": "Is Islam a peaceful religion?",
+      "answer": "Yes, Islam is a peaceful religion that promotes peace, justice, and compassion. The term \"Islam\" itself comes from the Arabic word \"salaam,\" meaning peace. Islam teaches peace in personal relationships, as well as between nations.",
+      "category": "Miscellaneous Questions"
+    },
+    {
+      "id": "77",
+      "question": "What is the significance of the Hijab (headscarf)?",
+      "answer": "The Hijab is a symbol of modesty and privacy in Islam. It is a personal choice for Muslim women to wear a headscarf to cover their hair and dress modestly in accordance with Islamic principles.",
+      "category": "Miscellaneous Questions"
+    },
+    {
+      "id": "78",
+      "question": "Why do Muslims fast during Ramadan?",
+      "answer": "Muslims fast during Ramadan to obey Allah's command, gain spiritual discipline, purify their souls, and empathize with the less fortunate.",
+      "category": "Miscellaneous Questions"
+    },
+    {
+      "id": "79",
+      "question": "Can Muslims drink alcohol?",
+      "answer": "No, Muslims are prohibited from consuming alcohol. The Quran explicitly forbids alcohol, considering it an intoxicant that can impair judgment and lead to sinful behavior.",
+      "category": "Miscellaneous Questions"
+    },
+    {
+      "id": "80",
+      "question": "Can Muslims eat pork?",
+      "answer": "No, pork is considered Haram (forbidden) in Islam. The Quran forbids the consumption of pork and its by-products.",
+      "category": "Miscellaneous Questions"
+    },
+    {
+      "id": "81",
+      "question": "Does Islam encourage the pursuit of knowledge?",
+      "answer": "Yes, Islam places a high value on seeking knowledge. The Quran and Hadith emphasize the importance of education and learning in all fields, including science, philosophy, and the arts.",
+      "category": "Islam and Science"
+    },
+    {
+      "id": "82",
+      "question": "What is the Islamic view of science?",
+      "answer": "Islam encourages the pursuit of scientific knowledge. Many early Muslim scholars contributed significantly to fields like astronomy, medicine, mathematics, and philosophy, and their discoveries are still valued today.",
+      "category": "Islam and Science"
+    },
+    {
+      "id": "83",
+      "question": "Does Islam accept evolution?",
+      "answer": "The concept of evolution is debated within the Islamic community. Some scholars believe that the process of creation was guided by Allah's will, while others argue that Allah created humans in their present form. Muslims are encouraged to explore science and seek knowledge while maintaining faith in Allah.",
+      "category": "Islam and Science"
+    },
+    {
+      "id": "84",
+      "question": "Does Islam support environmental protection?",
+      "answer": "Islam places great importance on caring for the environment. The Quran teaches that humans are stewards of the Earth and must use its resources responsibly, avoiding wastefulness and harm.",
+      "category": "Islam and Science"
+    },
+     {
+      "id": "85",
+      "question": "What is the significance of fasting in Ramadan?",
+      "answer": "Fasting during Ramadan serves to purify the soul, develop self-discipline, and strengthen empathy for those who are less fortunate. It is a time of spiritual reflection and closeness to Allah.",
+      "category": "Social and Cultural Practices"
+    },
+    {
+      "id": "86",
+      "question": "Why do Muslims celebrate Eid al-Fitr?",
+      "answer": "Eid al-Fitr celebrates the end of Ramadan and the successful completion of the fast. It is a time of joy, gratitude, feasting, and charity, marking a renewal of faith.",
+      "category": "Social and Cultural Practices"
+    },
+    {
+      "id": "87",
+      "question": "Can Muslims have pets?",
+      "answer": "Yes, Muslims can have pets. However, Islam emphasizes treating animals with kindness and respect. Pets should be well cared for, and harming animals is prohibited.",
+      "category": "Social and Cultural Practices"
+    },
+    {
+      "id": "88",
+      "question": "What is the significance of the Islamic New Year?",
+      "answer": "The Islamic New Year is the beginning of the Islamic lunar calendar. It marks the migration (Hijra) of Prophet Muhammad (PBUH) from Mecca to Medina and is a time for reflection on the past year and setting goals for the future.",
+      "category": "Social and Cultural Practices"
+    },
+    {
+      "id": "89",
+      "question": "What is the role of the family in Islam?",
+      "answer": "Family is highly valued in Islam, with strong emphasis on respecting parents, upholding family ties, and treating one another with kindness, love, and fairness. Parents have a significant role in raising children with Islamic values.",
+      "category": "Social and Cultural Practices"
+    },
+    {
+      "id": "90",
+      "question": "Do Muslims celebrate birthdays?",
+      "answer": "While there is no specific religious tradition for celebrating birthdays in Islam, many Muslims do celebrate birthdays as personal occasions. However, Islamic teachings emphasize that all celebrations should align with Islamic principles.",
+      "category": "Social and Cultural Practices"
+    },
+    {
+      "id": "91",
+      "question": "What is the role of the community in Islam?",
+      "answer": "The community (Ummah) is essential in Islam, as it provides support, strengthens faith, and encourages mutual care. Muslims are encouraged to be active members of their communities and help those in need.",
+      "category": "Social and Cultural Practices"
+    },
+    {
+      "id": "92",
+      "question": "Can Muslims make friends with non-Muslims?",
+      "answer": "Yes, Muslims are allowed to make friends with non-Muslims, as long as the relationship promotes mutual respect and does not interfere with their faith or values.",
+      "category": "Social and Cultural Practices"
+    },
+    {
+      "id": "93",
+      "question": "Can Muslims participate in non-Muslim holidays?",
+      "answer": "Muslims are not required to participate in non-Muslim holidays, but they can show respect and kindness by acknowledging the holidays of others while adhering to their own religious practices.",
+      "category": "Social and Cultural Practices"
+    },
+    {
+      "id": "94",
+      "question": "How does Islam view cultural diversity?",
+      "answer": "Islam embraces cultural diversity as a sign of Allah's creation. The Quran encourages mutual respect and understanding among people of different cultures, nations, and backgrounds. The unity of the Ummah transcends racial and cultural differences.",
+      "category": "Social and Cultural Practices"
+    }
+  ]

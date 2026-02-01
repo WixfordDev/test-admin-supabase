@@ -1,0 +1,311 @@
+[
+  {
+    "category": "General Questions About Zakat",
+    "question": "What is Zakat, and why is it important in Islam?",
+    "answer": "Zakat is an obligatory charity, one of the Five Pillars of Islam, aimed at purifying wealth, helping the needy, and fostering social equity.",
+    "quranReference": {
+      "surah": "Al-Baqarah",
+      "surahNumber": 2,
+      "verseNumber": 177,
+      "quote": "It is not righteousness that you turn your faces towards the East or the West, but righteousness is in one who believes in Allah, the Last Day, the Angels, the Book, and the Prophets, and gives his wealth, in spite of love for it, to relatives, orphans, the needy, the traveler, those who ask [for help], and for freeing slaves."
+    },
+    "hadithReference": {
+      "source": "Sahih Muslim",
+      "quote": "The giving of charity is a duty upon every Muslim."
+    }
+  },
+  {
+    "category": "General Questions About Zakat",
+    "question": "What does Zakat mean linguistically and religiously?",
+    "answer": "Linguistically, Zakat means \"purification\" or \"growth.\" Religiously, it’s a fixed portion (typically 2.5%) of wealth given annually to purify one’s earnings and soul.",
+    "quranReference": {
+      "surah": "At-Tawbah",
+      "surahNumber": 9,
+      "verseNumber": 103,
+      "quote": "Take, [O Muhammad], from their wealth a charity by which you purify them and cause them increase..."
+    }
+  },
+  {
+    "category": "General Questions About Zakat",
+    "question": "Why is Zakat one of the Five Pillars of Islam?",
+    "answer": "It is essential for both spiritual growth and social welfare, promoting wealth circulation and reducing inequality, as emphasized in the Quran and Hadith.",
+    "hadithReference": {
+      "source": "Sahih Bukhari",
+      "quote": "Islam is built upon five [pillars]: the testimony of faith, prayer, zakat, fasting in Ramadan, and pilgrimage to the House."
+    }
+  },
+  {
+    "category": "General Questions About Zakat",
+    "question": "Who is obligated to pay Zakat?",
+    "answer": "Muslims who are sane, adult (post-puberty), and possess wealth above the Nisab threshold for a full lunar year must pay Zakat.",
+    "quranReference": {
+      "surah": "At-Tawbah",
+      "surahNumber": 9,
+      "verseNumber": 60,
+      "quote": "Zakat expenditures are only for the poor and for the needy and for those employed to collect [the funds] and for bringing hearts together..."
+    }
+  },
+  {
+    "category": "Wealth, Nisab, and Calculation",
+    "question": "What is the Nisab, and how is it determined?",
+    "answer": "The Nisab is the minimum wealth threshold for Zakat eligibility, equivalent to 87.48 grams of gold or 612.36 grams of silver.",
+    "hadithReference": {
+      "source": "Sunan Ibn Majah",
+      "quote": "Zakat is obligatory on you, and its due is on whatever wealth reaches the Nisab."
+    }
+  },
+  {
+    "category": "Wealth, Nisab, and Calculation",
+    "question": "How much Zakat do I need to pay on my wealth?",
+    "answer": "Zakat is 2.5% (1/40th) of wealth held for a year, including cash, gold, silver, and business assets, after deducting liabilities.",
+    "quranReference": {
+      "surah": "Al-Baqarah",
+      "surahNumber": 2,
+      "verseNumber": 267,
+      "quote": "O you who have believed, spend from the good things which you have earned and from that which We have produced for you from the earth."
+    }
+  },
+  {
+    "category": "Wealth, Nisab, and Calculation",
+    "question": "When is Zakat due, and what is the Hawl?",
+    "answer": "Zakat is due annually after a full lunar year (Hawl) of possessing wealth above Nisab. You select a fixed date to calculate and pay.",
+    "hadithReference": {
+      "source": "Sahih Bukhari",
+      "quote": "The time for Zakat is when one full lunar year has passed on the wealth."
+    }
+  },
+  {
+    "category": "Wealth, Nisab, and Calculation",
+    "question": "How do I calculate Zakat if I have outstanding debts?",
+    "answer": "You may deduct immediate debts (due within a year) from your wealth before calculating Zakat. Long-term debts may be treated differently depending on interpretation.",
+    "hadithReference": {
+      "source": "Sunan Abu Dawood",
+      "quote": "If a person has debts and has wealth that exceeds the Nisab after the debts are paid, he is liable to pay Zakat."
+    }
+  },
+  {
+    "category": "Eligible Recipients of Zakat",
+    "question": "Who are the eligible recipients of Zakat according to the Quran?",
+    "answer": "The Quran lists eight categories: the poor, needy, Zakat administrators, those whose hearts are to be reconciled, captives, debtors, those in Allah’s cause, and stranded travelers.",
+    "quranReference": {
+      "surah": "At-Tawbah",
+      "surahNumber": 9,
+      "verseNumber": 60,
+      "quote": "Zakat expenditures are only for the poor and for the needy and for those employed to collect [the funds]..."
+    }
+  },
+  {
+    "category": "Eligible Recipients of Zakat",
+    "question": "Can I give Zakat to my immediate family (e.g., parents, spouse)?",
+    "answer": "No, you cannot give Zakat to parents, spouse, or children you’re responsible for supporting.",
+    "hadithReference": {
+      "source": "Sahih Bukhari",
+      "quote": "The best charity is that which is given to a family member."
+    }
+  },
+  {
+    "category": "Eligible Recipients of Zakat",
+    "question": "Can Zakat be given to non-Muslims in need?",
+    "answer": "Generally, no, except in specific cases such as for new converts or extreme hardship.",
+    "hadithReference": {
+      "source": "Sahih Muslim",
+      "quote": "Zakat is only for Muslims."
+    }
+  },
+  {
+    "category": "Zakat on Different Assets",
+    "question": "What types of wealth are subject to Zakat?",
+    "answer": "Zakat applies to cash, gold, silver, business inventory, livestock, agricultural produce, and certain investments, excluding personal items like homes or cars.",
+    "quranReference": {
+      "surah": "Al-Baqarah",
+      "surahNumber": 2,
+      "verseNumber": 267,
+      "quote": "Spend from the good things which you have earned and from that which We have produced for you from the earth."
+    }
+  },
+  {
+    "category": "Zakat on Different Assets",
+    "question": "Is Zakat due on personal items like my house or car?",
+    "answer": "No, unless intended for sale or investment.",
+    "hadithReference": {
+      "source": "Sunan Abu Dawood",
+      "quote": "Zakat is due only on items intended for trade or investment."
+    }
+  },
+  {
+    "category": "Zakat on Different Assets",
+    "question": "Is Zakat due on gold or silver jewelry I wear daily?",
+    "answer": "It depends on the school of thought. Some schools say yes, others say no if it's for personal use.",
+    "hadithReference": {
+      "source": "Sahih Muslim",
+      "quote": "There is no Zakat on gold or silver jewelry worn by the owner, unless it is intended for trade."
+    }
+  },
+  {
+    "category": "Special Zakat Scenarios",
+    "question": "Can Zakat be paid in installments throughout the year?",
+    "answer": "Preferably, Zakat should be paid in one lump sum, but installments are permissible if necessary.",
+    "quranReference": {
+      "surah": "At-Tawbah",
+      "surahNumber": 9,
+      "verseNumber": 60,
+      "quote": "The poor and the needy... [are recipients of] Zakat, to be paid in the way prescribed."
+    }
+  },
+  {
+    "category": "Special Zakat Scenarios",
+    "question": "Can I pay Zakat in goods (e.g., food, clothes) instead of cash?",
+    "answer": "Yes, but cash is typically preferred for practicality.",
+    "hadithReference": {
+      "source": "Sahih Bukhari",
+      "quote": "Give Zakat in the form of the best that you have."
+    }
+  },
+  {
+    "category": "Special Zakat Scenarios",
+    "question": "Is Zakat required on stocks, shares, or mutual funds?",
+    "answer": "Yes, on the market value if held for a year, although there is some debate on whether it should be on the total value or just dividends.",
+    "quranReference": {
+      "surah": "Al-Baqarah",
+      "surahNumber": 2,
+      "verseNumber": 267,
+      "quote": "Spend from the good things which you have earned."
+    }
+  },
+  {
+    "category": "Special Zakat Scenarios",
+    "question": "Is Zakat due on inherited wealth?",
+    "answer": "Yes, once the wealth is received and held for a year above Nisab.",
+    "quranReference": {
+      "surah": "An-Nisa",
+      "surahNumber": 4,
+      "verseNumber": 7,
+      "quote": "For men is a share of what their parents and close relatives leave, and for women is a share of what their parents and close relatives leave."
+    }
+  },
+  {
+    "category": "Zakat and Family Support",
+    "question": "Can I give Zakat to my spouse if they’re in need?",
+    "answer": "No, as you are obligated to support your spouse. Zakat cannot benefit the giver directly.",
+    "quranReference": {
+      "surah": "Al-Baqarah",
+      "surahNumber": 2,
+      "verseNumber": 177,
+      "quote": "It is righteousness to give to those in need, but not to those whom you are already obligated to support."
+    }
+  },
+  {
+    "category": "Zakat and Family Support",
+    "question": "Are children required to pay Zakat on their wealth?",
+    "answer": "No, but some scholars say guardians should pay on their behalf if the wealth exceeds Nisab.",
+    "hadithReference": {
+      "source": "Sunan Abu Dawood",
+      "quote": "The wealth of a child is subject to Zakat, and the guardian may pay on their behalf."
+    }
+  },
+  {
+    "category": "Zakat and Family Support",
+    "question": "Do mentally incapacitated individuals owe Zakat?",
+    "answer": "No, they are exempt due to lack of responsibility, but guardians may pay on their behalf if wealth exists.",
+    "hadithReference": {
+      "source": "Sahih Muslim",
+      "quote": "There is no Zakat on a person who is mentally incapacitated."
+    }
+  },
+  {
+    "category": "Intentions and Validity",
+    "question": "Do I need to make a specific intention (niyyah) for Zakat?",
+    "answer": "Yes, you must have the intention at the time of payment or allocation.",
+    "hadithReference": {
+      "source": "Sahih Bukhari",
+      "quote": "Actions are judged by their intentions."
+    }
+  },
+  {
+    "category": "Intentions and Validity",
+    "question": "What if my intention was unclear when paying Zakat?",
+    "answer": "It’s valid if you intended charity; just clarify next time.",
+    "hadithReference": {
+      "source": "Sahih Bukhari",
+      "quote": "In the name of Allah, the Most Gracious, the Most Merciful, charity is accepted by the intention."
+    }
+  },
+  {
+    "category": "Zakat and Debt",
+    "question": "Can Zakat be used to pay off someone’s debt?",
+    "answer": "Yes, if they are among the eligible recipients, such as those in debt.",
+    "quranReference": {
+      "surah": "At-Tawbah",
+      "surahNumber": 9,
+      "verseNumber": 60,
+      "quote": "Zakat expenditures are only for the poor... and for those in debt."
+    }
+  },
+  {
+    "category": "Zakat and Debt",
+    "question": "Can Zakat be given to someone who owes me money?",
+    "answer": "Yes, if they are eligible (e.g., poor), but not for the specific purpose of settling your debt.",
+    "hadithReference": {
+      "source": "Sahih Muslim",
+      "quote": "You can give Zakat to those in debt, but it cannot be used to pay back a debt owed to you personally."
+    }
+  },
+  {
+    "category": "Zakat and Non-Muslim Countries",
+    "question": "Is Zakat deductible from income tax in non-Muslim countries?",
+    "answer": "There is no Islamic ruling on this, but some non-Muslim countries may allow charity deductions."
+  },
+  {
+    "category": "Zakat and Non-Muslim Countries",
+    "question": "Can Zakat be given to a charitable organization or NGO?",
+    "answer": "Yes, if the organization ensures that Zakat reaches the eight eligible categories.",
+    "quranReference": {
+      "surah": "At-Tawbah",
+      "surahNumber": 9,
+      "verseNumber": 60,
+      "quote": "Zakat expenditures are only for the poor... and for those employed to collect [the funds]."
+    }
+  },
+  {
+    "category": "Miscellaneous Zakat Questions",
+    "question": "Can Zakat be used to free someone from slavery or captivity?",
+    "answer": "Yes, this is an eligible cause under \"freeing captives\" in the Quran.",
+    "quranReference": {
+      "surah": "Al-Baqarah",
+      "surahNumber": 2,
+      "verseNumber": 177,
+      "quote": "Righteousness is not in turning your face to the East or West but in giving charity to those in need."
+    }
+  },
+  {
+    "category": "Miscellaneous Zakat Questions",
+    "question": "Is Zakat due on income from a salary or wages?",
+    "answer": "Yes, if saved for a year above Nisab.",
+    "quranReference": {
+      "surah": "Al-Baqarah",
+      "surahNumber": 2,
+      "verseNumber": 267,
+      "quote": "Spend from the good things which you have earned."
+    }
+  },
+  {
+    "category": "Miscellaneous Zakat Questions",
+    "question": "Can Zakat be used to help refugees or displaced people?",
+    "answer": "Yes, if they are poor, needy, or travelers.",
+    "quranReference": {
+      "surah": "At-Tawbah",
+      "surahNumber": 9,
+      "verseNumber": 60,
+      "quote": "Zakat expenditures are only for the poor... and for those in debt."
+    }
+  },
+  {
+    "category": "Miscellaneous Zakat Questions",
+    "question": "What if I’m unsure whether someone qualifies for Zakat?",
+    "answer": "You can give if you reasonably believe they’re eligible, as good intentions count.",
+    "hadithReference": {
+      "source": "Sahih Muslim",
+      "quote": "Give charity even with a small amount, as it counts as part of Zakat."
+    }
+  }
+]

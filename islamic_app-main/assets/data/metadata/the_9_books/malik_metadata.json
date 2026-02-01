@@ -1,0 +1,568 @@
+{
+  "id": 7,
+  "metadata": {
+    "id": 7,
+    "length": 1985,
+    "arabic": {
+      "title": "موطأ مالك",
+      "author": "الإمام مالك بن أنس",
+      "introduction": ""
+    },
+    "english": {
+      "title": "Muwatta Malik",
+      "author": "Imam Malik ibn Anas",
+      "introduction": ""
+    }
+  },
+  "chapters": [
+    {
+      "id": 1,
+      "bookId": 7,
+      "length": 31,
+      "start": 1,
+      "end": 31,
+      "english": "The Times of Prayer",
+      "arabic": "كتاب وقوت الصلاة"
+    },
+    {
+      "id": 2,
+      "bookId": 7,
+      "length": 115,
+      "start": 32,
+      "end": 146,
+      "english": "Purity",
+      "arabic": "كتاب الطهارة"
+    },
+    {
+      "id": 3,
+      "bookId": 7,
+      "length": 75,
+      "start": 147,
+      "end": 221,
+      "english": "Prayer",
+      "arabic": "كتاب الصلاة"
+    },
+    {
+      "id": 4,
+      "bookId": 7,
+      "length": 3,
+      "start": 222,
+      "end": 224,
+      "english": "Forgetfulness in Prayer",
+      "arabic": "كتاب السهو"
+    },
+    {
+      "id": 5,
+      "bookId": 7,
+      "length": 23,
+      "start": 225,
+      "end": 247,
+      "english": "Jumu'a",
+      "arabic": "كتاب الجمعة"
+    },
+    {
+      "id": 6,
+      "bookId": 7,
+      "length": 8,
+      "start": 248,
+      "end": 255,
+      "english": "Prayer in Ramadan",
+      "arabic": "كتاب الصلاة فى رمضان"
+    },
+    {
+      "id": 7,
+      "bookId": 7,
+      "length": 33,
+      "start": 256,
+      "end": 288,
+      "english": "Tahajjud",
+      "arabic": "كتاب صلاة الليل"
+    },
+    {
+      "id": 8,
+      "bookId": 7,
+      "length": 39,
+      "start": 289,
+      "end": 327,
+      "english": "Prayer in Congregation",
+      "arabic": "كتاب صلاة الجماعة"
+    },
+    {
+      "id": 9,
+      "bookId": 7,
+      "length": 104,
+      "start": 328,
+      "end": 431,
+      "english": "Shortening the Prayer",
+      "arabic": "كتاب قصر الصلاة فى السفر"
+    },
+    {
+      "id": 10,
+      "bookId": 7,
+      "length": 14,
+      "start": 432,
+      "end": 445,
+      "english": "The Two 'Ids",
+      "arabic": "كتاب العيدين"
+    },
+    {
+      "id": 11,
+      "bookId": 7,
+      "length": 5,
+      "start": 446,
+      "end": 450,
+      "english": "The Fear Prayer",
+      "arabic": "كتاب صلاة الخوف"
+    },
+    {
+      "id": 12,
+      "bookId": 7,
+      "length": 4,
+      "start": 451,
+      "end": 454,
+      "english": "The Eclipse Prayer",
+      "arabic": "كتاب صلاة الكسوف"
+    },
+    {
+      "id": 13,
+      "bookId": 7,
+      "length": 6,
+      "start": 455,
+      "end": 460,
+      "english": "Asking for Rain",
+      "arabic": "كتاب الاستسقاء"
+    },
+    {
+      "id": 14,
+      "bookId": 7,
+      "length": 16,
+      "start": 461,
+      "end": 476,
+      "english": "The Qibla",
+      "arabic": "كتاب القبلة"
+    },
+    {
+      "id": 15,
+      "bookId": 7,
+      "length": 52,
+      "start": 477,
+      "end": 528,
+      "english": "The Qur'an",
+      "arabic": "كتاب القرآن"
+    },
+    {
+      "id": 16,
+      "bookId": 7,
+      "length": 59,
+      "start": 529,
+      "end": 587,
+      "english": "Burials",
+      "arabic": "كتاب الجنائز"
+    },
+    {
+      "id": 17,
+      "bookId": 7,
+      "length": 63,
+      "start": 588,
+      "end": 650,
+      "english": "Zakat",
+      "arabic": "كتاب الزكاة"
+    },
+    {
+      "id": 18,
+      "bookId": 7,
+      "length": 66,
+      "start": 651,
+      "end": 716,
+      "english": "Fasting",
+      "arabic": "كتاب الصيام"
+    },
+    {
+      "id": 19,
+      "bookId": 7,
+      "length": 18,
+      "start": 717,
+      "end": 734,
+      "english": "I'tikaf in Ramadan",
+      "arabic": "كتاب الاعتكاف"
+    },
+    {
+      "id": 20,
+      "bookId": 7,
+      "length": 267,
+      "start": 735,
+      "end": 1001,
+      "english": "Hajj",
+      "arabic": "كتاب الحج"
+    },
+    {
+      "id": 21,
+      "bookId": 7,
+      "length": 54,
+      "start": 1002,
+      "end": 1055,
+      "english": "Jihad",
+      "arabic": "كتاب الجهاد"
+    },
+    {
+      "id": 22,
+      "bookId": 7,
+      "length": 19,
+      "start": 1056,
+      "end": 1074,
+      "english": "Vows and Oaths",
+      "arabic": "كتاب النذور والأيمان"
+    },
+    {
+      "id": 23,
+      "bookId": 7,
+      "length": 13,
+      "start": 1075,
+      "end": 1087,
+      "english": "Sacrificial Animals",
+      "arabic": "كتاب الضحايا"
+    },
+    {
+      "id": 24,
+      "bookId": 7,
+      "length": 10,
+      "start": 1088,
+      "end": 1097,
+      "english": "Slaughtering Animals",
+      "arabic": "كتاب الذبائح"
+    },
+    {
+      "id": 25,
+      "bookId": 7,
+      "length": 19,
+      "start": 1098,
+      "end": 1116,
+      "english": "Game",
+      "arabic": "كتاب الصيد"
+    },
+    {
+      "id": 26,
+      "bookId": 7,
+      "length": 7,
+      "start": 1117,
+      "end": 1123,
+      "english": "The 'Aqiqa",
+      "arabic": "كتاب العقيقة"
+    },
+    {
+      "id": 27,
+      "bookId": 7,
+      "length": 24,
+      "start": 1124,
+      "end": 1147,
+      "english": "Fara'id",
+      "arabic": "كتاب الفرائض"
+    },
+    {
+      "id": 28,
+      "bookId": 7,
+      "length": 61,
+      "start": 1148,
+      "end": 1208,
+      "english": "Marriage",
+      "arabic": "كتاب النكاح"
+    },
+    {
+      "id": 29,
+      "bookId": 7,
+      "length": 120,
+      "start": 1209,
+      "end": 1328,
+      "english": "Divorce",
+      "arabic": "كتاب الطلاق"
+    },
+    {
+      "id": 30,
+      "bookId": 7,
+      "length": 18,
+      "start": 1329,
+      "end": 1346,
+      "english": "Suckling",
+      "arabic": "كتاب الرضاع"
+    },
+    {
+      "id": 31,
+      "bookId": 7,
+      "length": 103,
+      "start": 1347,
+      "end": 1449,
+      "english": "Business Transactions",
+      "arabic": "كتاب البيوع"
+    },
+    {
+      "id": 32,
+      "bookId": 7,
+      "length": 16,
+      "start": 1450,
+      "end": 1465,
+      "english": "Qirad",
+      "arabic": "كتاب القراض"
+    },
+    {
+      "id": 33,
+      "bookId": 7,
+      "length": 3,
+      "start": 1466,
+      "end": 1468,
+      "english": "Sharecropping",
+      "arabic": "كتاب المساقاة"
+    },
+    {
+      "id": 34,
+      "bookId": 7,
+      "length": 5,
+      "start": 1469,
+      "end": 1473,
+      "english": "Renting Land",
+      "arabic": "كتاب كراء الأرض"
+    },
+    {
+      "id": 35,
+      "bookId": 7,
+      "length": 5,
+      "start": 1474,
+      "end": 1478,
+      "english": "Pre-emption in Property",
+      "arabic": "كتاب الشفعة"
+    },
+    {
+      "id": 36,
+      "bookId": 7,
+      "length": 72,
+      "start": 1479,
+      "end": 1550,
+      "english": "Judgements",
+      "arabic": "كتاب الأقضية"
+    },
+    {
+      "id": 37,
+      "bookId": 7,
+      "length": 13,
+      "start": 1551,
+      "end": 1563,
+      "english": "Wills and Testaments",
+      "arabic": "كتاب الوصية"
+    },
+    {
+      "id": 38,
+      "bookId": 7,
+      "length": 28,
+      "start": 1564,
+      "end": 1591,
+      "english": "Setting Free and Wala'",
+      "arabic": "كتاب العتق والولاء"
+    },
+    {
+      "id": 39,
+      "bookId": 7,
+      "length": 15,
+      "start": 1592,
+      "end": 1606,
+      "english": "The Mukatab",
+      "arabic": "كتاب المكاتب"
+    },
+    {
+      "id": 40,
+      "bookId": 7,
+      "length": 8,
+      "start": 1607,
+      "end": 1614,
+      "english": "The Mudabbar",
+      "arabic": "كتاب المدبر"
+    },
+    {
+      "id": 41,
+      "bookId": 7,
+      "length": 37,
+      "start": 1615,
+      "end": 1651,
+      "english": "Hudud",
+      "arabic": "كتاب الحدود"
+    },
+    {
+      "id": 42,
+      "bookId": 7,
+      "length": 20,
+      "start": 1652,
+      "end": 1671,
+      "english": "Drinks",
+      "arabic": "كتاب الأشربة"
+    },
+    {
+      "id": 43,
+      "bookId": 7,
+      "length": 45,
+      "start": 1672,
+      "end": 1716,
+      "english": "Blood-Money",
+      "arabic": "كتاب العقول"
+    },
+    {
+      "id": 44,
+      "bookId": 7,
+      "length": 6,
+      "start": 1717,
+      "end": 1722,
+      "english": "The Oath of Qasama",
+      "arabic": "كتاب القسامة"
+    },
+    {
+      "id": 45,
+      "bookId": 7,
+      "length": 25,
+      "start": 1723,
+      "end": 1747,
+      "english": "Madina",
+      "arabic": "كتاب الْمَدِينَةِ"
+    },
+    {
+      "id": 46,
+      "bookId": 7,
+      "length": 10,
+      "start": 1748,
+      "end": 1757,
+      "english": "The Decree",
+      "arabic": "كتاب القدر"
+    },
+    {
+      "id": 47,
+      "bookId": 7,
+      "length": 18,
+      "start": 1758,
+      "end": 1775,
+      "english": "Good Character",
+      "arabic": "كتاب حسن الخلق"
+    },
+    {
+      "id": 48,
+      "bookId": 7,
+      "length": 20,
+      "start": 1776,
+      "end": 1795,
+      "english": "Dress",
+      "arabic": "كتاب اللباس"
+    },
+    {
+      "id": 49,
+      "bookId": 7,
+      "length": 42,
+      "start": 1796,
+      "end": 1837,
+      "english": "The Description of the Prophet, may Allah Bless Him and Grant Him Peace",
+      "arabic": "كتاب صفة النبى صلى الله عليه وسلم"
+    },
+    {
+      "id": 50,
+      "bookId": 7,
+      "length": 19,
+      "start": 1838,
+      "end": 1856,
+      "english": "The Evil Eye",
+      "arabic": "كتاب العين"
+    },
+    {
+      "id": 51,
+      "bookId": 7,
+      "length": 17,
+      "start": 1857,
+      "end": 1873,
+      "english": "Hair",
+      "arabic": "كتاب الشعر"
+    },
+    {
+      "id": 52,
+      "bookId": 7,
+      "length": 8,
+      "start": 1874,
+      "end": 1881,
+      "english": "Visions",
+      "arabic": "كتاب الرؤيا"
+    },
+    {
+      "id": 53,
+      "bookId": 7,
+      "length": 8,
+      "start": 1882,
+      "end": 1889,
+      "english": "Greetings",
+      "arabic": "كتاب السلام"
+    },
+    {
+      "id": 54,
+      "bookId": 7,
+      "length": 45,
+      "start": 1890,
+      "end": 1934,
+      "english": "General Subjects",
+      "arabic": "كتاب الاستئذان"
+    },
+    {
+      "id": 55,
+      "bookId": 7,
+      "length": 3,
+      "start": 1935,
+      "end": 1937,
+      "english": "The Oath of Allegiance",
+      "arabic": "كتاب البيعة"
+    },
+    {
+      "id": 56,
+      "bookId": 7,
+      "length": 28,
+      "start": 1938,
+      "end": 1965,
+      "english": "Speech",
+      "arabic": "كتاب الكلام"
+    },
+    {
+      "id": 57,
+      "bookId": 7,
+      "length": 2,
+      "start": 1966,
+      "end": 1967,
+      "english": "Jahannam",
+      "arabic": "كتاب جهنم"
+    },
+    {
+      "id": 58,
+      "bookId": 7,
+      "length": 15,
+      "start": 1968,
+      "end": 1982,
+      "english": "Sadaqa",
+      "arabic": "كتاب الصدقة"
+    },
+    {
+      "id": 59,
+      "bookId": 7,
+      "length": 1,
+      "start": 1983,
+      "end": 1983,
+      "english": "Knowledge",
+      "arabic": "كتاب العلم"
+    },
+    {
+      "id": 60,
+      "bookId": 7,
+      "length": 1,
+      "start": 1984,
+      "end": 1984,
+      "english": "The Supplication of the Unjustly Wronged",
+      "arabic": "كتاب دعوة المظلوم"
+    },
+    {
+      "id": 61,
+      "bookId": 7,
+      "length": 1,
+      "start": 1985,
+      "end": 1985,
+      "english": "The Names of the Prophet, may Allah Bless Him and Grant Him Peace",
+      "arabic": "كتاب أسماء النبى صلى الله عليه وسلم"
+    }
+  ]
+}

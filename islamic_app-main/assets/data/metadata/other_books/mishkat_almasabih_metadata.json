@@ -1,0 +1,244 @@
+{
+  "id": 14,
+  "metadata": {
+    "id": 14,
+    "length": 4428,
+    "arabic": {
+      "title": "مشكاة المصابيح",
+      "author": "الإمام الكاتب التبريزي",
+      "introduction": ""
+    },
+    "english": {
+      "title": "Mishkat al-Masabih",
+      "author": "Al-Khatib Al-Tabrizi",
+      "introduction": ""
+    }
+  },
+  "chapters": [
+    {
+      "id": 1,
+      "bookId": 14,
+      "length": 188,
+      "start": 1,
+      "end": 188,
+      "english": "Faith",
+      "arabic": "كتاب الإيمان"
+    },
+    {
+      "id": 2,
+      "bookId": 14,
+      "length": 75,
+      "start": 189,
+      "end": 263,
+      "english": "Knowledge",
+      "arabic": "كتاب العلم"
+    },
+    {
+      "id": 3,
+      "bookId": 14,
+      "length": 258,
+      "start": 264,
+      "end": 521,
+      "english": "Purification",
+      "arabic": "كتاب الطهارة"
+    },
+    {
+      "id": 4,
+      "bookId": 14,
+      "length": 921,
+      "start": 522,
+      "end": 1442,
+      "english": "Prayer",
+      "arabic": "كتاب الصلاة"
+    },
+    {
+      "id": 5,
+      "bookId": 14,
+      "length": 243,
+      "start": 1443,
+      "end": 1685,
+      "english": "Funerals",
+      "arabic": "كتاب الجنائز"
+    },
+    {
+      "id": 6,
+      "bookId": 14,
+      "length": 180,
+      "start": 1686,
+      "end": 1865,
+      "english": "Zakat",
+      "arabic": "كتاب الزكاة"
+    },
+    {
+      "id": 7,
+      "bookId": 14,
+      "length": 148,
+      "start": 1866,
+      "end": 2013,
+      "english": "Fasting",
+      "arabic": "كتاب الصوم"
+    },
+    {
+      "id": 8,
+      "bookId": 14,
+      "length": 112,
+      "start": 2014,
+      "end": 2125,
+      "english": "The Excellent Qualities of the Qur'an",
+      "arabic": "كتاب فضائل القرآن"
+    },
+    {
+      "id": 9,
+      "bookId": 14,
+      "length": 272,
+      "start": 2126,
+      "end": 2397,
+      "english": "Supplications",
+      "arabic": "كتاب الدعوات"
+    },
+    {
+      "id": 10,
+      "bookId": 14,
+      "length": 246,
+      "start": 2398,
+      "end": 2643,
+      "english": "The Rites of Pilgrimage",
+      "arabic": "كتاب المناسك"
+    },
+    {
+      "id": 11,
+      "bookId": 14,
+      "length": 274,
+      "start": 2644,
+      "end": 2917,
+      "english": "Business Transactions",
+      "arabic": "كتاب البيوع"
+    },
+    {
+      "id": 12,
+      "bookId": 14,
+      "length": 37,
+      "start": 2918,
+      "end": 2954,
+      "english": "Inheritance and Wills",
+      "arabic": "كتاب الفرائض والوصايا"
+    },
+    {
+      "id": 13,
+      "bookId": 14,
+      "length": 293,
+      "start": 2955,
+      "end": 3247,
+      "english": "Marriage",
+      "arabic": "كتاب النكاح"
+    },
+    {
+      "id": 14,
+      "bookId": 14,
+      "length": 24,
+      "start": 3248,
+      "end": 3271,
+      "english": "Emancipation",
+      "arabic": "كتاب العتق"
+    },
+    {
+      "id": 15,
+      "bookId": 14,
+      "length": 39,
+      "start": 3272,
+      "end": 3310,
+      "english": "Oaths and Vows",
+      "arabic": "كتاب الإيمان والنذور"
+    },
+    {
+      "id": 16,
+      "bookId": 14,
+      "length": 100,
+      "start": 3311,
+      "end": 3410,
+      "english": "Retaliation",
+      "arabic": "كتاب القصاص"
+    },
+    {
+      "id": 17,
+      "bookId": 14,
+      "length": 94,
+      "start": 3411,
+      "end": 3504,
+      "english": "Prescribed Punishments",
+      "arabic": "كتاب الحدود"
+    },
+    {
+      "id": 18,
+      "bookId": 14,
+      "length": 121,
+      "start": 3505,
+      "end": 3625,
+      "english": "The Offices of Commander and Qadi",
+      "arabic": "كتاب الإمارة والقضاء"
+    },
+    {
+      "id": 19,
+      "bookId": 14,
+      "length": 273,
+      "start": 3626,
+      "end": 3898,
+      "english": "Jihad",
+      "arabic": "كتاب الجهاد"
+    },
+    {
+      "id": 20,
+      "bookId": 14,
+      "length": 93,
+      "start": 3899,
+      "end": 3991,
+      "english": "Game and Animals Which May Be Slaughtered",
+      "arabic": "كتاب الصيد والذبائح"
+    },
+    {
+      "id": 21,
+      "bookId": 14,
+      "length": 135,
+      "start": 3992,
+      "end": 4126,
+      "english": "Foods",
+      "arabic": "كتاب الأطعمة"
+    },
+    {
+      "id": 22,
+      "bookId": 14,
+      "length": 193,
+      "start": 4127,
+      "end": 4319,
+      "english": "Clothing",
+      "arabic": "كتاب اللباس"
+    },
+    {
+      "id": 23,
+      "bookId": 14,
+      "length": 88,
+      "start": 4320,
+      "end": 4407,
+      "english": "Medicine and Spells",
+      "arabic": "كتاب الطب والرقى"
+    },
+    {
+      "id": 24,
+      "bookId": 14,
+      "length": 20,
+      "start": 4408,
+      "end": 4427,
+      "english": "Visions",
+      "arabic": "كتاب الرؤيا"
+    },
+    {
+      "id": 0,
+      "bookId": 14,
+      "length": 1,
+      "start": 4428,
+      "end": 4428,
+      "english": "Author's Introduction",
+      "arabic": "مقدمة المؤلف"
+    }
+  ]
+}

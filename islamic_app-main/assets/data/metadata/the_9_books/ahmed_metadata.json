@@ -1,0 +1,91 @@
+{
+  "id": 8,
+  "metadata": {
+    "id": 8,
+    "length": 1374,
+    "arabic": {
+      "title": "مسند الإمام أحمد بن حنبل",
+      "author": "الإمام أحمد بن حنبل",
+      "introduction": ""
+    },
+    "english": {
+      "title": "Musnad Ahmad ibn Hanbal",
+      "author": "Imam Ahmad ibn Hanbal",
+      "introduction": ""
+    }
+  },
+  "chapters": [
+    {
+      "id": 1,
+      "bookId": 8,
+      "length": 77,
+      "start": 1,
+      "end": 77,
+      "english": "Musnad Abu Bakr as-Siddiq (ra)",
+      "arabic": "مُسْنَدُ أَبِي بَكْرٍ الصِّدِّيقِ رَضِيَ اللَّهُ عَنْهُ"
+    },
+    {
+      "id": 2,
+      "bookId": 8,
+      "length": 291,
+      "start": 78,
+      "end": 368,
+      "english": "Musnad `Umar b. al-Khattab (ra)",
+      "arabic": "مُسْنَدِ عُمَرَ بْنِ الْخَطَّابِ رَضِيَ اللَّهُ عَنْهُ"
+    },
+    {
+      "id": 3,
+      "bookId": 8,
+      "length": 8,
+      "start": 369,
+      "end": 376,
+      "english": "The Hadeeth of Saqeefah",
+      "arabic": "حَدِيثُ السَّقِيفَةِ"
+    },
+    {
+      "id": 4,
+      "bookId": 8,
+      "length": 152,
+      "start": 377,
+      "end": 528,
+      "english": "Musnad Uthman ibn Affan",
+      "arabic": "مُسْنَدُ عُثْمَانَ بْنِ عَفَّانَ رَضِيَ اللَّهُ عَنْهُ"
+    },
+    {
+      "id": 5,
+      "bookId": 8,
+      "length": 778,
+      "start": 529,
+      "end": 1306,
+      "english": "Musnad 'Ali Ibn Abi Talib",
+      "arabic": "وَمِنْ مُسْنَدِ عَلِيِّ بْنِ أَبِي طَالِبٍ رَضِيَ اللَّهُ عَنْهُ"
+    },
+    {
+      "id": 6,
+      "bookId": 8,
+      "length": 22,
+      "start": 1307,
+      "end": 1328,
+      "english": "Musnad of Abu Muhammad Talhah bin 'Ubaidullah",
+      "arabic": "مُسْنَدُ أَبِي مُحَمَّدٍ طَلْحَةَ بْنِ عُبَيْدِ اللَّهِ رَضِيَ اللَّهُ تَعَالَى عَنْهُ"
+    },
+    {
+      "id": 7,
+      "bookId": 8,
+      "length": 31,
+      "start": 1329,
+      "end": 1359,
+      "english": "The Musnad of az-Zubair bin al-'Awwam",
+      "arabic": "مُسْنَدُ الزُّبَيْرِ بْنِ الْعَوَّامِ رَضِيَ اللَّهُ عَنْهُ"
+    },
+    {
+      "id": 31,
+      "bookId": 8,
+      "length": 15,
+      "start": 1360,
+      "end": 1374,
+      "english": "",
+      "arabic": "حَدِيثُ أَبِي رِمْثَةَ عَنْ النَّبِيَّ رَضِيَ اللَّهُ عَنْهُ"
+    }
+  ]
+}

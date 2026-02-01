@@ -1,0 +1,532 @@
+{
+  "id": 15,
+  "metadata": {
+    "id": 15,
+    "length": 1326,
+    "arabic": {
+      "title": "الأدب المفرد",
+      "author": "الإمام محمد بن إسماعيل البخاري",
+      "introduction": ""
+    },
+    "english": {
+      "title": "Al-Adab Al-Mufrad",
+      "author": "Imam Muhammad ibn Ismail al-Bukhari",
+      "introduction": ""
+    }
+  },
+  "chapters": [
+    {
+      "id": 1,
+      "bookId": 15,
+      "length": 46,
+      "start": 1,
+      "end": 46,
+      "english": "Parents",
+      "arabic": "كتاب الْوَالِدَيْنِ"
+    },
+    {
+      "id": 2,
+      "bookId": 15,
+      "length": 27,
+      "start": 47,
+      "end": 73,
+      "english": "Ties of Kinship",
+      "arabic": "كتاب صِلَةِ الرَّحِمِ"
+    },
+    {
+      "id": 3,
+      "bookId": 15,
+      "length": 2,
+      "start": 74,
+      "end": 75,
+      "english": "Mawlas (Clients of Manumission)",
+      "arabic": "كتاب مَوَالِي"
+    },
+    {
+      "id": 4,
+      "bookId": 15,
+      "length": 8,
+      "start": 76,
+      "end": 83,
+      "english": "Looking after girls",
+      "arabic": "كتاب عول البنات"
+    },
+    {
+      "id": 5,
+      "bookId": 15,
+      "length": 17,
+      "start": 84,
+      "end": 100,
+      "english": "Looking after children",
+      "arabic": "كتاب رعاية الأولاد"
+    },
+    {
+      "id": 6,
+      "bookId": 15,
+      "length": 28,
+      "start": 101,
+      "end": 128,
+      "english": "Neighbours",
+      "arabic": "كتاب الْجَارِ"
+    },
+    {
+      "id": 7,
+      "bookId": 15,
+      "length": 14,
+      "start": 129,
+      "end": 142,
+      "english": "Generosity and Orphans",
+      "arabic": "كتاب الْكَرَمِ وَ يَتِيمٌ"
+    },
+    {
+      "id": 8,
+      "bookId": 15,
+      "length": 13,
+      "start": 143,
+      "end": 155,
+      "english": "Children's Death",
+      "arabic": "كتاب موت الأولاد"
+    },
+    {
+      "id": 9,
+      "bookId": 15,
+      "length": 56,
+      "start": 156,
+      "end": 211,
+      "english": "Being a master",
+      "arabic": "كتاب الملكة"
+    },
+    {
+      "id": 10,
+      "bookId": 15,
+      "length": 9,
+      "start": 212,
+      "end": 220,
+      "english": "Supervision",
+      "arabic": "كتاب الرعاية"
+    },
+    {
+      "id": 11,
+      "bookId": 15,
+      "length": 17,
+      "start": 221,
+      "end": 237,
+      "english": "Good Conduct",
+      "arabic": "كتاب الْمَعْرُوفِ"
+    },
+    {
+      "id": 12,
+      "bookId": 15,
+      "length": 18,
+      "start": 238,
+      "end": 255,
+      "english": "Cheerfulness Towards People",
+      "arabic": "كتاب الِانْبِسَاطِ إِلَى النَّاسِ"
+    },
+    {
+      "id": 13,
+      "bookId": 15,
+      "length": 4,
+      "start": 256,
+      "end": 259,
+      "english": "Consultation",
+      "arabic": "كتاب الْمَشُورَةِ"
+    },
+    {
+      "id": 14,
+      "bookId": 15,
+      "length": 50,
+      "start": 260,
+      "end": 309,
+      "english": "Excellence in Character",
+      "arabic": "كتاب حسن الخلق"
+    },
+    {
+      "id": 15,
+      "bookId": 15,
+      "length": 24,
+      "start": 310,
+      "end": 333,
+      "english": "Cursing",
+      "arabic": "كتاب اللعن"
+    },
+    {
+      "id": 16,
+      "bookId": 15,
+      "length": 11,
+      "start": 334,
+      "end": 344,
+      "english": "Praise",
+      "arabic": "كتاب المدح"
+    },
+    {
+      "id": 17,
+      "bookId": 15,
+      "length": 10,
+      "start": 345,
+      "end": 354,
+      "english": "Visitation",
+      "arabic": "كتاب الزِّيَارَةِ"
+    },
+    {
+      "id": 18,
+      "bookId": 15,
+      "length": 9,
+      "start": 355,
+      "end": 363,
+      "english": "The Elderly",
+      "arabic": "كتاب الأكَابِرِ"
+    },
+    {
+      "id": 19,
+      "bookId": 15,
+      "length": 10,
+      "start": 364,
+      "end": 373,
+      "english": "Children",
+      "arabic": "كتاب الصَّغِيرِ"
+    },
+    {
+      "id": 20,
+      "bookId": 15,
+      "length": 13,
+      "start": 374,
+      "end": 386,
+      "english": "Mercy",
+      "arabic": "كتاب رَحْمَةِ"
+    },
+    {
+      "id": 21,
+      "bookId": 15,
+      "length": 12,
+      "start": 387,
+      "end": 398,
+      "english": "Social Behaviour",
+      "arabic": "كتاب ذات البين"
+    },
+    {
+      "id": 22,
+      "bookId": 15,
+      "length": 18,
+      "start": 399,
+      "end": 416,
+      "english": "Abandonment",
+      "arabic": "كتاب الهجر"
+    },
+    {
+      "id": 23,
+      "bookId": 15,
+      "length": 4,
+      "start": 417,
+      "end": 420,
+      "english": "Advising",
+      "arabic": "كتاب الإشارة"
+    },
+    {
+      "id": 24,
+      "bookId": 15,
+      "length": 23,
+      "start": 421,
+      "end": 443,
+      "english": "Disparaging",
+      "arabic": "كتاب السِّبَابِ"
+    },
+    {
+      "id": 25,
+      "bookId": 15,
+      "length": 20,
+      "start": 444,
+      "end": 463,
+      "english": "Extravagance in Building",
+      "arabic": "كتاب السَّرَفِ فِي  الْبِنَاءِ"
+    },
+    {
+      "id": 26,
+      "bookId": 15,
+      "length": 13,
+      "start": 464,
+      "end": 476,
+      "english": "Compassion",
+      "arabic": "كتاب الرِّفْقِ"
+    },
+    {
+      "id": 27,
+      "bookId": 15,
+      "length": 8,
+      "start": 477,
+      "end": 484,
+      "english": "Attending to this world",
+      "arabic": "كتاب الاعتناء بالدنيا"
+    },
+    {
+      "id": 28,
+      "bookId": 15,
+      "length": 8,
+      "start": 485,
+      "end": 492,
+      "english": "Injustice",
+      "arabic": "كتاب الظُّلْم"
+    },
+    {
+      "id": 29,
+      "bookId": 15,
+      "length": 47,
+      "start": 493,
+      "end": 539,
+      "english": "Visiting the Ill",
+      "arabic": "كتاب عيادة المرضى"
+    },
+    {
+      "id": 30,
+      "bookId": 15,
+      "length": 66,
+      "start": 540,
+      "end": 605,
+      "english": "General Behavior",
+      "arabic": "كتاب التصرف العام"
+    },
+    {
+      "id": 31,
+      "bookId": 15,
+      "length": 135,
+      "start": 606,
+      "end": 740,
+      "english": "Supplication",
+      "arabic": "كتاب الدعاء"
+    },
+    {
+      "id": 32,
+      "bookId": 15,
+      "length": 15,
+      "start": 741,
+      "end": 755,
+      "english": "Guests and Spending",
+      "arabic": "كتاب الضيف والنفقة"
+    },
+    {
+      "id": 33,
+      "bookId": 15,
+      "length": 57,
+      "start": 756,
+      "end": 812,
+      "english": "Sayings",
+      "arabic": "كتاب الأقوال"
+    },
+    {
+      "id": 34,
+      "bookId": 15,
+      "length": 31,
+      "start": 813,
+      "end": 843,
+      "english": "Names",
+      "arabic": "كتاب الأسْمَاءِ"
+    },
+    {
+      "id": 35,
+      "bookId": 15,
+      "length": 14,
+      "start": 844,
+      "end": 857,
+      "english": "Kunyas",
+      "arabic": "كتاب  الكُنْيَةِ"
+    },
+    {
+      "id": 36,
+      "bookId": 15,
+      "length": 19,
+      "start": 858,
+      "end": 876,
+      "english": "Poetry",
+      "arabic": "كتاب الشِّعْرِ"
+    },
+    {
+      "id": 37,
+      "bookId": 15,
+      "length": 13,
+      "start": 877,
+      "end": 889,
+      "english": "Words",
+      "arabic": "كتاب الْكَلامِ"
+    },
+    {
+      "id": 38,
+      "bookId": 15,
+      "length": 19,
+      "start": 890,
+      "end": 908,
+      "english": "Consequences",
+      "arabic": "كتاب عاقبة الأمور"
+    },
+    {
+      "id": 39,
+      "bookId": 15,
+      "length": 12,
+      "start": 909,
+      "end": 920,
+      "english": "Omens",
+      "arabic": "كتاب الطيرة"
+    },
+    {
+      "id": 40,
+      "bookId": 15,
+      "length": 33,
+      "start": 921,
+      "end": 953,
+      "english": "Sneezing and Yawning",
+      "arabic": "كتاب الْعُطَاسَ والتثاؤب"
+    },
+    {
+      "id": 41,
+      "bookId": 15,
+      "length": 13,
+      "start": 954,
+      "end": 966,
+      "english": "Gestures",
+      "arabic": "كتاب الحركات"
+    },
+    {
+      "id": 42,
+      "bookId": 15,
+      "length": 87,
+      "start": 967,
+      "end": 1053,
+      "english": "Greetings",
+      "arabic": "كتاب السَّلامِ"
+    },
+    {
+      "id": 43,
+      "bookId": 15,
+      "length": 50,
+      "start": 1054,
+      "end": 1103,
+      "english": "Asking Permission",
+      "arabic": "كتاب الاسْتِئْذَانُ"
+    },
+    {
+      "id": 44,
+      "bookId": 15,
+      "length": 16,
+      "start": 1104,
+      "end": 1119,
+      "english": "The People of the Book",
+      "arabic": "كتاب أَهْلِ الْكِتَابِ"
+    },
+    {
+      "id": 45,
+      "bookId": 15,
+      "length": 19,
+      "start": 1120,
+      "end": 1138,
+      "english": "Letters",
+      "arabic": "كتاب الرَّسَائِلِ‏"
+    },
+    {
+      "id": 46,
+      "bookId": 15,
+      "length": 17,
+      "start": 1139,
+      "end": 1155,
+      "english": "Gatherings",
+      "arabic": "كتاب الْمَجَالِسِ"
+    },
+    {
+      "id": 47,
+      "bookId": 15,
+      "length": 22,
+      "start": 1156,
+      "end": 1177,
+      "english": "Behaviour with people",
+      "arabic": "كتاب تعامل الناس"
+    },
+    {
+      "id": 48,
+      "bookId": 15,
+      "length": 24,
+      "start": 1178,
+      "end": 1201,
+      "english": "Sitting and lying down",
+      "arabic": "باب الجلوس والاستلقاء"
+    },
+    {
+      "id": 49,
+      "bookId": 15,
+      "length": 6,
+      "start": 1202,
+      "end": 1207,
+      "english": "Mornings and evenings",
+      "arabic": "كتاب الصباح والمساء"
+    },
+    {
+      "id": 50,
+      "bookId": 15,
+      "length": 27,
+      "start": 1208,
+      "end": 1234,
+      "english": "Sleep and night lodging",
+      "arabic": "كتاب النوم والمبيت"
+    },
+    {
+      "id": 51,
+      "bookId": 15,
+      "length": 6,
+      "start": 1235,
+      "end": 1240,
+      "english": "Animals",
+      "arabic": "كتاب الْبَهَائِمِ"
+    },
+    {
+      "id": 52,
+      "bookId": 15,
+      "length": 6,
+      "start": 1241,
+      "end": 1246,
+      "english": "Midday Naps",
+      "arabic": "كتاب الْقَائِلَةِ"
+    },
+    {
+      "id": 53,
+      "bookId": 15,
+      "length": 15,
+      "start": 1247,
+      "end": 1261,
+      "english": "Circumcision",
+      "arabic": "كتاب الْخِتَانِ"
+    },
+    {
+      "id": 54,
+      "bookId": 15,
+      "length": 23,
+      "start": 1262,
+      "end": 1284,
+      "english": "Betting and similar pastimes",
+      "arabic": "كتاب القمار ونحوه"
+    },
+    {
+      "id": 55,
+      "bookId": 15,
+      "length": 23,
+      "start": 1285,
+      "end": 1307,
+      "english": "Recognition",
+      "arabic": "كتاب المعرفة"
+    },
+    {
+      "id": 56,
+      "bookId": 15,
+      "length": 12,
+      "start": 1308,
+      "end": 1319,
+      "english": "Meddling and Harshness",
+      "arabic": "كتاب الفضول والجفاء"
+    },
+    {
+      "id": 57,
+      "bookId": 15,
+      "length": 7,
+      "start": 1320,
+      "end": 1326,
+      "english": "Anger",
+      "arabic": "كتاب الْغَضَبِ"
+    }
+  ]
+}

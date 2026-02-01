@@ -1,0 +1,199 @@
+{
+  "id": 13,
+  "metadata": {
+    "id": 13,
+    "length": 1896,
+    "arabic": {
+      "title": "رياض الصالحين",
+      "author": "الإمام يحيى بن شرف النووي",
+      "introduction": ""
+    },
+    "english": {
+      "title": "Riyad as-Salihin",
+      "author": "Imam Yahya ibn Sharaf al-Nawawi",
+      "introduction": ""
+    }
+  },
+  "chapters": [
+    {
+      "id": 1,
+      "bookId": 13,
+      "length": 47,
+      "start": 1,
+      "end": 47,
+      "english": "The Book of Good Manners",
+      "arabic": "كتاب الأدب"
+    },
+    {
+      "id": 2,
+      "bookId": 13,
+      "length": 51,
+      "start": 48,
+      "end": 98,
+      "english": "The Book About the Etiquette of Eating",
+      "arabic": "كتـــــاب أدب الطعام"
+    },
+    {
+      "id": 3,
+      "bookId": 13,
+      "length": 35,
+      "start": 99,
+      "end": 133,
+      "english": "The Book of Dress",
+      "arabic": "كتــــاب اللباس"
+    },
+    {
+      "id": 4,
+      "bookId": 13,
+      "length": 31,
+      "start": 134,
+      "end": 164,
+      "english": "The Book of the Etiquette of Sleeping, Lying and Sitting etc",
+      "arabic": "كتاب آداب النوم"
+    },
+    {
+      "id": 5,
+      "bookId": 13,
+      "length": 50,
+      "start": 165,
+      "end": 214,
+      "english": "The Book of Greetings",
+      "arabic": "كتاب السلام"
+    },
+    {
+      "id": 6,
+      "bookId": 13,
+      "length": 62,
+      "start": 215,
+      "end": 276,
+      "english": "The Book of Visiting the Sick",
+      "arabic": "كتاب عيادة المريض وتشييع الميت والصلاة عليه وحضور دفنه"
+    },
+    {
+      "id": 7,
+      "bookId": 13,
+      "length": 35,
+      "start": 277,
+      "end": 311,
+      "english": "The Book of Etiquette of Traveling",
+      "arabic": "كتاب آداب السفر"
+    },
+    {
+      "id": 8,
+      "bookId": 13,
+      "length": 277,
+      "start": 312,
+      "end": 588,
+      "english": "The Book of Virtues",
+      "arabic": "كتاب الفضائل"
+    },
+    {
+      "id": 9,
+      "bookId": 13,
+      "length": 3,
+      "start": 589,
+      "end": 591,
+      "english": "The Book of I'tikaf",
+      "arabic": "كتاب الاعتكاف"
+    },
+    {
+      "id": 10,
+      "bookId": 13,
+      "length": 14,
+      "start": 592,
+      "end": 605,
+      "english": "The Book of Hajj",
+      "arabic": "كتاب الحج"
+    },
+    {
+      "id": 11,
+      "bookId": 13,
+      "length": 91,
+      "start": 606,
+      "end": 696,
+      "english": "The Book of Jihad",
+      "arabic": "كتاب الجهاد"
+    },
+    {
+      "id": 12,
+      "bookId": 13,
+      "length": 17,
+      "start": 697,
+      "end": 713,
+      "english": "The Book of Knowledge",
+      "arabic": "كتاب العلم"
+    },
+    {
+      "id": 13,
+      "bookId": 13,
+      "length": 4,
+      "start": 714,
+      "end": 717,
+      "english": "The Book of Praise and Gratitude to Allah",
+      "arabic": "كتاب حمد الله تعالى وشكره"
+    },
+    {
+      "id": 14,
+      "bookId": 13,
+      "length": 11,
+      "start": 718,
+      "end": 728,
+      "english": "The Book of Supplicating Allah to Exalt the Mention of Allah's Messenger",
+      "arabic": "كتاب الصلاة على رسول الله صلى الله عليه وسلم"
+    },
+    {
+      "id": 15,
+      "bookId": 13,
+      "length": 57,
+      "start": 729,
+      "end": 785,
+      "english": "The Book of the Remembrance of Allah",
+      "arabic": "كتاب الأذكار"
+    },
+    {
+      "id": 16,
+      "bookId": 13,
+      "length": 46,
+      "start": 786,
+      "end": 831,
+      "english": "The Book of Du'a (Supplications)",
+      "arabic": "كتاب الدعوات"
+    },
+    {
+      "id": 17,
+      "bookId": 13,
+      "length": 297,
+      "start": 832,
+      "end": 1128,
+      "english": "The Book of the Prohibited actions",
+      "arabic": "كتاب الأمور المنهي عنها"
+    },
+    {
+      "id": 18,
+      "bookId": 13,
+      "length": 61,
+      "start": 1129,
+      "end": 1189,
+      "english": "The Book of Miscellaneous ahadith of Significant Values",
+      "arabic": "كتاب المنثورات والملح"
+    },
+    {
+      "id": 19,
+      "bookId": 13,
+      "length": 28,
+      "start": 1190,
+      "end": 1217,
+      "english": "The Book of Forgiveness",
+      "arabic": "كتاب الاستغفار"
+    },
+    {
+      "id": 0,
+      "bookId": 13,
+      "length": 679,
+      "start": 1218,
+      "end": 1896,
+      "english": "The Book of Miscellany",
+      "arabic": "كتاب المقدمات"
+    }
+  ]
+}

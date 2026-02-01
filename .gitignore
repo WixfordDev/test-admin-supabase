@@ -39,3 +39,53 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+
+
+# ================================
+# Ignore flutter stuff ONLY inside islamic_app-main
+# ================================
+
+# Miscellaneous
+/islamic_app-main/*.class
+/islamic_app-main/*.log
+/islamic_app-main/*.pyc
+/islamic_app-main/*.swp
+/islamic_app-main/.DS_Store
+/islamic_app-main/.atom/
+/islamic_app-main/.build/
+/islamic_app-main/.buildlog/
+/islamic_app-main/.history/
+/islamic_app-main/.svn/
+/islamic_app-main/.swiftpm/
+/islamic_app-main/migrate_working_dir/
+
+# IntelliJ related
+/islamic_app-main/*.iml
+/islamic_app-main/*.ipr
+/islamic_app-main/*.iws
+/islamic_app-main/.idea/
+
+# Flutter/Dart/Pub related
+/islamic_app-main/**/doc/api/
+/islamic_app-main/**/ios/Flutter/.last_build_id
+/islamic_app-main/.dart_tool/
+/islamic_app-main/.flutter-plugins
+/islamic_app-main/.flutter-plugins-dependencies
+/islamic_app-main/.pub-cache/
+/islamic_app-main/.pub/
+/islamic_app-main/build/
+
+# Symbolication related
+/islamic_app-main/app.*.symbols
+
+# Obfuscation related
+/islamic_app-main/app.*.map.json
+
+# Android Studio build artifacts
+/islamic_app-main/android/app/debug/
+/islamic_app-main/android/app/profile/
+/islamic_app-main/android/app/release/
+
+# FVM cache
+/islamic_app-main/.fvm/

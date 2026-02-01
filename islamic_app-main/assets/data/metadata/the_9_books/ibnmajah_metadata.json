@@ -1,0 +1,361 @@
+{
+  "id": 6,
+  "metadata": {
+    "id": 6,
+    "length": 4345,
+    "arabic": {
+      "title": "سنن ابن ماجه",
+      "author": "الإمام محمد بن يزيد بن ماجه القزويني",
+      "introduction": ""
+    },
+    "english": {
+      "title": "Sunan Ibn Majah",
+      "author": "Imam Muhammad ibn Yazid Ibn Majah al-Qazwini",
+      "introduction": ""
+    }
+  },
+  "chapters": [
+    {
+      "id": 1,
+      "bookId": 6,
+      "length": 400,
+      "start": 1,
+      "end": 400,
+      "english": "The Book of Purification and its Sunnah",
+      "arabic": "كتاب الطهارة وسننها"
+    },
+    {
+      "id": 2,
+      "bookId": 6,
+      "length": 39,
+      "start": 401,
+      "end": 439,
+      "english": "The Book of the Prayer",
+      "arabic": "كتاب الصلاة"
+    },
+    {
+      "id": 3,
+      "bookId": 6,
+      "length": 29,
+      "start": 440,
+      "end": 468,
+      "english": "The Book of the Adhan and the Sunnah Regarding It",
+      "arabic": "كتاب الأذان والسنة فيها"
+    },
+    {
+      "id": 4,
+      "bookId": 6,
+      "length": 68,
+      "start": 469,
+      "end": 536,
+      "english": "The Book On The Mosques And The Congregations",
+      "arabic": "كتاب المساجد والجماعات"
+    },
+    {
+      "id": 5,
+      "bookId": 6,
+      "length": 630,
+      "start": 537,
+      "end": 1166,
+      "english": "Establishing the Prayer and the Sunnah Regarding Them",
+      "arabic": "كتاب إقامة الصلاة والسنة فيها"
+    },
+    {
+      "id": 6,
+      "bookId": 6,
+      "length": 205,
+      "start": 1167,
+      "end": 1371,
+      "english": "Chapters Regarding Funerals",
+      "arabic": "كتاب الجنائز"
+    },
+    {
+      "id": 7,
+      "bookId": 6,
+      "length": 145,
+      "start": 1372,
+      "end": 1516,
+      "english": "Fasting",
+      "arabic": "كتاب الصيام"
+    },
+    {
+      "id": 8,
+      "bookId": 6,
+      "length": 62,
+      "start": 1517,
+      "end": 1578,
+      "english": "The Chapters Regarding Zakat",
+      "arabic": "كتاب الزكاة"
+    },
+    {
+      "id": 9,
+      "bookId": 6,
+      "length": 171,
+      "start": 1579,
+      "end": 1749,
+      "english": "The Chapters on Marriage",
+      "arabic": "كتاب النكاح"
+    },
+    {
+      "id": 10,
+      "bookId": 6,
+      "length": 74,
+      "start": 1750,
+      "end": 1823,
+      "english": "The Chapters on Divorce",
+      "arabic": "كتاب الطلاق"
+    },
+    {
+      "id": 11,
+      "bookId": 6,
+      "length": 47,
+      "start": 1824,
+      "end": 1870,
+      "english": "The Chapters on Expiation",
+      "arabic": "كتاب الكفارات"
+    },
+    {
+      "id": 12,
+      "bookId": 6,
+      "length": 171,
+      "start": 1871,
+      "end": 2041,
+      "english": "The Chapters on Business Transactions",
+      "arabic": "كتاب التجارات"
+    },
+    {
+      "id": 13,
+      "bookId": 6,
+      "length": 67,
+      "start": 2042,
+      "end": 2108,
+      "english": "The Chapters on Rulings",
+      "arabic": "كتاب الأحكام"
+    },
+    {
+      "id": 14,
+      "bookId": 6,
+      "length": 15,
+      "start": 2109,
+      "end": 2123,
+      "english": "The Chapters on Gifts",
+      "arabic": "كتاب الهبات"
+    },
+    {
+      "id": 15,
+      "bookId": 6,
+      "length": 46,
+      "start": 2124,
+      "end": 2169,
+      "english": "The Chapters on Charity",
+      "arabic": "كتاب الصدقات"
+    },
+    {
+      "id": 16,
+      "bookId": 6,
+      "length": 57,
+      "start": 2170,
+      "end": 2226,
+      "english": "The Chapters on Pawning",
+      "arabic": "كتاب الرهون"
+    },
+    {
+      "id": 17,
+      "bookId": 6,
+      "length": 11,
+      "start": 2227,
+      "end": 2237,
+      "english": "The Chapters on Pre-emption",
+      "arabic": "كتاب الشفعة"
+    },
+    {
+      "id": 18,
+      "bookId": 6,
+      "length": 10,
+      "start": 2238,
+      "end": 2247,
+      "english": "The Chapters on Lost Property",
+      "arabic": "كتاب اللقطة"
+    },
+    {
+      "id": 19,
+      "bookId": 6,
+      "length": 21,
+      "start": 2248,
+      "end": 2268,
+      "english": "The Chapters on Manumission (of Slaves)",
+      "arabic": "كتاب العتق"
+    },
+    {
+      "id": 20,
+      "bookId": 6,
+      "length": 82,
+      "start": 2269,
+      "end": 2350,
+      "english": "The Chapters on Legal Punishments",
+      "arabic": "كتاب الحدود"
+    },
+    {
+      "id": 21,
+      "bookId": 6,
+      "length": 80,
+      "start": 2351,
+      "end": 2430,
+      "english": "The Chapters on Blood Money",
+      "arabic": "كتاب الديات"
+    },
+    {
+      "id": 22,
+      "bookId": 6,
+      "length": 24,
+      "start": 2431,
+      "end": 2454,
+      "english": "The Chapters on Wills",
+      "arabic": "كتاب الوصايا"
+    },
+    {
+      "id": 23,
+      "bookId": 6,
+      "length": 34,
+      "start": 2455,
+      "end": 2488,
+      "english": "Chapters on Shares of Inheritance",
+      "arabic": "كتاب الفرائض"
+    },
+    {
+      "id": 24,
+      "bookId": 6,
+      "length": 129,
+      "start": 2489,
+      "end": 2617,
+      "english": "The Chapters on Jihad",
+      "arabic": "كتاب الجهاد"
+    },
+    {
+      "id": 25,
+      "bookId": 6,
+      "length": 238,
+      "start": 2618,
+      "end": 2855,
+      "english": "Chapters on Hajj Rituals",
+      "arabic": "كتاب المناسك"
+    },
+    {
+      "id": 26,
+      "bookId": 6,
+      "length": 42,
+      "start": 2856,
+      "end": 2897,
+      "english": "Chapters on Sacrifices",
+      "arabic": "كتاب الأضاحي"
+    },
+    {
+      "id": 27,
+      "bookId": 6,
+      "length": 38,
+      "start": 2898,
+      "end": 2935,
+      "english": "Chapters on Slaughtering",
+      "arabic": "كتاب الذبائح"
+    },
+    {
+      "id": 28,
+      "bookId": 6,
+      "length": 51,
+      "start": 2936,
+      "end": 2986,
+      "english": "Chapters on Hunting",
+      "arabic": "كتاب الصيد"
+    },
+    {
+      "id": 29,
+      "bookId": 6,
+      "length": 120,
+      "start": 2987,
+      "end": 3106,
+      "english": "Chapters on Food",
+      "arabic": "كتاب الأطعمة"
+    },
+    {
+      "id": 30,
+      "bookId": 6,
+      "length": 65,
+      "start": 3107,
+      "end": 3171,
+      "english": "Chapters on Drinks",
+      "arabic": "كتاب الأشربة"
+    },
+    {
+      "id": 31,
+      "bookId": 6,
+      "length": 114,
+      "start": 3172,
+      "end": 3285,
+      "english": "Chapters on Medicine",
+      "arabic": "كتاب الطب"
+    },
+    {
+      "id": 32,
+      "bookId": 6,
+      "length": 107,
+      "start": 3286,
+      "end": 3392,
+      "english": "Chapters on Dress",
+      "arabic": "كتاب اللباس"
+    },
+    {
+      "id": 33,
+      "bookId": 6,
+      "length": 170,
+      "start": 3393,
+      "end": 3562,
+      "english": "Etiquette",
+      "arabic": "كتاب الأدب"
+    },
+    {
+      "id": 34,
+      "bookId": 6,
+      "length": 66,
+      "start": 3563,
+      "end": 3628,
+      "english": "Supplication",
+      "arabic": "كتاب الدعاء"
+    },
+    {
+      "id": 35,
+      "bookId": 6,
+      "length": 34,
+      "start": 3629,
+      "end": 3662,
+      "english": "Interpretation of Dreams",
+      "arabic": "كتاب تعبير الرؤيا"
+    },
+    {
+      "id": 36,
+      "bookId": 6,
+      "length": 175,
+      "start": 3663,
+      "end": 3837,
+      "english": "Tribulations",
+      "arabic": "كتاب الفتن"
+    },
+    {
+      "id": 37,
+      "bookId": 6,
+      "length": 242,
+      "start": 3838,
+      "end": 4079,
+      "english": "Zuhd",
+      "arabic": "كتاب الزهد"
+    },
+    {
+      "id": 0,
+      "bookId": 6,
+      "length": 266,
+      "start": 4080,
+      "end": 4345,
+      "english": "The Book of the Sunnah",
+      "arabic": "كتاب المقدمة"
+    }
+  ]
+}
