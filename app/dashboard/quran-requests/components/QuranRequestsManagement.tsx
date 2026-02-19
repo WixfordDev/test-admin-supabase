@@ -602,7 +602,7 @@ const handleDeleteRequest = async (id: string) => {
           <div className="flex items-center gap-4">
             <Button
               onClick={() => setShowAddDialog(true)}
-              className="flex items-center gap-2"
+              className="flex items-center text-black gap-2 border"
             >
               <Plus className="h-4 w-4" />
               Add Request
@@ -610,7 +610,7 @@ const handleDeleteRequest = async (id: string) => {
 
             {selectedRequests.length > 0 && (
               <div className="flex items-center gap-2">
-                <span className="text-sm text-gray-600">
+                <span className="text-sm text-black">
                   {selectedRequests.length} selected
                 </span>
                 <Button
@@ -644,7 +644,7 @@ const handleDeleteRequest = async (id: string) => {
             <Button
               variant="outline"
               onClick={fetchRequests}
-              className="flex items-center gap-2"
+              className="flex text-black items-center gap-2"
             >
               <RefreshCw className="h-4 w-4" />
               Refresh
@@ -652,7 +652,7 @@ const handleDeleteRequest = async (id: string) => {
             <Button
               variant="outline"
               onClick={handleExport}
-              className="flex items-center gap-2"
+              className="flex text-black items-center gap-2"
             >
               <Download className="h-4 w-4" />
               Export CSV
@@ -691,6 +691,7 @@ const handleDeleteRequest = async (id: string) => {
             <div className="flex items-center gap-2">
               <Button
                 variant="outline"
+                 className="text-black"
                 size="sm"
                 onClick={() => setPagination((prev) => ({ ...prev, page: 1 }))}
                 disabled={pagination.page === 1}
@@ -699,6 +700,7 @@ const handleDeleteRequest = async (id: string) => {
               </Button>
               <Button
                 variant="outline"
+                 className="text-black"
                 size="sm"
                 onClick={() =>
                   setPagination((prev) => ({ ...prev, page: prev.page - 1 }))
@@ -725,6 +727,7 @@ const handleDeleteRequest = async (id: string) => {
 
                     return (
                       <Button
+                       className="text-black"
                         key={pageNum}
                         variant={
                           pagination.page === pageNum ? "default" : "outline"
@@ -743,6 +746,7 @@ const handleDeleteRequest = async (id: string) => {
 
               <Button
                 variant="outline"
+                 className="text-black"
                 size="sm"
                 onClick={() =>
                   setPagination((prev) => ({ ...prev, page: prev.page + 1 }))
@@ -752,6 +756,7 @@ const handleDeleteRequest = async (id: string) => {
                 Next
               </Button>
               <Button
+              className="text-black"
                 variant="outline"
                 size="sm"
                 onClick={() =>

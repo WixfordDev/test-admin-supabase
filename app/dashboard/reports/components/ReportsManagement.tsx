@@ -805,7 +805,7 @@ export default function ReportsManagement() {
               {selectedReports.length} selected
             </span>
           )}
-          <Button variant="outline" size="sm">
+          <Button variant="outline" className='text-black' size="sm">
             <Download className="mr-2 h-4 w-4" />
             Export
           </Button>

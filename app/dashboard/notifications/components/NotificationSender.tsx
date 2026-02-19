@@ -94,7 +94,7 @@ export default function AdminNotifications() {
               <span className="text-gray-500">Loading subscriber count...</span>
             ) : (
               <span className="text-lg font-semibold text-blue-600">
-                ({subscriberCount !== null ? subscriberCount.toLocaleString() : 'N/A'} subscribers)
+                
               </span>
             )}
           </div>

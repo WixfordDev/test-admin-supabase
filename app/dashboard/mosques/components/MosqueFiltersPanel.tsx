@@ -83,9 +83,9 @@ export default function MosqueFiltersPanel({
               variant="outline"
               size="sm"
               onClick={() => setShowAdvanced(!showAdvanced)}
-              className="flex items-center gap-2"
+              className="flex items-center text-black gap-2"
             >
-              <Filter className="h-4 w-4" />
+              <Filter className="h-4 w-4 text-black" />
               {showAdvanced ? 'Hide Filters' : 'More Filters'}
             </Button>
             

@@ -660,7 +660,7 @@ export default function AddQuranRequestDialog({
           </div>
 
           {/* Form Actions */}
-          <div className="flex items-center justify-end gap-3 pt-4 border-t">
+          <div className="flex items-center text-black justify-end gap-3 pt-4 border-t">
             <Button
               type="button"
               variant="outline"

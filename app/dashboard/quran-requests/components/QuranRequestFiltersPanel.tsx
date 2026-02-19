@@ -71,7 +71,7 @@ export default function QuranRequestFiltersPanel({
             </div>
           </div>
 
-          <div className="flex items-center gap-2">
+          <div className="flex items-center text-black gap-2">
             <Button
               variant="outline"
               size="sm"
@@ -87,7 +87,7 @@ export default function QuranRequestFiltersPanel({
                 variant="outline"
                 size="sm"
                 onClick={clearFilters}
-                className="flex items-center gap-2"
+                className="flex items-center text-black gap-2"
               >
                 <X className="h-4 w-4" />
                 Clear
@@ -98,8 +98,8 @@ export default function QuranRequestFiltersPanel({
 
         {/* Status Filter */}
         <div>
-          <label className="text-sm font-medium text-gray-700 mb-2 block">Status</label>
-          <div className="flex flex-wrap gap-2">
+          <label className="text-sm text-black font-medium mb-2 block">Status</label>
+          <div className="flex flex-wrap text-black gap-2">
             {statusOptions.map((option) => (
               <Badge
                 key={option.value}
@@ -140,11 +140,11 @@ export default function QuranRequestFiltersPanel({
                 <select
                   value={filters.state || ''}
                   onChange={(e) => handleFilterChange('state', e.target.value)}
-                  className="w-full rounded-md border border-gray-300 px-3 py-2 text-sm focus:border-blue-500 focus:outline-none"
+                  className="w-full text-black rounded-md border border-gray-300 px-3 py-2 text-sm focus:border-blue-500 focus:outline-none"
                 >
-                  <option value="">All States</option>
+                  <option className='text-black' value="">All States</option>
                   {uniqueStates.map((state) => (
-                    <option key={state ?? 'unknown'} value={state ?? ''}>
+                    <option className='text-black' key={state ?? 'unknown'} value={state ?? ''}>
                       {state ?? 'Unknown'}
                     </option>
                   ))}
@@ -203,7 +203,7 @@ export default function QuranRequestFiltersPanel({
         )}
 
         {/* Results Summary */}
-        <div className="text-sm text-gray-600">
+        <div className="text-sm text-black font-medium">
           Showing {requests.length} request{requests.length !== 1 ? 's' : ''}
           {hasActiveFilters && ' (filtered)'}
         </div>

@@ -144,7 +144,7 @@ export default function MosquesManagement() {
 
       {/* Header Actions */}
       <Card className="p-6">
-        <div className="flex flex-col lg:flex-row gap-4 items-start lg:items-center justify-between">
+        <div className="flex flex-col text-black lg:flex-row gap-4 items-start lg:items-center justify-between">
           <div>
             <h2 className="text-xl font-semibold text-gray-900">Mosque Database</h2>
             <p className="text-gray-600">Manage mosque locations and metadata</p>

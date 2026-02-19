@@ -464,9 +464,9 @@ export default function QuranRequestsTable({
 
       {/* Notes Edit Modal */}
       {editingNotes && (
-        <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
+        <div className="fixed inset-0 bg-black/70 bg-opacity-50 flex items-center justify-center z-50">
           <div className="bg-white rounded-lg p-6 w-full max-w-md">
-            <h3 className="text-lg font-semibold mb-4">Edit Request Details</h3>
+            <h3 className="text-lg text-black font-semibold mb-4">Edit Request Details</h3>
             
             <div className="space-y-4">
               
@@ -483,11 +483,11 @@ export default function QuranRequestsTable({
               </div>
             </div>
             
-            <div className="flex justify-end gap-2 mt-4">
+            <div className="flex text-black justify-end gap-2 mt-4">
               <Button variant="outline" onClick={handleNotesCancel}>
                 Cancel
               </Button>
-              <Button onClick={() => handleNotesSave(editingNotes)}>
+              <Button className='border' onClick={() => handleNotesSave(editingNotes)}>
                 Save Changes
               </Button>
             </div>
