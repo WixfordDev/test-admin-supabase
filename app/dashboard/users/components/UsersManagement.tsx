@@ -23,10 +23,11 @@ import {
 import { formatDateTime } from '@/lib/utils'
 import UserActions from './UserActions'
 import AddUserDialog from './AddUserDialog'
+import type { UserProfile, UserStats } from '@/lib/types/users'
 
 export default function UsersManagement() {
-  const [users, setUsers] = useState([])
-  const [stats, setStats] = useState({
+  const [users, setUsers] = useState<UserProfile[]>([])
+  const [stats, setStats] = useState<UserStats>({
     total_users: 0,
     barakah_access_users: 0,
     quran_lite_users: 0,
@@ -48,7 +49,7 @@ export default function UsersManagement() {
     sort_order: 'desc'
   })
   const [isLoading, setIsLoading] = useState(true)
-  const [selectedUsers, setSelectedUsers] = useState([])
+  const [selectedUsers, setSelectedUsers] = useState<(string | number)[]>([])
   const [showAddDialog, setShowAddDialog] = useState(false)
 
   // Fetch users with pagination
@@ -135,7 +136,7 @@ export default function UsersManagement() {
     setPagination(prev => ({ ...prev, page: 1 }))
   }, [filters.subscription_status])
 
-  const getSubscriptionBadge = (status) => {
+  const getSubscriptionBadge = (status: string) => {
     switch (status) {
       case 'deenhub_pro':
         return (
@@ -165,7 +166,7 @@ export default function UsersManagement() {
     }
   }
 
-  const handleSelectUser = (userId) => {
+  const handleSelectUser = (userId: string | number) => {
     setSelectedUsers(prev =>
       prev.includes(userId)
         ? prev.filter(id => id !== userId)
@@ -181,7 +182,7 @@ export default function UsersManagement() {
     )
   }
 
-  const handlePageChange = (newPage) => {
+  const handlePageChange = (newPage: number) => {
     console.log('Changing to page:', newPage)
     setPagination(prev => ({ ...prev, page: newPage }))
     setSelectedUsers([])

@@ -18,7 +18,7 @@ export async function GET(request: Request) {
     // Get the user's FCM token from the user_fcm_tokens table
     const { data, error } = await supabase
       .from('user_fcm_tokens')
-      .select('fcm_token as token')
+      .select('fcm_token')
       .eq('user_id', user_id)
       .order('created_at', { ascending: false }) // Get the most recent token
       .limit(1);
@@ -39,7 +39,7 @@ export async function GET(request: Request) {
 
     return Response.json({
       success: true,
-      token: data[0].token
+      token: data[0]?.fcm_token
     });
   } catch (error) {
     console.error('Error getting user token:', error);

@@ -113,7 +113,7 @@ import { cookies } from 'next/headers';
 import { NextResponse } from 'next/server';
 
 export async function POST(request: Request) {
-  const cookieStore = cookies();
+  const cookieStore = await cookies();
   const supabase = createServerClient(
     process.env.NEXT_PUBLIC_SUPABASE_URL!,
     process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!,
@@ -143,9 +143,11 @@ export async function POST(request: Request) {
       process.env.SUPABASE_SERVICE_ROLE_KEY!,
       {
         cookies: {
-          get() { return null; },
-          getAll() { return []; },
-          setAll() {},
+          get(name: string) {
+            return undefined;
+          },
+          set(name: string, value: string, options: any) {},
+          remove(name: string, options: any) {},
         },
       }
     );

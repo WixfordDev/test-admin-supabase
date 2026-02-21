@@ -258,7 +258,7 @@ export default function AddUserDialog({ isOpen, onClose, onSuccess }: AddUserDia
     }
   }
 
-  const handleKeyPress = (e) => {
+  const handleKeyPress = (e: React.KeyboardEvent) => {
     if (e.key === 'Enter' && !loading && !success && formData.email) {
       handleSubmit()
     }
