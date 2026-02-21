@@ -17,6 +17,8 @@ export default function AdminNotifications() {
         const response = await fetch('/api/get-subscriber-count');
         const data = await response.json();
 
+ 
+
         if (response.ok) {
           setSubscriberCount(data.subscriberCount);
         } else {

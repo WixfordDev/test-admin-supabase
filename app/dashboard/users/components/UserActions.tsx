@@ -437,6 +437,9 @@ export default function UserActions({ user, onUserUpdate, onDelete }: UserAction
 
       const data = await response.json();
 
+      console.log(data, userId);
+      
+
       if (response.ok) {
         console.log('✅ Notification sent to user:', userId);
       } else {

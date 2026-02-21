@@ -1,0 +1,498 @@
+// import 'dart:async';
+// import 'package:deenhub/core/di/app_injections.dart';
+// import 'package:deenhub/core/services/shared_prefs_helper.dart';
+// import 'package:deenhub/core/services/ai_usage/ai_usage_tracking_service.dart';
+// import 'package:deenhub/core/services/ai_usage/models/ai_usage_data.dart';
+// import 'package:deenhub/features/auth/data/repositories/auth_repository.dart';
+// import 'package:deenhub/features/auth/data/services/memorization_sync_service.dart';
+// import 'package:deenhub/features/auth/domain/models/user_model.dart';
+// import 'package:deenhub/features/quran/data/repository/memorization_service.dart';
+// import 'package:deenhub/core/services/supabase_provider.dart';
+// import 'package:deenhub/main.dart';
+// import 'package:flutter/foundation.dart';
+// import 'package:flutter_bloc/flutter_bloc.dart';
+// import 'package:freezed_annotation/freezed_annotation.dart';
+// import 'package:shared_preferences/shared_preferences.dart';
+// import 'package:deenhub/features/notifications/services/mosque_notification_service.dart'; // ✅ আপনার actual path দিন
+
+// import '../../../subscription/data/services/subscription_service.dart';
+
+// part 'auth_event.dart';
+// part 'auth_state.dart';
+// part 'auth_bloc.freezed.dart';
+
+// class AuthBloc extends Bloc<AuthEvent, AuthState> {
+//   final AuthRepository _authRepository;
+//   final MemorizationSyncService _memorizationSyncService;
+//   final SharedPrefsHelper _prefsHelper;
+//   StreamSubscription? _authStateSubscription;
+//   StreamSubscription<bool>? _subscriptionStatusSub;
+
+//   AuthBloc(
+//       this._authRepository, this._memorizationSyncService, this._prefsHelper)
+//       : super(const AuthState.initial()) {
+//     on<AuthEvent>((event, emit) async {
+//       await event.map(
+//         checkAuthStatus: (e) => _checkAuthStatus(e, emit),
+//         signIn: (e) => _signIn(e, emit),
+//         signUp: (e) => _signUp(e, emit),
+//         signInWithGoogle: (e) => _signInWithGoogle(e, emit),
+//         signInWithApple: (e) => _signInWithApple(e, emit),
+//         signOut: (e) => _signOut(e, emit),
+//         resetPassword: (e) => _resetPassword(e, emit),
+//         updateSubscription: (e) => _updateSubscription(e, emit),
+//       );
+//     });
+
+//     _authStateSubscription = _authRepository.authStateChanges().listen(
+//       (user) {
+//         debugPrint(
+//             'AuthBloc: Auth state change detected: User is ${user != null ? 'logged in' : 'logged out'}');
+//         if (user != null) {
+//           add(const AuthEvent.checkAuthStatus());
+//         } else {
+//           if (!state.maybeMap(
+//               unauthenticated: (_) => true, orElse: () => false)) {
+//             add(AuthEvent.checkAuthStatus());
+//           }
+//         }
+//       },
+//       onError: (error) {
+//         debugPrint('AuthBloc: Auth state stream error: $error');
+//         add(AuthEvent.checkAuthStatus());
+//       },
+//     );
+
+//     add(const AuthEvent.checkAuthStatus());
+
+//     _subscriptionStatusSub = getIt<SubscriptionService>().subscriptionStatusStream.listen(
+//       (hasSubscription) {
+//         final currentState = state;
+//         if (currentState is _Authenticated) {
+//           final updatedUser = currentState.user.copyWith(hasSubscription: hasSubscription);
+//           emit(AuthState.authenticated(updatedUser));
+//         }
+//       },
+//       onError: (error) {
+//         debugPrint('AuthBloc: Error in subscription status stream: $error');
+//       },
+//     );
+//   }
+
+//   Future<void> _checkAuthStatus(
+//       _CheckAuthStatus event, Emitter<AuthState> emit) async {
+//     debugPrint('Checking auth status...');
+//     emit(const AuthState.loading());
+//     try {
+//       final storedUserId = _prefsHelper.userId;
+//       final isStoredAsLoggedIn = _prefsHelper.isLoggedIn;
+
+//       debugPrint(
+//           'Stored user ID: $storedUserId, Stored login state: $isStoredAsLoggedIn');
+
+//       final user = await _authRepository.getCurrentUser();
+
+//       if (user != null) {
+//         debugPrint('User is authenticated: ${user.email}');
+
+//         if (storedUserId != null && storedUserId != user.id) {
+//           debugPrint(
+//               'User switch detected during auth check: $storedUserId -> ${user.id}. Clearing old user data.');
+//           final memorizationService = getIt<MemorizationService>();
+//           await memorizationService.clearAllData();
+//           await memorizationService.initialize();
+//         }
+
+//         _prefsHelper.setIsLoggedIn = true;
+//         _prefsHelper.setUserId = user.id;
+
+//         emit(AuthState.authenticated(user));
+
+//         _initializeMemorizationSync(user.id);
+//         _fetchAndSyncSubscriptionStatus(user.id);
+//         _subscribeToUserNotificationTopic(user.id); // ✅ যোগ করা হয়েছে
+//       } else {
+//         debugPrint('User is not authenticated, clearing auth data');
+//         _prefsHelper.clearAuthData();
+//         emit(const AuthState.unauthenticated());
+//       }
+//     } catch (e) {
+//       debugPrint('Error checking auth status: $e');
+//       emit(AuthState.error(e.toString()));
+//     }
+//   }
+
+//   Future<void> _signIn(_SignIn event, Emitter<AuthState> emit) async {
+//     emit(const AuthState.loading());
+//     try {
+//       final user = await _authRepository.signInWithEmail(
+//         event.email,
+//         event.password,
+//       );
+
+//       _prefsHelper.setIsLoggedIn = true;
+//       _prefsHelper.setUserId = user.id;
+
+//       emit(AuthState.authenticated(user));
+
+//       _initializeMemorizationSync(user.id);
+//       _fetchAndSyncSubscriptionStatus(user.id);
+//       _subscribeToUserNotificationTopic(user.id); // ✅ যোগ করা হয়েছে
+
+//       debugPrint('Login successful for user: ${user.email}');
+//     } catch (e) {
+//       debugPrint('Error signing in: $e');
+//       String errorMessage = 'Login failed';
+
+//       final errorString = e.toString().toLowerCase();
+//       if (errorString.contains('email not confirmed') ||
+//           errorString.contains('email_not_confirmed') ||
+//           errorString.contains('email verification')) {
+//         errorMessage =
+//             'Please check your email and click the verification link before signing in.';
+//       } else if (errorString.contains('invalid login credentials') ||
+//           errorString.contains('invalid_credentials')) {
+//         errorMessage =
+//             'Invalid email or password. Please check your credentials and try again.';
+//       } else if (errorString.contains('too many requests') ||
+//           errorString.contains('rate_limit')) {
+//         errorMessage =
+//             'Too many login attempts. Please wait a few minutes and try again.';
+//       } else if (errorString.contains('network') ||
+//           errorString.contains('connection')) {
+//         errorMessage =
+//             'Network error. Please check your internet connection and try again.';
+//       } else if (e is Exception) {
+//         errorMessage = e.toString().replaceAll('Exception: ', '');
+//       }
+
+//       emit(AuthState.error(errorMessage));
+//     }
+//   }
+
+//   Future<void> _signUp(_SignUp event, Emitter<AuthState> emit) async {
+//     emit(const AuthState.loading());
+//     try {
+//       await _authRepository.signUpWithEmail(
+//         event.email,
+//         event.password,
+//         event.fullName,
+//       );
+
+//       emit(const AuthState.error('SIGNUP_SUCCESS_VERIFY_EMAIL'));
+
+//       debugPrint(
+//           'Signup successful for email: ${event.email} - verification required');
+//     } catch (e) {
+//       debugPrint('Error signing up: $e');
+//       String errorMessage = 'Registration failed';
+
+//       final errorString = e.toString().toLowerCase();
+//       if (errorString.contains('email already exists') ||
+//           errorString.contains('email_address_already_in_use') ||
+//           errorString.contains('user already exists')) {
+//         errorMessage =
+//             'An account with this email already exists. Please try signing in instead.';
+//       } else if (errorString.contains('weak password') ||
+//           errorString.contains('password_too_weak')) {
+//         errorMessage =
+//             'Password is too weak. Please use at least 8 characters with mixed case, numbers, and symbols.';
+//       } else if (errorString.contains('invalid email') ||
+//           errorString.contains('invalid_email')) {
+//         errorMessage = 'Please enter a valid email address.';
+//       } else if (errorString.contains('network') ||
+//           errorString.contains('connection')) {
+//         errorMessage =
+//             'Network error. Please check your internet connection and try again.';
+//       } else if (e is Exception) {
+//         errorMessage = e.toString().replaceAll('Exception: ', '');
+//       }
+
+//       emit(AuthState.error(errorMessage));
+//     }
+//   }
+
+//   Future<void> _signInWithGoogle(
+//       _SignInWithGoogle event, Emitter<AuthState> emit) async {
+//     emit(const AuthState.loading());
+//     try {
+//       debugPrint('Starting Google sign-in process...');
+
+//       await _authRepository.signInWithGoogle().timeout(
+//         const Duration(seconds: 20),
+//         onTimeout: () {
+//           throw Exception('Google sign-in timed out. Please try again.');
+//         },
+//       );
+
+//       debugPrint('Google sign-in repository call completed');
+
+//       await Future.delayed(const Duration(milliseconds: 1000));
+
+//       final currentUser = await _authRepository.getCurrentUser();
+//       if (currentUser != null) {
+//         logger.i('Google sign-in successful: ${currentUser.email}');
+//         // ✅ Google sign-in এও subscribe করো
+//         _subscribeToUserNotificationTopic(currentUser.id);
+//       } else {
+//         debugPrint('Google sign-in completed but no user found');
+//         emit(const AuthState.unauthenticated());
+//       }
+//     } catch (e) {
+//       debugPrint('Error signing in with Google: $e');
+//       String errorMessage = 'Google login failed';
+
+//       if (e.toString().contains('cancelled') ||
+//           e.toString().contains('canceled')) {
+//         errorMessage = 'Google sign-in was cancelled';
+//       } else if (e.toString().contains('network')) {
+//         errorMessage =
+//             'Network error. Please check your connection and try again.';
+//       } else if (e.toString().contains('timeout')) {
+//         errorMessage = 'Google sign-in timed out. Please try again.';
+//       } else if (e is Exception) {
+//         errorMessage = e.toString().replaceAll('Exception: ', '');
+//       }
+
+//       emit(AuthState.error(errorMessage));
+//     }
+//   }
+
+//   Future<void> _signInWithApple(
+//       _SignInWithApple event, Emitter<AuthState> emit) async {
+//     emit(const AuthState.loading());
+//     try {
+//       debugPrint('Starting Apple sign-in process...');
+
+//       await _authRepository.signInWithApple().timeout(
+//         const Duration(seconds: 20),
+//         onTimeout: () {
+//           throw Exception('Apple sign-in timed out. Please try again.');
+//         },
+//       );
+
+//       debugPrint('Apple sign-in repository call completed');
+
+//       await Future.delayed(const Duration(milliseconds: 1000));
+
+//       final currentUser = await _authRepository.getCurrentUser();
+//       if (currentUser != null) {
+//         logger.i('Apple sign-in successful: ${currentUser.email}');
+//         // ✅ Apple sign-in এও subscribe করো
+//         _subscribeToUserNotificationTopic(currentUser.id);
+//       } else {
+//         debugPrint('Apple sign-in completed but no user found');
+//         emit(const AuthState.unauthenticated());
+//       }
+//     } catch (e) {
+//       debugPrint('Error signing in with Apple: $e');
+//       String errorMessage = 'Apple login failed';
+
+//       if (e.toString().contains('cancelled') ||
+//           e.toString().contains('canceled')) {
+//         errorMessage = 'Apple sign-in was cancelled';
+//       } else if (e.toString().contains('network')) {
+//         errorMessage =
+//             'Network error. Please check your connection and try again.';
+//       } else if (e.toString().contains('timeout')) {
+//         errorMessage = 'Apple sign-in timed out. Please try again.';
+//       } else if (e.toString().contains('not available')) {
+//         errorMessage = 'Apple Sign In is not available on this device.';
+//       } else if (e is Exception) {
+//         errorMessage = e.toString().replaceAll('Exception: ', '');
+//       }
+
+//       emit(AuthState.error(errorMessage));
+//     }
+//   }
+
+//   Future<void> _signOut(_SignOut event, Emitter<AuthState> emit) async {
+//     debugPrint('AuthBloc: Starting sign out process');
+//     emit(const AuthState.loading());
+//     try {
+//       final currentUser = await _authRepository.getCurrentUser();
+//       if (currentUser != null) {
+//         debugPrint('AuthBloc: Starting background upload before signing out');
+//         _performBackgroundUpload(currentUser.id);
+//         _unsubscribeFromUserNotificationTopic(currentUser.id); // ✅ যোগ করা হয়েছে
+//       }
+
+//       await _memorizationSyncService.handleUserLogout();
+//       await _authRepository.signOut();
+
+//       _prefsHelper.clearAuthData();
+
+//       emit(const AuthState.unauthenticated());
+
+//       debugPrint('AuthBloc: User signed out successfully');
+//     } catch (e) {
+//       debugPrint('AuthBloc: Error signing out: $e');
+//       String errorMessage = 'Failed to sign out';
+
+//       if (e is Exception) {
+//         errorMessage = e.toString().replaceAll('Exception: ', '');
+//       }
+
+//       _prefsHelper.clearAuthData();
+//       await _memorizationSyncService.handleUserLogout();
+
+//       emit(const AuthState.unauthenticated());
+//       debugPrint('AuthBloc: Sign out error handled: $errorMessage');
+//     }
+//   }
+
+//   Future<void> _resetPassword(
+//       _ResetPassword event, Emitter<AuthState> emit) async {
+//     emit(const AuthState.loading());
+//     try {
+//       await _authRepository.sendPasswordResetEmail(event.email);
+//       emit(const AuthState.unauthenticated());
+
+//       debugPrint('Password reset email sent to: ${event.email}');
+//     } catch (e) {
+//       debugPrint('Error resetting password: $e');
+//       String errorMessage = 'Failed to reset password';
+
+//       if (e is Exception) {
+//         errorMessage = e.toString().replaceAll('Exception: ', '');
+//       }
+
+//       emit(AuthState.error(errorMessage));
+//     }
+//   }
+
+//   Future<void> _updateSubscription(
+//       _UpdateSubscription event, Emitter<AuthState> emit) async {
+//     try {
+//       final currentState = state;
+//       if (currentState is _Authenticated) {
+//         final user = currentState.user;
+
+//         final updatedUser =
+//             user.copyWith(hasSubscription: event.hasSubscription);
+//         emit(AuthState.authenticated(updatedUser));
+
+//         await _authRepository.updateUserSubscription(
+//             user.id, event.hasSubscription);
+
+//         debugPrint('Subscription status updated: ${event.hasSubscription}');
+//       }
+//     } catch (e) {
+//       debugPrint('Error updating subscription: $e');
+//       String errorMessage = 'Failed to update subscription';
+
+//       if (e is Exception) {
+//         errorMessage = e.toString().replaceAll('Exception: ', '');
+//       }
+
+//       emit(AuthState.error(errorMessage));
+//     }
+//   }
+
+//   void _initializeMemorizationSync(String userId) async {
+//     try {
+//       logger.i('Initializing memorization sync for user: $userId');
+//       await _memorizationSyncService.handleUserLogin(userId);
+//     } catch (e) {
+//       debugPrint('Error initializing memorization sync: $e');
+//     }
+//   }
+
+//   void _performBackgroundUpload(String userId) async {
+//     try {
+//       debugPrint('AuthBloc: Performing background upload for user: $userId');
+//       await _memorizationSyncService
+//           .uploadMemorizationData(userId)
+//           .timeout(const Duration(seconds: 5), onTimeout: () {
+//         debugPrint(
+//             'AuthBloc: Background upload timeout - logout will continue');
+//       });
+//     } catch (syncError) {
+//       debugPrint('AuthBloc: Background upload failed: $syncError');
+//     }
+//   }
+
+//   void _fetchAndSyncSubscriptionStatus(String userId) async {
+//     try {
+//       logger.i('AuthBloc: Fetching subscription status for user: $userId');
+
+//       final supabase = getIt<SupabaseProvider>().client;
+//       final response = await supabase
+//           .from('user_profiles')
+//           .select('has_subscription, subscription_status, subscription_expiry, ai_usage_data')
+//           .eq('user_id', userId)
+//           .maybeSingle();
+
+//       if (response != null) {
+//         final prefs = await SharedPreferences.getInstance();
+//         await prefs.setBool(
+//             'isSubscribed', response['has_subscription'] ?? false);
+//         await prefs.setString(
+//             'subscriptionType', response['subscription_status'] ?? '');
+//         logger.i('subscriptionType: ${response['subscription_status']}');
+
+//         if (response['subscription_expiry'] != null) {
+//           await prefs.setString(
+//               'subscriptionExpiry', response['subscription_expiry']);
+//         }
+
+//         if (response['ai_usage_data'] != null) {
+//           final aiUsageData = response['ai_usage_data'] as Map<String, dynamic>;
+//           await _syncAIUsageData(aiUsageData);
+//         }
+
+//         debugPrint('AuthBloc: Subscription and AI usage data synced successfully');
+//       }
+//     } catch (e) {
+//       logger.e('AuthBloc: Error fetching subscription status: $e');
+//     }
+//   }
+
+//   Future<void> _syncAIUsageData(Map<String, dynamic> aiUsageData) async {
+//     try {
+//       final aiUsageTracker = AIUsageTrackingService();
+
+//       final usageData = AIUsageData(
+//         monthlyTokens: aiUsageData['monthly_tokens'] ?? 0,
+//         totalRequests: aiUsageData['total_requests'] ?? 0,
+//         lastResetDate: aiUsageData['last_reset_date'] ?? DateTime.now().toIso8601String(),
+//         lastUsed: aiUsageData['last_used'],
+//       );
+
+//       await aiUsageTracker.saveAIUsageDataToPrefs(usageData);
+
+//       logger.i('AuthBloc: AI usage data synced successfully');
+//     } catch (e) {
+//       logger.e('AuthBloc: Error syncing AI usage data: $e');
+//     }
+//   }
+
+//   // ✅ নতুন helper - login এ user topic subscribe
+//   void _subscribeToUserNotificationTopic(String userId) async {
+//     try {
+//       final notificationService = getIt<MosqueNotificationService>();
+//       await notificationService.subscribeToUserTopic(userId);
+//       debugPrint('AuthBloc: ✅ Subscribed to user topic: user_$userId');
+//     } catch (e) {
+//       debugPrint('AuthBloc: ❌ Error subscribing to user topic: $e');
+//     }
+//   }
+
+//   // ✅ নতুন helper - logout এ user topic unsubscribe
+//   void _unsubscribeFromUserNotificationTopic(String userId) async {
+//     try {
+//       final notificationService = getIt<MosqueNotificationService>();
+//       await notificationService.unsubscribeFromUserTopic(userId);
+//       debugPrint('AuthBloc: ✅ Unsubscribed from user topic: user_$userId');
+//     } catch (e) {
+//       debugPrint('AuthBloc: ❌ Error unsubscribing from user topic: $e');
+//     }
+//   }
+
+//   @override
+//   Future<void> close() {
+//     _authStateSubscription?.cancel();
+//     _subscriptionStatusSub?.cancel();
+//     return super.close();
+//   }
+// }
