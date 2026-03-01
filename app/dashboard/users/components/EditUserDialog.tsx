@@ -68,8 +68,8 @@ export default function EditUserDialog({ isOpen, onClose, user, onSuccess }: Edi
   if (!isOpen) return null
 
   return (
-    <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
-      <Card className="w-full max-w-md mx-4 shadow-xl">
+    <div className="fixed inset-0 bg-black/70 bg-opacity-30 flex items-center justify-center z-50">
+      <Card className="w-full max-w-md mx-4 bg-slate-200 shadow-xl">
         <CardHeader className="pb-3">
           <div className="flex items-center justify-between">
             <div>

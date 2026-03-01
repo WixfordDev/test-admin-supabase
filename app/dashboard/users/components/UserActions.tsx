@@ -1,381 +1,11 @@
-// import { useState } from 'react'
-// import { Button } from '@/app/components/ui/button'
-// import { MoreHorizontal, Edit, Trash2, Crown, Ban, UserCheck, AlertTriangle, CheckCircle, Bell } from 'lucide-react'
-// import EditUserDialog from './EditUserDialog';
-// import type { UserProfile } from '@/lib/types/users'
-
-// interface UserActionsProps {
-//   user: UserProfile
-//   onUserUpdate: (user: UserProfile) => void
-//   onDelete?: () => void
-// }
-
-// export default function UserActions({ user, onUserUpdate, onDelete }: UserActionsProps) {
-//   const [isOpen, setIsOpen] = useState(false)
-//   const [loading, setLoading] = useState(false)
-//   const [showEditDialog, setShowEditDialog] = useState(false)
-
-//   const handleSubscriptionChange = async (newStatus: 'free' | 'barakah_access' | 'quran_lite' | 'deenhub_pro' | 'expired') => {
-//     setLoading(true)
-//     try {
-//       const response = await fetch('/api/admin/users', {
-//         method: 'PUT',
-//         headers: {
-//           'Content-Type': 'application/json',
-//         },
-//         body: JSON.stringify({
-//           user_id: user.user_id,
-//           subscription_status: newStatus,
-//         }),
-//       })
-
-//       const result = await response.json()
-
-//       if (result.success) {
-//         // Send notification to the user about their subscription change
-//         await sendSubscriptionNotification(user.user_id, newStatus);
-
-//         onUserUpdate(result.user)
-//         setIsOpen(false)
-//       } else {
-//         console.error('Failed to update user subscription:', result.error)
-//         alert('Failed to update subscription. Please try again.')
-//       }
-//     } catch (error) {
-//       console.error('Error updating subscription:', error)
-//       alert('Failed to update subscription. Please try again.')
-//     } finally {
-//       setLoading(false)
-//     }
-//   }
-
-//   const sendSubscriptionNotification = async (userId: string, newStatus: string) => {
-//    try {
-//     // Get user's FCM token from the database
-//     const tokenResponse = await fetch(`/api/get-user-token?user_id=${userId}`);
-
-//     if (!tokenResponse.ok) {
-//       console.error('Failed to fetch user token:', tokenResponse.status, tokenResponse.statusText);
-//       return;
-//     }
-
-//     const tokenResult = await tokenResponse.json();
-
-//     if (!tokenResult.success || !tokenResult.token) {
-//       console.warn(`User ${userId} does not have an FCM token registered. Notification will not be sent.`);
-//       // Still consider this a success since the subscription update worked
-//       // Just inform the admin that the notification couldn't be sent
-//       return;
-//     }
-
-//       // Prepare notification based on subscription change
-//       let title = '';
-//       let body = '';
-
-//       switch(newStatus) {
-//         case 'deenhub_pro':
-//           title = '🎉 Subscription Upgraded!';
-//           body = 'Congratulations! Your subscription has been upgraded to DeenHub Pro. Enjoy premium features.';
-//           break;
-//         case 'quran_lite':
-//           title = '✨ Subscription Updated';
-//           body = 'Your subscription has been updated to Quran Lite. Enjoy enhanced features.';
-//           break;
-//         case 'barakah_access':
-//           title = '✨ Subscription Updated';
-//           body = 'Your subscription has been updated to Barakah Access. Enjoy exclusive content.';
-//           break;
-//         case 'free':
-//           title = '🔄 Subscription Changed';
-//           body = 'Your subscription has been changed to Free tier. Some features may be limited.';
-//           break;
-//         case 'expired':
-//           title = '⚠️ Subscription Expired';
-//           body = 'Your subscription has expired. Please renew to continue enjoying premium features.';
-//           break;
-//         default:
-//           title = '📋 Subscription Updated';
-//           body = 'Your subscription status has been updated.';
-//       }
-
-//       // Send notification via FCM
-//       const notificationResponse = await fetch('/api/send-notification', {
-//         method: 'POST',
-//         headers: {
-//           'Content-Type': 'application/json',
-//         },
-//         body: JSON.stringify({
-//           title,
-//           body,
-//           target: 'single',
-//           token: tokenResult.token,
-//         }),
-//       });
-
-//       if (!notificationResponse.ok) {
-//         console.error('Failed to send notification:', notificationResponse.status, notificationResponse.statusText);
-//         return;
-//       }
-
-//       const notificationResult = await notificationResponse.json();
-
-//       if (!notificationResult.success) {
-//         console.error('Failed to send notification:', notificationResult.error);
-//       } else {
-//         console.log('Notification sent successfully to user:', userId);
-//       }
-//     } catch (error) {
-//       console.error('Error sending subscription notification:', error);
-//     }
-//   }
-
-//     const handleSuspendUser = async () => {
-//     setLoading(true)
-//     try {
-//       // In Supabase, we can update user's status by changing their role or by managing a flag in our user_profiles table
-//       // Here we'll update their subscription status to 'expired' and set has_subscription to false
-//       const response = await fetch('/api/admin/users', {
-//         method: 'PUT',
-//         headers: {
-//           'Content-Type': 'application/json',
-//         },
-//         body: JSON.stringify({
-//           user_id: user.user_id,
-//           subscription_status: 'expired',
-//           has_subscription: false,
-//           subscription_expiry: null,
-//         }),
-//       })
-
-//       const result = await response.json()
-
-//       if (result.success) {
-//         onUserUpdate(result.user)
-//         setIsOpen(false)
-//       } else {
-//         console.error('Failed to suspend user:', result.error)
-//         alert('Failed to suspend user. Please try again.')
-//       }
-//     } catch (error) {
-//       console.error('Error suspending user:', error)
-//       alert('Failed to suspend user. Please try again.')
-//     } finally {
-//       setLoading(false)
-//     }
-//   }
-
-//   // const handleSuspendUser = async () => {
-//   //   // Prompt for suspension reason
-//   //   const reason = prompt('Enter the reason for suspending this user:');
-
-//   //   if (!reason) {
-//   //     alert('A reason is required to suspend a user.');
-//   //     return;
-//   //   }
-
-//   //   setLoading(true)
-//   //   try {
-//   //     // In Supabase, we can update user's status by changing their role or by managing a flag in our user_profiles table
-//   //     // Here we'll update their subscription status to 'expired' and set has_subscription to false
-//   //     const response = await fetch('/api/admin/users', {
-//   //       method: 'PUT',
-//   //       headers: {
-//   //         'Content-Type': 'application/json',
-//   //       },
-//   //       body: JSON.stringify({
-//   //         user_id: user.user_id,
-//   //         subscription_status: 'expired',
-//   //         has_subscription: false,
-//   //         subscription_expiry: null,
-//   //         suspension_reason: reason, // This will be stored for reference
-//   //       }),
-//   //     })
-
-//   //     const result = await response.json()
-
-//   //     if (result.success) {
-//   //       onUserUpdate(result.user)
-//   //       setIsOpen(false)
-//   //     } else {
-//   //       console.error('Failed to suspend user:', result.error)
-//   //       alert('Failed to suspend user. Please try again.')
-//   //     }
-//   //   } catch (error) {
-//   //     console.error('Error suspending user:', error)
-//   //     alert('Failed to suspend user. Please try again.')
-//   //   } finally {
-//   //     setLoading(false)
-//   //   }
-//   // }
-
-//   const handleDeleteUser = async () => {
-//     if (confirm(`Are you sure you want to delete ${user.full_name || user.email}? This action cannot be undone.`)) {
-//       setLoading(true)
-//       try {
-//         const response = await fetch(`/api/admin/users/${user.user_id}`, {
-//           method: 'DELETE',
-//         })
-
-//         if (response.ok) {
-//           // In the UsersManagement component, we'll need to update the UI to remove the deleted user
-//           // Since we can't remove the user from the parent component directly, we'll just close the menu
-//           setIsOpen(false)
-//           alert('User deleted successfully')
-//           onDelete?.()
-//         } else {
-//           const error = await response.json()
-//           console.error('Failed to delete user:', error.error)
-//           alert(`Failed to delete user: ${error.error}`)
-//         }
-//       } catch (error) {
-//         console.error('Error deleting user:', error)
-//         alert('Failed to delete user. Please try again.')
-//       } finally {
-//         setLoading(false)
-//       }
-//     }
-//   }
-
-//   const handleEditUser = () => {
-//     setShowEditDialog(true)
-//     setIsOpen(false)
-//   }
-
-//   return (
-//     <div className="relative">
-//       <Button
-//         variant="ghost"
-//         size="sm"
-//         onClick={() => setIsOpen(!isOpen)}
-//         disabled={loading}
-//       >
-//         {loading ? (
-//           <div className="h-4 w-4 animate-spin rounded-full border-2 border-gray-300 border-t-transparent"></div>
-//         ) : (
-//           <MoreHorizontal className="h-4 w-4" />
-//         )}
-//       </Button>
-
-//       {isOpen && (
-//         <>
-//           <div
-//             className="fixed inset-0 z-10"
-//             onClick={() => setIsOpen(false)}
-//           />
-//           <div className="absolute right-0 top-full z-20 mt-1 w-56 bg-white border border-gray-200 rounded-lg shadow-lg overflow-hidden">
-//             <div className="py-1">
-//               <button
-//                 onClick={handleEditUser}
-//                 disabled={loading}
-//                 className="flex items-center w-full px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 transition-colors disabled:opacity-50"
-//               >
-//                 <Edit className="mr-2 h-4 w-4" />
-//                 Edit User
-//               </button>
-
-//               {/* Subscription Actions based on current status */}
-//               {user.subscription_status === 'free' || user.subscription_status === 'expired' ? (
-//                 <>
-//                   <button
-//                     onClick={() => handleSubscriptionChange('quran_lite')}
-//                     disabled={loading}
-//                     className="flex items-center w-full px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 transition-colors disabled:opacity-50"
-//                   >
-//                     <Crown className="mr-2 h-4 w-4 text-blue-500" />
-//                     Upgrade to Quran Lite
-//                   </button>
-//                   <button
-//                     onClick={() => handleSubscriptionChange('deenhub_pro')}
-//                     disabled={loading}
-//                     className="flex items-center w-full px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 transition-colors disabled:opacity-50"
-//                   >
-//                     <Crown className="mr-2 h-4 w-4 text-purple-500" />
-//                     Upgrade to DeenHub Pro
-//                   </button>
-//                 </>
-//               ) : (
-//                 <>
-//                   {user.subscription_status !== 'deenhub_pro' && (
-//                     <button
-//                       onClick={() => handleSubscriptionChange('deenhub_pro')}
-//                       disabled={loading}
-//                       className="flex items-center w-full px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 transition-colors disabled:opacity-50"
-//                     >
-//                       <Crown className="mr-2 h-4 w-4 text-purple-500" />
-//                       Upgrade to DeenHub Pro
-//                     </button>
-//                   )}
-//                   {user.subscription_status !== 'quran_lite' && (
-//                     <button
-//                       onClick={() => handleSubscriptionChange('quran_lite')}
-//                       disabled={loading}
-//                       className="flex items-center w-full px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 transition-colors disabled:opacity-50"
-//                     >
-//                       <Crown className="mr-2 h-4 w-4 text-blue-500" />
-//                       {user.subscription_status === 'deenhub_pro' ? 'Downgrade to Quran Lite' : 'Upgrade to Quran Lite'}
-//                     </button>
-//                   )}
-//                   <button
-//                     onClick={() => handleSubscriptionChange('free')}
-//                     disabled={loading}
-//                     className="flex items-center w-full px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 transition-colors disabled:opacity-50"
-//                   >
-//                     <Crown className="mr-2 h-4 w-4" />
-//                     Downgrade to Free
-//                   </button>
-//                 </>
-//               )}
-
-//               <div className="border-t border-gray-100 my-1"></div>
-
-//               <button
-//                 onClick={handleSuspendUser}
-//                 disabled={loading}
-//                 className="flex items-center w-full px-4 py-2 text-sm text-amber-600 hover:bg-amber-50 transition-colors disabled:opacity-50"
-//               >
-//                 <Ban className="mr-2 h-4 w-4" />
-//                 Suspend User
-//               </button>
-
-//               <div className="border-t border-gray-100 my-1"></div>
-
-//               <button
-//                 onClick={handleDeleteUser}
-//                 disabled={loading}
-//                 className="flex items-center w-full px-4 py-2 text-sm text-red-600 hover:bg-red-50 transition-colors disabled:opacity-50"
-//               >
-//                 <Trash2 className="mr-2 h-4 w-4" />
-//                 Delete User
-//               </button>
-//             </div>
-//           </div>
-//         </>
-//       )}
-
-//       {showEditDialog && (
-//         <EditUserDialog
-//           isOpen={showEditDialog}
-//           onClose={() => setShowEditDialog(false)}
-//           user={user}
-//           onSuccess={(updatedUser) => {
-//             onUserUpdate(updatedUser)
-//             setShowEditDialog(false)
-//           }}
-//         />
-//       )}
-//     </div>
-//   )
-// }
-
-
-
-
-
 
 import { useState } from 'react'
 import { Button } from '@/app/components/ui/button'
-import { MoreHorizontal, Edit, Trash2, Crown, Ban } from 'lucide-react'
-import EditUserDialog from './EditUserDialog';
+import {
+  MoreHorizontal, Edit, Trash2, Crown, Ban, Send,
+  ArrowUpCircle, ArrowDownCircle, CheckCircle2,
+} from 'lucide-react'
+import EditUserDialog from './EditUserDialog'
 import type { UserProfile } from '@/lib/types/users'
 
 interface UserActionsProps {
@@ -384,99 +14,76 @@ interface UserActionsProps {
   onDelete?: () => void
 }
 
+type SubscriptionStatus = 'free' | 'barakah_access' | 'quran_lite' | 'deenhub_pro' | 'expired'
+
+const DEFAULT_MESSAGES: Record<SubscriptionStatus, { title: string; body: string }> = {
+  deenhub_pro:    { title: '🎉 Subscription Upgraded!', body: 'Congratulations! Your subscription has been upgraded to DeenHub Pro. Enjoy premium features.' },
+  quran_lite:     { title: '✨ Subscription Updated',   body: 'Your subscription has been updated to Quran Lite. Enjoy enhanced features.' },
+  barakah_access: { title: '✨ Subscription Updated',   body: 'Your subscription has been updated to Barakah Access. Enjoy exclusive content.' },
+  free:           { title: '🔄 Subscription Changed',  body: 'Your subscription has been changed to Free tier. Some features may be limited.' },
+  expired:        { title: '⚠️ Subscription Expired',  body: 'Your subscription has expired. Please renew to continue enjoying premium features.' },
+}
+
+const PLAN_BADGE: Record<string, string> = {
+  deenhub_pro:    'bg-purple-100 text-purple-700',
+  quran_lite:     'bg-blue-100 text-blue-700',
+  barakah_access: 'bg-teal-100 text-teal-700',
+  free:           'bg-gray-100 text-gray-600',
+  expired:        'bg-red-100 text-red-600',
+}
+
+const PLAN_LABEL: Record<string, string> = {
+  deenhub_pro:    'DeenHub Pro',
+  quran_lite:     'Quran Lite',
+  barakah_access: 'Barakah Access',
+  free:           'Free',
+  expired:        'Expired',
+}
+
 export default function UserActions({ user, onUserUpdate, onDelete }: UserActionsProps) {
-  const [isOpen, setIsOpen] = useState(false)
-  const [loading, setLoading] = useState(false)
+  const [isOpen, setIsOpen]         = useState(false)
+  const [loading, setLoading]       = useState(false)
   const [showEditDialog, setShowEditDialog] = useState(false)
+  const [customMessage, setCustomMessage]   = useState('')
+  const [sendingMsg, setSendingMsg]         = useState(false)
+  const [msgSent, setMsgSent]               = useState(false)
 
-  // ✅ Same API as notification page, just pass user_id for specific user
-  const sendSubscriptionNotification = async (userId: string, newStatus: string) => {
+  const sendNotification = async (userId: string, title: string, body: string) => {
     try {
-      let title = '';
-      let body = '';
-
-      switch (newStatus) {
-        case 'deenhub_pro':
-          title = '🎉 Subscription Upgraded!';
-          body = 'Congratulations! Your subscription has been upgraded to DeenHub Pro. Enjoy premium features.';
-          break;
-        case 'quran_lite':
-          title = '✨ Subscription Updated';
-          body = 'Your subscription has been updated to Quran Lite. Enjoy enhanced features.';
-          break;
-        case 'barakah_access':
-          title = '✨ Subscription Updated';
-          body = 'Your subscription has been updated to Barakah Access. Enjoy exclusive content.';
-          break;
-        case 'free':
-          title = '🔄 Subscription Changed';
-          body = 'Your subscription has been changed to Free tier. Some features may be limited.';
-          break;
-        case 'expired':
-          title = '⚠️ Subscription Expired';
-          body = 'Your subscription has expired. Please renew to continue enjoying premium features.';
-          break;
-        default:
-          title = '📋 Subscription Updated';
-          body = 'Your subscription status has been updated.';
-      }
-
-      // ✅ Same endpoint as notification page — just adding user_id
-      const response = await fetch('/api/send-announcement', {
+      const res = await fetch('/api/send-announcement', {
         method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
+        headers: { 'Content-Type': 'application/json' },
         credentials: 'include',
-        body: JSON.stringify({
-          title,
-          body,
-          user_id: userId, // 👈 specific user ko target korbe
-        }),
-      });
-
-      const data = await response.json();
-
-      console.log(data, userId);
-      
-
-      if (response.ok) {
-        console.log('✅ Notification sent to user:', userId);
-      } else {
-        console.error('❌ Failed to send notification:', data.error);
-      }
-    } catch (error) {
-      console.error('Error sending notification:', error);
+        body: JSON.stringify({ title, body, user_id: userId }),
+      })
+      const data = await res.json()
+      if (!res.ok) console.error('Notification error:', data.error)
+    } catch (e) {
+      console.error('Notification error:', e)
     }
-  };
+  }
 
-  const handleSubscriptionChange = async (newStatus: 'free' | 'barakah_access' | 'quran_lite' | 'deenhub_pro' | 'expired') => {
+  const handleSubscriptionChange = async (newStatus: SubscriptionStatus) => {
     setLoading(true)
     try {
-      const response = await fetch('/api/admin/users', {
+      const res    = await fetch('/api/admin/users', {
         method: 'PUT',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({
-          user_id: user.user_id,
-          subscription_status: newStatus,
-        }),
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ user_id: user.user_id, subscription_status: newStatus }),
       })
-
-      const result = await response.json()
-
+      const result = await res.json()
       if (result.success) {
-        // ✅ Subscription update holar pore notification pathabo
-        await sendSubscriptionNotification(user.user_id, newStatus);
+        const defaults = DEFAULT_MESSAGES[newStatus]
+        const title    = customMessage.trim() ? '📢 Subscription Update' : defaults.title
+        const body     = customMessage.trim() ? customMessage.trim()     : defaults.body
+        await sendNotification(user.user_id, title, body)
         onUserUpdate(result.user)
         setIsOpen(false)
+        setCustomMessage('')
       } else {
-        console.error('Failed to update user subscription:', result.error)
         alert('Failed to update subscription. Please try again.')
       }
-    } catch (error) {
-      console.error('Error updating subscription:', error)
+    } catch {
       alert('Failed to update subscription. Please try again.')
     } finally {
       setLoading(false)
@@ -486,11 +93,9 @@ export default function UserActions({ user, onUserUpdate, onDelete }: UserAction
   const handleSuspendUser = async () => {
     setLoading(true)
     try {
-      const response = await fetch('/api/admin/users', {
+      const res    = await fetch('/api/admin/users', {
         method: 'PUT',
-        headers: {
-          'Content-Type': 'application/json',
-        },
+        headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
           user_id: user.user_id,
           subscription_status: 'expired',
@@ -498,20 +103,17 @@ export default function UserActions({ user, onUserUpdate, onDelete }: UserAction
           subscription_expiry: null,
         }),
       })
-
-      const result = await response.json()
-
+      const result = await res.json()
       if (result.success) {
-        // ✅ Suspend hole o notification pathabo
-        await sendSubscriptionNotification(user.user_id, 'expired');
+        const body = customMessage.trim() || 'Your account has been suspended. Please contact support for assistance.'
+        await sendNotification(user.user_id, '⚠️ Account Suspended', body)
         onUserUpdate(result.user)
         setIsOpen(false)
+        setCustomMessage('')
       } else {
-        console.error('Failed to suspend user:', result.error)
         alert('Failed to suspend user. Please try again.')
       }
-    } catch (error) {
-      console.error('Error suspending user:', error)
+    } catch {
       alert('Failed to suspend user. Please try again.')
     } finally {
       setLoading(false)
@@ -519,143 +121,227 @@ export default function UserActions({ user, onUserUpdate, onDelete }: UserAction
   }
 
   const handleDeleteUser = async () => {
-    if (confirm(`Are you sure you want to delete ${user.full_name || user.email}? This action cannot be undone.`)) {
-      setLoading(true)
-      try {
-        const response = await fetch(`/api/admin/users/${user.user_id}`, {
-          method: 'DELETE',
-        })
-
-        if (response.ok) {
-          setIsOpen(false)
-          alert('User deleted successfully')
-          onDelete?.()
-        } else {
-          const error = await response.json()
-          console.error('Failed to delete user:', error.error)
-          alert(`Failed to delete user: ${error.error}`)
-        }
-      } catch (error) {
-        console.error('Error deleting user:', error)
-        alert('Failed to delete user. Please try again.')
-      } finally {
-        setLoading(false)
+    if (!confirm(`Delete ${user.full_name || user.email}? This cannot be undone.`)) return
+    setLoading(true)
+    try {
+      const res = await fetch(`/api/admin/users/${user.user_id}`, { method: 'DELETE' })
+      if (res.ok) {
+        setIsOpen(false)
+        alert('User deleted successfully')
+        onDelete?.()
+      } else {
+        const err = await res.json()
+        alert(`Failed to delete user: ${err.error}`)
       }
+    } catch {
+      alert('Failed to delete user. Please try again.')
+    } finally {
+      setLoading(false)
     }
   }
 
-  const handleEditUser = () => {
-    setShowEditDialog(true)
-    setIsOpen(false)
+  const handleSendCustomMessage = async () => {
+    if (!customMessage.trim()) return
+    setSendingMsg(true)
+    try {
+      await sendNotification(user.user_id, '📢 Message from Admin', customMessage.trim())
+      setMsgSent(true)
+      setCustomMessage('')
+      setTimeout(() => setMsgSent(false), 2500)
+    } finally {
+      setSendingMsg(false)
+    }
   }
+
+  const isPro     = user.subscription_status === 'deenhub_pro'
+  const isLite    = user.subscription_status === 'quran_lite'
+  const isFreeish = user.subscription_status === 'free' || user.subscription_status === 'expired'
 
   return (
     <div className="relative">
       <Button
         variant="ghost"
         size="sm"
-        onClick={() => setIsOpen(!isOpen)}
+        onClick={() => { setIsOpen(!isOpen); setCustomMessage(''); setMsgSent(false) }}
         disabled={loading}
+        className="h-8 w-8 p-0 rounded-full hover:bg-gray-100"
       >
-        {loading ? (
-          <div className="h-4 w-4 animate-spin rounded-full border-2 border-gray-300 border-t-transparent"></div>
-        ) : (
-          <MoreHorizontal className="h-4 w-4" />
-        )}
+        {loading
+          ? <div className="h-4 w-4 animate-spin rounded-full border-2 border-gray-400 border-t-transparent" />
+          : <MoreHorizontal className="h-4 w-4 text-gray-500" />}
       </Button>
 
       {isOpen && (
         <>
-          <div
-            className="fixed inset-0 z-10"
-            onClick={() => setIsOpen(false)}
-          />
-          <div className="absolute right-0 top-full z-20 mt-1 w-56 bg-white border border-gray-200 rounded-lg shadow-lg overflow-hidden">
-            <div className="py-1">
+          {/* backdrop */}
+          <div className="fixed inset-0 z-10" onClick={() => setIsOpen(false)} />
+
+          {/* panel */}
+          <div className="absolute right-0 top-full z-20 mt-2 w-72 bg-white rounded-2xl shadow-xl border border-gray-100 overflow-hidden">
+
+            {/* ── User header ── */}
+            <div className="px-4 py-3 bg-gradient-to-r from-slate-50 to-gray-50 border-b border-gray-100 flex items-center gap-3">
+              <div className="h-8 w-8 rounded-full bg-gradient-to-br from-blue-400 to-purple-500 flex items-center justify-center text-white text-xs font-bold shrink-0">
+                {(user.full_name || user.email || '?')[0].toUpperCase()}
+              </div>
+              <div className="min-w-0">
+                <p className="text-sm font-semibold text-gray-800 truncate">
+                  {user.full_name || 'Unknown'}
+                </p>
+                <span className={`inline-flex items-center px-2 py-0.5 rounded-full text-[10px] font-semibold mt-0.5 ${PLAN_BADGE[user.subscription_status] ?? 'bg-gray-100 text-gray-600'}`}>
+                  {PLAN_LABEL[user.subscription_status] ?? user.subscription_status}
+                </span>
+              </div>
+            </div>
+
+            {/* ── Actions ── */}
+            <div className="p-2 space-y-0.5">
+
+              {/* Edit */}
               <button
-                onClick={handleEditUser}
+                onClick={() => { setShowEditDialog(true); setIsOpen(false) }}
                 disabled={loading}
-                className="flex items-center w-full px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 transition-colors disabled:opacity-50"
+                className="flex items-center gap-3 w-full px-3 py-2 rounded-xl text-sm text-gray-700 hover:bg-gray-50 transition-colors disabled:opacity-50"
               >
-                <Edit className="mr-2 h-4 w-4" />
-                Edit User
+                <span className="h-7 w-7 rounded-lg bg-gray-100 flex items-center justify-center shrink-0">
+                  <Edit className="h-3.5 w-3.5 text-gray-600" />
+                </span>
+                <span className="font-medium">Edit User</span>
               </button>
 
-              {/* Subscription Actions based on current status */}
-              {user.subscription_status === 'free' || user.subscription_status === 'expired' ? (
-                <>
-                  <button
-                    onClick={() => handleSubscriptionChange('quran_lite')}
-                    disabled={loading}
-                    className="flex items-center w-full px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 transition-colors disabled:opacity-50"
-                  >
-                    <Crown className="mr-2 h-4 w-4 text-blue-500" />
-                    Upgrade to Quran Lite
-                  </button>
-                  <button
-                    onClick={() => handleSubscriptionChange('deenhub_pro')}
-                    disabled={loading}
-                    className="flex items-center w-full px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 transition-colors disabled:opacity-50"
-                  >
-                    <Crown className="mr-2 h-4 w-4 text-purple-500" />
-                    Upgrade to DeenHub Pro
-                  </button>
-                </>
-              ) : (
-                <>
-                  {user.subscription_status !== 'deenhub_pro' && (
-                    <button
-                      onClick={() => handleSubscriptionChange('deenhub_pro')}
-                      disabled={loading}
-                      className="flex items-center w-full px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 transition-colors disabled:opacity-50"
-                    >
-                      <Crown className="mr-2 h-4 w-4 text-purple-500" />
-                      Upgrade to DeenHub Pro
-                    </button>
-                  )}
-                  {user.subscription_status !== 'quran_lite' && (
-                    <button
-                      onClick={() => handleSubscriptionChange('quran_lite')}
-                      disabled={loading}
-                      className="flex items-center w-full px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 transition-colors disabled:opacity-50"
-                    >
-                      <Crown className="mr-2 h-4 w-4 text-blue-500" />
-                      {user.subscription_status === 'deenhub_pro' ? 'Downgrade to Quran Lite' : 'Upgrade to Quran Lite'}
-                    </button>
-                  )}
-                  <button
-                    onClick={() => handleSubscriptionChange('free')}
-                    disabled={loading}
-                    className="flex items-center w-full px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 transition-colors disabled:opacity-50"
-                  >
-                    <Crown className="mr-2 h-4 w-4" />
-                    Downgrade to Free
-                  </button>
-                </>
+              {/* ── Subscription section ── */}
+              <div className="pt-2 pb-1 px-3">
+                <p className="text-[10px] font-semibold text-gray-400 uppercase tracking-wider flex items-center gap-1">
+                  <Crown className="h-3 w-3" /> Subscription
+                </p>
+              </div>
+
+              {/* Upgrade to DeenHub Pro */}
+              {!isPro && (
+                <button
+                  onClick={() => handleSubscriptionChange('deenhub_pro')}
+                  disabled={loading}
+                  className="flex items-center gap-3 w-full px-3 py-2 rounded-xl text-sm hover:bg-purple-50 transition-colors disabled:opacity-50 group"
+                >
+                  <span className="h-7 w-7 rounded-lg bg-purple-100 flex items-center justify-center shrink-0">
+                    <ArrowUpCircle className="h-3.5 w-3.5 text-purple-600" />
+                  </span>
+                  <div className="text-left">
+                    <p className="font-medium text-gray-800">
+                      {isFreeish ? 'Upgrade' : 'Switch'} to DeenHub Pro
+                    </p>
+                    <p className="text-[10px] text-gray-400">Premium plan</p>
+                  </div>
+                </button>
               )}
 
-              <div className="border-t border-gray-100 my-1"></div>
+              {/* Quran Lite */}
+              {!isLite && (
+                <button
+                  onClick={() => handleSubscriptionChange('quran_lite')}
+                  disabled={loading}
+                  className="flex items-center gap-3 w-full px-3 py-2 rounded-xl text-sm hover:bg-blue-50 transition-colors disabled:opacity-50"
+                >
+                  <span className="h-7 w-7 rounded-lg bg-blue-100 flex items-center justify-center shrink-0">
+                    {isPro
+                      ? <ArrowDownCircle className="h-3.5 w-3.5 text-blue-600" />
+                      : <ArrowUpCircle   className="h-3.5 w-3.5 text-blue-600" />}
+                  </span>
+                  <div className="text-left">
+                    <p className="font-medium text-gray-800">
+                      {isPro ? 'Downgrade' : 'Upgrade'} to Quran Lite
+                    </p>
+                    <p className="text-[10px] text-gray-400">Lite plan</p>
+                  </div>
+                </button>
+              )}
 
+              {/* Downgrade to Free */}
+              {!isFreeish && (
+                <button
+                  onClick={() => handleSubscriptionChange('free')}
+                  disabled={loading}
+                  className="flex items-center gap-3 w-full px-3 py-2 rounded-xl text-sm hover:bg-gray-50 transition-colors disabled:opacity-50"
+                >
+                  <span className="h-7 w-7 rounded-lg bg-gray-100 flex items-center justify-center shrink-0">
+                    <ArrowDownCircle className="h-3.5 w-3.5 text-gray-500" />
+                  </span>
+                  <div className="text-left">
+                    <p className="font-medium text-gray-800">Downgrade to Free</p>
+                    <p className="text-[10px] text-gray-400">Basic plan</p>
+                  </div>
+                </button>
+              )}
+            </div>
+
+            {/* ── Custom notification ── */}
+            <div
+              className="mx-2 mb-2 rounded-xl bg-gradient-to-br from-blue-50 to-indigo-50 border border-blue-100 p-3"
+              onClick={(e) => e.stopPropagation()}
+            >
+              <p className="text-[10px] font-semibold text-blue-600 uppercase tracking-wider mb-2 flex items-center gap-1">
+                <Send className="h-3 w-3" /> Custom Notification
+              </p>
+              <textarea
+                value={customMessage}
+                onChange={(e) => { setCustomMessage(e.target.value); setMsgSent(false) }}
+                placeholder="Write a message for this user…"
+                rows={2}
+                className="w-full px-3 py-2 text-xs bg-white border border-blue-100 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-300 resize-none text-gray-700 placeholder-gray-400 shadow-sm"
+              />
+              <div className="flex items-center gap-2 mt-2">
+                <button
+                  onClick={handleSendCustomMessage}
+                  disabled={!customMessage.trim() || sendingMsg}
+                  className="flex-1 flex items-center justify-center gap-1.5 py-1.5 text-xs font-semibold rounded-lg transition-all disabled:opacity-40 disabled:cursor-not-allowed bg-blue-600 hover:bg-blue-700 active:scale-95 text-white shadow-sm"
+                >
+                  {sendingMsg ? (
+                    <div className="h-3 w-3 animate-spin rounded-full border-2 border-white border-t-transparent" />
+                  ) : msgSent ? (
+                    <><CheckCircle2 className="h-3 w-3" /> Sent!</>
+                  ) : (
+                    <><Send className="h-3 w-3" /> Send to User</>
+                  )}
+                </button>
+                {customMessage.trim() && !msgSent && (
+                  <span className="text-[10px] text-blue-500 leading-tight">
+                    Also used for<br/>plan changes
+                  </span>
+                )}
+              </div>
+            </div>
+
+            {/* ── Danger zone ── */}
+            <div className="border-t border-gray-100 p-2 space-y-0.5">
               <button
                 onClick={handleSuspendUser}
                 disabled={loading}
-                className="flex items-center w-full px-4 py-2 text-sm text-amber-600 hover:bg-amber-50 transition-colors disabled:opacity-50"
+                className="flex items-center gap-3 w-full px-3 py-2 rounded-xl text-sm hover:bg-amber-50 transition-colors disabled:opacity-50"
               >
-                <Ban className="mr-2 h-4 w-4" />
-                Suspend User
+                <span className="h-7 w-7 rounded-lg bg-amber-100 flex items-center justify-center shrink-0">
+                  <Ban className="h-3.5 w-3.5 text-amber-600" />
+                </span>
+                <div className="text-left">
+                  <p className="font-medium text-amber-700">Suspend User</p>
+                  <p className="text-[10px] text-gray-400">Disable account access</p>
+                </div>
               </button>
-
-              <div className="border-t border-gray-100 my-1"></div>
 
               <button
                 onClick={handleDeleteUser}
                 disabled={loading}
-                className="flex items-center w-full px-4 py-2 text-sm text-red-600 hover:bg-red-50 transition-colors disabled:opacity-50"
+                className="flex items-center gap-3 w-full px-3 py-2 rounded-xl text-sm hover:bg-red-50 transition-colors disabled:opacity-50"
               >
-                <Trash2 className="mr-2 h-4 w-4" />
-                Delete User
+                <span className="h-7 w-7 rounded-lg bg-red-100 flex items-center justify-center shrink-0">
+                  <Trash2 className="h-3.5 w-3.5 text-red-600" />
+                </span>
+                <div className="text-left">
+                  <p className="font-medium text-red-600">Delete User</p>
+                  <p className="text-[10px] text-gray-400">Permanently remove</p>
+                </div>
               </button>
             </div>
+
           </div>
         </>
       )}
