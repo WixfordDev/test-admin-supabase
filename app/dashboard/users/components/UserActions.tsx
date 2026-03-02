@@ -1,5 +1,5 @@
 
-import { useState } from 'react'
+import React, { useState, useRef } from 'react'
 import { Button } from '@/app/components/ui/button'
 import {
   MoreHorizontal, Edit, Trash2, Crown, Ban, Send,
@@ -42,7 +42,9 @@ const PLAN_LABEL: Record<string, string> = {
 
 export default function UserActions({ user, onUserUpdate, onDelete }: UserActionsProps) {
   const [isOpen, setIsOpen]         = useState(false)
+  const [panelStyle, setPanelStyle] = useState<React.CSSProperties>({})
   const [loading, setLoading]       = useState(false)
+  const buttonRef                   = useRef<HTMLDivElement>(null)
   const [showEditDialog, setShowEditDialog] = useState(false)
   const [customMessage, setCustomMessage]   = useState('')
   const [sendingMsg, setSendingMsg]         = useState(false)
@@ -157,12 +159,29 @@ export default function UserActions({ user, onUserUpdate, onDelete }: UserAction
   const isLite    = user.subscription_status === 'quran_lite'
   const isFreeish = user.subscription_status === 'free' || user.subscription_status === 'expired'
 
+  const handleToggle = () => {
+    if (!isOpen && buttonRef.current) {
+      const rect = buttonRef.current.getBoundingClientRect()
+      const spaceBelow = window.innerHeight - rect.bottom - 8
+      const spaceAbove = rect.top - 8
+      const right = window.innerWidth - rect.right
+      if (spaceBelow < 420 && spaceAbove > spaceBelow) {
+        setPanelStyle({ position: 'fixed', bottom: window.innerHeight - rect.top + 8, right, maxHeight: spaceAbove })
+      } else {
+        setPanelStyle({ position: 'fixed', top: rect.bottom + 8, right, maxHeight: spaceBelow })
+      }
+    }
+    setIsOpen(!isOpen)
+    setCustomMessage('')
+    setMsgSent(false)
+  }
+
   return (
-    <div className="relative">
+    <div className="relative" ref={buttonRef}>
       <Button
         variant="ghost"
         size="sm"
-        onClick={() => { setIsOpen(!isOpen); setCustomMessage(''); setMsgSent(false) }}
+        onClick={handleToggle}
         disabled={loading}
         className="h-8 w-8 p-0 rounded-full hover:bg-gray-100"
       >
@@ -177,7 +196,7 @@ export default function UserActions({ user, onUserUpdate, onDelete }: UserAction
           <div className="fixed inset-0 z-10" onClick={() => setIsOpen(false)} />
 
           {/* panel */}
-          <div className="absolute right-0 top-full z-20 mt-2 w-72 bg-white rounded-2xl shadow-xl border border-gray-100 overflow-hidden">
+          <div style={panelStyle} className="z-50 w-72 bg-white rounded-2xl shadow-xl border border-gray-100 overflow-y-auto">
 
             {/* ── User header ── */}
             <div className="px-4 py-3 bg-gradient-to-r from-slate-50 to-gray-50 border-b border-gray-100 flex items-center gap-3">
