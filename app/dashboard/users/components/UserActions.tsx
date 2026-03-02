@@ -20,7 +20,7 @@ const DEFAULT_MESSAGES: Record<SubscriptionStatus, { title: string; body: string
   deenhub_pro:    { title: '🎉 Subscription Upgraded!', body: 'Congratulations! Your subscription has been upgraded to DeenHub Pro. Enjoy premium features.' },
   quran_lite:     { title: '✨ Subscription Updated',   body: 'Your subscription has been updated to Quran Lite. Enjoy enhanced features.' },
   barakah_access: { title: '✨ Subscription Updated',   body: 'Your subscription has been updated to Barakah Access. Enjoy exclusive content.' }, 
-  free:           { title: '🔄 Subscription Changed',  body: 'Your subscription has been changed to Free tier.. Some features may be limited.' },
+  free:           { title: '🔄 Subscription Changed',  body: 'Your your subscription has been changed to Free tier.. Some features may be limited.' },
   expired:        { title: '⚠️ Subscription Expired',  body: 'Your subscription has expired. Please renew to continue enjoying premium features.' },
 }
 
