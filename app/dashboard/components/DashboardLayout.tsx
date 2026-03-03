@@ -18,6 +18,7 @@ import {
   AlarmClock
 } from 'lucide-react'
 import { signOutClient } from '@/lib/auth-client'
+import NotificationBell from './NotificationBell'
 
 interface DashboardLayoutProps {
   children: React.ReactNode
@@ -192,6 +193,7 @@ export default function DashboardLayout({ children, user, adminUser }: Dashboard
       <div className="lg:pl-72">
         {/* Top Header */}
         <header className="bg-white/80 backdrop-blur-sm border-b border-gray-200 sticky top-0 z-30 shadow-sm">
+        
           <div className="flex h-16 items-center justify-between px-6">
             <div className="flex items-center gap-4">
               <Button
@@ -201,10 +203,12 @@ export default function DashboardLayout({ children, user, adminUser }: Dashboard
                 onClick={() => setSidebarOpen(true)}
               >
                 <Menu className="h-5 w-5" />
+                
               </Button>
               <div className="hidden sm:block">
                 <h2 className="text-lg font-semibold text-gray-900">
                   {navigationItems.find(item => item.href === pathname)?.name || 'Dashboard'}
+                  
                 </h2>
               </div>
             </div>
@@ -214,7 +218,11 @@ export default function DashboardLayout({ children, user, adminUser }: Dashboard
                 <div className="h-2 w-2 bg-emerald-500 rounded-full animate-pulse"></div>
                 <span className="text-xs font-medium text-emerald-700">
                   {adminUser.role.replace('_', ' ')}
+
+                  
                 </span>
+
+                <NotificationBell />
               </div>
             </div>
           </div>
