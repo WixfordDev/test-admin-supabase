@@ -25,6 +25,11 @@ const TYPE_CONFIG: Record<string, { color: string; label: string; icon: string }
     label: 'Subscription',
     icon: '👑',
   },
+  warning: {
+    color: 'bg-amber-100 text-amber-700',
+    label: 'Warning',
+    icon: '⚠️',
+  },
   mosque_prayer_time_change: {
     color: 'bg-green-100 text-green-700',
     label: 'Prayer Time',

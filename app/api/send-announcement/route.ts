@@ -175,21 +175,25 @@ export async function POST(request: Request) {
     // ── ২. DB তে save করো ──
     if (user_id) {
       // ✅ Specific user — directly insert
+      const rows: { user_id: string; title: string; body: string; type: string; data: object }[] = [
+        { user_id, title, body, type, data: {} },
+      ];
+
+      // Admin-এর জন্যও copy insert করো (যাতে NotificationBell-এ দেখায়)
+      // কিন্তু যদি admin নিজেই target user হয় তাহলে duplicate হবে না
+      if (user.id && user.id !== user_id) {
+        rows.push({ user_id: user.id, title, body, type, data: {} });
+      }
+
       const { error: insertError } = await adminClient
         .from('notifications')
-        .insert({
-          user_id,   // ← user_profiles.user_id এর মতোই UUID
-          title,
-          body,
-          type,
-          data: {},
-        });
+        .insert(rows);
 
       if (insertError) {
         // FCM গেছে কিন্তু DB fail — log করো কিন্তু error return করো না
-        console.error('❌ DB insert failed for specific user:', insertError);
+        console.error('❌ DB insert failed for specific user:', insertError.message, insertError.details);
       } else {
-        console.log('✅ Notification saved for user:', user_id);
+        console.log('✅ Notification saved for user:', user_id, '+ admin copy for:', user.id);
       }
 
     } else {
