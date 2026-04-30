@@ -100,16 +100,38 @@ export async function GET(request: NextRequest) {
     }
 
     // Get user details separately
-    const userIds = reports?.map(r => r.user_id).filter((id): id is string => Boolean(id)) || []
+    const userIds = [...new Set(reports?.map(r => r.user_id).filter((id): id is string => Boolean(id)) || [])]
     let userData: UserProfile[] = []
 
     if (userIds.length > 0) {
+      // First try user_profiles table
       const { data: profiles } = await adminClient
         .from('user_profiles')
         .select('id, email, full_name')
         .in('id', userIds)
-      
+
       userData = (profiles as UserProfile[]) || []
+
+      // Fallback to auth.users for any user IDs not found in user_profiles
+      const foundIds = new Set(userData.map(u => u.id))
+      const missingIds = userIds.filter(id => !foundIds.has(id))
+
+      if (missingIds.length > 0) {
+        const authResults = await Promise.all(
+          missingIds.map(id => adminClient.auth.admin.getUserById(id))
+        )
+        const authUsers: UserProfile[] = authResults
+          .filter(r => !r.error && r.data.user)
+          .map(r => ({
+            id: r.data.user!.id,
+            email: r.data.user!.email || '',
+            full_name:
+              r.data.user!.user_metadata?.full_name ||
+              r.data.user!.user_metadata?.name ||
+              null
+          }))
+        userData = [...userData, ...authUsers]
+      }
     }
 
     // Transform reports to include reporter info
@@ -155,5 +177,56 @@ export async function GET(request: NextRequest) {
       { error: 'Internal server error' },
       { status: 500 }
     )
+  }
+}
+
+export async function PATCH(request: NextRequest) {
+  try {
+    const adminClient = await createAdminClient()
+    const { searchParams } = new URL(request.url)
+    const report_id = searchParams.get('id')
+
+    if (!report_id) {
+      return NextResponse.json({ error: 'Report ID is required' }, { status: 400 })
+    }
+
+    const body = await request.json()
+    const { status, admin_notes, resolved_by } = body
+
+    const updateData: Record<string, any> = {
+      updated_at: new Date().toISOString()
+    }
+
+    if (status !== undefined) updateData.status = status
+    if (admin_notes !== undefined) updateData.admin_notes = admin_notes
+
+    // Set resolved_at and resolved_by when resolving or dismissing
+    if (status === 'resolved' || status === 'dismissed') {
+      updateData.resolved_at = new Date().toISOString()
+      updateData.resolved_by = resolved_by || null
+    }
+
+    // Clear resolution fields when moving back to pending/reviewing
+    if (status === 'pending' || status === 'reviewing') {
+      updateData.resolved_at = null
+      updateData.resolved_by = null
+    }
+
+    const { data, error } = await adminClient
+      .from('reports')
+      .update(updateData)
+      .eq('id', report_id)
+      .select()
+      .single()
+
+    if (error) {
+      console.error('Error updating report:', error)
+      return NextResponse.json({ error: 'Failed to update report', details: error.message }, { status: 500 })
+    }
+
+    return NextResponse.json({ success: true, report: data })
+  } catch (error) {
+    console.error('Error in report PATCH API:', error)
+    return NextResponse.json({ error: 'Internal server error' }, { status: 500 })
   }
 }

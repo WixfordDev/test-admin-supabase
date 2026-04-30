@@ -10,6 +10,7 @@ interface MosqueUpdateData {
   phone?: string
   website?: string
   additional_info?: string
+  is_approved?: boolean
 }
 
 export async function GET(request: NextRequest) {
@@ -20,6 +21,7 @@ export async function GET(request: NextRequest) {
     const search = searchParams.get('search') || ''
     const timezone = searchParams.get('timezone') || ''
     const facility = searchParams.get('facility') || ''
+    const userSubmitted = searchParams.get('user_submitted') === 'true'
     const page = parseInt(searchParams.get('page') || '1')
     const limit = parseInt(searchParams.get('limit') || '50')
 
@@ -53,6 +55,11 @@ export async function GET(request: NextRequest) {
       query = query.filter('mosque_facilities.facility_type', 'eq', facility)
     }
 
+    // Filter user-submitted mosques (mosque_id starts with 'user_mosque_')
+    if (userSubmitted) {
+      query = query.like('mosque_id', 'user_mosque_%')
+    }
+
     // Apply sorting
     query = query.order('name', { ascending: true })
 
@@ -62,6 +69,8 @@ export async function GET(request: NextRequest) {
     query = query.range(from, to)
 
     const { data: mosques, error, count } = await query
+
+    // console.log("get data", mosques);
 
     if (error) {
       console.error('Error fetching mosques:', error)
@@ -107,10 +116,15 @@ export async function GET(request: NextRequest) {
       }
     })
 
+    const pendingApprovalCount = (statsData || []).filter((m: any) =>
+      m.mosque_id?.startsWith('user_mosque_') && !m.is_approved
+    ).length
+
     const stats = {
       total_mosques: statsData?.length || 0,
       this_week: thisWeekCount,
       this_month: thisMonthCount,
+      pending_approval: pendingApprovalCount,
       by_timezone: byTimezone,
       by_facility: byFacility
     }

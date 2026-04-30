@@ -306,7 +306,7 @@ import QuranRequestsTable from "./QuranRequestsTable";
 export default function QuranRequestsManagement() {
   const [requests, setRequests] = useState<QuranRequest[]>([]);
  
-  console.log(requests);
+ 
 
   const [stats, setStats] = useState<QuranRequestStats>({
     total: 0,
@@ -332,7 +332,7 @@ export default function QuranRequestsManagement() {
   const [showAddDialog, setShowAddDialog] = useState(false);
   const [pagination, setPagination] = useState({
     page: 1,
-    limit: 3,
+    limit: 10,
     total: 0,
     totalPages: 0,
   });
@@ -679,7 +679,7 @@ const handleDeleteRequest = async (id: string) => {
       />
 
       {/* Pagination */}
-      {pagination.totalPages > 1 && (
+      {pagination.total > 0 && (
         <Card className="p-4">
           <div className="flex items-center justify-between">
             <div className="text-sm text-gray-600">

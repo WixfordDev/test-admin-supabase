@@ -8,6 +8,7 @@ export interface Mosque {
   phone?: string
   website?: string
   additional_info?: string
+  is_approved?: boolean
   created_at: string
   updated_at: string
   // Computed fields that might be added by API

@@ -1,11 +1,9 @@
 'use client'
 
 import { useState, useEffect } from 'react'
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/app/components/ui/card'
+import { Card } from '@/app/components/ui/card'
 import { Button } from '@/app/components/ui/button'
-import { Badge } from '@/app/components/ui/badge'
-import { Plus, Download, RefreshCw, MapPin, CheckCircle, XCircle } from 'lucide-react'
-// Removed unused createClient import
+import { Plus, Download, RefreshCw, Clock } from 'lucide-react'
 import type { Mosque, MosqueFilters, MosqueStats } from '@/lib/types/mosques'
 import MosqueStatsCards from './MosqueStatsCards'
 import MosqueFiltersPanel from './MosqueFiltersPanel'
@@ -30,32 +28,19 @@ export default function MosquesManagement() {
   const [loading, setLoading] = useState(true)
   const [selectedMosques, setSelectedMosques] = useState<string[]>([])
   const [showAddDialog, setShowAddDialog] = useState(false)
-
-  // Removed unused supabase client
+  const [activeTab, setActiveTab] = useState<'all' | 'user_submitted'>('all')
 
   const fetchMosques = async () => {
     try {
       setLoading(true)
-      
-      // Build query parameters
-      const params = new URLSearchParams()
-      if (filters.search) {
-        params.set('search', filters.search)
-      }
-      if (filters.timezone) {
-        params.set('timezone', filters.timezone)
-      }
-      if (filters.hasFacilities.length > 0) {
-        // For now, just use the first facility filter
-        params.set('facility', filters.hasFacilities[0])
-      }
 
-      // Use the admin API instead of direct database queries
+      const params = new URLSearchParams()
+      if (filters.search) params.set('search', filters.search)
+      if (filters.timezone) params.set('timezone', filters.timezone)
+      if (filters.hasFacilities.length > 0) params.set('facility', filters.hasFacilities[0])
+
       const response = await fetch(`/api/admin/mosques?${params.toString()}`)
-      
-      if (!response.ok) {
-        throw new Error('Failed to fetch mosques')
-      }
+      if (!response.ok) throw new Error('Failed to fetch mosques')
 
       const data = await response.json()
       setMosques(data.mosques || [])
@@ -74,72 +59,75 @@ export default function MosquesManagement() {
     }
   }
 
-  // Remove calculateStats since we get stats from API
-
   const handleUpdateMosque = async (id: string, updates: Partial<Mosque>) => {
     try {
       const response = await fetch(`/api/admin/mosques?id=${id}`, {
         method: 'PUT',
-        headers: {
-          'Content-Type': 'application/json',
-        },
+        headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(updates)
       })
-
       if (!response.ok) {
         const errorData = await response.json()
         throw new Error(errorData.error || 'Failed to update mosque')
       }
-
       await fetchMosques()
     } catch (error) {
       console.error('Error updating mosque:', error)
-      // You might want to show a toast notification here
     }
   }
 
   const handleDeleteMosque = async (id: string) => {
-    if (!confirm('Are you sure you want to delete this mosque? This action cannot be undone.')) {
-      return
-    }
-
+    if (!confirm('Are you sure you want to delete this mosque? This action cannot be undone.')) return
     try {
-      const response = await fetch(`/api/admin/mosques?id=${id}`, {
-        method: 'DELETE'
-      })
-
+      const response = await fetch(`/api/admin/mosques?id=${id}`, { method: 'DELETE' })
       if (!response.ok) {
         const errorData = await response.json()
         throw new Error(errorData.error || 'Failed to delete mosque')
       }
-
       await fetchMosques()
     } catch (error) {
       console.error('Error deleting mosque:', error)
-      // You might want to show a toast notification here
+    }
+  }
+
+  const handleApproveMosque = async (id: string) => {
+    try {
+      const response = await fetch(`/api/admin/mosques?id=${id}`, {
+        method: 'PUT',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ is_approved: true })
+      })
+      if (!response.ok) {
+        const errorData = await response.json()
+        throw new Error(errorData.error || 'Failed to approve mosque')
+      }
+      await fetchMosques()
+    } catch (error) {
+      console.error('Error approving mosque:', error)
     }
   }
 
   const handleBulkAction = async (action: string) => {
     if (selectedMosques.length === 0) return
     console.log('Bulk action functionality needs API implementation:', action, selectedMosques)
-    // TODO: Implement bulk mosque actions API
     setSelectedMosques([])
     await fetchMosques()
   }
 
   const handleExport = async () => {
     console.log('Export functionality needs API implementation')
-    // TODO: Implement export mosque data API
   }
 
   useEffect(() => {
     fetchMosques()
   }, [filters])
 
+  const userSubmittedMosques = mosques.filter(m => m.mosque_id.startsWith('user_mosque_'))
+  const pendingCount = userSubmittedMosques.filter(m => !m.is_approved).length
+  const displayMosques = activeTab === 'user_submitted' ? userSubmittedMosques : mosques
+
   return (
     <div className="space-y-6">
-      {/* Stats Cards */}
       <MosqueStatsCards stats={stats} loading={loading} />
 
       {/* Header Actions */}
@@ -151,45 +139,28 @@ export default function MosquesManagement() {
           </div>
 
           <div className="flex items-center gap-2">
-            <Button
-              onClick={() => setShowAddDialog(true)}
-              className="flex items-center gap-2"
-            >
+            <Button onClick={() => setShowAddDialog(true)} className="flex items-center gap-2">
               <Plus className="h-4 w-4" />
               Add Mosque
             </Button>
-            <Button
-              variant="outline"
-              onClick={fetchMosques}
-              className="flex items-center gap-2"
-            >
+            <Button variant="outline" onClick={fetchMosques} className="flex items-center gap-2">
               <RefreshCw className="h-4 w-4" />
               Refresh
             </Button>
-            <Button
-              variant="outline"
-              onClick={handleExport}
-              className="flex items-center gap-2"
-            >
+            <Button variant="outline" onClick={handleExport} className="flex items-center gap-2">
               <Download className="h-4 w-4" />
               Export CSV
             </Button>
           </div>
         </div>
 
-        {/* Bulk Actions */}
         {selectedMosques.length > 0 && (
           <div className="border-t mt-6 pt-4">
             <div className="flex items-center gap-2">
               <span className="text-sm text-gray-600">
                 {selectedMosques.length} mosque{selectedMosques.length !== 1 ? 's' : ''} selected:
               </span>
-
-              <Button
-                size="sm"
-                variant="destructive"
-                onClick={() => handleBulkAction('delete')}
-              >
+              <Button size="sm" variant="destructive" onClick={() => handleBulkAction('delete')}>
                 Delete Selected
               </Button>
             </div>
@@ -197,24 +168,48 @@ export default function MosquesManagement() {
         )}
       </Card>
 
-      {/* Filters */}
-      <MosqueFiltersPanel
-        filters={filters}
-        onFiltersChange={setFilters}
-        mosques={mosques}
-      />
+      <MosqueFiltersPanel filters={filters} onFiltersChange={setFilters} mosques={mosques} />
 
-      {/* Mosques Table */}
+      {/* Tabs */}
+      <div className="flex gap-1 border-b border-gray-200">
+        <button
+          onClick={() => setActiveTab('all')}
+          className={`px-4 py-2 text-sm font-medium rounded-t-md transition-colors ${
+            activeTab === 'all'
+              ? 'bg-white border border-b-white border-gray-200 text-blue-600 -mb-px'
+              : 'text-gray-500 hover:text-gray-700'
+          }`}
+        >
+          All Mosques ({mosques.length})
+        </button>
+        <button
+          onClick={() => setActiveTab('user_submitted')}
+          className={`px-4 py-2 text-sm font-medium rounded-t-md transition-colors flex items-center gap-2 ${
+            activeTab === 'user_submitted'
+              ? 'bg-white border border-b-white border-gray-200 text-blue-600 -mb-px'
+              : 'text-gray-500 hover:text-gray-700'
+          }`}
+        >
+          <Clock className="h-3.5 w-3.5" />
+          User Submitted ({userSubmittedMosques.length})
+          {pendingCount > 0 && (
+            <span className="bg-yellow-500 text-white text-xs font-bold px-1.5 py-0.5 rounded-full">
+              {pendingCount}
+            </span>
+          )}
+        </button>
+      </div>
+
       <MosqueTable
-        mosques={mosques}
+        mosques={displayMosques}
         selectedMosques={selectedMosques}
         onSelectionChange={setSelectedMosques}
         onUpdateMosque={handleUpdateMosque}
         onDeleteMosque={handleDeleteMosque}
+        onApproveMosque={handleApproveMosque}
         loading={loading}
       />
 
-      {/* Add Mosque Dialog */}
       {showAddDialog && (
         <AddMosqueDialog
           isOpen={showAddDialog}
@@ -227,4 +222,4 @@ export default function MosquesManagement() {
       )}
     </div>
   )
-} 
+}
