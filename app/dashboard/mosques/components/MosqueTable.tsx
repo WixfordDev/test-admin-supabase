@@ -41,7 +41,7 @@ export default function MosqueTable({
       onSelectionChange([])
     }
   }
-
+console.log(mosques);
   const handleSelectMosque = (id: string, checked: boolean) => {
     if (checked) {
       onSelectionChange([...selectedMosques, id])

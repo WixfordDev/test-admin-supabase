@@ -6,16 +6,17 @@ import { usePathname, useRouter } from 'next/navigation'
 import { Button } from '@/app/components/ui/button'
 import { Card, CardContent } from '@/app/components/ui/card'
 import type { AuthUser, AdminUser } from '@/lib/types/auth'
-import { 
-  LayoutDashboard, 
-  Users, 
-  MessageSquareWarning, 
-  BookOpen, 
-  MapPin, 
+import {
+  LayoutDashboard,
+  Users,
+  MessageSquareWarning,
+  BookOpen,
+  MapPin,
   LogOut,
   Menu,
   X,
-  AlarmClock
+  AlarmClock,
+  ClipboardCheck
 } from 'lucide-react'
 import { signOutClient } from '@/lib/auth-client'
 import NotificationBell from './NotificationBell'
@@ -51,6 +52,11 @@ const navigationItems = [
     name: 'Mosques',
     href: '/dashboard/mosques',
     icon: MapPin,
+  },
+  {
+    name: 'Mosque Claims',
+    href: '/dashboard/mosque-claims',
+    icon: ClipboardCheck,
   },
   {
     name: 'Send Push Notification',
