@@ -8,7 +8,6 @@ import toast, { Toaster } from 'react-hot-toast'
 import type { MosqueClaim, MosqueClaimStats } from '@/lib/types/mosque-claims'
 import MosqueClaimsStatsCards from './MosqueClaimsStatsCards'
 import MosqueClaimsTable from './MosqueClaimsTable'
-import ClaimDetailDialog from './ClaimDetailDialog'
 
 const STATUS_TABS = [
   { label: 'All', value: 'all' },
@@ -31,7 +30,6 @@ export default function MosqueClaimsManagement() {
   const [search, setSearch] = useState('')
   const [loading, setLoading] = useState(true)
   const [isActing, setIsActing] = useState(false)
-  const [selectedClaim, setSelectedClaim] = useState<MosqueClaim | null>(null)
   const [pagination, setPagination] = useState({
     page: 1,
     limit: 20,
@@ -79,7 +77,6 @@ export default function MosqueClaimsManagement() {
         `Claim approved! Verification code: ${data.verification_code}`,
         { duration: 8000 }
       )
-      setSelectedClaim(null)
       await fetchClaims()
     } catch (err: any) {
       toast.error(err.message || 'Failed to approve claim')
@@ -99,7 +96,6 @@ export default function MosqueClaimsManagement() {
       if (!response.ok) throw new Error(data.error)
 
       toast.success('Claim rejected')
-      setSelectedClaim(null)
       await fetchClaims()
     } catch (err: any) {
       toast.error(err.message || 'Failed to reject claim')
@@ -182,7 +178,6 @@ export default function MosqueClaimsManagement() {
       ) : (
         <MosqueClaimsTable
           claims={claims}
-          onViewDetail={setSelectedClaim}
           onApprove={handleApprove}
           onReject={handleReject}
           isActing={isActing}
@@ -223,17 +218,6 @@ export default function MosqueClaimsManagement() {
             </div>
           </div>
         </Card>
-      )}
-
-      {/* Detail dialog */}
-      {selectedClaim && (
-        <ClaimDetailDialog
-          claim={selectedClaim}
-          onClose={() => setSelectedClaim(null)}
-          onApprove={handleApprove}
-          onReject={handleReject}
-          isActing={isActing}
-        />
       )}
     </div>
   )

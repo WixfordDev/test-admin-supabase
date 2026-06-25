@@ -1,5 +1,6 @@
 'use client'
 
+import { useRouter } from 'next/navigation'
 import { Card } from '@/app/components/ui/card'
 import { Button } from '@/app/components/ui/button'
 import type { MosqueClaim } from '@/lib/types/mosque-claims'
@@ -7,7 +8,6 @@ import { Eye, CheckCircle, XCircle } from 'lucide-react'
 
 interface Props {
   claims: MosqueClaim[]
-  onViewDetail: (claim: MosqueClaim) => void
   onApprove: (id: string) => void
   onReject: (id: string) => void
   isActing: boolean
@@ -22,11 +22,12 @@ const statusColors: Record<string, string> = {
 
 export default function MosqueClaimsTable({
   claims,
-  onViewDetail,
   onApprove,
   onReject,
   isActing,
 }: Props) {
+  const router = useRouter()
+
   if (claims.length === 0) {
     return (
       <Card className="p-12 text-center">
@@ -79,7 +80,7 @@ export default function MosqueClaimsTable({
                       variant="outline"
                       size="sm"
                       className="text-black"
-                      onClick={() => onViewDetail(claim)}
+                      onClick={() => router.push(`/dashboard/mosque-claims/${claim.id}`)}
                     >
                       <Eye className="h-4 w-4 mr-1" />
                       View

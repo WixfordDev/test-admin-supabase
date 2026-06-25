@@ -38,20 +38,21 @@ export async function POST(request: NextRequest) {
       return NextResponse.json({ error: 'Mosque is already claimed' }, { status: 409 })
     }
 
-    // Prevent duplicate active claims from the same user
-    const { data: existingClaim } = await adminClient
+    // Prevent any other user from claiming a mosque that already has an active claim
+    const { data: existingClaims } = await adminClient
       .from('mosque_claims')
-      .select('id, status')
+      .select('id, user_id, status')
       .eq('mosque_id', body.mosque_id)
-      .eq('user_id', user.id)
       .in('status', ['pending', 'approved'])
-      .maybeSingle()
+      .limit(1)
 
+    const existingClaim = existingClaims?.[0]
     if (existingClaim) {
-      return NextResponse.json(
-        { error: 'You already have an active claim for this mosque' },
-        { status: 409 }
-      )
+      const message =
+        existingClaim.user_id === user.id
+          ? 'You already have an active claim for this mosque'
+          : 'This mosque already has an active claim from another user'
+      return NextResponse.json({ error: message }, { status: 409 })
     }
 
     const { data: claim, error: insertError } = await adminClient

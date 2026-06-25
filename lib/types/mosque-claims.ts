@@ -48,4 +48,5 @@ export interface MosqueRole {
   mosque_id: string
   user_id: string
   role: MosqueRoleType
+  is_blocked: boolean
 }
