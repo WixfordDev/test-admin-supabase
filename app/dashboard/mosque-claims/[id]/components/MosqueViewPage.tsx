@@ -9,6 +9,7 @@ import { ArrowLeft, RefreshCw, Eye, EyeOff, Copy, CheckCircle, XCircle, Megaphon
 import type { MosqueClaim } from '@/lib/types/mosque-claims'
 import AnnouncementsPanel from './AnnouncementsPanel'
 import EventsPanel from './EventsPanel'
+import ConfirmDialog from '@/app/components/ui/confirm-dialog'
 
 const statusColors: Record<string, string> = {
   pending: 'bg-yellow-100 text-yellow-800',
@@ -33,6 +34,7 @@ export default function MosqueViewPage() {
   const [isActing, setIsActing] = useState(false)
   const [showCode, setShowCode] = useState(false)
   const [activeTab, setActiveTab] = useState<'announcements' | 'events'>('announcements')
+  const [showBlockConfirm, setShowBlockConfirm] = useState(false)
 
   const fetchClaim = async () => {
     try {
@@ -99,17 +101,13 @@ export default function MosqueViewPage() {
 
   const handleToggleBlock = async () => {
     const action = ownerBlocked ? 'unblock-owner' : 'block-owner'
-    const confirmMsg = ownerBlocked
-      ? 'Restore this owner\'s access to manage announcements and events?'
-      : 'Block this owner? They will no longer be able to create, edit, or delete announcements/events for this mosque.'
-    if (!confirm(confirmMsg)) return
-
     setIsActing(true)
     try {
       const response = await fetch(`/api/admin/mosque-claims/${claimId}/${action}`, { method: 'PUT' })
       const data = await response.json()
       if (!response.ok) throw new Error(data.error)
       toast.success(ownerBlocked ? 'Owner access restored' : 'Owner access blocked')
+      setShowBlockConfirm(false)
       await fetchClaim()
     } catch (err: any) {
       toast.error(err.message || 'Failed to update owner access')
@@ -260,7 +258,7 @@ export default function MosqueViewPage() {
             <Button
               variant="outline"
               className={ownerBlocked ? 'text-green-700 border-green-300 hover:bg-green-50' : 'text-red-600 border-red-300 hover:bg-red-50'}
-              onClick={handleToggleBlock}
+              onClick={() => setShowBlockConfirm(true)}
               disabled={isActing}
             >
               {ownerBlocked ? (
@@ -302,6 +300,21 @@ export default function MosqueViewPage() {
       ) : (
         <EventsPanel mosqueId={claim.mosque_id} />
       )}
+
+      <ConfirmDialog
+        open={showBlockConfirm}
+        title={ownerBlocked ? 'Unblock Owner' : 'Block Owner'}
+        description={
+          ownerBlocked
+            ? "Restore this owner's access to manage announcements and events?"
+            : 'Block this owner? They will no longer be able to create, edit, or delete announcements/events for this mosque.'
+        }
+        confirmText={ownerBlocked ? 'Unblock' : 'Block'}
+        variant={ownerBlocked ? 'default' : 'danger'}
+        isLoading={isActing}
+        onConfirm={handleToggleBlock}
+        onCancel={() => setShowBlockConfirm(false)}
+      />
     </div>
   )
 }

@@ -1,11 +1,12 @@
 'use client'
 
-import { useEffect, useState } from 'react'
-import { Card } from '@/app/components/ui/card'
 import { Button } from '@/app/components/ui/button'
-import { RefreshCw, Edit, Trash2 } from 'lucide-react'
-import toast from 'react-hot-toast'
+import { Card } from '@/app/components/ui/card'
+import ConfirmDialog from '@/app/components/ui/confirm-dialog'
 import type { MosqueEvent, UpdateEventBody } from '@/lib/types/events'
+import { Edit, RefreshCw, Trash2 } from 'lucide-react'
+import { useEffect, useState } from 'react'
+import toast from 'react-hot-toast'
 import EditEventDialog from './EditEventDialog'
 
 interface Props {
@@ -19,6 +20,7 @@ export default function EventsPanel({ mosqueId }: Props) {
   const [loading, setLoading] = useState(true)
   const [isActing, setIsActing] = useState(false)
   const [editing, setEditing] = useState<AdminEvent | null>(null)
+  const [deleting, setDeleting] = useState<AdminEvent | null>(null)
   const [pagination, setPagination] = useState({ page: 1, limit: 20, total: 0, totalPages: 0 })
 
   const fetchEvents = async () => {
@@ -67,15 +69,16 @@ export default function EventsPanel({ mosqueId }: Props) {
     }
   }
 
-  const handleDelete = async (id: string) => {
-    if (!confirm('Delete this event? This cannot be undone.')) return
+  const handleDelete = async () => {
+    if (!deleting) return
     setIsActing(true)
     try {
-      const response = await fetch(`/api/admin/mosque-events/${id}`, { method: 'DELETE' })
+      const response = await fetch(`/api/admin/mosque-events/${deleting.id}`, { method: 'DELETE' })
       const data = await response.json()
       if (!response.ok) throw new Error(data.error)
 
       toast.success('Event deleted')
+      setDeleting(null)
       await fetchEvents()
     } catch (err: any) {
       toast.error(err.message || 'Failed to delete event')
@@ -155,7 +158,7 @@ export default function EventsPanel({ mosqueId }: Props) {
                           size="sm"
                           variant="outline"
                           className="text-red-600 border-red-300 hover:bg-red-50"
-                          onClick={() => handleDelete(e.id)}
+                          onClick={() => setDeleting(e)}
                           disabled={isActing}
                         >
                           <Trash2 className="h-4 w-4 mr-1" />
@@ -213,6 +216,16 @@ export default function EventsPanel({ mosqueId }: Props) {
           isActing={isActing}
         />
       )}
+
+      <ConfirmDialog
+        open={!!deleting}
+        title="Delete Event"
+        description={`Are you sure you want to delete "${deleting?.title}"? This cannot be undone.`}
+        confirmText="Delete"
+        isLoading={isActing}
+        onConfirm={handleDelete}
+        onCancel={() => setDeleting(null)}
+      />
     </div>
   )
 }

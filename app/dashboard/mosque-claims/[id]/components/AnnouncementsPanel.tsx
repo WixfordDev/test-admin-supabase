@@ -7,6 +7,7 @@ import { RefreshCw, Edit, Trash2 } from 'lucide-react'
 import toast from 'react-hot-toast'
 import type { MosqueAnnouncement } from '@/lib/types/announcements'
 import EditAnnouncementDialog from './EditAnnouncementDialog'
+import ConfirmDialog from '@/app/components/ui/confirm-dialog'
 
 interface Props {
   mosqueId: string
@@ -17,6 +18,7 @@ export default function AnnouncementsPanel({ mosqueId }: Props) {
   const [loading, setLoading] = useState(true)
   const [isActing, setIsActing] = useState(false)
   const [editing, setEditing] = useState<MosqueAnnouncement | null>(null)
+  const [deleting, setDeleting] = useState<MosqueAnnouncement | null>(null)
   const [pagination, setPagination] = useState({ page: 1, limit: 20, total: 0, totalPages: 0 })
 
   const fetchAnnouncements = async () => {
@@ -65,15 +67,16 @@ export default function AnnouncementsPanel({ mosqueId }: Props) {
     }
   }
 
-  const handleDelete = async (id: string) => {
-    if (!confirm('Delete this announcement? This cannot be undone.')) return
+  const handleDelete = async () => {
+    if (!deleting) return
     setIsActing(true)
     try {
-      const response = await fetch(`/api/admin/mosque-announcements/${id}`, { method: 'DELETE' })
+      const response = await fetch(`/api/admin/mosque-announcements/${deleting.id}`, { method: 'DELETE' })
       const data = await response.json()
       if (!response.ok) throw new Error(data.error)
 
       toast.success('Announcement deleted')
+      setDeleting(null)
       await fetchAnnouncements()
     } catch (err: any) {
       toast.error(err.message || 'Failed to delete announcement')
@@ -137,7 +140,7 @@ export default function AnnouncementsPanel({ mosqueId }: Props) {
                           size="sm"
                           variant="outline"
                           className="text-red-600 border-red-300 hover:bg-red-50"
-                          onClick={() => handleDelete(a.id)}
+                          onClick={() => setDeleting(a)}
                           disabled={isActing}
                         >
                           <Trash2 className="h-4 w-4 mr-1" />
@@ -195,6 +198,16 @@ export default function AnnouncementsPanel({ mosqueId }: Props) {
           isActing={isActing}
         />
       )}
+
+      <ConfirmDialog
+        open={!!deleting}
+        title="Delete Announcement"
+        description={`Are you sure you want to delete "${deleting?.title}"? This cannot be undone.`}
+        confirmText="Delete"
+        isLoading={isActing}
+        onConfirm={handleDelete}
+        onCancel={() => setDeleting(null)}
+      />
     </div>
   )
 }
