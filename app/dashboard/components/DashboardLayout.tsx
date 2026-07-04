@@ -16,7 +16,8 @@ import {
   Menu,
   X,
   AlarmClock,
-  ClipboardCheck
+  ClipboardCheck,
+  HandCoins,
 } from 'lucide-react'
 import { signOutClient } from '@/lib/auth-client'
 import NotificationBell from './NotificationBell'
@@ -57,6 +58,11 @@ const navigationItems = [
     name: 'Mosque Claims',
     href: '/dashboard/mosque-claims',
     icon: ClipboardCheck,
+  },
+  {
+    name: 'Donations',
+    href: '/dashboard/donations',
+    icon: HandCoins,
   },
   {
     name: 'Send Push Notification',

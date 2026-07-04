@@ -42,3 +42,12 @@ export async function canManageAdmins(
   const role = await getMosqueRole(userId, mosqueId)
   return role === 'owner'
 }
+
+// Only verified, unblocked owner can connect/manage Stripe donation account
+export async function canConnectStripe(
+  userId: string,
+  mosqueId: string
+): Promise<boolean> {
+  const role = await getMosqueRole(userId, mosqueId)
+  return role === 'owner'
+}
