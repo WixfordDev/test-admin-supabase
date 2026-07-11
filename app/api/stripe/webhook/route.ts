@@ -49,7 +49,7 @@ export async function POST(request: NextRequest) {
           }
         }
 
-        await adminClient
+        const { data: tx } = await adminClient
           .from('donation_transactions')
           .update({
             status: 'completed',
@@ -57,6 +57,16 @@ export async function POST(request: NextRequest) {
             receipt_url: receiptUrl,
           })
           .eq('stripe_checkout_session', sessionId)
+          .select('campaign_id, mosque_amount')
+          .single()
+
+        // Update campaign raised_amount if this donation was for a campaign
+        if (tx?.campaign_id && tx?.mosque_amount) {
+          await adminClient.rpc('increment_campaign_raised', {
+            p_campaign_id: tx.campaign_id,
+            p_amount: tx.mosque_amount,
+          })
+        }
 
         break
       }
