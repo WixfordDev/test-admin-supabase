@@ -69,13 +69,29 @@ export async function POST(request: NextRequest, context: RouteContext) {
       // Account exists — verify it still exists on Stripe then generate a new link
       try {
         const stripeAccount = await retrieveStripeAccount(existingAccount.stripe_account_id)
-        if (stripeAccount.details_submitted && stripeAccount.charges_enabled) {
+
+        // Fully connected AND not disabled by admin → block re-connect
+        if (
+          stripeAccount.details_submitted &&
+          stripeAccount.charges_enabled &&
+          existingAccount.account_status !== 'disabled'
+        ) {
           return NextResponse.json(
             { success: false, message: 'Stripe account is already fully connected' },
             { status: 409 }
           )
         }
+
+        // If admin disabled it, or onboarding incomplete → allow reconnect with same account
         stripeAccountId = existingAccount.stripe_account_id
+
+        // Reset status to pending so donations stay blocked until onboarding confirmed
+        if (existingAccount.account_status === 'disabled') {
+          await adminClient
+            .from('mosque_donation_accounts')
+            .update({ account_status: 'pending' })
+            .eq('id', existingAccount.id)
+        }
       } catch {
         // Stripe account not found — create a fresh one
         stripeAccountId = ''
