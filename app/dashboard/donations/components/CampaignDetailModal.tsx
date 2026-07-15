@@ -98,7 +98,11 @@ export default function CampaignDetailModal({ campaignId, onClose, onDeleted }: 
 
                 <div className="flex flex-wrap gap-2 text-xs">
                   <span className="px-2.5 py-0.5 rounded-full bg-blue-50 text-blue-700 font-medium">{categoryLabel}</span>
-                  {campaign.end_date && (
+                  {campaign.no_end_date ? (
+                    <span className="px-2.5 py-0.5 rounded-full bg-yellow-50 text-yellow-700 font-medium">
+                      No end date
+                    </span>
+                  ) : campaign.end_date && (
                     <span className="px-2.5 py-0.5 rounded-full bg-yellow-50 text-yellow-700 font-medium">
                       Deadline: {new Date(campaign.end_date).toLocaleDateString()}
                     </span>

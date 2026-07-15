@@ -63,6 +63,17 @@ export async function POST(request: NextRequest, context: RouteContext) {
       .eq('mosque_id', mosqueId)
       .maybeSingle()
 
+    // Admin-disabled accounts cannot be self-reconnected — owner must contact admin first
+    if (existingAccount?.account_status === 'disabled') {
+      return NextResponse.json(
+        {
+          success: false,
+          message: 'Your donation account was disabled by an admin. Please contact admin to re-enable it before reconnecting.',
+        },
+        { status: 403 }
+      )
+    }
+
     let stripeAccountId: string
 
     if (existingAccount?.stripe_account_id) {
@@ -70,28 +81,16 @@ export async function POST(request: NextRequest, context: RouteContext) {
       try {
         const stripeAccount = await retrieveStripeAccount(existingAccount.stripe_account_id)
 
-        // Fully connected AND not disabled by admin → block re-connect
-        if (
-          stripeAccount.details_submitted &&
-          stripeAccount.charges_enabled &&
-          existingAccount.account_status !== 'disabled'
-        ) {
+        // Fully connected → block re-connect
+        if (stripeAccount.details_submitted && stripeAccount.charges_enabled) {
           return NextResponse.json(
             { success: false, message: 'Stripe account is already fully connected' },
             { status: 409 }
           )
         }
 
-        // If admin disabled it, or onboarding incomplete → allow reconnect with same account
+        // Onboarding incomplete → allow reconnect with same account
         stripeAccountId = existingAccount.stripe_account_id
-
-        // Reset status to pending so donations stay blocked until onboarding confirmed
-        if (existingAccount.account_status === 'disabled') {
-          await adminClient
-            .from('mosque_donation_accounts')
-            .update({ account_status: 'pending' })
-            .eq('id', existingAccount.id)
-        }
       } catch {
         // Stripe account not found — create a fresh one
         stripeAccountId = ''

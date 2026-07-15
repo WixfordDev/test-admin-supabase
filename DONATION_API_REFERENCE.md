@@ -8,6 +8,8 @@ Authorization: Bearer <supabase_jwt>
 Content-Type: application/json
 ```
 
+> Full architecture, DB schema এবং step-by-step flow (connect → donate → webhook → admin lock)-এর জন্য দেখো [`DONATION_MODULE.md`](DONATION_MODULE.md)। এই ফাইলটা শুধু request/response reference।
+
 ---
 
 ## 1. Stripe Connect APIs (Mosque Owner)
@@ -18,16 +20,31 @@ POST /api/mosques/{mosqueId}/stripe/connect
 ```
 **Body:** none
 
-**Response:**
+**Response (success):**
 ```json
 {
   "success": true,
+  "message": "Stripe onboarding link generated.",
   "data": {
     "onboarding_url": "https://connect.stripe.com/setup/..."
   }
 }
 ```
-> `onboarding_url` WebView বা browser এ খোলো। Owner onboarding শেষ করলে Stripe redirect করবে।
+> `onboarding_url` WebView বা browser এ খোলো। Owner onboarding শেষ করলে Stripe `GET /api/stripe/connect/return`-এ redirect করবে, যেটা status update করে `/stripe-connect?status=success|pending` ওয়েব পেজে পাঠায়।
+
+**Response (409 — already connected):**
+```json
+{ "success": false, "message": "Stripe account is already fully connected" }
+```
+
+**Response (403 — admin disabled this account):**
+```json
+{
+  "success": false,
+  "message": "Your donation account was disabled by an admin. Please contact admin to re-enable it before reconnecting."
+}
+```
+> **গুরুত্বপূর্ণ:** admin কোনো মসজিদের Stripe account disconnect করলে, owner **নিজে থেকে reconnect করতে পারবে না** — এই 403 আসবে। Owner-কে admin-এর সাথে যোগাযোগ করে account re-enable করাতে হবে, তারপর আবার এই endpoint কল করলে normal onboarding flow চলবে (একই Stripe account, স্ক্র্যাচ থেকে না)।
 
 ---
 
@@ -51,6 +68,7 @@ GET /api/mosques/{mosqueId}/stripe/status
 }
 ```
 > `status` values: `connected` | `pending` | `not_connected`
+> ⚠️ একটা admin-disabled account-ও এখানে `"pending"` দেখাবে — এই endpoint থেকে `disabled` আলাদা করে বোঝা যায় না। Owner নিজের mosque-এর জন্য raw status দেখতে চাইলে নিচের `/stripe/dashboard` ব্যবহার করবে (সেখানে raw `disabled` string দেখা যায়)।
 
 ---
 
@@ -103,6 +121,7 @@ GET /api/mosques/{mosqueId}/stripe/login-link
 }
 ```
 > One-time link। Owner এই URL এ গেলে তার Stripe dashboard দেখবে (balance, payouts, history)।
+> **টাকা withdraw করার জন্য কোনো আলাদা API নেই** — withdrawal Stripe-এর নিজের Express Dashboard থেকেই হয়, এই link দিয়ে সেখানে ঢুকতে হবে। শুধু `charges_enabled = true` থাকলেই এই link কাজ করবে।
 
 ---
 
@@ -174,6 +193,8 @@ POST /api/mosques/{mosqueId}/campaigns/{campaignId}/donate
 
 ## 3. Campaign APIs (Mosque Owner)
 
+> Campaign CRUD-এর সম্পূর্ণ, up-to-date reference (সব field, validation rules, error codes) আছে [`CAMPAIGN_API_REFERENCE.md`](CAMPAIGN_API_REFERENCE.md)-এ। নিচেরটা শুধু quick summary।
+
 ### Campaign তৈরি করো
 ```
 POST /api/mosques/{mosqueId}/campaigns
@@ -189,6 +210,7 @@ POST /api/mosques/{mosqueId}/campaigns
   "cover_image_url": "https://example.com/image.jpg",
   "start_date": "2026-07-11",
   "end_date": "2026-12-31",
+  "no_end_date": false,
   "is_active": true
 }
 ```
@@ -202,7 +224,8 @@ POST /api/mosques/{mosqueId}/campaigns
 | `currency` | ❌ | Default: `usd` |
 | `cover_image_url` | ❌ | Banner image URL |
 | `start_date` | ❌ | Format: YYYY-MM-DD |
-| `end_date` | ❌ | Format: YYYY-MM-DD |
+| `end_date` | ❌ | Format: YYYY-MM-DD. `no_end_date: true` হলে ignore হবে |
+| `no_end_date` | ❌ | Default: `false`. `true` দিলে campaign কখনো expire হবে না |
 | `is_active` | ❌ | Default: `true` |
 
 **Response:**
@@ -477,10 +500,10 @@ Authorization: Bearer <owner_token>
 | Code | কারণ |
 |---|---|
 | 401 | Token নেই বা invalid |
-| 403 | Owner না |
+| 403 | Owner না, অথবা admin এই Stripe account disable করে রেখেছে (reconnect ব্লকড) |
 | 404 | Mosque / Campaign পাওয়া যায়নি |
 | 409 | Already connected |
-| 422 | Stripe setup complete না / Campaign expired |
+| 422 | Stripe setup complete না / Campaign expired বা inactive |
 | 400 | Validation error |
 | 500 | Server error |
 

@@ -75,7 +75,7 @@ export async function PUT(request: NextRequest, context: RouteContext) {
       )
     }
 
-    if (body.end_date && body.start_date && body.end_date <= body.start_date) {
+    if (!body.no_end_date && body.end_date && body.start_date && body.end_date <= body.start_date) {
       return NextResponse.json(
         { success: false, message: 'end_date must be after start_date' },
         { status: 400 }
@@ -91,6 +91,10 @@ export async function PUT(request: NextRequest, context: RouteContext) {
     if (body.cover_image_url !== undefined) updateData.cover_image_url = body.cover_image_url
     if (body.start_date !== undefined) updateData.start_date = body.start_date
     if (body.end_date !== undefined) updateData.end_date = body.end_date
+    if (body.no_end_date !== undefined) {
+      updateData.no_end_date = body.no_end_date
+      if (body.no_end_date) updateData.end_date = null
+    }
     if (body.is_active !== undefined) updateData.is_active = body.is_active
 
     const { data: campaign, error } = await adminClient

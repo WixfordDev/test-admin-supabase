@@ -8,6 +8,8 @@ Authorization: Bearer <supabase_jwt>
 Content-Type: application/json
 ```
 
+> পুরো donation + Stripe Connect architecture আর flow-এর জন্য দেখো [`DONATION_MODULE.md`](DONATION_MODULE.md)।
+
 ---
 
 ## APIs Overview
@@ -41,6 +43,7 @@ Authorization: Bearer <owner_token>
   "cover_image_url": "https://example.com/image.jpg",
   "start_date": "2026-07-11",
   "end_date": "2026-12-31",
+  "no_end_date": false,
   "is_active": true
 }
 ```
@@ -56,7 +59,8 @@ Authorization: Bearer <owner_token>
 | `currency` | string | ❌ | Default: `usd` |
 | `cover_image_url` | string | ❌ | Banner image URL |
 | `start_date` | string | ❌ | Format: `YYYY-MM-DD` |
-| `end_date` | string | ❌ | Format: `YYYY-MM-DD` |
+| `end_date` | string | ❌ | Format: `YYYY-MM-DD`. `no_end_date: true` হলে ignore হবে |
+| `no_end_date` | boolean | ❌ | Default: `false`. `true` দিলে campaign কখনো expire হবে না, `end_date` লাগবে না |
 | `is_active` | boolean | ❌ | Default: `true` |
 
 **Response (201):**
@@ -185,6 +189,8 @@ Authorization: Bearer <owner_token>
 }
 ```
 
+`no_end_date: true` পাঠালে `end_date` আপনা-আপনি `null` হয়ে যাবে (deadline মুছে যাবে, campaign চলতেই থাকবে)।
+
 **Response (200):**
 ```json
 {
@@ -261,6 +267,7 @@ Authorization: Bearer <user_token>
 ```
 > `checkout_url` browser বা WebView এ খোলো।
 > Payment সফল হলে `raised_amount` automatically update হবে।
+> Campaign-এর `no_end_date: true` থাকলে deadline check সম্পূর্ণ skip হয়ে যায় — `end_date` অতীতে থাকলেও donate ব্লক হবে না।
 
 ---
 

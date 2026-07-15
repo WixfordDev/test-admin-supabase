@@ -3,7 +3,7 @@
 import { useState } from 'react'
 import { Card } from '@/app/components/ui/card'
 import { Button } from '@/app/components/ui/button'
-import { X, CheckCircle, XCircle, Clock, Building2, Unplug } from 'lucide-react'
+import { X, CheckCircle, XCircle, Clock, Building2, Unplug, Plug } from 'lucide-react'
 import toast from 'react-hot-toast'
 import ConfirmDialog from '@/app/components/ui/confirm-dialog'
 
@@ -36,6 +36,7 @@ function BoolIcon({ value }: { value: boolean }) {
 export default function MosqueAccountDetailModal({ account: a, onClose, onStatusChanged }: Props) {
   const [showDisconnectConfirm, setShowDisconnectConfirm] = useState(false)
   const [disconnecting, setDisconnecting] = useState(false)
+  const [enabling, setEnabling] = useState(false)
   const [currentStatus, setCurrentStatus] = useState(a.account_status)
 
   const statusConfig = {
@@ -47,7 +48,11 @@ export default function MosqueAccountDetailModal({ account: a, onClose, onStatus
   const handleDisconnect = async () => {
     setDisconnecting(true)
     try {
-      const res = await fetch(`/api/admin/donations/accounts/${a.id}`, { method: 'PATCH' })
+      const res = await fetch(`/api/admin/donations/accounts/${a.id}`, {
+        method: 'PATCH',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ action: 'disable' }),
+      })
       const json = await res.json()
       if (!res.ok) throw new Error(json.message ?? 'Failed')
       toast.success('Mosque account disconnected.')
@@ -58,6 +63,26 @@ export default function MosqueAccountDetailModal({ account: a, onClose, onStatus
       toast.error(err.message ?? 'Failed to disconnect')
     } finally {
       setDisconnecting(false)
+    }
+  }
+
+  const handleEnable = async () => {
+    setEnabling(true)
+    try {
+      const res = await fetch(`/api/admin/donations/accounts/${a.id}`, {
+        method: 'PATCH',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ action: 'enable' }),
+      })
+      const json = await res.json()
+      if (!res.ok) throw new Error(json.message ?? 'Failed')
+      toast.success(json.message ?? 'Account re-enabled.')
+      setCurrentStatus(json.data?.account_status ?? 'pending')
+      onStatusChanged?.()
+    } catch (err: any) {
+      toast.error(err.message ?? 'Failed to re-enable')
+    } finally {
+      setEnabling(false)
     }
   }
 
@@ -137,7 +162,7 @@ export default function MosqueAccountDetailModal({ account: a, onClose, onStatus
           )}
           {currentStatus === 'disabled' && (
             <div className="p-3 rounded-lg bg-red-50 border border-red-200 text-sm text-red-700">
-              🔴 This account has been disconnected by admin. Mosque cannot receive donations. The mosque owner must reconnect Stripe from their app.
+              🔴 This account has been disconnected by admin. Mosque cannot receive donations, and the owner cannot reconnect Stripe on their own — re-enable it below once you've verified with them.
             </div>
           )}
           {currentStatus === 'active' && (
@@ -160,7 +185,15 @@ export default function MosqueAccountDetailModal({ account: a, onClose, onStatus
               Disconnect
             </Button>
           ) : (
-            <p className="text-sm text-gray-400 italic">Account disconnected</p>
+            <Button
+              variant="outline"
+              className="flex items-center gap-2 text-green-700 border-green-300 hover:bg-green-50"
+              onClick={handleEnable}
+              disabled={enabling}
+            >
+              <Plug className="h-4 w-4" />
+              Re-enable
+            </Button>
           )}
           <Button variant="outline" className="text-black" onClick={onClose}>
             Close

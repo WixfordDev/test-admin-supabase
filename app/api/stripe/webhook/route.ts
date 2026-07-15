@@ -122,6 +122,18 @@ export async function POST(request: NextRequest) {
         const account = event.data.object as any
         const stripeAccountId = account.id as string
 
+        const { data: existing } = await adminClient
+          .from('mosque_donation_accounts')
+          .select('account_status')
+          .eq('stripe_account_id', stripeAccountId)
+          .maybeSingle()
+
+        // Admin-disabled accounts are locked until admin re-enables —
+        // don't let a Stripe-side event silently undo that
+        if (existing?.account_status === 'disabled') {
+          break
+        }
+
         const chargesEnabled = account.charges_enabled ?? false
         const payoutsEnabled = account.payouts_enabled ?? false
         const detailsSubmitted = account.details_submitted ?? false

@@ -16,10 +16,15 @@ CREATE TABLE IF NOT EXISTS mosque_campaigns (
   currency         TEXT NOT NULL DEFAULT 'usd',
   start_date       DATE,
   end_date         DATE,
+  no_end_date      BOOLEAN NOT NULL DEFAULT FALSE,
   is_active        BOOLEAN NOT NULL DEFAULT TRUE,
   created_at       TIMESTAMPTZ NOT NULL DEFAULT NOW(),
   updated_at       TIMESTAMPTZ NOT NULL DEFAULT NOW()
 );
+
+-- For existing installs: add the column if the table was created before this field existed
+ALTER TABLE mosque_campaigns
+  ADD COLUMN IF NOT EXISTS no_end_date BOOLEAN NOT NULL DEFAULT FALSE;
 
 CREATE INDEX IF NOT EXISTS idx_mosque_campaigns_mosque_id
   ON mosque_campaigns (mosque_id);

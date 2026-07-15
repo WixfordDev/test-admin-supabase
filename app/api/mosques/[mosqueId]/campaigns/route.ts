@@ -102,7 +102,9 @@ export async function POST(request: NextRequest, context: RouteContext) {
       )
     }
 
-    if (body.end_date && body.start_date && body.end_date <= body.start_date) {
+    const noEndDate = body.no_end_date ?? false
+
+    if (!noEndDate && body.end_date && body.start_date && body.end_date <= body.start_date) {
       return NextResponse.json(
         { success: false, message: 'end_date must be after start_date' },
         { status: 400 }
@@ -120,7 +122,8 @@ export async function POST(request: NextRequest, context: RouteContext) {
         currency: body.currency ?? 'usd',
         cover_image_url: body.cover_image_url ?? null,
         start_date: body.start_date ?? null,
-        end_date: body.end_date ?? null,
+        end_date: noEndDate ? null : body.end_date ?? null,
+        no_end_date: noEndDate,
         is_active: body.is_active ?? true,
       })
       .select()

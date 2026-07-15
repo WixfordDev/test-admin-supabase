@@ -54,8 +54,8 @@ export async function POST(request: NextRequest, context: RouteContext) {
       )
     }
 
-    // Check campaign deadline
-    if (campaign.end_date && new Date(campaign.end_date) < new Date()) {
+    // Check campaign deadline (skip entirely for no-end-date campaigns)
+    if (!campaign.no_end_date && campaign.end_date && new Date(campaign.end_date) < new Date()) {
       return NextResponse.json(
         { success: false, message: 'This campaign has ended' },
         { status: 422 }

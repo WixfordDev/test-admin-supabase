@@ -17,6 +17,7 @@ interface Campaign {
   currency: string
   start_date: string | null
   end_date: string | null
+  no_end_date: boolean
   is_active: boolean
   created_at: string
 }
@@ -104,7 +105,7 @@ export default function CampaignsTable({ campaigns, pagination, onPageChange, on
                       <ProgressBar raised={c.raised_amount} goal={c.goal_amount} />
                     </td>
                     <td className="px-4 py-3 text-gray-500">
-                      {c.end_date ? new Date(c.end_date).toLocaleDateString() : '—'}
+                      {c.no_end_date ? 'No end date' : c.end_date ? new Date(c.end_date).toLocaleDateString() : '—'}
                     </td>
                     <td className="px-4 py-3">
                       <span className={`px-2.5 py-0.5 rounded-full text-xs font-semibold ${

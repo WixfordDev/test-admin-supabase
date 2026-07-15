@@ -31,6 +31,7 @@ export interface MosqueCampaign {
   currency: string
   start_date: string | null
   end_date: string | null
+  no_end_date: boolean
   is_active: boolean
   created_at: string
   updated_at: string
@@ -45,6 +46,7 @@ export interface CreateCampaignBody {
   cover_image_url?: string
   start_date?: string
   end_date?: string
+  no_end_date?: boolean
   is_active?: boolean
 }
 
