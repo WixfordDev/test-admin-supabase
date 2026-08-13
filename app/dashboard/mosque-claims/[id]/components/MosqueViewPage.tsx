@@ -5,7 +5,7 @@ import { useParams, useRouter } from 'next/navigation'
 import { Card } from '@/app/components/ui/card'
 import { Button } from '@/app/components/ui/button'
 import toast, { Toaster } from 'react-hot-toast'
-import { ArrowLeft, RefreshCw, Eye, EyeOff, Copy, CheckCircle, XCircle, Megaphone, Calendar, RotateCcw, Ban, ShieldCheck } from 'lucide-react'
+import { ArrowLeft, RefreshCw, Eye, EyeOff, Copy, CheckCircle, XCircle, Megaphone, Calendar, RotateCcw, Ban, ShieldCheck, ArrowRightLeft } from 'lucide-react'
 import type { MosqueClaim } from '@/lib/types/mosque-claims'
 import AnnouncementsPanel from './AnnouncementsPanel'
 import EventsPanel from './EventsPanel'
@@ -30,11 +30,16 @@ export default function MosqueViewPage() {
 
   const [claim, setClaim] = useState<MosqueClaim | null>(null)
   const [ownerBlocked, setOwnerBlocked] = useState<boolean | null>(null)
+  const [ownerEmail, setOwnerEmail] = useState<string | null>(null)
   const [loading, setLoading] = useState(true)
   const [isActing, setIsActing] = useState(false)
   const [showCode, setShowCode] = useState(false)
   const [activeTab, setActiveTab] = useState<'announcements' | 'events'>('announcements')
   const [showBlockConfirm, setShowBlockConfirm] = useState(false)
+  const [showTransferModal, setShowTransferModal] = useState(false)
+  const [transferEmail, setTransferEmail] = useState('')
+  const [isTransferring, setIsTransferring] = useState(false)
+  const [newAccountCreds, setNewAccountCreds] = useState<{ email: string; password: string } | null>(null)
 
   const fetchClaim = async () => {
     try {
@@ -44,6 +49,7 @@ export default function MosqueViewPage() {
       if (!response.ok) throw new Error(data.error)
       setClaim(data.claim)
       setOwnerBlocked(data.owner_blocked)
+      setOwnerEmail(data.owner_email ?? null)
     } catch (err: any) {
       toast.error(err.message || 'Failed to load mosque claim')
     } finally {
@@ -114,6 +120,43 @@ export default function MosqueViewPage() {
     } finally {
       setIsActing(false)
     }
+  }
+
+  const handleTransfer = async () => {
+    if (!transferEmail.trim()) {
+      toast.error('Enter the new owner\'s email')
+      return
+    }
+    setIsTransferring(true)
+    try {
+      const response = await fetch(`/api/admin/mosque-claims/${claimId}/transfer-owner`, {
+        method: 'PUT',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ email: transferEmail.trim() }),
+      })
+      const data = await response.json()
+      if (!response.ok) throw new Error(data.error)
+
+      if (data.data?.created_new_account && data.data?.temporary_password) {
+        setNewAccountCreds({ email: data.data.new_owner_email, password: data.data.temporary_password })
+      } else {
+        toast.success(`Ownership transferred to ${data.data?.new_owner_email ?? transferEmail}`)
+      }
+
+      setShowTransferModal(false)
+      setTransferEmail('')
+      await fetchClaim()
+    } catch (err: any) {
+      toast.error(err.message || 'Failed to transfer ownership')
+    } finally {
+      setIsTransferring(false)
+    }
+  }
+
+  const copyCreds = () => {
+    if (!newAccountCreds) return
+    navigator.clipboard.writeText(`Email: ${newAccountCreds.email}\nPassword: ${newAccountCreds.password}`)
+    toast.success('Credentials copied!')
   }
 
   const copyCode = () => {
@@ -247,32 +290,48 @@ export default function MosqueViewPage() {
         )}
 
         {claim.status === 'verified' && (
-          <div className="flex items-center justify-between pt-2 border-t">
-            <span
-              className={`px-2.5 py-0.5 rounded-full text-xs font-semibold ${
-                ownerBlocked ? 'bg-red-100 text-red-800' : 'bg-green-100 text-green-800'
-              }`}
-            >
-              {ownerBlocked ? 'Owner Access Blocked' : 'Owner Access Active'}
-            </span>
-            <Button
-              variant="outline"
-              className={ownerBlocked ? 'text-green-700 border-green-300 hover:bg-green-50' : 'text-red-600 border-red-300 hover:bg-red-50'}
-              onClick={() => setShowBlockConfirm(true)}
-              disabled={isActing}
-            >
-              {ownerBlocked ? (
-                <>
-                  <ShieldCheck className="h-4 w-4 mr-1.5" />
-                  Unblock Owner
-                </>
-              ) : (
-                <>
-                  <Ban className="h-4 w-4 mr-1.5" />
-                  Block Owner
-                </>
-              )}
-            </Button>
+          <div className="flex flex-col gap-3 pt-2 border-t">
+            <div className="flex items-center justify-between">
+              <div className="flex items-center gap-2">
+                <span
+                  className={`px-2.5 py-0.5 rounded-full text-xs font-semibold ${
+                    ownerBlocked ? 'bg-red-100 text-red-800' : 'bg-green-100 text-green-800'
+                  }`}
+                >
+                  {ownerBlocked ? 'Owner Access Blocked' : 'Owner Access Active'}
+                </span>
+                {ownerEmail && <span className="text-sm text-gray-500">Owner: {ownerEmail}</span>}
+              </div>
+              <div className="flex items-center gap-2">
+                <Button
+                  variant="outline"
+                  className="text-black"
+                  onClick={() => setShowTransferModal(true)}
+                  disabled={isActing}
+                >
+                  <ArrowRightLeft className="h-4 w-4 mr-1.5" />
+                  Transfer Owner
+                </Button>
+                <Button
+                  variant="outline"
+                  className={ownerBlocked ? 'text-green-700 border-green-300 hover:bg-green-50' : 'text-red-600 border-red-300 hover:bg-red-50'}
+                  onClick={() => setShowBlockConfirm(true)}
+                  disabled={isActing}
+                >
+                  {ownerBlocked ? (
+                    <>
+                      <ShieldCheck className="h-4 w-4 mr-1.5" />
+                      Unblock Owner
+                    </>
+                  ) : (
+                    <>
+                      <Ban className="h-4 w-4 mr-1.5" />
+                      Block Owner
+                    </>
+                  )}
+                </Button>
+              </div>
+            </div>
           </div>
         )}
       </Card>
@@ -315,6 +374,89 @@ export default function MosqueViewPage() {
         onConfirm={handleToggleBlock}
         onCancel={() => setShowBlockConfirm(false)}
       />
+
+      {showTransferModal && (
+        <div className="fixed inset-0 z-[50] flex items-center justify-center bg-black/50 p-4">
+          <Card className="w-full max-w-sm p-6 bg-white">
+            <div className="flex items-start gap-3 mb-4">
+              <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-blue-100">
+                <ArrowRightLeft className="h-5 w-5 text-blue-600" />
+              </div>
+              <div>
+                <h3 className="text-lg font-semibold text-gray-900">Transfer Ownership</h3>
+                <p className="text-sm text-gray-600 mt-1">
+                  Enter the email of the account that should become the new owner of this mosque.
+                  {ownerEmail && <> Current owner: <span className="font-medium">{ownerEmail}</span>.</>}
+                  {' '}The current owner will lose access entirely. If no account exists for this email yet, one will be created automatically with a temporary password (shown to you after transfer, to share with them).
+                </p>
+              </div>
+            </div>
+
+            <input
+              type="email"
+              placeholder="new-owner@example.com"
+              value={transferEmail}
+              onChange={(e) => setTransferEmail(e.target.value)}
+              className="w-full rounded-lg border border-gray-300 px-3 py-2 text-sm text-gray-900 focus:outline-none focus:ring-2 focus:ring-blue-500"
+              disabled={isTransferring}
+              autoFocus
+            />
+
+            <div className="flex justify-end gap-2 mt-4">
+              <Button
+                variant="outline"
+                className="text-black"
+                onClick={() => { setShowTransferModal(false); setTransferEmail('') }}
+                disabled={isTransferring}
+              >
+                Cancel
+              </Button>
+              <Button onClick={handleTransfer} disabled={isTransferring}>
+                {isTransferring ? 'Transferring...' : 'Transfer'}
+              </Button>
+            </div>
+          </Card>
+        </div>
+      )}
+
+      {newAccountCreds && (
+        <div className="fixed inset-0 z-[50] flex items-center justify-center bg-black/50 p-4">
+          <Card className="w-full max-w-sm p-6 bg-white">
+            <div className="flex items-start gap-3 mb-4">
+              <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-green-100">
+                <CheckCircle className="h-5 w-5 text-green-600" />
+              </div>
+              <div>
+                <h3 className="text-lg font-semibold text-gray-900">New Owner Account Created</h3>
+                <p className="text-sm text-gray-600 mt-1">
+                  Share these credentials with the new owner. They should log in and change the password immediately — this is shown only once.
+                </p>
+              </div>
+            </div>
+
+            <div className="space-y-2 bg-gray-50 border border-gray-200 rounded-lg p-3 font-mono text-sm">
+              <div className="flex justify-between gap-3">
+                <span className="text-gray-500 shrink-0">Email</span>
+                <span className="text-gray-900 break-all text-right">{newAccountCreds.email}</span>
+              </div>
+              <div className="flex justify-between gap-3">
+                <span className="text-gray-500 shrink-0">Password</span>
+                <span className="text-gray-900 break-all text-right">{newAccountCreds.password}</span>
+              </div>
+            </div>
+
+            <div className="flex justify-end gap-2 mt-4">
+              <Button variant="outline" className="text-black flex items-center gap-1.5" onClick={copyCreds}>
+                <Copy className="h-4 w-4" />
+                Copy
+              </Button>
+              <Button onClick={() => setNewAccountCreds(null)}>
+                Done
+              </Button>
+            </div>
+          </Card>
+        </div>
+      )}
     </div>
   )
 }

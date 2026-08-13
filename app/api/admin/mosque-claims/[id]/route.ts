@@ -28,6 +28,7 @@ export async function GET(request: NextRequest, context: RouteContext) {
       .single()
 
     let ownerBlocked: boolean | null = null
+    let ownerEmail: string | null = null
     if (claim.status === 'verified') {
       const { data: role } = await adminClient
         .from('mosque_roles')
@@ -36,11 +37,15 @@ export async function GET(request: NextRequest, context: RouteContext) {
         .eq('user_id', claim.user_id)
         .maybeSingle()
       ownerBlocked = role?.is_blocked ?? false
+
+      const { data: { user: ownerUser } } = await adminClient.auth.admin.getUserById(claim.user_id)
+      ownerEmail = ownerUser?.email ?? null
     }
 
     return NextResponse.json({
       claim: { ...claim, mosque: mosque ?? null },
       owner_blocked: ownerBlocked,
+      owner_email: ownerEmail,
     })
   } catch {
     return NextResponse.json({ error: 'Internal server error' }, { status: 500 })
