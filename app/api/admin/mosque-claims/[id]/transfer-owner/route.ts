@@ -99,20 +99,36 @@ export async function PUT(request: NextRequest, context: RouteContext) {
       .eq('role', 'owner')
 
     if (removeError) {
+      console.error('[transfer-owner] Failed to remove previous owner:', removeError)
       return NextResponse.json({ error: 'Failed to remove previous owner' }, { status: 500 })
     }
 
-    // Grant ownership to the new user — upsert also handles the case where
-    // they were already an admin of this mosque (promotes them to owner)
-    const { error: roleError } = await adminClient
+    // Grant ownership to the new user. Done as an explicit check + insert/update
+    // instead of upsert(onConflict) — that requires a matching unique constraint
+    // on (user_id, mosque_id) to exist, which mosque_roles isn't guaranteed to have.
+    // This also handles the case where they were already an admin here (promotes to owner).
+    const { data: existingRole } = await adminClient
       .from('mosque_roles')
-      .upsert(
-        { mosque_id: claim.mosque_id, user_id: newOwner.id, role: 'owner', is_blocked: false },
-        { onConflict: 'user_id,mosque_id' }
-      )
+      .select('id')
+      .eq('mosque_id', claim.mosque_id)
+      .eq('user_id', newOwner.id)
+      .maybeSingle()
+
+    const { error: roleError } = existingRole
+      ? await adminClient
+          .from('mosque_roles')
+          .update({ role: 'owner', is_blocked: false })
+          .eq('id', existingRole.id)
+      : await adminClient
+          .from('mosque_roles')
+          .insert({ mosque_id: claim.mosque_id, user_id: newOwner.id, role: 'owner', is_blocked: false })
 
     if (roleError) {
-      return NextResponse.json({ error: 'Failed to assign new owner' }, { status: 500 })
+      console.error('[transfer-owner] Failed to assign new owner:', roleError)
+      return NextResponse.json(
+        { error: `Failed to assign new owner: ${roleError.message}` },
+        { status: 500 }
+      )
     }
 
     // Keep mosques_metadata denormalized owner in sync
@@ -122,7 +138,11 @@ export async function PUT(request: NextRequest, context: RouteContext) {
       .eq('mosque_id', claim.mosque_id)
 
     if (mosqueError) {
-      return NextResponse.json({ error: 'Failed to update mosque owner record' }, { status: 500 })
+      console.error('[transfer-owner] Failed to update mosque owner record:', mosqueError)
+      return NextResponse.json(
+        { error: `Failed to update mosque owner record: ${mosqueError.message}` },
+        { status: 500 }
+      )
     }
 
     // Repoint the claim itself so block/unblock and claim lookups follow the new owner
@@ -132,7 +152,11 @@ export async function PUT(request: NextRequest, context: RouteContext) {
       .eq('id', id)
 
     if (claimUpdateError) {
-      return NextResponse.json({ error: 'Failed to update claim record' }, { status: 500 })
+      console.error('[transfer-owner] Failed to update claim record:', claimUpdateError)
+      return NextResponse.json(
+        { error: `Failed to update claim record: ${claimUpdateError.message}` },
+        { status: 500 }
+      )
     }
 
     return NextResponse.json({
@@ -147,7 +171,8 @@ export async function PUT(request: NextRequest, context: RouteContext) {
         temporary_password: createdNewAccount ? tempPassword : undefined,
       },
     })
-  } catch {
+  } catch (err) {
+    console.error('[transfer-owner] Unhandled error:', err)
     return NextResponse.json({ error: 'Internal server error' }, { status: 500 })
   }
 }
