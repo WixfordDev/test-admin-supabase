@@ -39,7 +39,7 @@ export default function MosqueViewPage() {
   const [showTransferModal, setShowTransferModal] = useState(false)
   const [transferEmail, setTransferEmail] = useState('')
   const [isTransferring, setIsTransferring] = useState(false)
-  const [newAccountCreds, setNewAccountCreds] = useState<{ email: string; password: string } | null>(null)
+  const [transferResult, setTransferResult] = useState<{ email: string; password: string | null } | null>(null)
 
   const fetchClaim = async () => {
     try {
@@ -137,11 +137,10 @@ export default function MosqueViewPage() {
       const data = await response.json()
       if (!response.ok) throw new Error(data.error)
 
-      if (data.data?.created_new_account && data.data?.temporary_password) {
-        setNewAccountCreds({ email: data.data.new_owner_email, password: data.data.temporary_password })
-      } else {
-        toast.success(`Ownership transferred to ${data.data?.new_owner_email ?? transferEmail}`)
-      }
+      setTransferResult({
+        email: data.data?.new_owner_email ?? transferEmail,
+        password: data.data?.created_new_account ? data.data?.temporary_password ?? null : null,
+      })
 
       setShowTransferModal(false)
       setTransferEmail('')
@@ -154,9 +153,12 @@ export default function MosqueViewPage() {
   }
 
   const copyCreds = () => {
-    if (!newAccountCreds) return
-    navigator.clipboard.writeText(`Email: ${newAccountCreds.email}\nPassword: ${newAccountCreds.password}`)
-    toast.success('Credentials copied!')
+    if (!transferResult) return
+    const text = transferResult.password
+      ? `Email: ${transferResult.email}\nPassword: ${transferResult.password}`
+      : `Email: ${transferResult.email}`
+    navigator.clipboard.writeText(text)
+    toast.success('Copied!')
   }
 
   const copyCode = () => {
@@ -419,7 +421,7 @@ export default function MosqueViewPage() {
         </div>
       )}
 
-      {newAccountCreds && (
+      {transferResult && (
         <div className="fixed inset-0 z-[50] flex items-center justify-center bg-black/50 p-4">
           <Card className="w-full max-w-sm p-6 bg-white">
             <div className="flex items-start gap-3 mb-4">
@@ -427,9 +429,13 @@ export default function MosqueViewPage() {
                 <CheckCircle className="h-5 w-5 text-green-600" />
               </div>
               <div>
-                <h3 className="text-lg font-semibold text-gray-900">New Owner Account Created</h3>
+                <h3 className="text-lg font-semibold text-gray-900">
+                  {transferResult.password ? 'New Owner Account Created' : 'Ownership Transferred'}
+                </h3>
                 <p className="text-sm text-gray-600 mt-1">
-                  Share these credentials with the new owner. They should log in and change the password immediately — this is shown only once.
+                  {transferResult.password
+                    ? 'Share these credentials with the new owner. They should log in and change the password immediately — this is shown only once.'
+                    : 'This email already had an account. They can log in with their existing password — no need to reset anything — and will now have owner access to this mosque.'}
                 </p>
               </div>
             </div>
@@ -437,12 +443,14 @@ export default function MosqueViewPage() {
             <div className="space-y-2 bg-gray-50 border border-gray-200 rounded-lg p-3 font-mono text-sm">
               <div className="flex justify-between gap-3">
                 <span className="text-gray-500 shrink-0">Email</span>
-                <span className="text-gray-900 break-all text-right">{newAccountCreds.email}</span>
+                <span className="text-gray-900 break-all text-right">{transferResult.email}</span>
               </div>
-              <div className="flex justify-between gap-3">
-                <span className="text-gray-500 shrink-0">Password</span>
-                <span className="text-gray-900 break-all text-right">{newAccountCreds.password}</span>
-              </div>
+              {transferResult.password && (
+                <div className="flex justify-between gap-3">
+                  <span className="text-gray-500 shrink-0">Password</span>
+                  <span className="text-gray-900 break-all text-right">{transferResult.password}</span>
+                </div>
+              )}
             </div>
 
             <div className="flex justify-end gap-2 mt-4">
@@ -450,7 +458,7 @@ export default function MosqueViewPage() {
                 <Copy className="h-4 w-4" />
                 Copy
               </Button>
-              <Button onClick={() => setNewAccountCreds(null)}>
+              <Button onClick={() => setTransferResult(null)}>
                 Done
               </Button>
             </div>
