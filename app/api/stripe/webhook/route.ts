@@ -10,19 +10,35 @@ export const runtime = 'nodejs'
 export async function POST(request: NextRequest) {
   const body = await request.text()
   const sig = request.headers.get('stripe-signature') ?? ''
-  const secret = process.env.STRIPE_DONATION_WEBHOOK_SECRET ?? ''
 
-  if (!secret) {
-    console.error('[webhook] STRIPE_DONATION_WEBHOOK_SECRET is not set')
+  // Two separate Stripe endpoint destinations point at this same URL — one for
+  // "Your account" events (checkout/payment_intent), one for "Connected accounts"
+  // events (account.updated) — Stripe's dashboard doesn't let a single endpoint
+  // listen to both, and each destination has its own signing secret.
+  const secrets = [
+    process.env.STRIPE_DONATION_WEBHOOK_SECRET,
+    process.env.STRIPE_DONATION_WEBHOOK_SECRET_ACCOUNT,
+  ].filter((s): s is string => Boolean(s))
+
+  if (secrets.length === 0) {
+    console.error('[webhook] No STRIPE_DONATION_WEBHOOK_SECRET(_ACCOUNT) configured')
     return NextResponse.json({ error: 'Webhook secret not configured' }, { status: 500 })
   }
 
-  let event
-  try {
-    event = constructWebhookEvent(body, sig, secret)
-  } catch (err: any) {
-    console.error('[webhook] Signature verification failed:', err.message)
-    return NextResponse.json({ error: `Webhook error: ${err.message}` }, { status: 400 })
+  let event: ReturnType<typeof constructWebhookEvent> | undefined
+  let lastError: any
+  for (const secret of secrets) {
+    try {
+      event = constructWebhookEvent(body, sig, secret)
+      break
+    } catch (err) {
+      lastError = err
+    }
+  }
+
+  if (!event) {
+    console.error('[webhook] Signature verification failed:', lastError?.message)
+    return NextResponse.json({ error: `Webhook error: ${lastError?.message}` }, { status: 400 })
   }
 
   const adminClient = await createAdminClient()

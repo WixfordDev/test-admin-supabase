@@ -62,8 +62,16 @@ Stripe
 # Existing Stripe Platform Account (reused — do NOT create a new one)
 STRIPE_SECRET_KEY=sk_live_...
 
-# Webhook secret for donation events (Stripe Dashboard > Webhooks)
+# Webhook secret for the "Your account" (platform) endpoint destination —
+# checkout.session.completed, payment_intent.succeeded, payment_intent.payment_failed
 STRIPE_DONATION_WEBHOOK_SECRET=whsec_...
+
+# Webhook secret for the "Connected accounts" endpoint destination — account.updated.
+# Stripe's dashboard requires these as two SEPARATE endpoint destinations even though
+# both point at the same URL (/api/stripe/webhook) — "Events from" can't be edited
+# after an endpoint is created, and each destination gets its own signing secret.
+# The webhook route tries both secrets in turn when verifying a signature.
+STRIPE_DONATION_WEBHOOK_SECRET_ACCOUNT=whsec_...
 
 # Public base URL (used for Stripe onboarding return/refresh + checkout success/cancel URLs)
 NEXT_PUBLIC_SITE_URL=https://yourdomain.com
