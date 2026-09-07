@@ -1,0 +1,488 @@
+{
+  "info": {
+    "name": "DeenHub — Owner Dashboard APIs",
+    "description": "Mosque owner dashboard, donation, campaign, event and Stripe Connect APIs for the DeenHub Flutter app. Set collection variables (baseUrl, ownerToken, userToken, mosqueId, campaignId, eventId, userId) before running.",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "auth": {
+    "type": "bearer",
+    "bearer": [{ "key": "token", "value": "{{ownerToken}}", "type": "string" }]
+  },
+  "variable": [
+    { "key": "baseUrl", "value": "https://admin.deenhub.app", "type": "string" },
+    { "key": "ownerToken", "value": "", "type": "string", "description": "Supabase JWT of the verified mosque owner" },
+    { "key": "userToken", "value": "", "type": "string", "description": "Supabase JWT of a regular donor/attendee user" },
+    { "key": "mosqueId", "value": "", "type": "string" },
+    { "key": "campaignId", "value": "", "type": "string" },
+    { "key": "eventId", "value": "", "type": "string" },
+    { "key": "userId", "value": "", "type": "string", "description": "Target user id for admin add/remove" },
+    { "key": "claimId", "value": "", "type": "string", "description": "mosque_claims row id (admin-only endpoints)" },
+    { "key": "accountId", "value": "", "type": "string", "description": "mosque_donation_accounts row id (admin-only endpoints)" }
+  ],
+  "item": [
+    {
+      "name": "📊 Dashboard (Read-only)",
+      "description": "Everything the owner dashboard screen needs to DISPLAY data — no create/edit/delete here.",
+      "item": [
+        {
+          "name": "Overview",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/api/mosques/{{mosqueId}}/overview",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "mosques", "{{mosqueId}}", "overview"]
+            },
+            "description": "Announcement/event counts, campaign totals, donation totals, Stripe status — one call for the home/overview screen."
+          }
+        },
+        {
+          "name": "List Announcements",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/api/mosques/{{mosqueId}}/announcements?page=1&limit=20&start_date=&end_date=",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "mosques", "{{mosqueId}}", "announcements"],
+              "query": [
+                { "key": "page", "value": "1" },
+                { "key": "limit", "value": "20" },
+                { "key": "start_date", "value": "", "description": "YYYY-MM-DD, optional" },
+                { "key": "end_date", "value": "", "description": "YYYY-MM-DD, optional" }
+              ]
+            }
+          }
+        },
+        {
+          "name": "List Events",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/api/mosques/{{mosqueId}}/events?page=1&limit=20&upcoming=false&start_date=&end_date=",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "mosques", "{{mosqueId}}", "events"],
+              "query": [
+                { "key": "page", "value": "1" },
+                { "key": "limit", "value": "20" },
+                { "key": "upcoming", "value": "false", "description": "true = only future events" },
+                { "key": "start_date", "value": "", "description": "YYYY-MM-DD, optional" },
+                { "key": "end_date", "value": "", "description": "YYYY-MM-DD, optional" }
+              ]
+            },
+            "description": "Each event includes attendee_count { going, maybe, total }."
+          }
+        },
+        {
+          "name": "Get Event Attendees",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/api/events/{{eventId}}/attendees",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "events", "{{eventId}}", "attendees"]
+            },
+            "description": "Drill-down: full attendee list + summary for one event."
+          }
+        },
+        {
+          "name": "List Campaigns",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/api/mosques/{{mosqueId}}/campaigns?page=1&limit=20&active=true&start_date=&end_date=",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "mosques", "{{mosqueId}}", "campaigns"],
+              "query": [
+                { "key": "page", "value": "1" },
+                { "key": "limit", "value": "20" },
+                { "key": "active", "value": "true" },
+                { "key": "start_date", "value": "", "description": "YYYY-MM-DD, optional" },
+                { "key": "end_date", "value": "", "description": "YYYY-MM-DD, optional" }
+              ]
+            }
+          }
+        },
+        {
+          "name": "Owner Donation History",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/api/mosques/{{mosqueId}}/donations?page=1&limit=20",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "mosques", "{{mosqueId}}", "donations"],
+              "query": [
+                { "key": "page", "value": "1" },
+                { "key": "limit", "value": "20" }
+              ]
+            },
+            "description": "Only status = completed transactions are returned."
+          }
+        },
+        {
+          "name": "Stripe Status",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/api/mosques/{{mosqueId}}/stripe/status",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "mosques", "{{mosqueId}}", "stripe", "status"]
+            },
+            "description": "status: connected | pending | not_connected."
+          }
+        },
+        {
+          "name": "Stripe Dashboard (Balance + Stats)",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/api/mosques/{{mosqueId}}/stripe/dashboard",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "mosques", "{{mosqueId}}", "stripe", "dashboard"]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "Actions ▸ Announcements",
+      "item": [
+        {
+          "name": "Create Announcement",
+          "request": {
+            "method": "POST",
+            "header": [{ "key": "Content-Type", "value": "application/json" }],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"title\": \"Jumma Prayer Time Update\",\n  \"content\": \"This Friday's Jumma prayer starts at 1:30 PM.\"\n}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/api/mosques/{{mosqueId}}/announcements",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "mosques", "{{mosqueId}}", "announcements"]
+            },
+            "description": "Owner or admin role required."
+          }
+        }
+      ]
+    },
+    {
+      "name": "Actions ▸ Events",
+      "item": [
+        {
+          "name": "Create Event",
+          "request": {
+            "method": "POST",
+            "header": [{ "key": "Content-Type", "value": "application/json" }],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"title\": \"Community Iftar\",\n  \"description\": \"Join us for a community iftar gathering.\",\n  \"event_date\": \"2026-09-15T18:00:00Z\",\n  \"end_date\": \"2026-09-15T20:00:00Z\",\n  \"location\": \"Main Hall\",\n  \"image_url\": \"https://example.com/iftar.jpg\",\n  \"max_attendees\": 100\n}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/api/mosques/{{mosqueId}}/events",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "mosques", "{{mosqueId}}", "events"]
+            },
+            "description": "Owner or admin role required."
+          }
+        },
+        {
+          "name": "Attend Event (RSVP)",
+          "request": {
+            "method": "POST",
+            "header": [{ "key": "Content-Type", "value": "application/json" }],
+            "auth": {
+              "type": "bearer",
+              "bearer": [{ "key": "token", "value": "{{userToken}}", "type": "string" }]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"attendance_status\": \"going\",\n  \"reminder_enabled\": true\n}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/api/events/{{eventId}}/attend",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "events", "{{eventId}}", "attend"]
+            },
+            "description": "Called by the attending user (donor/app user), not the owner. attendance_status: 'going' | 'maybe'."
+          }
+        },
+        {
+          "name": "Cancel Attendance",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "auth": {
+              "type": "bearer",
+              "bearer": [{ "key": "token", "value": "{{userToken}}", "type": "string" }]
+            },
+            "url": {
+              "raw": "{{baseUrl}}/api/events/{{eventId}}/attend",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "events", "{{eventId}}", "attend"]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "Actions ▸ Campaigns",
+      "item": [
+        {
+          "name": "Create Campaign",
+          "request": {
+            "method": "POST",
+            "header": [{ "key": "Content-Type", "value": "application/json" }],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"title\": \"Mosque Renovation 2026\",\n  \"description\": \"We are raising funds to renovate our mosque building.\",\n  \"category\": \"renovation\",\n  \"goal_amount\": 500000,\n  \"currency\": \"usd\",\n  \"cover_image_url\": \"https://example.com/image.jpg\",\n  \"start_date\": \"2026-09-01\",\n  \"end_date\": \"2026-12-31\",\n  \"no_end_date\": false,\n  \"is_active\": true\n}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/api/mosques/{{mosqueId}}/campaigns",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "mosques", "{{mosqueId}}", "campaigns"]
+            },
+            "description": "Owner only. goal_amount/end_date in cents/YYYY-MM-DD. Set no_end_date: true for a campaign that never expires."
+          }
+        },
+        {
+          "name": "Get Single Campaign",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/api/mosques/{{mosqueId}}/campaigns/{{campaignId}}",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "mosques", "{{mosqueId}}", "campaigns", "{{campaignId}}"]
+            }
+          }
+        },
+        {
+          "name": "Update Campaign",
+          "request": {
+            "method": "PUT",
+            "header": [{ "key": "Content-Type", "value": "application/json" }],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"title\": \"Updated Campaign Title\",\n  \"goal_amount\": 600000,\n  \"is_active\": true\n}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/api/mosques/{{mosqueId}}/campaigns/{{campaignId}}",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "mosques", "{{mosqueId}}", "campaigns", "{{campaignId}}"]
+            },
+            "description": "Owner only. All fields optional — send only what changes."
+          }
+        },
+        {
+          "name": "Delete Campaign",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/api/mosques/{{mosqueId}}/campaigns/{{campaignId}}",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "mosques", "{{mosqueId}}", "campaigns", "{{campaignId}}"]
+            },
+            "description": "Owner only."
+          }
+        },
+        {
+          "name": "Donate to Campaign",
+          "request": {
+            "method": "POST",
+            "header": [{ "key": "Content-Type", "value": "application/json" }],
+            "auth": {
+              "type": "bearer",
+              "bearer": [{ "key": "token", "value": "{{userToken}}", "type": "string" }]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"amount\": 1000,\n  \"currency\": \"usd\"\n}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/api/mosques/{{mosqueId}}/campaigns/{{campaignId}}/donate",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "mosques", "{{mosqueId}}", "campaigns", "{{campaignId}}", "donate"]
+            },
+            "description": "Called by the donor, not the owner. amount is in cents, min 50. Returns a Stripe checkout_url."
+          }
+        }
+      ]
+    },
+    {
+      "name": "Actions ▸ Donations",
+      "item": [
+        {
+          "name": "General Donate (no campaign)",
+          "request": {
+            "method": "POST",
+            "header": [{ "key": "Content-Type", "value": "application/json" }],
+            "auth": {
+              "type": "bearer",
+              "bearer": [{ "key": "token", "value": "{{userToken}}", "type": "string" }]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"amount\": 1000,\n  \"currency\": \"usd\"\n}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/api/mosques/{{mosqueId}}/donate",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "mosques", "{{mosqueId}}", "donate"]
+            },
+            "description": "Called by the donor. Returns a Stripe checkout_url."
+          }
+        }
+      ]
+    },
+    {
+      "name": "Actions ▸ Stripe Connect",
+      "item": [
+        {
+          "name": "Connect / Reconnect Stripe",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/api/mosques/{{mosqueId}}/stripe/connect",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "mosques", "{{mosqueId}}", "stripe", "connect"]
+            },
+            "description": "Owner only. Returns onboarding_url. 403 if admin has disabled this mosque's account."
+          }
+        },
+        {
+          "name": "Stripe Express Login Link (Withdraw)",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/api/mosques/{{mosqueId}}/stripe/login-link",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "mosques", "{{mosqueId}}", "stripe", "login-link"]
+            },
+            "description": "Owner only. Requires charges_enabled = true. Returns a one-time Stripe Express Dashboard URL for managing balance/payouts."
+          }
+        }
+      ]
+    },
+    {
+      "name": "Actions ▸ Admin Management (mosque team)",
+      "item": [
+        {
+          "name": "List Admins",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/api/mosques/{{mosqueId}}/admins",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "mosques", "{{mosqueId}}", "admins"]
+            },
+            "description": "Owner only."
+          }
+        },
+        {
+          "name": "Add Admin (by email)",
+          "request": {
+            "method": "POST",
+            "header": [{ "key": "Content-Type", "value": "application/json" }],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"email\": \"helper@example.com\"\n}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/api/mosques/{{mosqueId}}/admins",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "mosques", "{{mosqueId}}", "admins"]
+            },
+            "description": "Owner only. user_id may be sent instead of email."
+          }
+        },
+        {
+          "name": "Remove Admin",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/api/mosques/{{mosqueId}}/admins/{{userId}}",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "mosques", "{{mosqueId}}", "admins", "{{userId}}"]
+            },
+            "description": "Owner only. Cannot remove the owner themselves."
+          }
+        }
+      ]
+    },
+    {
+      "name": "Admin (platform staff — not owner)",
+      "item": [
+        {
+          "name": "Global Donations Overview",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/api/admin/donations?page=1&limit=20",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "admin", "donations"],
+              "query": [
+                { "key": "page", "value": "1" },
+                { "key": "limit", "value": "20" }
+              ]
+            },
+            "description": "Platform admin dashboard only — global stats, all completed transactions, all connected accounts."
+          }
+        },
+        {
+          "name": "Disable Mosque Stripe Account",
+          "request": {
+            "method": "PATCH",
+            "header": [{ "key": "Content-Type", "value": "application/json" }],
+            "body": { "mode": "raw", "raw": "{\n  \"action\": \"disable\"\n}" },
+            "url": {
+              "raw": "{{baseUrl}}/api/admin/donations/accounts/{{accountId}}",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "admin", "donations", "accounts", "{{accountId}}"]
+            }
+          }
+        },
+        {
+          "name": "Re-enable Mosque Stripe Account",
+          "request": {
+            "method": "PATCH",
+            "header": [{ "key": "Content-Type", "value": "application/json" }],
+            "body": { "mode": "raw", "raw": "{\n  \"action\": \"enable\"\n}" },
+            "url": {
+              "raw": "{{baseUrl}}/api/admin/donations/accounts/{{accountId}}",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "admin", "donations", "accounts", "{{accountId}}"]
+            }
+          }
+        },
+        {
+          "name": "Transfer Mosque Ownership",
+          "request": {
+            "method": "PUT",
+            "header": [{ "key": "Content-Type", "value": "application/json" }],
+            "body": { "mode": "raw", "raw": "{\n  \"email\": \"new-owner@example.com\"\n}" },
+            "url": {
+              "raw": "{{baseUrl}}/api/admin/mosque-claims/{{claimId}}/transfer-owner",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "admin", "mosque-claims", "{{claimId}}", "transfer-owner"]
+            },
+            "description": "claimId is the mosque_claims row id, not mosqueId."
+          }
+        }
+      ]
+    }
+  ]
+}

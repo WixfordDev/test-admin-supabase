@@ -8,6 +8,7 @@ type RouteContext = {
 }
 
 // GET /api/mosques/:mosqueId/campaigns — public list
+// Query params: page, limit, active=true, start_date=YYYY-MM-DD, end_date=YYYY-MM-DD (filters by created_at)
 export async function GET(request: NextRequest, context: RouteContext) {
   try {
     const { mosqueId } = await context.params
@@ -15,8 +16,10 @@ export async function GET(request: NextRequest, context: RouteContext) {
     const page = parseInt(searchParams.get('page') || '1')
     const limit = parseInt(searchParams.get('limit') || '20')
     const activeOnly = searchParams.get('active') === 'true'
-    const from = (page - 1) * limit
-    const to = from + limit - 1
+    const startDate = searchParams.get('start_date')
+    const endDate = searchParams.get('end_date')
+    const rangeFrom = (page - 1) * limit
+    const rangeTo = rangeFrom + limit - 1
 
     const adminClient = await createAdminClient()
 
@@ -25,10 +28,16 @@ export async function GET(request: NextRequest, context: RouteContext) {
       .select('*', { count: 'exact' })
       .eq('mosque_id', mosqueId)
       .order('created_at', { ascending: false })
-      .range(from, to)
+      .range(rangeFrom, rangeTo)
 
     if (activeOnly) {
       query = query.eq('is_active', true)
+    }
+    if (startDate) {
+      query = query.gte('created_at', startDate)
+    }
+    if (endDate) {
+      query = query.lte('created_at', `${endDate}T23:59:59.999Z`)
     }
 
     const { data: campaigns, count, error } = await query

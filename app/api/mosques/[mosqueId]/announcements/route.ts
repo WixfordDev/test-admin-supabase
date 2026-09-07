@@ -9,24 +9,36 @@ type RouteContext = {
 }
 
 // GET /api/mosques/:mosqueId/announcements — public read
+// Query params: page, limit, start_date=YYYY-MM-DD, end_date=YYYY-MM-DD (filters by created_at)
 export async function GET(request: NextRequest, context: RouteContext) {
   try {
     const { mosqueId } = await context.params
     const { searchParams } = new URL(request.url)
     const page = parseInt(searchParams.get('page') || '1')
     const limit = parseInt(searchParams.get('limit') || '20')
+    const startDate = searchParams.get('start_date')
+    const endDate = searchParams.get('end_date')
 
     const adminClient = await createAdminClient()
 
-    const from = (page - 1) * limit
-    const to = from + limit - 1
+    const rangeFrom = (page - 1) * limit
+    const rangeTo = rangeFrom + limit - 1
 
-    const { data: announcements, error, count } = await adminClient
+    let query = adminClient
       .from('mosque_announcements')
       .select('*', { count: 'exact' })
       .eq('mosque_id', mosqueId)
       .order('created_at', { ascending: false })
-      .range(from, to)
+      .range(rangeFrom, rangeTo)
+
+    if (startDate) {
+      query = query.gte('created_at', startDate)
+    }
+    if (endDate) {
+      query = query.lte('created_at', `${endDate}T23:59:59.999Z`)
+    }
+
+    const { data: announcements, error, count } = await query
 
     if (error) {
       return NextResponse.json(

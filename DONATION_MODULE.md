@@ -246,6 +246,11 @@ Stripe Platform (DeenHub)
 
 ## Full Endpoint List
 
+### Owner — Overview
+| Method | Endpoint | Notes |
+|---|---|---|
+| `GET` | `/api/mosques/:mosqueId/overview` | Owner-only. Single-call dashboard summary: announcement/event counts, campaign totals, donation totals, Stripe status — for the app's "my mosque" screen |
+
 ### Owner — Stripe Connect
 | Method | Endpoint | Notes |
 |---|---|---|

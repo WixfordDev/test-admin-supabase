@@ -28,10 +28,12 @@ export async function GET(request: NextRequest) {
     const totalDonations = completedTx?.reduce((sum, t) => sum + (t.amount ?? 0), 0) ?? 0
     const platformRevenue = completedTx?.reduce((sum, t) => sum + (t.platform_fee ?? 0), 0) ?? 0
 
-    // Recent transactions with mosque name
+    // Recent transactions with mosque name — only completed donations;
+    // pending/failed rows are checkout attempts that never turned into real money
     const { data: transactions, count } = await adminClient
       .from('donation_transactions')
       .select('*', { count: 'exact' })
+      .eq('status', 'completed')
       .order('created_at', { ascending: false })
       .range(from, to)
 

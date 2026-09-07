@@ -9,6 +9,7 @@ type RouteContext = {
 }
 
 // GET /api/mosques/:mosqueId/events — public read
+// Query params: page, limit, upcoming=true, start_date=YYYY-MM-DD, end_date=YYYY-MM-DD
 export async function GET(request: NextRequest, context: RouteContext) {
   try {
     const { mosqueId } = await context.params
@@ -16,11 +17,13 @@ export async function GET(request: NextRequest, context: RouteContext) {
     const page = parseInt(searchParams.get('page') || '1')
     const limit = parseInt(searchParams.get('limit') || '20')
     const upcomingOnly = searchParams.get('upcoming') === 'true'
+    const startDate = searchParams.get('start_date')
+    const endDate = searchParams.get('end_date')
 
     const adminClient = await createAdminClient()
 
-    const from = (page - 1) * limit
-    const to = from + limit - 1
+    const rangeFrom = (page - 1) * limit
+    const rangeTo = rangeFrom + limit - 1
 
     let query = adminClient
       .from('mosque_events')
@@ -28,10 +31,17 @@ export async function GET(request: NextRequest, context: RouteContext) {
       .eq('mosque_id', mosqueId)
       .eq('is_active', true)
       .order('event_date', { ascending: true })
-      .range(from, to)
+      .range(rangeFrom, rangeTo)
 
     if (upcomingOnly) {
       query = query.gte('event_date', new Date().toISOString())
+    }
+    if (startDate) {
+      query = query.gte('event_date', startDate)
+    }
+    if (endDate) {
+      // end_date is a plain date (YYYY-MM-DD) — extend to end-of-day so that day's events are included
+      query = query.lte('event_date', `${endDate}T23:59:59.999Z`)
     }
 
     const { data: events, error, count } = await query
@@ -43,8 +53,30 @@ export async function GET(request: NextRequest, context: RouteContext) {
       )
     }
 
+    // Attach attendance counts so the list doesn't need a separate call per event
+    const eventIds = (events ?? []).map((e) => e.id)
+    const { data: attendees } = eventIds.length
+      ? await adminClient
+          .from('mosque_event_attendees')
+          .select('event_id, attendance_status')
+          .in('event_id', eventIds)
+      : { data: [] }
+
+    const countsByEvent: Record<string, { going: number; maybe: number; total: number }> = {}
+    for (const a of attendees ?? []) {
+      const bucket = (countsByEvent[a.event_id] ??= { going: 0, maybe: 0, total: 0 })
+      bucket.total += 1
+      if (a.attendance_status === 'going') bucket.going += 1
+      if (a.attendance_status === 'maybe') bucket.maybe += 1
+    }
+
+    const enrichedEvents = (events ?? []).map((e) => ({
+      ...e,
+      attendee_count: countsByEvent[e.id] ?? { going: 0, maybe: 0, total: 0 },
+    }))
+
     return NextResponse.json({
-      events: events ?? [],
+      events: enrichedEvents,
       pagination: {
         page,
         limit,

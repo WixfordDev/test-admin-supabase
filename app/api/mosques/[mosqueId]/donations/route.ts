@@ -38,10 +38,13 @@ export async function GET(request: NextRequest, context: RouteContext) {
     const from = (page - 1) * limit
     const to = from + limit - 1
 
+    // Only completed donations — pending/failed rows are checkout attempts
+    // that never turned into real money, and shouldn't clutter the owner's history
     const { data: transactions, count, error } = await adminClient
       .from('donation_transactions')
       .select('*', { count: 'exact' })
       .eq('mosque_id', mosqueId)
+      .eq('status', 'completed')
       .order('created_at', { ascending: false })
       .range(from, to)
 
