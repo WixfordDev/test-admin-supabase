@@ -3,7 +3,7 @@
 import { useState } from 'react'
 import { Card } from '@/app/components/ui/card'
 import { Button } from '@/app/components/ui/button'
-import { X, CheckCircle, XCircle, Clock, Building2, Unplug, Plug } from 'lucide-react'
+import { X, CheckCircle, XCircle, Clock, Building2, Unplug, Plug, Trash2 } from 'lucide-react'
 import toast from 'react-hot-toast'
 import ConfirmDialog from '@/app/components/ui/confirm-dialog'
 
@@ -35,8 +35,10 @@ function BoolIcon({ value }: { value: boolean }) {
 
 export default function MosqueAccountDetailModal({ account: a, onClose, onStatusChanged }: Props) {
   const [showDisconnectConfirm, setShowDisconnectConfirm] = useState(false)
+  const [showRemoveConfirm, setShowRemoveConfirm] = useState(false)
   const [disconnecting, setDisconnecting] = useState(false)
   const [enabling, setEnabling] = useState(false)
+  const [removing, setRemoving] = useState(false)
   const [currentStatus, setCurrentStatus] = useState(a.account_status)
 
   const statusConfig = {
@@ -83,6 +85,23 @@ export default function MosqueAccountDetailModal({ account: a, onClose, onStatus
       toast.error(err.message ?? 'Failed to re-enable')
     } finally {
       setEnabling(false)
+    }
+  }
+
+  const handleRemove = async () => {
+    setRemoving(true)
+    try {
+      const res = await fetch(`/api/admin/donations/accounts/${a.id}`, { method: 'DELETE' })
+      const json = await res.json()
+      if (!res.ok) throw new Error(json.message ?? 'Failed')
+      toast.success('Stripe account permanently removed. Owner must connect a fresh account.')
+      setShowRemoveConfirm(false)
+      onStatusChanged?.()
+      onClose()
+    } catch (err: any) {
+      toast.error(err.message ?? 'Failed to remove account')
+    } finally {
+      setRemoving(false)
     }
   }
 
@@ -174,27 +193,38 @@ export default function MosqueAccountDetailModal({ account: a, onClose, onStatus
 
         {/* Footer */}
         <div className="flex justify-between items-center p-6 border-t gap-3">
-          {currentStatus !== 'disabled' ? (
+          <div className="flex items-center gap-2">
+            {currentStatus !== 'disabled' ? (
+              <Button
+                variant="outline"
+                className="flex items-center gap-2 text-red-600 border-red-300 hover:bg-red-50"
+                onClick={() => setShowDisconnectConfirm(true)}
+                disabled={disconnecting}
+              >
+                <Unplug className="h-4 w-4" />
+                Disconnect
+              </Button>
+            ) : (
+              <Button
+                variant="outline"
+                className="flex items-center gap-2 text-green-700 border-green-300 hover:bg-green-50"
+                onClick={handleEnable}
+                disabled={enabling}
+              >
+                <Plug className="h-4 w-4" />
+                Re-enable
+              </Button>
+            )}
             <Button
               variant="outline"
-              className="flex items-center gap-2 text-red-600 border-red-300 hover:bg-red-50"
-              onClick={() => setShowDisconnectConfirm(true)}
-              disabled={disconnecting}
+              className="flex items-center gap-2 text-red-800 border-red-400 hover:bg-red-50"
+              onClick={() => setShowRemoveConfirm(true)}
+              disabled={removing}
             >
-              <Unplug className="h-4 w-4" />
-              Disconnect
+              <Trash2 className="h-4 w-4" />
+              Permanently Remove
             </Button>
-          ) : (
-            <Button
-              variant="outline"
-              className="flex items-center gap-2 text-green-700 border-green-300 hover:bg-green-50"
-              onClick={handleEnable}
-              disabled={enabling}
-            >
-              <Plug className="h-4 w-4" />
-              Re-enable
-            </Button>
-          )}
+          </div>
           <Button variant="outline" className="text-black" onClick={onClose}>
             Close
           </Button>
@@ -210,6 +240,17 @@ export default function MosqueAccountDetailModal({ account: a, onClose, onStatus
         isLoading={disconnecting}
         onConfirm={handleDisconnect}
         onCancel={() => setShowDisconnectConfirm(false)}
+      />
+
+      <ConfirmDialog
+        open={showRemoveConfirm}
+        title="Permanently Remove Stripe Account"
+        description={`This permanently deletes "${a.mosque_name}"'s Stripe connection record — unlike Disconnect, this cannot be undone with a simple re-enable. The owner will have to connect a brand-new Stripe account from scratch (full onboarding again).`}
+        confirmText="Permanently Remove"
+        variant="danger"
+        isLoading={removing}
+        onConfirm={handleRemove}
+        onCancel={() => setShowRemoveConfirm(false)}
       />
     </div>
   )

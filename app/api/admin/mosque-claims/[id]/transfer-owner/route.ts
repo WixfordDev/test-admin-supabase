@@ -17,11 +17,24 @@ function generateTempPassword(length = 12): string {
 }
 
 // Admin: PUT /api/admin/mosque-claims/[id]/transfer-owner
-// body: { email: string }
+// body: { email: string, reset_stripe_account?: boolean, position?: string, mosque_phone?: string }
 // Reassigns mosque ownership to a user found by email — or creates a fresh,
 // unverified account for that email if none exists yet (matches the pattern
 // used by /api/admin/users/add).
 // The previous owner's mosque_roles row is removed entirely (not demoted to admin).
+//
+// The claim's mosque_email is always re-synced to the new owner's actual account
+// email (previously it stayed frozen at whatever the original claimant submitted).
+// position/mosque_phone are only overwritten if explicitly passed — otherwise the
+// original claim's values are left as-is, since we don't know the new owner's role
+// or phone number unless the admin tells us.
+//
+// By default the mosque's existing Stripe donation account (and its bank details,
+// which belong to the PREVIOUS owner) carries over unchanged to the new owner —
+// donations keep going to the same bank account. Pass reset_stripe_account: true
+// to also disconnect it as part of the transfer, forcing the new owner to connect
+// their own Stripe account (fresh Express account, own bank details) before the
+// mosque can accept donations again.
 export async function PUT(request: NextRequest, context: RouteContext) {
   try {
     const adminClient = await createAdminClient()
@@ -46,6 +59,9 @@ export async function PUT(request: NextRequest, context: RouteContext) {
 
     const body = await request.json().catch(() => ({} as Record<string, unknown>))
     const email = typeof body?.email === 'string' ? body.email.trim() : ''
+    const resetStripeAccount = body?.reset_stripe_account === true
+    const newPosition = typeof body?.position === 'string' ? body.position.trim() : undefined
+    const newPhone = typeof body?.mosque_phone === 'string' ? body.mosque_phone.trim() : undefined
 
     if (!email) {
       return NextResponse.json({ error: 'email is required' }, { status: 400 })
@@ -145,10 +161,17 @@ export async function PUT(request: NextRequest, context: RouteContext) {
       )
     }
 
-    // Repoint the claim itself so block/unblock and claim lookups follow the new owner
+    // Repoint the claim itself so block/unblock and claim lookups follow the new owner.
+    // mosque_email is always kept in sync with the new owner's real account email —
+    // position/mosque_phone only change if the admin explicitly supplied new values.
+    const claimUpdate: Record<string, string> = { user_id: newOwner.id }
+    if (newOwner.email) claimUpdate.mosque_email = newOwner.email
+    if (newPosition) claimUpdate.position = newPosition
+    if (newPhone) claimUpdate.mosque_phone = newPhone
+
     const { error: claimUpdateError } = await adminClient
       .from('mosque_claims')
-      .update({ user_id: newOwner.id })
+      .update(claimUpdate)
       .eq('id', id)
 
     if (claimUpdateError) {
@@ -159,16 +182,46 @@ export async function PUT(request: NextRequest, context: RouteContext) {
       )
     }
 
+    // Optionally disconnect the mosque's existing Stripe account (previous owner's
+    // bank details) so the new owner must connect their own before accepting donations
+    let stripeAccountReset = false
+    if (resetStripeAccount) {
+      const { error: resetError } = await adminClient
+        .from('mosque_donation_accounts')
+        .delete()
+        .eq('mosque_id', claim.mosque_id)
+
+      if (resetError) {
+        console.error('[transfer-owner] Failed to reset Stripe account:', resetError)
+        // Non-fatal — ownership transfer already succeeded, just report it didn't reset
+      } else {
+        stripeAccountReset = true
+      }
+    }
+
+    const messages: string[] = []
+    messages.push(
+      createdNewAccount
+        ? 'Mosque ownership transferred to a newly created account. Share the temporary password with them so they can log in and change it.'
+        : 'Mosque ownership transferred successfully.'
+    )
+    if (resetStripeAccount) {
+      messages.push(
+        stripeAccountReset
+          ? 'The previous Stripe donation account was disconnected — the new owner must connect their own.'
+          : 'Ownership transferred, but resetting the Stripe account failed — it still points to the previous owner.'
+      )
+    }
+
     return NextResponse.json({
       success: true,
-      message: createdNewAccount
-        ? 'Mosque ownership transferred to a newly created account. Share the temporary password with them so they can log in and change it.'
-        : 'Mosque ownership transferred successfully.',
+      message: messages.join(' '),
       data: {
         new_owner_user_id: newOwner.id,
         new_owner_email: newOwner.email,
         created_new_account: createdNewAccount,
         temporary_password: createdNewAccount ? tempPassword : undefined,
+        stripe_account_reset: stripeAccountReset,
       },
     })
   } catch (err) {

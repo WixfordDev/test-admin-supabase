@@ -38,8 +38,10 @@ export default function MosqueViewPage() {
   const [showBlockConfirm, setShowBlockConfirm] = useState(false)
   const [showTransferModal, setShowTransferModal] = useState(false)
   const [transferEmail, setTransferEmail] = useState('')
+  const [transferPosition, setTransferPosition] = useState('')
+  const [resetStripeAccount, setResetStripeAccount] = useState(false)
   const [isTransferring, setIsTransferring] = useState(false)
-  const [transferResult, setTransferResult] = useState<{ email: string; password: string | null } | null>(null)
+  const [transferResult, setTransferResult] = useState<{ email: string; password: string | null; stripeReset: boolean } | null>(null)
 
   const fetchClaim = async () => {
     try {
@@ -132,7 +134,11 @@ export default function MosqueViewPage() {
       const response = await fetch(`/api/admin/mosque-claims/${claimId}/transfer-owner`, {
         method: 'PUT',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ email: transferEmail.trim() }),
+        body: JSON.stringify({
+          email: transferEmail.trim(),
+          reset_stripe_account: resetStripeAccount,
+          ...(transferPosition.trim() ? { position: transferPosition.trim() } : {}),
+        }),
       })
       const data = await response.json()
       if (!response.ok) throw new Error(data.error)
@@ -140,10 +146,13 @@ export default function MosqueViewPage() {
       setTransferResult({
         email: data.data?.new_owner_email ?? transferEmail,
         password: data.data?.created_new_account ? data.data?.temporary_password ?? null : null,
+        stripeReset: data.data?.stripe_account_reset ?? false,
       })
 
       setShowTransferModal(false)
       setTransferEmail('')
+      setTransferPosition('')
+      setResetStripeAccount(false)
       await fetchClaim()
     } catch (err: any) {
       toast.error(err.message || 'Failed to transfer ownership')
@@ -404,11 +413,39 @@ export default function MosqueViewPage() {
               autoFocus
             />
 
+            <input
+              type="text"
+              placeholder="New owner's position (optional, e.g. Imam)"
+              value={transferPosition}
+              onChange={(e) => setTransferPosition(e.target.value)}
+              className="w-full rounded-lg border border-gray-300 px-3 py-2 text-sm text-gray-900 focus:outline-none focus:ring-2 focus:ring-blue-500 mt-2"
+              disabled={isTransferring}
+            />
+            <p className="text-xs text-gray-500 mt-1">
+              The claim's contact email updates to the new owner automatically. Position is only updated if you fill this in.
+            </p>
+
+            <label className="flex items-start gap-2 mt-3 text-sm text-gray-700 cursor-pointer">
+              <input
+                type="checkbox"
+                checked={resetStripeAccount}
+                onChange={(e) => setResetStripeAccount(e.target.checked)}
+                disabled={isTransferring}
+                className="mt-0.5"
+              />
+              <span>
+                Also disconnect the current Stripe donation account
+                <span className="block text-xs text-gray-500">
+                  Otherwise donations keep going to the previous owner's bank account. Check this if the new owner should connect their own.
+                </span>
+              </span>
+            </label>
+
             <div className="flex justify-end gap-2 mt-4">
               <Button
                 variant="outline"
                 className="text-black"
-                onClick={() => { setShowTransferModal(false); setTransferEmail('') }}
+                onClick={() => { setShowTransferModal(false); setTransferEmail(''); setTransferPosition(''); setResetStripeAccount(false) }}
                 disabled={isTransferring}
               >
                 Cancel
@@ -452,6 +489,12 @@ export default function MosqueViewPage() {
                 </div>
               )}
             </div>
+
+            {transferResult.stripeReset && (
+              <div className="mt-3 p-3 rounded-lg bg-yellow-50 border border-yellow-200 text-sm text-yellow-800">
+                🔌 The previous Stripe donation account was disconnected. The new owner must connect their own Stripe account before this mosque can accept donations again.
+              </div>
+            )}
 
             <div className="flex justify-end gap-2 mt-4">
               <Button variant="outline" className="text-black flex items-center gap-1.5" onClick={copyCreds}>

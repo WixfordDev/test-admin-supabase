@@ -473,13 +473,13 @@
           "request": {
             "method": "PUT",
             "header": [{ "key": "Content-Type", "value": "application/json" }],
-            "body": { "mode": "raw", "raw": "{\n  \"email\": \"new-owner@example.com\"\n}" },
+            "body": { "mode": "raw", "raw": "{\n  \"email\": \"new-owner@example.com\",\n  \"reset_stripe_account\": false,\n  \"position\": \"\",\n  \"mosque_phone\": \"\"\n}" },
             "url": {
               "raw": "{{baseUrl}}/api/admin/mosque-claims/{{claimId}}/transfer-owner",
               "host": ["{{baseUrl}}"],
               "path": ["api", "admin", "mosque-claims", "{{claimId}}", "transfer-owner"]
             },
-            "description": "claimId is the mosque_claims row id, not mosqueId."
+            "description": "claimId is the mosque_claims row id, not mosqueId. reset_stripe_account (optional, default false): also disconnects the mosque's existing Stripe donation account. The claim's mosque_email always auto-syncs to the new owner's real account email. position/mosque_phone (both optional) only update if provided — leave blank/omit to keep the original claim's values."
           }
         }
       ]
